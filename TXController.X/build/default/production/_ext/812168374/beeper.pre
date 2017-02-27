@@ -1,5 +1,5 @@
 
-# 1 "../source/main.c"
+# 1 "../source/beeper.c"
 
 # 26 "C:\Program Files (x86)\Microchip\xc8\v1.37\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -2892,37 +2892,6 @@ typedef unsigned long DWORD;
 
 typedef unsigned char bool;
 
-# 18 "../include\main.h"
-void initialise( void );
-void hardwareInit( void );
-void interruptsInit( void );
-void kickWatchDog( void );
-
-# 16 "../include\interrupt.h"
-void initInterrupt( void );
-void disableInterrupts( void );
-void enableInterrupts( void );
-
-
-# 18 "../include\picconfig.h"
-#pragma config (FCMEN=OFF)
-#pragma config (IESO=OFF)
-#pragma config (CLKOUTEN=OFF)
-#pragma config (BOREN=ON)
-#pragma config (CPD=OFF)
-#pragma config (CP=OFF)
-#pragma config (MCLRE=OFF)
-#pragma config (PWRTE=OFF)
-#pragma config (WDTE=ON)
-#pragma config (FOSC=INTOSC)
-
-
-#pragma config (LVP=OFF )
-#pragma config (BORV=LO)
-#pragma config (STVREN=OFF)
-#pragma config (PLLEN=ON)
-#pragma config (WRT=OFF)
-
 # 19 "../include\timer.h"
 typedef unsigned char TTimerIndex;
 
@@ -2935,45 +2904,6 @@ extern void timerDelay( unsigned int Duration );
 
 void timerInterrupt( void );
 
-# 12 "../include\eventhandler.h"
-void initIOCInterrupt( void );
-void resetIOCInterrupt( void );
-void IOCInterrupt( void );
-void eventHandlerInit( void );
-void eventHandlerService( void );
-
-
-
-
-enum states { INITIALISE, STATE_2, STATE_3, MAX_STATES } currentState;
-enum events { INITIALISING_TX, EVENT_1, MAX_EVENTS } newEvent;
-
-
-void action_s1_e1 (void);
-void action_s1_e2 (void);
-void action_s2_e1 (void);
-void action_s2_e2 (void);
-void action_s3_e1 (void);
-void action_s3_e2 (void);
-enum events getNewEvent (void);
-void setEvent( enum events event);
-
-
-void (*const stateTable [MAX_STATES][MAX_EVENTS]) (void) = {
-
-{ action_s1_e1, action_s1_e2 },
-{ action_s2_e1, action_s2_e2 },
-{ action_s3_e1, action_s3_e2 }
-};
-
-# 13 "../include\led.h"
-void setLED ( void );
-void clearLED ( void );
-void flashLED ( int period );
-
-void LEDInit (void);
-void LEDService (void);
-
 # 13 "../include\beeper.h"
 void setBeeper ( void );
 void clearBeeper ( void );
@@ -2982,58 +2912,111 @@ void beepRepeatedly ( int period, int nBeeps );
 void beeperInit (void);
 void beeperService (void);
 
-# 18 "../source/main.c"
-void kickWatchDog( void )
-{
-asm("CLRWDT");
-}
+# 14 "../source/beeper.c"
+BYTE beeperTimer = 0;
+bool beeperToggle = 0;
+INT16 beepRate = 1000;
+bool repeatedBeeping = 0;
+bool beeperOn = 0;
+int nBeeps = 0;
 
 # 29
-void main( void )
+void timer2Init( void )
 {
-initialise();
-while( 1 )
+
+T2CONbits.T2CKPS = 0b00;
+T2CONbits.T2OUTPS = 0b0111;;
+
+PR2 = 0x65;
+
+PIE1bits.TMR2IE = 1;
+
+INTCONbits.PEIE = 1;
+T2CONbits.TMR2ON = 1;
+}
+
+# 50
+void timer2Interrupt( void )
 {
-eventHandlerService();
-LEDService();
-beeperService();
-kickWatchDog();
+unsigned char i;
+
+if ( PIE1bits.TMR2IE && PIR1bits.TMR2IF )
+{
+T2CONbits.TMR2ON = 0;
+
+if (beeperOn)
+{
+LATAbits.LATA1 ^= 1;
+}
+T2CONbits.TMR2ON = 1;
+PIR1bits.TMR2IF = 0;
 }
 }
 
-# 47
-void initialise( void )
+
+
+
+void setBeeper ()
 {
-hardwareInit();
-timerInit();
-eventHandlerInit();
-LEDInit();
-beeperInit();
-initInterrupt();
-flashLED(1000);
-beepRepeatedly(300, 3);
+repeatedBeeping = 0;
+beeperOn = !0;
 }
 
-# 65
-void hardwareInit( void )
+void clearBeeper ()
 {
-OSCCONbits.SCS = 0;
-OSCCONbits.IRCF = 0xE;
-OSCCONbits.SPLLEN = 1;
-
-TRISAbits.TRISA5 = 0;
-
-TRISAbits.TRISA1 = 0;
-ANSELAbits.ANSA1 = 0;
-LATAbits.LATA1 = 0;
-
-TRISAbits.TRISA3 = 1;
-
-TRISAbits.TRISA4 = 0;
-ANSELAbits.ANSA4 = 0;
-LATAbits.LATA4 = 0;
-
-# 120
-WDTCONbits.SWDTEN = 1;
-
+repeatedBeeping = 0;
+beeperOn = 0;
 }
+
+void beepRepeatedly ( int period, int n)
+{
+repeatedBeeping = !0;
+if (n != -1)
+nBeeps = n * 2;
+else
+nBeeps = -1;
+beeperOn = 0;
+beepRate = period;
+beeperToggle = 0;
+}
+
+
+void beeperInit ()
+{
+timer2Init();
+beeperOn = 0;
+beeperTimer = timerGet ();
+timerSet( beeperTimer, beepRate );
+}
+
+void beeperService ()
+{
+if (repeatedBeeping)
+{
+if ( timerRead(beeperTimer) == 0 )
+{
+if (beeperToggle)
+{
+beeperToggle = 0;
+beeperOn = 0;
+}
+else
+{
+beeperToggle = !0;
+beeperOn = !0;
+}
+
+if (nBeeps != -1)
+{
+nBeeps--;
+if (nBeeps == 0)
+{
+repeatedBeeping = 0;
+beeperOn = 0;
+}
+}
+timerSet( beeperTimer, beepRate );
+}
+}
+}
+

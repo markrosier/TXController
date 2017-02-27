@@ -5,35 +5,41 @@
 //
 //  eventhandler.h
 //
-//  Iota Electronics Limited 2016
+//  Iota Electronics Limited 2017
 //
 //****************************************************************************
 
-void initKeyInterrupt( void );
-void resetKeyInterrupt( void );
-void initChargerAttachedInterrupt( void );
-void resetChargerAttachedInterrupt( void );
-void chargerAttachedInterrupt( void );
-void keyInterrupt( void );
-void switchOff( void );
-void switchOn( void );
-void gotoSleep( void );
+void initIOCInterrupt( void );
+void resetIOCInterrupt( void );
+void IOCInterrupt( void );
 void eventHandlerInit( void );
 void eventHandlerService( void );
 
 #define EVENT_HANDLER_PERIOD    100
-#define DEBOUNCE_PERIOD 50
 
-#define OFF_BUTTON_TIMEOUT     9000  // 9 seconds
-#define OFF_TIMEOUT             5000 // 5 seconds
+// State Machine stuff
+enum states { INITIALISE, STATE_2, STATE_3, MAX_STATES } currentState;
+enum events { INITIALISING_TX, EVENT_1, MAX_EVENTS } newEvent;
 
-enum eOnState { onStateOn, 
-                onStateWaitingforOff, 
-                onStateWaitingforOffRequest, 
-                onStateOffWaitingforKeyRelease, 
-                onStateOnWaitingforRequestRelease,
-                onStateOnWaitingforKeyRelease, 
-                onStateOff};
+
+void action_s1_e1 (void);
+void action_s1_e2 (void);
+void action_s2_e1 (void);
+void action_s2_e2 (void);
+void action_s3_e1 (void);
+void action_s3_e2 (void);
+enum events getNewEvent (void);
+void setEvent( enum events event);
+
+
+void (*const stateTable [MAX_STATES][MAX_EVENTS]) (void) = {
+
+    { action_s1_e1, action_s1_e2 }, /* procedures for state 1 */
+    { action_s2_e1, action_s2_e2 }, /* procedures for state 2 */
+    { action_s3_e1, action_s3_e2 }  /* procedures for state 3 */
+};
+
+
 
 
 #endif

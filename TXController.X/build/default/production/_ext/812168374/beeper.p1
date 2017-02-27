@@ -1,39 +1,52 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"420 C:\Program Files (x86)\Microchip\xc8\v1.37\include\pic12f1822.h
-[s S30 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S30 . RA0 RA1 RA2 RA3 RA4 RA5 ]
-"428
-[s S31 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S31 . AN0 AN1 AN2 . AN3 ]
-"435
-[s S32 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S32 . CPS0 CPS1 CPS2 . CPS3 ]
-"442
-[s S33 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S33 . C1INP C1IN0N C1OUT . C1IN1N ]
-"449
-[s S34 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S34 . DACOUT SRI SRQ . SRNQ ]
-"456
-[s S35 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S35 . . SCK T0CKI . T1OSO T1CKI ]
-"464
-[s S36 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S36 . . SCL SDA nMCLR CLKR T1OSI ]
-"472
-[s S37 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S37 . MDOUT MDMIN MDCIN1 . MDCIN2 ]
-"479
-[s S38 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S38 . . SDI . OSC2 OSC1 ]
-"486
-[s S39 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S39 . . FLT0 . CLKOUT CLKIN ]
-"419
-[u S29 `S30 1 `S31 1 `S32 1 `S33 1 `S34 1 `S35 1 `S36 1 `S37 1 `S38 1 `S39 1 ]
-[n S29 . . . . . . . . . . . ]
-"494
-[v _PORTAbits `VS29 ~T0 @X0 0 e@12 ]
+"1057 C:\Program Files (x86)\Microchip\xc8\v1.37\include\pic12f1822.h
+[s S61 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S61 . T2CKPS0 T2CKPS1 TMR2ON T2OUTPS0 T2OUTPS1 T2OUTPS2 T2OUTPS3 ]
+"1066
+[s S62 :2 `uc 1 :1 `uc 1 :4 `uc 1 ]
+[n S62 . T2CKPS . T2OUTPS ]
+"1056
+[u S60 `S61 1 `S62 1 ]
+[n S60 . . . ]
+"1072
+[v _T2CONbits `VS60 ~T0 @X0 0 e@28 ]
+"1032
+[v _PR2 `Vuc ~T0 @X0 0 e@27 ]
+"1268
+[s S72 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S72 . TMR1IE TMR2IE CCP1IE SSP1IE TXIE RCIE ADIE TMR1GIE ]
+"1267
+[u S71 `S72 1 ]
+[n S71 . . ]
+"1279
+[v _PIE1bits `VS71 ~T0 @X0 0 e@145 ]
+"343
+[s S27 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S27 . IOCIF INTF TMR0IF IOCIE INTE TMR0IE PEIE GIE ]
+"353
+[s S28 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S28 . . T0IF . T0IE ]
+"342
+[u S26 `S27 1 `S28 1 ]
+[n S26 . . . ]
+"360
+[v _INTCONbits `VS26 ~T0 @X0 0 e@11 ]
+"709
+[s S41 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S41 . TMR1IF TMR2IF CCP1IF SSP1IF TXIF RCIF ADIF TMR1GIF ]
+"708
+[u S40 `S41 1 ]
+[n S40 . . ]
+"720
+[v _PIR1bits `VS40 ~T0 @X0 0 e@17 ]
+"1944
+[s S104 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S104 . LATA0 LATA1 LATA2 . LATA4 LATA5 ]
+"1943
+[u S103 `S104 1 ]
+[n S103 . . ]
+"1953
+[v _LATAbits `VS103 ~T0 @X0 0 e@268 ]
 "22 ../include\timer.h
 [v _timerGet `(uc ~T0 @X0 0 ef ]
 "23
@@ -2177,180 +2190,319 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;include\timer.h: 25: extern void timerLock( TTimerIndex index );
 [; ;include\timer.h: 26: extern void timerDelay( unsigned int Duration );
 [; ;include\timer.h: 28: void timerInterrupt( void );
-[; ;include\led.h: 13: void setLED ( void );
-[; ;include\led.h: 14: void clearLED ( void );
-[; ;include\led.h: 15: void flashLED ( int period );
-[; ;include\led.h: 17: void LEDInit (void);
-[; ;include\led.h: 18: void LEDService (void);
-"14 ../source/LED.c
-[v _LEDTimer `uc ~T0 @X0 1 e ]
-[i _LEDTimer
+[; ;include\beeper.h: 13: void setBeeper ( void );
+[; ;include\beeper.h: 14: void clearBeeper ( void );
+[; ;include\beeper.h: 15: void beepRepeatedly ( int period, int nBeeps );
+[; ;include\beeper.h: 17: void beeperInit (void);
+[; ;include\beeper.h: 18: void beeperService (void);
+"14 ../source/beeper.c
+[v _beeperTimer `uc ~T0 @X0 1 e ]
+[i _beeperTimer
 -> -> 0 `i `uc
 ]
-[; ;LED.c: 14: BYTE LEDTimer = 0;
+[; ;beeper.c: 14: BYTE beeperTimer = 0;
 "15
-[v _flasherToggle `uc ~T0 @X0 1 e ]
-[i _flasherToggle
+[v _beeperToggle `uc ~T0 @X0 1 e ]
+[i _beeperToggle
 -> -> 0 `i `uc
 ]
-[; ;LED.c: 15: bool flasherToggle = 0;
+[; ;beeper.c: 15: bool beeperToggle = 0;
 "16
-[v _flashRate `i ~T0 @X0 1 e ]
-[i _flashRate
+[v _beepRate `i ~T0 @X0 1 e ]
+[i _beepRate
 -> 1000 `i
 ]
-[; ;LED.c: 16: INT16 flashRate = 1000;
+[; ;beeper.c: 16: INT16 beepRate = 1000;
 "17
-[v _flashing `uc ~T0 @X0 1 e ]
-[i _flashing
+[v _repeatedBeeping `uc ~T0 @X0 1 e ]
+[i _repeatedBeeping
 -> -> 0 `i `uc
 ]
-[; ;LED.c: 17: bool flashing = 0;
+[; ;beeper.c: 17: bool repeatedBeeping = 0;
+"18
+[v _beeperOn `uc ~T0 @X0 1 e ]
+[i _beeperOn
+-> -> 0 `i `uc
+]
+[; ;beeper.c: 18: bool beeperOn = 0;
 "19
-[v _setLED `(v ~T0 @X0 1 ef ]
-"20
+[v _nBeeps `i ~T0 @X0 1 e ]
+[i _nBeeps
+-> 0 `i
+]
+[; ;beeper.c: 19: int nBeeps = 0;
+"29
+[v _timer2Init `(v ~T0 @X0 1 ef ]
+"30
 {
-[; ;LED.c: 19: void setLED ()
-[; ;LED.c: 20: {
-[e :U _setLED ]
+[; ;beeper.c: 29: void timer2Init( void )
+[; ;beeper.c: 30: {
+[e :U _timer2Init ]
 [f ]
-[; ;LED.c: 21: flashing = 0;
-"21
-[e = _flashing -> -> 0 `i `uc ]
-[; ;LED.c: 22: PORTAbits.RA5 = 0;
-"22
-[e = . . _PORTAbits 0 5 -> -> 0 `i `uc ]
-[; ;LED.c: 23: }
-"23
+[; ;beeper.c: 32: T2CONbits.T2CKPS = 0b00;
+"32
+[e = . . _T2CONbits 1 0 -> -> 0 `i `uc ]
+[; ;beeper.c: 33: T2CONbits.T2OUTPS = 0b0111;;
+"33
+[e = . . _T2CONbits 1 2 -> -> 7 `i `uc ]
+[; ;beeper.c: 35: PR2 = 0x65;
+"35
+[e = _PR2 -> -> 101 `i `uc ]
+[; ;beeper.c: 37: PIE1bits.TMR2IE = 1;
+"37
+[e = . . _PIE1bits 0 1 -> -> 1 `i `uc ]
+[; ;beeper.c: 39: INTCONbits.PEIE = 1;
+"39
+[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
+[; ;beeper.c: 40: T2CONbits.TMR2ON = 1;
+"40
+[e = . . _T2CONbits 0 2 -> -> 1 `i `uc ]
+[; ;beeper.c: 41: }
+"41
 [e :UE 270 ]
 }
-"25
-[v _clearLED `(v ~T0 @X0 1 ef ]
-"26
-{
-[; ;LED.c: 25: void clearLED ()
-[; ;LED.c: 26: {
-[e :U _clearLED ]
-[f ]
-[; ;LED.c: 27: flashing = 0;
-"27
-[e = _flashing -> -> 0 `i `uc ]
-[; ;LED.c: 28: PORTAbits.RA5 = 1;
-"28
-[e = . . _PORTAbits 0 5 -> -> 1 `i `uc ]
-[; ;LED.c: 29: }
-"29
-[e :UE 271 ]
-}
-"31
-[v _flashLED `(v ~T0 @X0 1 ef1`i ]
-"32
-{
-[; ;LED.c: 31: void flashLED ( int period)
-[; ;LED.c: 32: {
-[e :U _flashLED ]
-"31
-[v _period `i ~T0 @X0 1 r1 ]
-"32
-[f ]
-[; ;LED.c: 33: flashing = !0;
-"33
-[e = _flashing -> -> ! != -> 0 `i -> 0 `i `i `uc ]
-[; ;LED.c: 34: PORTAbits.RA5 = 0;
-"34
-[e = . . _PORTAbits 0 5 -> -> 0 `i `uc ]
-[; ;LED.c: 35: flashRate = period;
-"35
-[e = _flashRate _period ]
-[; ;LED.c: 36: flasherToggle = !0;
-"36
-[e = _flasherToggle -> -> ! != -> 0 `i -> 0 `i `i `uc ]
-[; ;LED.c: 37: }
-"37
-[e :UE 272 ]
-}
-"40
-[v _LEDInit `(v ~T0 @X0 1 ef ]
-"41
-{
-[; ;LED.c: 40: void LEDInit ()
-[; ;LED.c: 41: {
-[e :U _LEDInit ]
-[f ]
-[; ;LED.c: 42: LEDTimer = timerGet ();
-"42
-[e = _LEDTimer ( _timerGet ..  ]
-[; ;LED.c: 44: timerSet( LEDTimer, flashRate );
-"44
-[e ( _timerSet (2 , _LEDTimer -> _flashRate `ui ]
-[; ;LED.c: 45: }
-"45
-[e :UE 273 ]
-}
-"47
-[v _LEDService `(v ~T0 @X0 1 ef ]
-"48
-{
-[; ;LED.c: 47: void LEDService ()
-[; ;LED.c: 48: {
-[e :U _LEDService ]
-[f ]
-[; ;LED.c: 49: if (flashing)
-"49
-[e $ ! != -> _flashing `i -> -> -> 0 `i `uc `i 275  ]
-[; ;LED.c: 50: {
 "50
-{
-[; ;LED.c: 51: if ( timerRead(LEDTimer) == 0 )
+[v _timer2Interrupt `(v ~T0 @X0 1 ef ]
 "51
-[e $ ! == ( _timerRead (1 _LEDTimer -> -> 0 `i `ui 276  ]
-[; ;LED.c: 52: {
+{
+[; ;beeper.c: 50: void timer2Interrupt( void )
+[; ;beeper.c: 51: {
+[e :U _timer2Interrupt ]
+[f ]
 "52
-{
-[; ;LED.c: 53: if (flasherToggle)
-"53
-[e $ ! != -> _flasherToggle `i -> -> -> 0 `i `uc `i 277  ]
-[; ;LED.c: 54: {
+[v _i `uc ~T0 @X0 1 a ]
+[; ;beeper.c: 52: unsigned char i;
+[; ;beeper.c: 54: if ( PIE1bits.TMR2IE && PIR1bits.TMR2IF )
 "54
-{
-[; ;LED.c: 55: flasherToggle = 0;
+[e $ ! && != -> . . _PIE1bits 0 1 `i -> -> -> 0 `i `Vuc `i != -> . . _PIR1bits 0 1 `i -> -> -> 0 `i `Vuc `i 272  ]
+[; ;beeper.c: 55: {
 "55
-[e = _flasherToggle -> -> 0 `i `uc ]
-[; ;LED.c: 56: PORTAbits.RA5 = 1;
+{
+[; ;beeper.c: 56: T2CONbits.TMR2ON = 0;
 "56
-[e = . . _PORTAbits 0 5 -> -> 1 `i `uc ]
-"57
-}
-[; ;LED.c: 57: }
-[e $U 278  ]
+[e = . . _T2CONbits 0 2 -> -> 0 `i `uc ]
+[; ;beeper.c: 58: if (beeperOn)
 "58
-[e :U 277 ]
-[; ;LED.c: 58: else
-[; ;LED.c: 59: {
+[e $ ! != -> _beeperOn `i -> -> -> 0 `i `uc `i 273  ]
+[; ;beeper.c: 59: {
 "59
 {
-[; ;LED.c: 60: flasherToggle = !0;
+[; ;beeper.c: 60: LATAbits.LATA1 ^= 1;
 "60
-[e = _flasherToggle -> -> ! != -> 0 `i -> 0 `i `i `uc ]
-[; ;LED.c: 61: PORTAbits.RA5 = 0;
+[e =^ . . _LATAbits 0 1 -> -> 1 `i `uc ]
 "61
-[e = . . _PORTAbits 0 5 -> -> 0 `i `uc ]
-"62
 }
-[e :U 278 ]
-[; ;LED.c: 62: }
-[; ;LED.c: 63: timerSet( LEDTimer, flashRate );
+[e :U 273 ]
+[; ;beeper.c: 61: }
+[; ;beeper.c: 62: T2CONbits.TMR2ON = 1;
+"62
+[e = . . _T2CONbits 0 2 -> -> 1 `i `uc ]
+[; ;beeper.c: 63: PIR1bits.TMR2IF = 0;
 "63
-[e ( _timerSet (2 , _LEDTimer -> _flashRate `ui ]
+[e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
 "64
 }
-[e :U 276 ]
+[e :U 272 ]
+[; ;beeper.c: 64: }
+[; ;beeper.c: 65: }
 "65
+[e :UE 271 ]
 }
-[e :U 275 ]
-[; ;LED.c: 64: }
-[; ;LED.c: 65: }
-[; ;LED.c: 66: }
-"66
+"70
+[v _setBeeper `(v ~T0 @X0 1 ef ]
+"71
+{
+[; ;beeper.c: 70: void setBeeper ()
+[; ;beeper.c: 71: {
+[e :U _setBeeper ]
+[f ]
+[; ;beeper.c: 72: repeatedBeeping = 0;
+"72
+[e = _repeatedBeeping -> -> 0 `i `uc ]
+[; ;beeper.c: 73: beeperOn = !0;
+"73
+[e = _beeperOn -> -> ! != -> 0 `i -> 0 `i `i `uc ]
+[; ;beeper.c: 74: }
+"74
 [e :UE 274 ]
+}
+"76
+[v _clearBeeper `(v ~T0 @X0 1 ef ]
+"77
+{
+[; ;beeper.c: 76: void clearBeeper ()
+[; ;beeper.c: 77: {
+[e :U _clearBeeper ]
+[f ]
+[; ;beeper.c: 78: repeatedBeeping = 0;
+"78
+[e = _repeatedBeeping -> -> 0 `i `uc ]
+[; ;beeper.c: 79: beeperOn = 0;
+"79
+[e = _beeperOn -> -> 0 `i `uc ]
+[; ;beeper.c: 80: }
+"80
+[e :UE 275 ]
+}
+"82
+[v _beepRepeatedly `(v ~T0 @X0 1 ef2`i`i ]
+"83
+{
+[; ;beeper.c: 82: void beepRepeatedly ( int period, int n)
+[; ;beeper.c: 83: {
+[e :U _beepRepeatedly ]
+"82
+[v _period `i ~T0 @X0 1 r1 ]
+[v _n `i ~T0 @X0 1 r2 ]
+"83
+[f ]
+[; ;beeper.c: 84: repeatedBeeping = !0;
+"84
+[e = _repeatedBeeping -> -> ! != -> 0 `i -> 0 `i `i `uc ]
+[; ;beeper.c: 85: if (n != -1)
+"85
+[e $ ! != _n -U -> 1 `i 277  ]
+[; ;beeper.c: 86: nBeeps = n * 2;
+"86
+[e = _nBeeps * _n -> 2 `i ]
+[e $U 278  ]
+"87
+[e :U 277 ]
+[; ;beeper.c: 87: else
+[; ;beeper.c: 88: nBeeps = -1;
+"88
+[e = _nBeeps -U -> 1 `i ]
+[e :U 278 ]
+[; ;beeper.c: 89: beeperOn = 0;
+"89
+[e = _beeperOn -> -> 0 `i `uc ]
+[; ;beeper.c: 90: beepRate = period;
+"90
+[e = _beepRate _period ]
+[; ;beeper.c: 91: beeperToggle = 0;
+"91
+[e = _beeperToggle -> -> 0 `i `uc ]
+[; ;beeper.c: 92: }
+"92
+[e :UE 276 ]
+}
+"95
+[v _beeperInit `(v ~T0 @X0 1 ef ]
+"96
+{
+[; ;beeper.c: 95: void beeperInit ()
+[; ;beeper.c: 96: {
+[e :U _beeperInit ]
+[f ]
+[; ;beeper.c: 97: timer2Init();
+"97
+[e ( _timer2Init ..  ]
+[; ;beeper.c: 98: beeperOn = 0;
+"98
+[e = _beeperOn -> -> 0 `i `uc ]
+[; ;beeper.c: 99: beeperTimer = timerGet ();
+"99
+[e = _beeperTimer ( _timerGet ..  ]
+[; ;beeper.c: 100: timerSet( beeperTimer, beepRate );
+"100
+[e ( _timerSet (2 , _beeperTimer -> _beepRate `ui ]
+[; ;beeper.c: 101: }
+"101
+[e :UE 279 ]
+}
+"103
+[v _beeperService `(v ~T0 @X0 1 ef ]
+"104
+{
+[; ;beeper.c: 103: void beeperService ()
+[; ;beeper.c: 104: {
+[e :U _beeperService ]
+[f ]
+[; ;beeper.c: 105: if (repeatedBeeping)
+"105
+[e $ ! != -> _repeatedBeeping `i -> -> -> 0 `i `uc `i 281  ]
+[; ;beeper.c: 106: {
+"106
+{
+[; ;beeper.c: 107: if ( timerRead(beeperTimer) == 0 )
+"107
+[e $ ! == ( _timerRead (1 _beeperTimer -> -> 0 `i `ui 282  ]
+[; ;beeper.c: 108: {
+"108
+{
+[; ;beeper.c: 109: if (beeperToggle)
+"109
+[e $ ! != -> _beeperToggle `i -> -> -> 0 `i `uc `i 283  ]
+[; ;beeper.c: 110: {
+"110
+{
+[; ;beeper.c: 111: beeperToggle = 0;
+"111
+[e = _beeperToggle -> -> 0 `i `uc ]
+[; ;beeper.c: 112: beeperOn = 0;
+"112
+[e = _beeperOn -> -> 0 `i `uc ]
+"113
+}
+[; ;beeper.c: 113: }
+[e $U 284  ]
+"114
+[e :U 283 ]
+[; ;beeper.c: 114: else
+[; ;beeper.c: 115: {
+"115
+{
+[; ;beeper.c: 116: beeperToggle = !0;
+"116
+[e = _beeperToggle -> -> ! != -> 0 `i -> 0 `i `i `uc ]
+[; ;beeper.c: 117: beeperOn = !0;
+"117
+[e = _beeperOn -> -> ! != -> 0 `i -> 0 `i `i `uc ]
+"118
+}
+[e :U 284 ]
+[; ;beeper.c: 118: }
+[; ;beeper.c: 120: if (nBeeps != -1)
+"120
+[e $ ! != _nBeeps -U -> 1 `i 285  ]
+[; ;beeper.c: 121: {
+"121
+{
+[; ;beeper.c: 122: nBeeps--;
+"122
+[e -- _nBeeps -> 1 `i ]
+[; ;beeper.c: 123: if (nBeeps == 0)
+"123
+[e $ ! == _nBeeps -> 0 `i 286  ]
+[; ;beeper.c: 124: {
+"124
+{
+[; ;beeper.c: 125: repeatedBeeping = 0;
+"125
+[e = _repeatedBeeping -> -> 0 `i `uc ]
+[; ;beeper.c: 126: beeperOn = 0;
+"126
+[e = _beeperOn -> -> 0 `i `uc ]
+"127
+}
+[e :U 286 ]
+"128
+}
+[e :U 285 ]
+[; ;beeper.c: 127: }
+[; ;beeper.c: 128: }
+[; ;beeper.c: 129: timerSet( beeperTimer, beepRate );
+"129
+[e ( _timerSet (2 , _beeperTimer -> _beepRate `ui ]
+"130
+}
+[e :U 282 ]
+"131
+}
+[e :U 281 ]
+[; ;beeper.c: 130: }
+[; ;beeper.c: 131: }
+[; ;beeper.c: 132: }
+"132
+[e :UE 280 ]
 }

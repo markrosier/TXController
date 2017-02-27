@@ -1,5 +1,5 @@
 
-# 1 "../source/main.c"
+# 1 "../source/eventhandler.c"
 
 # 26 "C:\Program Files (x86)\Microchip\xc8\v1.37\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -2892,37 +2892,6 @@ typedef unsigned long DWORD;
 
 typedef unsigned char bool;
 
-# 18 "../include\main.h"
-void initialise( void );
-void hardwareInit( void );
-void interruptsInit( void );
-void kickWatchDog( void );
-
-# 16 "../include\interrupt.h"
-void initInterrupt( void );
-void disableInterrupts( void );
-void enableInterrupts( void );
-
-
-# 18 "../include\picconfig.h"
-#pragma config (FCMEN=OFF)
-#pragma config (IESO=OFF)
-#pragma config (CLKOUTEN=OFF)
-#pragma config (BOREN=ON)
-#pragma config (CPD=OFF)
-#pragma config (CP=OFF)
-#pragma config (MCLRE=OFF)
-#pragma config (PWRTE=OFF)
-#pragma config (WDTE=ON)
-#pragma config (FOSC=INTOSC)
-
-
-#pragma config (LVP=OFF )
-#pragma config (BORV=LO)
-#pragma config (STVREN=OFF)
-#pragma config (PLLEN=ON)
-#pragma config (WRT=OFF)
-
 # 19 "../include\timer.h"
 typedef unsigned char TTimerIndex;
 
@@ -2974,66 +2943,91 @@ void flashLED ( int period );
 void LEDInit (void);
 void LEDService (void);
 
-# 13 "../include\beeper.h"
-void setBeeper ( void );
-void clearBeeper ( void );
-void beepRepeatedly ( int period, int nBeeps );
+# 18 "../source/eventhandler.c"
+BYTE eventHandlerTimer = 0;
+enum events lastEvent = INITIALISING_TX;
 
-void beeperInit (void);
-void beeperService (void);
-
-# 18 "../source/main.c"
-void kickWatchDog( void )
+void initIOCInterrupt( void )
 {
-asm("CLRWDT");
+INTCONbits.GIE = 1;
+IOCANbits.IOCAN3 = 1;
+INTCONbits.IOCIF = 0;
+INTCONbits.IOCIE = 1;
+INTCONbits.PEIE = 1;
 }
 
-# 29
-void main( void )
+void resetIOCInterrupt( void )
 {
-initialise();
-while( 1 )
+IOCAFbits.IOCAF3 = 0;
+INTCONbits.PEIE = 1;
+}
+
+void IOCInterrupt( void )
 {
-eventHandlerService();
-LEDService();
-beeperService();
-kickWatchDog();
+if ( INTCONbits.IOCIF == 1)
+{
+
+if (IOCAFbits.IOCAF3 == 1)
+{
+
+
+LATAbits.LATA4 ^= 1;
+
+IOCAFbits.IOCAF3 = 0;
+}
+}
+}
+
+
+void eventHandlerInit ()
+{
+eventHandlerTimer = timerGet ();
+timerSet( eventHandlerTimer, 100 );
+initIOCInterrupt();
+setEvent( INITIALISING_TX );
+}
+
+void eventHandlerService ()
+{
+if ( timerRead(eventHandlerTimer) == 0 )
+{
+newEvent = getNewEvent ();
+
+if (((newEvent >= 0) && (newEvent < MAX_EVENTS))
+&& ((currentState >= 0) && (currentState < MAX_STATES))) {
+
+stateTable [currentState][newEvent] ();
+
+} else
+{
+
+currentState = INITIALISE;
+}
+
+timerSet( eventHandlerTimer, 100 );
 }
 }
 
-# 47
-void initialise( void )
+void action_s1_e1 (void)
 {
-hardwareInit();
-timerInit();
-eventHandlerInit();
-LEDInit();
-beeperInit();
-initInterrupt();
-flashLED(1000);
-beepRepeatedly(300, 3);
+
+
+currentState = STATE_2;
 }
 
-# 65
-void hardwareInit( void )
+void action_s1_e2 (void) {}
+void action_s2_e1 (void) {}
+void action_s2_e2 (void) {}
+void action_s3_e1 (void) {}
+void action_s3_e2 (void) {}
+
+
+enum events getNewEvent (void)
 {
-OSCCONbits.SCS = 0;
-OSCCONbits.IRCF = 0xE;
-OSCCONbits.SPLLEN = 1;
-
-TRISAbits.TRISA5 = 0;
-
-TRISAbits.TRISA1 = 0;
-ANSELAbits.ANSA1 = 0;
-LATAbits.LATA1 = 0;
-
-TRISAbits.TRISA3 = 1;
-
-TRISAbits.TRISA4 = 0;
-ANSELAbits.ANSA4 = 0;
-LATAbits.LATA4 = 0;
-
-# 120
-WDTCONbits.SWDTEN = 1;
-
+return EVENT_1;
 }
+
+void setEvent ( enum events envent) {
+lastEvent = envent;
+}
+

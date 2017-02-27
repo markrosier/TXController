@@ -13,6 +13,7 @@
 #include "timer.h"
 #include "eventhandler.h"
 #include "led.h"
+#include "beeper.h"
 
 void kickWatchDog( void )
 {
@@ -30,8 +31,9 @@ void main( void )
   initialise();
   while( 1 )
   {
-    //eventHandlerService();
+    eventHandlerService();
     LEDService();
+    beeperService();
     kickWatchDog();
   }
 }
@@ -46,10 +48,12 @@ void initialise( void )
 {
   hardwareInit();
   timerInit();
-  //eventHandlerInit();
+  eventHandlerInit();
   LEDInit();
+  beeperInit();
   initInterrupt();
   flashLED(1000);
+  beepRepeatedly(300, 3);
 }
 
 //*****************************************************************************
@@ -66,6 +70,17 @@ void hardwareInit( void )
 
   LED_PIN_DIR = OUTPUT_PIN;
 
+  BEEPER_PIN_DIR = OUTPUT_PIN;
+  BEEPER_PIN_TYPE = DIGITAL_PIN;
+  BEEPER_PIN_LATCH = 0;
+
+  P9241_BUZZER_PIN_DIR = INPUT_PIN;
+  
+  INDICATOR1_PIN_DIR = OUTPUT_PIN;
+  INDICATOR1_PIN_TYPE = DIGITAL_PIN;
+  INDICATOR1_PIN_LATCH = 0;
+
+  
 /*
   PI_POWER_OFF_REQUEST_PIN_DIR = INPUT_PIN;
   

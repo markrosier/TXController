@@ -11,7 +11,7 @@
 
 
 #define	EXPIRED	0
-#define MAX_TIMERS	32
+#define MAX_TIMERS	16
 
 #define TIMER_1MS_COUNT 32000
 #define SECONDS   1000

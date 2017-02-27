@@ -1,20 +1,49 @@
 Version 3.2 HI-TECH Software Intermediate Code
+"21 ../include\eventhandler.h
+[c E2227 0 1 2 3 .. ]
+[n E2227 states INITIALISE STATE_2 STATE_3 MAX_STATES  ]
+"22
+[c E2233 0 1 2 .. ]
+[n E2233 events INITIALISING_TX EVENT_1 MAX_EVENTS  ]
+[v F2257 `(v ~T0 @X0 0 tf ]
+"25
+[v _action_s1_e1 `(v ~T0 @X0 0 ef ]
+"26
+[v _action_s1_e2 `(v ~T0 @X0 0 ef ]
+"27
+[v _action_s2_e1 `(v ~T0 @X0 0 ef ]
+"28
+[v _action_s2_e2 `(v ~T0 @X0 0 ef ]
+"29
+[v _action_s3_e1 `(v ~T0 @X0 0 ef ]
+"30
+[v _action_s3_e2 `(v ~T0 @X0 0 ef ]
 [p mainexit ]
 "18 ../include\main.h
 [v _initialise `(v ~T0 @X0 0 ef ]
+"16 ../include\eventhandler.h
+[v _eventHandlerService `(v ~T0 @X0 0 ef ]
 "18 ../include\led.h
 [v _LEDService `(v ~T0 @X0 0 ef ]
+"18 ../include\beeper.h
+[v _beeperService `(v ~T0 @X0 0 ef ]
 "19 ../include\main.h
 [v _hardwareInit `(v ~T0 @X0 0 ef ]
 "21 ../include\timer.h
 [v _timerInit `(v ~T0 @X0 0 ef ]
+"15 ../include\eventhandler.h
+[v _eventHandlerInit `(v ~T0 @X0 0 ef ]
 "17 ../include\led.h
 [v _LEDInit `(v ~T0 @X0 0 ef ]
+"17 ../include\beeper.h
+[v _beeperInit `(v ~T0 @X0 0 ef ]
 "16 ../include\interrupt.h
 [v _initInterrupt `(v ~T0 @X0 0 ef ]
 "15 ../include\led.h
 [v _flashLED `(v ~T0 @X0 0 ef1`i ]
-"1615 C:\Program Files (x86)\Microchip\xc8\v1.38\include\pic12f1822.h
+"15 ../include\beeper.h
+[v _beepRepeatedly `(v ~T0 @X0 0 ef2`i`i ]
+"1615 C:\Program Files (x86)\Microchip\xc8\v1.37\include\pic12f1822.h
 [s S87 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S87 . SCS0 SCS1 . IRCF0 IRCF1 IRCF2 IRCF3 SPLLEN ]
 "1625
@@ -33,6 +62,25 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S69 . . ]
 "1228
 [v _TRISAbits `VS69 ~T0 @X0 0 e@140 ]
+"2584
+[s S135 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S135 . ANSA0 ANSA1 ANSA2 . ANSA4 ]
+"2591
+[s S136 :5 `uc 1 ]
+[n S136 . ANSELA ]
+"2583
+[u S134 `S135 1 `S136 1 ]
+[n S134 . . . ]
+"2595
+[v _ANSELAbits `VS134 ~T0 @X0 0 e@396 ]
+"1944
+[s S104 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S104 . LATA0 LATA1 LATA2 . LATA4 LATA5 ]
+"1943
+[u S103 `S104 1 ]
+[n S103 . . ]
+"1953
+[v _LATAbits `VS103 ~T0 @X0 0 e@268 ]
 "1500
 [s S81 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S81 . SWDTEN WDTPS0 WDTPS1 WDTPS2 WDTPS3 WDTPS4 ]
@@ -48,7 +96,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic12f1822.h: 49: extern volatile unsigned char INDF0 @ 0x000;
-"51 C:\Program Files (x86)\Microchip\xc8\v1.38\include\pic12f1822.h
+"51 C:\Program Files (x86)\Microchip\xc8\v1.37\include\pic12f1822.h
 [; ;pic12f1822.h: 51: asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
 [; ;pic12f1822.h: 54: typedef union {
@@ -2218,129 +2266,198 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;include\timer.h: 25: extern void timerLock( TTimerIndex index );
 [; ;include\timer.h: 26: extern void timerDelay( unsigned int Duration );
 [; ;include\timer.h: 28: void timerInterrupt( void );
-[; ;include\eventhandler.h: 12: void initKeyInterrupt( void );
-[; ;include\eventhandler.h: 13: void resetKeyInterrupt( void );
-[; ;include\eventhandler.h: 14: void initChargerAttachedInterrupt( void );
-[; ;include\eventhandler.h: 15: void resetChargerAttachedInterrupt( void );
-[; ;include\eventhandler.h: 16: void chargerAttachedInterrupt( void );
-[; ;include\eventhandler.h: 17: void keyInterrupt( void );
-[; ;include\eventhandler.h: 18: void switchOff( void );
-[; ;include\eventhandler.h: 19: void switchOn( void );
-[; ;include\eventhandler.h: 20: void gotoSleep( void );
-[; ;include\eventhandler.h: 21: void eventHandlerInit( void );
-[; ;include\eventhandler.h: 22: void eventHandlerService( void );
-[; ;include\eventhandler.h: 30: enum eOnState { onStateOn,
-[; ;include\eventhandler.h: 31: onStateWaitingforOff,
-[; ;include\eventhandler.h: 32: onStateWaitingforOffRequest,
-[; ;include\eventhandler.h: 33: onStateOffWaitingforKeyRelease,
-[; ;include\eventhandler.h: 34: onStateOnWaitingforRequestRelease,
-[; ;include\eventhandler.h: 35: onStateOnWaitingforKeyRelease,
-[; ;include\eventhandler.h: 36: onStateOff};
+[; ;include\eventhandler.h: 12: void initIOCInterrupt( void );
+[; ;include\eventhandler.h: 13: void resetIOCInterrupt( void );
+[; ;include\eventhandler.h: 14: void IOCInterrupt( void );
+[; ;include\eventhandler.h: 15: void eventHandlerInit( void );
+[; ;include\eventhandler.h: 16: void eventHandlerService( void );
+"21 ../include\eventhandler.h
+[v _currentState `E2227 ~T0 @X0 1 e ]
+[; ;include\eventhandler.h: 21: enum states { INITIALISE, STATE_2, STATE_3, MAX_STATES } currentState;
+"22
+[v _newEvent `E2233 ~T0 @X0 1 e ]
+[; ;include\eventhandler.h: 22: enum events { INITIALISING_TX, EVENT_1, MAX_EVENTS } newEvent;
+[; ;include\eventhandler.h: 25: void action_s1_e1 (void);
+[; ;include\eventhandler.h: 26: void action_s1_e2 (void);
+[; ;include\eventhandler.h: 27: void action_s2_e1 (void);
+[; ;include\eventhandler.h: 28: void action_s2_e2 (void);
+[; ;include\eventhandler.h: 29: void action_s3_e1 (void);
+[; ;include\eventhandler.h: 30: void action_s3_e2 (void);
+[; ;include\eventhandler.h: 31: enum events getNewEvent (void);
+[; ;include\eventhandler.h: 32: void setEvent( enum events event);
+[v F2256 `*F2257 ~T0 @X0 . `E2233 2 t ]
+"35
+[v _stateTable `CF2256 ~T0 @X0 . `E2227 3 e ]
+[i _stateTable
+:U ..
+:U ..
+"37
+&U _action_s1_e1
+&U _action_s1_e2
+..
+:U ..
+"38
+&U _action_s2_e1
+&U _action_s2_e2
+..
+:U ..
+"39
+&U _action_s3_e1
+&U _action_s3_e2
+..
+..
+]
+[; ;include\eventhandler.h: 35: void (*const stateTable [MAX_STATES][MAX_EVENTS]) (void) = {
+[; ;include\eventhandler.h: 37: { action_s1_e1, action_s1_e2 },
+[; ;include\eventhandler.h: 38: { action_s2_e1, action_s2_e2 },
+[; ;include\eventhandler.h: 39: { action_s3_e1, action_s3_e2 }
+[; ;include\eventhandler.h: 40: };
 [; ;include\led.h: 13: void setLED ( void );
 [; ;include\led.h: 14: void clearLED ( void );
 [; ;include\led.h: 15: void flashLED ( int period );
 [; ;include\led.h: 17: void LEDInit (void);
 [; ;include\led.h: 18: void LEDService (void);
-"17 ../source/main.c
+[; ;include\beeper.h: 13: void setBeeper ( void );
+[; ;include\beeper.h: 14: void clearBeeper ( void );
+[; ;include\beeper.h: 15: void beepRepeatedly ( int period, int nBeeps );
+[; ;include\beeper.h: 17: void beeperInit (void);
+[; ;include\beeper.h: 18: void beeperService (void);
+"18 ../source/main.c
 [v _kickWatchDog `(v ~T0 @X0 1 ef ]
-"18
+"19
 {
-[; ;main.c: 17: void kickWatchDog( void )
-[; ;main.c: 18: {
+[; ;main.c: 18: void kickWatchDog( void )
+[; ;main.c: 19: {
 [e :U _kickWatchDog ]
 [f ]
-[; ;main.c: 19: asm("CLRWDT");
-"19
-[; <" CLRWDT ;# ">
-[; ;main.c: 20: }
+[; ;main.c: 20: asm("CLRWDT");
 "20
+[; <" CLRWDT ;# ">
+[; ;main.c: 21: }
+"21
 [e :UE 270 ]
 }
-"28
-[v _main `(v ~T0 @X0 1 ef ]
 "29
+[v _main `(v ~T0 @X0 1 ef ]
+"30
 {
-[; ;main.c: 28: void main( void )
-[; ;main.c: 29: {
+[; ;main.c: 29: void main( void )
+[; ;main.c: 30: {
 [e :U _main ]
 [f ]
-[; ;main.c: 30: initialise();
-"30
-[e ( _initialise ..  ]
-[; ;main.c: 31: while( 1 )
+[; ;main.c: 31: initialise();
 "31
-[e :U 273 ]
-[; ;main.c: 32: {
+[e ( _initialise ..  ]
+[; ;main.c: 32: while( 1 )
 "32
+[e :U 273 ]
+[; ;main.c: 33: {
+"33
 {
-[; ;main.c: 34: LEDService();
+[; ;main.c: 34: eventHandlerService();
 "34
-[e ( _LEDService ..  ]
-[; ;main.c: 35: kickWatchDog();
+[e ( _eventHandlerService ..  ]
+[; ;main.c: 35: LEDService();
 "35
-[e ( _kickWatchDog ..  ]
+[e ( _LEDService ..  ]
+[; ;main.c: 36: beeperService();
 "36
+[e ( _beeperService ..  ]
+[; ;main.c: 37: kickWatchDog();
+"37
+[e ( _kickWatchDog ..  ]
+"38
 }
 [e :U 272 ]
-"31
+"32
 [e $U 273  ]
 [e :U 274 ]
-[; ;main.c: 36: }
-[; ;main.c: 37: }
-"37
+[; ;main.c: 38: }
+[; ;main.c: 39: }
+"39
 [e :UE 271 ]
 }
-"45
+"47
 [v _initialise `(v ~T0 @X0 1 ef ]
-"46
+"48
 {
-[; ;main.c: 45: void initialise( void )
-[; ;main.c: 46: {
+[; ;main.c: 47: void initialise( void )
+[; ;main.c: 48: {
 [e :U _initialise ]
 [f ]
-[; ;main.c: 47: hardwareInit();
-"47
+[; ;main.c: 49: hardwareInit();
+"49
 [e ( _hardwareInit ..  ]
-[; ;main.c: 48: timerInit();
-"48
-[e ( _timerInit ..  ]
-[; ;main.c: 50: LEDInit();
+[; ;main.c: 50: timerInit();
 "50
-[e ( _LEDInit ..  ]
-[; ;main.c: 51: initInterrupt();
+[e ( _timerInit ..  ]
+[; ;main.c: 51: eventHandlerInit();
 "51
-[e ( _initInterrupt ..  ]
-[; ;main.c: 52: flashLED(1000);
+[e ( _eventHandlerInit ..  ]
+[; ;main.c: 52: LEDInit();
 "52
-[e ( _flashLED (1 -> 1000 `i ]
-[; ;main.c: 53: }
+[e ( _LEDInit ..  ]
+[; ;main.c: 53: beeperInit();
 "53
+[e ( _beeperInit ..  ]
+[; ;main.c: 54: initInterrupt();
+"54
+[e ( _initInterrupt ..  ]
+[; ;main.c: 55: flashLED(1000);
+"55
+[e ( _flashLED (1 -> 1000 `i ]
+[; ;main.c: 56: beepRepeatedly(300, 3);
+"56
+[e ( _beepRepeatedly (2 , -> 300 `i -> 3 `i ]
+[; ;main.c: 57: }
+"57
 [e :UE 275 ]
 }
-"61
+"65
 [v _hardwareInit `(v ~T0 @X0 1 ef ]
-"62
+"66
 {
-[; ;main.c: 61: void hardwareInit( void )
-[; ;main.c: 62: {
+[; ;main.c: 65: void hardwareInit( void )
+[; ;main.c: 66: {
 [e :U _hardwareInit ]
 [f ]
-[; ;main.c: 63: OSCCONbits.SCS = 0;
-"63
-[e = . . _OSCCONbits 1 0 -> -> 0 `i `uc ]
-[; ;main.c: 64: OSCCONbits.IRCF = 0xE;
-"64
-[e = . . _OSCCONbits 1 2 -> -> 14 `i `uc ]
-[; ;main.c: 65: OSCCONbits.SPLLEN = 1;
-"65
-[e = . . _OSCCONbits 0 7 -> -> 1 `i `uc ]
-[; ;main.c: 67: TRISAbits.TRISA5 = 0;
+[; ;main.c: 67: OSCCONbits.SCS = 0;
 "67
+[e = . . _OSCCONbits 1 0 -> -> 0 `i `uc ]
+[; ;main.c: 68: OSCCONbits.IRCF = 0xE;
+"68
+[e = . . _OSCCONbits 1 2 -> -> 14 `i `uc ]
+[; ;main.c: 69: OSCCONbits.SPLLEN = 1;
+"69
+[e = . . _OSCCONbits 0 7 -> -> 1 `i `uc ]
+[; ;main.c: 71: TRISAbits.TRISA5 = 0;
+"71
 [e = . . _TRISAbits 0 5 -> -> 0 `i `uc ]
-[; ;main.c: 105: WDTCONbits.SWDTEN = 1;
-"105
+[; ;main.c: 73: TRISAbits.TRISA1 = 0;
+"73
+[e = . . _TRISAbits 0 1 -> -> 0 `i `uc ]
+[; ;main.c: 74: ANSELAbits.ANSA1 = 0;
+"74
+[e = . . _ANSELAbits 0 1 -> -> 0 `i `uc ]
+[; ;main.c: 75: LATAbits.LATA1 = 0;
+"75
+[e = . . _LATAbits 0 1 -> -> 0 `i `uc ]
+[; ;main.c: 77: TRISAbits.TRISA3 = 1;
+"77
+[e = . . _TRISAbits 0 3 -> -> 1 `i `uc ]
+[; ;main.c: 79: TRISAbits.TRISA4 = 0;
+"79
+[e = . . _TRISAbits 0 4 -> -> 0 `i `uc ]
+[; ;main.c: 80: ANSELAbits.ANSA4 = 0;
+"80
+[e = . . _ANSELAbits 0 4 -> -> 0 `i `uc ]
+[; ;main.c: 81: LATAbits.LATA4 = 0;
+"81
+[e = . . _LATAbits 0 4 -> -> 0 `i `uc ]
+[; ;main.c: 120: WDTCONbits.SWDTEN = 1;
+"120
 [e = . . _WDTCONbits 0 0 -> -> 1 `i `uc ]
-[; ;main.c: 107: }
-"107
+[; ;main.c: 122: }
+"122
 [e :UE 276 ]
 }

@@ -1,17 +1,17 @@
 
 # 1 "../source/interrupt.c"
 
-# 26 "C:\Program Files (x86)\Microchip\xc8\v1.38\include\htc.h"
+# 26 "C:\Program Files (x86)\Microchip\xc8\v1.37\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
 
 extern double __fpnormalize(double);
 
 
-# 13 "C:\Program Files (x86)\Microchip\xc8\v1.38\include\xc8debug.h"
+# 13 "C:\Program Files (x86)\Microchip\xc8\v1.37\include\xc8debug.h"
 #pragma intrinsic(__builtin_software_breakpoint)
 extern void __builtin_software_breakpoint(void);
 
-# 49 "C:\Program Files (x86)\Microchip\xc8\v1.38\include\pic12f1822.h"
+# 49 "C:\Program Files (x86)\Microchip\xc8\v1.37\include\pic12f1822.h"
 extern volatile unsigned char INDF0 @ 0x000;
 
 asm("INDF0 equ 00h");
@@ -2858,21 +2858,21 @@ extern volatile __bit nTO @ (((unsigned) &STATUS)*8) + 4;
 extern volatile __bit nWPUEN @ (((unsigned) &OPTION_REG)*8) + 7;
 
 
-# 27 "C:\Program Files (x86)\Microchip\xc8\v1.38\include\pic.h"
+# 27 "C:\Program Files (x86)\Microchip\xc8\v1.37\include\pic.h"
 #pragma intrinsic(__nop)
 extern void __nop(void);
 
 # 77
 extern unsigned int flash_read(unsigned short addr);
 
-# 114 "C:\Program Files (x86)\Microchip\xc8\v1.38\include\eeprom_routines.h"
+# 114 "C:\Program Files (x86)\Microchip\xc8\v1.37\include\eeprom_routines.h"
 extern void eeprom_write(unsigned char addr, unsigned char value);
 extern unsigned char eeprom_read(unsigned char addr);
 extern void eecpymem(volatile unsigned char *to, __eeprom unsigned char *from, unsigned char size);
 extern void memcpyee(__eeprom unsigned char *to, const unsigned char *from, unsigned char size);
 
 
-# 151 "C:\Program Files (x86)\Microchip\xc8\v1.38\include\pic.h"
+# 151 "C:\Program Files (x86)\Microchip\xc8\v1.37\include\pic.h"
 #pragma intrinsic(_delay)
 extern __nonreentrant void _delay(unsigned long);
 
@@ -2910,28 +2910,45 @@ void disableInterrupts( void );
 void enableInterrupts( void );
 
 # 12 "../include\eventhandler.h"
-void initKeyInterrupt( void );
-void resetKeyInterrupt( void );
-void initChargerAttachedInterrupt( void );
-void resetChargerAttachedInterrupt( void );
-void chargerAttachedInterrupt( void );
-void keyInterrupt( void );
-void switchOff( void );
-void switchOn( void );
-void gotoSleep( void );
+void initIOCInterrupt( void );
+void resetIOCInterrupt( void );
+void IOCInterrupt( void );
 void eventHandlerInit( void );
 void eventHandlerService( void );
 
-# 30
-enum eOnState { onStateOn,
-onStateWaitingforOff,
-onStateWaitingforOffRequest,
-onStateOffWaitingforKeyRelease,
-onStateOnWaitingforRequestRelease,
-onStateOnWaitingforKeyRelease,
-onStateOff};
 
-# 15 "../source/interrupt.c"
+
+
+enum states { INITIALISE, STATE_2, STATE_3, MAX_STATES } currentState;
+enum events { INITIALISING_TX, EVENT_1, MAX_EVENTS } newEvent;
+
+
+void action_s1_e1 (void);
+void action_s1_e2 (void);
+void action_s2_e1 (void);
+void action_s2_e2 (void);
+void action_s3_e1 (void);
+void action_s3_e2 (void);
+enum events getNewEvent (void);
+void setEvent( enum events event);
+
+
+void (*const stateTable [MAX_STATES][MAX_EVENTS]) (void) = {
+
+{ action_s1_e1, action_s1_e2 },
+{ action_s2_e1, action_s2_e2 },
+{ action_s3_e1, action_s3_e2 }
+};
+
+# 13 "../include\beeper.h"
+void setBeeper ( void );
+void clearBeeper ( void );
+void beepRepeatedly ( int period, int nBeeps );
+
+void beeperInit (void);
+void beeperService (void);
+
+# 16 "../source/interrupt.c"
 void initInterrupt( void )
 {
 INTCONbits.PEIE = 1;
@@ -2950,6 +2967,7 @@ INTCONbits.GIE = 1;
 
 void interrupt ISRCode( )
 {
-
+IOCInterrupt();
 timerInterrupt( );
+timer2Interrupt();
 }

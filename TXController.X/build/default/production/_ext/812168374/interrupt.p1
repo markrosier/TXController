@@ -1,5 +1,24 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"343 C:\Program Files (x86)\Microchip\xc8\v1.38\include\pic12f1822.h
+"21 ../include\eventhandler.h
+[c E2219 0 1 2 3 .. ]
+[n E2219 states INITIALISE STATE_2 STATE_3 MAX_STATES  ]
+"22
+[c E2225 0 1 2 .. ]
+[n E2225 events INITIALISING_TX EVENT_1 MAX_EVENTS  ]
+[v F2249 `(v ~T0 @X0 0 tf ]
+"25
+[v _action_s1_e1 `(v ~T0 @X0 0 ef ]
+"26
+[v _action_s1_e2 `(v ~T0 @X0 0 ef ]
+"27
+[v _action_s2_e1 `(v ~T0 @X0 0 ef ]
+"28
+[v _action_s2_e2 `(v ~T0 @X0 0 ef ]
+"29
+[v _action_s3_e1 `(v ~T0 @X0 0 ef ]
+"30
+[v _action_s3_e2 `(v ~T0 @X0 0 ef ]
+"343 C:\Program Files (x86)\Microchip\xc8\v1.37\include\pic12f1822.h
 [s S27 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S27 . IOCIF INTF TMR0IF IOCIE INTE TMR0IE PEIE GIE ]
 "353
@@ -10,13 +29,17 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S26 . . . ]
 "360
 [v _INTCONbits `VS26 ~T0 @X0 0 e@11 ]
+"14 ../include\eventhandler.h
+[v _IOCInterrupt `(v ~T0 @X0 0 ef ]
 "28 ../include\timer.h
 [v _timerInterrupt `(v ~T0 @X0 0 ef ]
+"36 ../source/interrupt.c
+[v _timer2Interrupt `(i ~T0 @X0 0 ef ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic12f1822.h: 49: extern volatile unsigned char INDF0 @ 0x000;
-"51 C:\Program Files (x86)\Microchip\xc8\v1.38\include\pic12f1822.h
+"51 C:\Program Files (x86)\Microchip\xc8\v1.37\include\pic12f1822.h
 [; ;pic12f1822.h: 51: asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
 [; ;pic12f1822.h: 54: typedef union {
@@ -2152,85 +2175,124 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;include\interrupt.h: 16: void initInterrupt( void );
 [; ;include\interrupt.h: 17: void disableInterrupts( void );
 [; ;include\interrupt.h: 18: void enableInterrupts( void );
-[; ;include\eventhandler.h: 12: void initKeyInterrupt( void );
-[; ;include\eventhandler.h: 13: void resetKeyInterrupt( void );
-[; ;include\eventhandler.h: 14: void initChargerAttachedInterrupt( void );
-[; ;include\eventhandler.h: 15: void resetChargerAttachedInterrupt( void );
-[; ;include\eventhandler.h: 16: void chargerAttachedInterrupt( void );
-[; ;include\eventhandler.h: 17: void keyInterrupt( void );
-[; ;include\eventhandler.h: 18: void switchOff( void );
-[; ;include\eventhandler.h: 19: void switchOn( void );
-[; ;include\eventhandler.h: 20: void gotoSleep( void );
-[; ;include\eventhandler.h: 21: void eventHandlerInit( void );
-[; ;include\eventhandler.h: 22: void eventHandlerService( void );
-[; ;include\eventhandler.h: 30: enum eOnState { onStateOn,
-[; ;include\eventhandler.h: 31: onStateWaitingforOff,
-[; ;include\eventhandler.h: 32: onStateWaitingforOffRequest,
-[; ;include\eventhandler.h: 33: onStateOffWaitingforKeyRelease,
-[; ;include\eventhandler.h: 34: onStateOnWaitingforRequestRelease,
-[; ;include\eventhandler.h: 35: onStateOnWaitingforKeyRelease,
-[; ;include\eventhandler.h: 36: onStateOff};
-"15 ../source/interrupt.c
+[; ;include\eventhandler.h: 12: void initIOCInterrupt( void );
+[; ;include\eventhandler.h: 13: void resetIOCInterrupt( void );
+[; ;include\eventhandler.h: 14: void IOCInterrupt( void );
+[; ;include\eventhandler.h: 15: void eventHandlerInit( void );
+[; ;include\eventhandler.h: 16: void eventHandlerService( void );
+"21 ../include\eventhandler.h
+[v _currentState `E2219 ~T0 @X0 1 e ]
+[; ;include\eventhandler.h: 21: enum states { INITIALISE, STATE_2, STATE_3, MAX_STATES } currentState;
+"22
+[v _newEvent `E2225 ~T0 @X0 1 e ]
+[; ;include\eventhandler.h: 22: enum events { INITIALISING_TX, EVENT_1, MAX_EVENTS } newEvent;
+[; ;include\eventhandler.h: 25: void action_s1_e1 (void);
+[; ;include\eventhandler.h: 26: void action_s1_e2 (void);
+[; ;include\eventhandler.h: 27: void action_s2_e1 (void);
+[; ;include\eventhandler.h: 28: void action_s2_e2 (void);
+[; ;include\eventhandler.h: 29: void action_s3_e1 (void);
+[; ;include\eventhandler.h: 30: void action_s3_e2 (void);
+[; ;include\eventhandler.h: 31: enum events getNewEvent (void);
+[; ;include\eventhandler.h: 32: void setEvent( enum events event);
+[v F2248 `*F2249 ~T0 @X0 . `E2225 2 t ]
+"35
+[v _stateTable `CF2248 ~T0 @X0 . `E2219 3 e ]
+[i _stateTable
+:U ..
+:U ..
+"37
+&U _action_s1_e1
+&U _action_s1_e2
+..
+:U ..
+"38
+&U _action_s2_e1
+&U _action_s2_e2
+..
+:U ..
+"39
+&U _action_s3_e1
+&U _action_s3_e2
+..
+..
+]
+[; ;include\eventhandler.h: 35: void (*const stateTable [MAX_STATES][MAX_EVENTS]) (void) = {
+[; ;include\eventhandler.h: 37: { action_s1_e1, action_s1_e2 },
+[; ;include\eventhandler.h: 38: { action_s2_e1, action_s2_e2 },
+[; ;include\eventhandler.h: 39: { action_s3_e1, action_s3_e2 }
+[; ;include\eventhandler.h: 40: };
+[; ;include\beeper.h: 13: void setBeeper ( void );
+[; ;include\beeper.h: 14: void clearBeeper ( void );
+[; ;include\beeper.h: 15: void beepRepeatedly ( int period, int nBeeps );
+[; ;include\beeper.h: 17: void beeperInit (void);
+[; ;include\beeper.h: 18: void beeperService (void);
+"16 ../source/interrupt.c
 [v _initInterrupt `(v ~T0 @X0 1 ef ]
-"16
+"17
 {
-[; ;interrupt.c: 15: void initInterrupt( void )
-[; ;interrupt.c: 16: {
+[; ;interrupt.c: 16: void initInterrupt( void )
+[; ;interrupt.c: 17: {
 [e :U _initInterrupt ]
 [f ]
-[; ;interrupt.c: 17: INTCONbits.PEIE = 1;
-"17
-[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-[; ;interrupt.c: 18: INTCONbits.GIE = 1;
+[; ;interrupt.c: 18: INTCONbits.PEIE = 1;
 "18
-[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-[; ;interrupt.c: 19: }
+[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
+[; ;interrupt.c: 19: INTCONbits.GIE = 1;
 "19
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
+[; ;interrupt.c: 20: }
+"20
 [e :UE 270 ]
 }
-"21
-[v _disableInterrupts `(v ~T0 @X0 1 ef ]
 "22
+[v _disableInterrupts `(v ~T0 @X0 1 ef ]
+"23
 {
-[; ;interrupt.c: 21: void disableInterrupts( void )
-[; ;interrupt.c: 22: {
+[; ;interrupt.c: 22: void disableInterrupts( void )
+[; ;interrupt.c: 23: {
 [e :U _disableInterrupts ]
 [f ]
-[; ;interrupt.c: 23: INTCONbits.GIE = 0;
-"23
-[e = . . _INTCONbits 0 7 -> -> 0 `i `uc ]
-[; ;interrupt.c: 24: }
+[; ;interrupt.c: 24: INTCONbits.GIE = 0;
 "24
+[e = . . _INTCONbits 0 7 -> -> 0 `i `uc ]
+[; ;interrupt.c: 25: }
+"25
 [e :UE 271 ]
 }
-"26
-[v _enableInterrupts `(v ~T0 @X0 1 ef ]
 "27
+[v _enableInterrupts `(v ~T0 @X0 1 ef ]
+"28
 {
-[; ;interrupt.c: 26: void enableInterrupts( void )
-[; ;interrupt.c: 27: {
+[; ;interrupt.c: 27: void enableInterrupts( void )
+[; ;interrupt.c: 28: {
 [e :U _enableInterrupts ]
 [f ]
-[; ;interrupt.c: 28: INTCONbits.GIE = 1;
-"28
-[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-[; ;interrupt.c: 29: }
+[; ;interrupt.c: 29: INTCONbits.GIE = 1;
 "29
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
+[; ;interrupt.c: 30: }
+"30
 [e :UE 272 ]
 }
-[v F2243 `(v ~T0 @X0 1 tf ]
-"31
-[v _ISRCode `IF2243 ~T0 @X0 1 e ]
+[v F2272 `(v ~T0 @X0 1 tf ]
 "32
+[v _ISRCode `IF2272 ~T0 @X0 1 e ]
+"33
 {
-[; ;interrupt.c: 31: void interrupt ISRCode( )
-[; ;interrupt.c: 32: {
+[; ;interrupt.c: 32: void interrupt ISRCode( )
+[; ;interrupt.c: 33: {
 [e :U _ISRCode ]
 [f ]
-[; ;interrupt.c: 34: timerInterrupt( );
+[; ;interrupt.c: 34: IOCInterrupt();
 "34
-[e ( _timerInterrupt ..  ]
-[; ;interrupt.c: 35: }
+[e ( _IOCInterrupt ..  ]
+[; ;interrupt.c: 35: timerInterrupt( );
 "35
+[e ( _timerInterrupt ..  ]
+[; ;interrupt.c: 36: timer2Interrupt();
+"36
+[e ( _timer2Interrupt ..  ]
+[; ;interrupt.c: 37: }
+"37
 [e :UE 273 ]
 }

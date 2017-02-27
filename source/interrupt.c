@@ -10,6 +10,7 @@
 #include "timer.h"
 #include "interrupt.h"
 #include "eventhandler.h"
+#include "beeper.h"
 
 
 void initInterrupt( void )
@@ -30,6 +31,7 @@ void enableInterrupts( void )
 
 void interrupt ISRCode( )
 {
-//  keyInterrupt();
+  IOCInterrupt();
   timerInterrupt( );
+  timer2Interrupt();
 }

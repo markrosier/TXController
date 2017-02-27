@@ -3,6 +3,7 @@
  ../source/main.c  \
 ../include/eventhandler.h  \
 ../include/main.h  \
+../include/beeper.h  \
 ../include/system.h  \
 ../include/hardware.h  \
 ../include/interrupt.h  \

@@ -1,5 +1,5 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"943 C:\Program Files (x86)\Microchip\xc8\v1.38\include\pic12f1822.h
+"943 C:\Program Files (x86)\Microchip\xc8\v1.37\include\pic12f1822.h
 [s S54 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S54 . T1GSS0 T1GSS1 T1GVAL T1GGO_nDONE T1GSPM T1GTM T1GPOL TMR1GE ]
 "953
@@ -56,7 +56,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic12f1822.h: 49: extern volatile unsigned char INDF0 @ 0x000;
-"51 C:\Program Files (x86)\Microchip\xc8\v1.38\include\pic12f1822.h
+"51 C:\Program Files (x86)\Microchip\xc8\v1.37\include\pic12f1822.h
 [; ;pic12f1822.h: 51: asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
 [; ;pic12f1822.h: 54: typedef union {
@@ -2190,8 +2190,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;include\timer.h: 26: extern void timerDelay( unsigned int Duration );
 [; ;include\timer.h: 28: void timerInterrupt( void );
 "11 ../source/timer.c
-[v _timers `ui ~T0 @X0 -> 32 `i e ]
-[; ;timer.c: 11: unsigned int timers[32];
+[v _timers `ui ~T0 @X0 -> 16 `i e ]
+[; ;timer.c: 11: unsigned int timers[16];
 "12
 [v _delayTimer `ui ~T0 @X0 1 e ]
 [; ;timer.c: 12: unsigned int delayTimer;
