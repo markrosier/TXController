@@ -15,31 +15,59 @@ void IOCInterrupt( void );
 void eventHandlerInit( void );
 void eventHandlerService( void );
 
-#define EVENT_HANDLER_PERIOD    100
+#define EVENT_HANDLER_PERIOD    10
 
 // State Machine stuff
-enum states { INITIALISE, STATE_2, STATE_3, MAX_STATES } currentState;
-enum events { INITIALISING_TX, EVENT_1, MAX_EVENTS } newEvent;
+enum initStates {   
+                initS1,
+                initS2, 
+                initS3,
+                initS4,
+                initS5,
+                initS6,
+                initS7,
+                initS8,
+                initialised,
+                maxInitStates } initState;
+                
+enum initEvents {   
+                noEvent,
+                timeout,
+                greenHighEvent,
+                greenLowEvent,
+                redHighEvent,
+                redLowEvent,
+                bothHighEvent,
+                bothLowEvent,
+                maxInitEvents } initEvent;
 
 
-void action_s1_e1 (void);
-void action_s1_e2 (void);
-void action_s2_e1 (void);
-void action_s2_e2 (void);
-void action_s3_e1 (void);
-void action_s3_e2 (void);
-enum events getNewEvent (void);
-void setEvent( enum events event);
+void noAction (void);
+void reInit (void);
+void initS1_Timeout (void);
+void initS2_Timeout (void);
+void initS3_greenHigh (void);
+void initS4_greenLow (void);
+void initS5_redHigh (void);
+void initS6_redLow (void);
+void initS7_bothHigh (void);
+void initS8_bothLow (void);
+enum initEvents getInitEvent (void);
+void setInitEvent( enum initEvents event);
 
 
-void (*const stateTable [MAX_STATES][MAX_EVENTS]) (void) = {
-
-    { action_s1_e1, action_s1_e2 }, /* procedures for state 1 */
-    { action_s2_e1, action_s2_e2 }, /* procedures for state 2 */
-    { action_s3_e1, action_s3_e2 }  /* procedures for state 3 */
+void (*const initStateTable [maxInitStates][maxInitEvents]) (void) = {
+        //Event     noEvent     timeout         greenHighEvent      greenLowEvent       redHighEvent    redLowEvent     bothHighEvent       bothLowEvent
+//State    
+/* initS1     */ {  noAction,   initS1_Timeout, reInit,             reInit,             reInit,         reInit,         reInit,             reInit         },
+/*initS2      */ {  noAction,   initS2_Timeout, reInit,             reInit,             reInit,         reInit,         reInit,             reInit         },
+/*initS3      */ {  noAction,   reInit,         initS3_greenHigh,   reInit,             reInit,         reInit,         reInit,             reInit         },
+/*initS4      */ {  noAction,   reInit,         reInit,             initS4_greenLow,    reInit,         reInit,         reInit,             reInit         },
+/*initS5      */ {  noAction,   reInit,         reInit,             reInit,             initS5_redHigh, reInit,         reInit,             reInit         },
+/*initS6      */ {  noAction,   reInit,         reInit,             reInit,             reInit,         initS6_redLow,  reInit,             reInit         }, 
+/*initS7      */ {  noAction,   reInit,         reInit,             reInit,             reInit,         reInit,         initS7_bothHigh,    reInit         },
+/*initS8      */ {  noAction,   reInit,         reInit,             reInit,             reInit,         reInit,         reInit,             initS8_bothLow },
+/*initialised */ {  noAction,   reInit,         noAction,           noAction,           noAction,       noAction,       noAction,           noAction       }
 };
-
-
-
 
 #endif

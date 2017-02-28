@@ -9,6 +9,7 @@
 //
 //****************************************************************************
 
+void timer2Interrupt( void );
 
 void setBeeper ( void );
 void clearBeeper ( void );

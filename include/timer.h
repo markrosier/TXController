@@ -15,6 +15,7 @@
 
 #define TIMER_1MS_COUNT 32000
 #define SECONDS   1000
+#define MILLISECONDS 1
 
 typedef unsigned char TTimerIndex;
 

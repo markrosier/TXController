@@ -13,10 +13,12 @@
 #include "eventhandler.h"
 #include "timer.h"
 #include "led.h"
+#include "beeper.h"
 
 
 BYTE eventHandlerTimer = 0;
-enum events lastEvent = INITIALISING_TX;
+enum initEvents lastEvent = noEvent;
+int initSMTimer = 0;  //timer used by init state machine
 
 void initIOCInterrupt( void )
 {
@@ -42,7 +44,7 @@ void IOCInterrupt( void )
     {
       
       // do something
-      INDICATOR1_PIN_LATCH ^= 1;
+      //INDICATOR1_PIN_LATCH ^= 1;
 
       IOCAFbits.IOCAF3 = 0;
     }
@@ -55,50 +57,110 @@ void eventHandlerInit ()
   eventHandlerTimer = timerGet ();
   timerSet( eventHandlerTimer, EVENT_HANDLER_PERIOD );
   initIOCInterrupt();
-  setEvent( INITIALISING_TX );
+  initSMTimer = timerGet ();
+  reInit();
 }
 
 void eventHandlerService ()
 {
   if ( timerRead(eventHandlerTimer) == EXPIRED )
   {
-    newEvent = getNewEvent ();
+    initEvent = getInitEvent ();
 
-    if (((newEvent >= 0) && (newEvent < MAX_EVENTS))
-    && ((currentState >= 0) && (currentState < MAX_STATES))) {
+    if (((initEvent >= 0) && (initEvent < maxInitEvents))
+    && ((initState >= 0) && (initState < maxInitStates))) {
 
-        stateTable [currentState][newEvent] ();
+        initStateTable [initState][initEvent] ();
 
     } else 
     {
       // Invalid State just start again
-      currentState = INITIALISE;
+        reInit();
     }
 
     timerSet( eventHandlerTimer, EVENT_HANDLER_PERIOD );
   }
 }
 
-void action_s1_e1 (void)
-{
-    /* do some processing here */
 
-    currentState = STATE_2; 
+void noAction (void) 
+{
+    // do nothing
 }
 
-void action_s1_e2 (void) {} 
-void action_s2_e1 (void) {}
-void action_s2_e2 (void) {}
-void action_s3_e1 (void) {}
-void action_s3_e2 (void) {}
-
-
-enum events getNewEvent (void)
+void reInit (void)
 {
-    return EVENT_1;
+  timerSet( initSMTimer, 100 * MILLISECONDS );
+  ENABLE_TX_PIN_LATCH = DISABLE_TX;
+  initState = initS1;
 }
 
-void setEvent ( enum events envent) {
-  lastEvent = envent;
+void initS1_Timeout (void)
+{
+  timerSet( initSMTimer, 100 * MILLISECONDS );
+  ENABLE_TX_PIN_LATCH = ENABLE_TX;
+  initState = initS2;
+}
+
+void initS2_Timeout (void)
+{
+  //timerSet( initSMTimer, 100 * MILLISECONDS );
+  //initState = initS3;
+ 
+  // test to see if it reInitialises after 15 seconds
+  timerSet( initSMTimer, 15 * SECONDS );
+  initState = initialised;
+}
+
+void initS3_greenHigh (void)
+{
+  timerSet( initSMTimer, 100 * MILLISECONDS );
+  initState = initS4;
+}
+
+void initS4_greenLow (void)
+{
+  timerSet( initSMTimer, 100 * MILLISECONDS );
+  initState = initS5;
+}
+
+void initS5_redHigh (void)
+{
+  timerSet( initSMTimer, 100 * MILLISECONDS );
+  initState = initS6;
+}
+
+void initS6_redLow (void)
+{
+  timerSet( initSMTimer, 100 * MILLISECONDS );
+  initState = initS7;
+}
+
+void initS7_bothHigh (void)
+{
+  timerSet( initSMTimer, 100 * MILLISECONDS );
+  initState = initS8;
+}
+
+void initS8_bothLow (void)
+{
+  timerLock( initSMTimer );
+  initState = initialised;
+  beepRepeatedly(500, 5);
+}
+
+enum initEvents getInitEvent (void)
+{
+    if ( timerRead(initSMTimer) == EXPIRED )
+    {
+        timerLock( initSMTimer );
+        return timeout;
+    }
+    else
+        return lastEvent;
+}
+
+void setInitEvent ( enum initEvents event) {
+  lastEvent = event;
 }
 

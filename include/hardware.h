@@ -67,8 +67,8 @@ extern "C"
 #define ENABLE_TX_PIN_LATCH         LATAbits.LATA0
 #define ENABLE_TX_PIN_DIR           TRISAbits.TRISA0
 #define ENABLE_TX_PIN_TYPE          ANSELAbits.ANSA0
-#define DISABLE_TX                  0
-#define ENABLE_TX                   1   
+#define DISABLE_TX                  1
+#define ENABLE_TX                   0   
 
 
 

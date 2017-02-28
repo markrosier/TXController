@@ -3,8 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/OneDrive/Software/Projects/Chivas/TXController/source/LED.c</file>
+            <file>file:/D:/OneDrive/Software/Projects/Chivas/TXController/source/eventhandler.c</file>
+            <file>file:/D:/OneDrive/Software/Projects/Chivas/TXController/include/eventhandler.h</file>
             <file>file:/D:/OneDrive/Software/Projects/Chivas/TXController/source/interrupt.c</file>
+            <file>file:/D:/OneDrive/Software/Projects/Chivas/TXController/include/picconfig.h</file>
+            <file>file:/D:/OneDrive/Software/Projects/Chivas/TXController/include/beeper.h</file>
+            <file>file:/D:/OneDrive/Software/Projects/Chivas/TXController/include/timer.h</file>
+            <file>file:/D:/OneDrive/Software/Projects/Chivas/TXController/source/beeper.c</file>
             <file>file:/D:/OneDrive/Software/Projects/Chivas/TXController/source/main.c</file>
             <file>file:/D:/OneDrive/Software/Projects/Chivas/TXController/include/hardware.h</file>
         </group>
