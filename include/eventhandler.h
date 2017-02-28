@@ -10,7 +10,6 @@
 //****************************************************************************
 
 void initIOCInterrupt( void );
-void resetIOCInterrupt( void );
 void IOCInterrupt( void );
 void eventHandlerInit( void );
 void eventHandlerService( void );
@@ -28,22 +27,24 @@ enum initStates {
                 initS7,
                 initS8,
                 initialised,
-                maxInitStates } initState;
+                maxInitStates 
+} initState;
                 
 enum initEvents {   
                 noEvent,
-                timeout,
+                timeoutEvent,
                 greenHighEvent,
                 greenLowEvent,
                 redHighEvent,
                 redLowEvent,
                 bothHighEvent,
                 bothLowEvent,
-                maxInitEvents } initEvent;
+                maxInitEvents 
+} initEvent;
 
 
-void noAction (void);
-void reInit (void);
+void init_NoAction (void);
+void init_Restart (void);
 void initS1_Timeout (void);
 void initS2_Timeout (void);
 void initS3_greenHigh (void);
@@ -57,17 +58,53 @@ void setInitEvent( enum initEvents event);
 
 
 void (*const initStateTable [maxInitStates][maxInitEvents]) (void) = {
-        //Event     noEvent     timeout         greenHighEvent      greenLowEvent       redHighEvent    redLowEvent     bothHighEvent       bothLowEvent
+        //Event     noEvent         timeoutEvent     greenHighEvent    greenLowEvent    redHighEvent    redLowEvent    bothHighEvent    bothLowEvent
 //State    
-/* initS1     */ {  noAction,   initS1_Timeout, reInit,             reInit,             reInit,         reInit,         reInit,             reInit         },
-/*initS2      */ {  noAction,   initS2_Timeout, reInit,             reInit,             reInit,         reInit,         reInit,             reInit         },
-/*initS3      */ {  noAction,   reInit,         initS3_greenHigh,   reInit,             reInit,         reInit,         reInit,             reInit         },
-/*initS4      */ {  noAction,   reInit,         reInit,             initS4_greenLow,    reInit,         reInit,         reInit,             reInit         },
-/*initS5      */ {  noAction,   reInit,         reInit,             reInit,             initS5_redHigh, reInit,         reInit,             reInit         },
-/*initS6      */ {  noAction,   reInit,         reInit,             reInit,             reInit,         initS6_redLow,  reInit,             reInit         }, 
-/*initS7      */ {  noAction,   reInit,         reInit,             reInit,             reInit,         reInit,         initS7_bothHigh,    reInit         },
-/*initS8      */ {  noAction,   reInit,         reInit,             reInit,             reInit,         reInit,         reInit,             initS8_bothLow },
-/*initialised */ {  noAction,   reInit,         noAction,           noAction,           noAction,       noAction,       noAction,           noAction       }
+/* initS1     */ { init_NoAction,   initS1_Timeout,  init_Restart,     init_Restart,    init_Restart,   init_Restart,  init_Restart,    init_Restart   },
+/*initS2      */ { init_NoAction,   initS2_Timeout,  init_Restart,     init_Restart,    init_Restart,   init_Restart,  init_Restart,    init_Restart   },
+/*initS3      */ { init_NoAction,   init_Restart,    initS3_greenHigh, init_Restart,    init_Restart,   init_Restart,  init_Restart,    init_Restart   },
+/*initS4      */ { init_NoAction,   init_Restart,    init_Restart,     initS4_greenLow, init_Restart,   init_Restart,  init_Restart,    init_Restart   },
+/*initS5      */ { init_NoAction,   init_Restart,    init_Restart,     init_Restart,    initS5_redHigh, init_Restart,  init_Restart,    init_Restart   },
+/*initS6      */ { init_NoAction,   init_Restart,    init_Restart,     init_Restart,    init_Restart,   initS6_redLow, init_Restart,    init_Restart   }, 
+/*initS7      */ { init_NoAction,   init_Restart,    init_Restart,     init_Restart,    init_Restart,   init_Restart,  initS7_bothHigh, init_Restart   },
+/*initS8      */ { init_NoAction,   init_Restart,    init_Restart,     init_Restart,    init_Restart,   init_Restart,  init_Restart,    initS8_bothLow },
+/*initialised */ { init_NoAction,   init_Restart,    init_NoAction,    init_NoAction,   init_NoAction,  init_NoAction, init_NoAction,   init_NoAction  }
+};
+
+enum runStates {
+                runS1,
+                runS2,
+                runS3,
+                runS4,
+                maxRunStates
+} runState;
+
+enum runEvents {
+                noEvent,
+                timeoutEvent,
+                initialisedEvent,
+                beepEvent,
+                greenFlashingEvent,
+                errorEvent,
+                maxRunEvents 
+} runEvent;
+
+void run_NoAction (void);
+void runS1_Error (void);
+void runS1_Timeout (void);
+void runS1_Initialised (void);
+void runS2_Error (void);
+void runS2_Timeout (void);
+void runS2_BeepReceived (void);
+void runS3_Error (void);
+void runS3_Timeout (void);
+void runS3_GreenFlashing (void);
+void runS4_Error (void);
+void runS4_GreenSteadyLow (void);
+
+void (*const runStateTable [maxRunStates][maxRunEvents]) (void) = {
+        //Event     noEvent         timeoutEvent     greenHighEvent    greenLowEvent    redHighEvent    redLowEvent    bothHighEvent    bothLowEvent
+//State    
 };
 
 #endif

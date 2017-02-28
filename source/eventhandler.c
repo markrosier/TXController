@@ -29,18 +29,28 @@ void initIOCInterrupt( void )
   INTCONbits.PEIE = 1;
 }
 
-void resetIOCInterrupt( void )
-{
-  IOCAFbits.IOCAF3 = 0;
-  INTCONbits.PEIE = 1;
-}
-
 void IOCInterrupt( void )
 {
   if ( INTCONbits.IOCIF == 1)
   {
     // check P9242 Buzzer line
     if (IOCAFbits.IOCAF3 == 1)
+    {
+      
+      // do something
+      //INDICATOR1_PIN_LATCH ^= 1;
+
+      IOCAFbits.IOCAF3 = 0;
+    }
+     if (IOCAFbits.IOCAF2 == 1)
+    {
+      
+      // do something
+      //INDICATOR1_PIN_LATCH ^= 1;
+
+      IOCAFbits.IOCAF3 = 0;
+    }
+    if (IOCAFbits.IOCAF4 == 1)
     {
       
       // do something
@@ -154,7 +164,7 @@ enum initEvents getInitEvent (void)
     if ( timerRead(initSMTimer) == EXPIRED )
     {
         timerLock( initSMTimer );
-        return timeout;
+        return timeoutEvent;
     }
     else
         return lastEvent;
