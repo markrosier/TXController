@@ -3,14 +3,14 @@ Microchip MPLAB XC8 Compiler V1.41 ()
 Linker command line:
 
 -W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v1.41\dat\en_msgs.txt -cs \
-  -h+dist/default/production\TXController.X.production.sym \
-  --cmf=dist/default/production\TXController.X.production.cmf -z -Q12F1822 \
-  -oC:\Users\Mark\AppData\Local\Temp\s8l4.2 \
-  -Mdist/default/production/TXController.X.production.map -E1 -ver=XC8 \
-  -ASTACK=02040h-0204fh -pstack=STACK -ACODE=00h-07FFh -ASTRCODE=00h-07FFh \
+  -h+dist/default/debug\TXController.X.debug.sym \
+  --cmf=dist/default/debug\TXController.X.debug.cmf -z -Q12F1822 \
+  -oC:\Users\Mark\AppData\Local\Temp\s24g.2 \
+  -Mdist/default/debug/TXController.X.debug.map -E1 -ver=XC8 \
+  -ASTACK=02042h-0205fh -pstack=STACK -ACODE=00h-07FFh -ASTRCODE=00h-07FFh \
   -ASTRING=00h-0FFhx8 -ACONST=00h-0FFhx8 -AENTRY=00h-0FFhx8 \
-  -ACOMMON=070h-07Fh -ABANK0=020h-06Fh -ABANK1=0A0h-0BFh \
-  -ABIGRAM=02000h-0206Fh -ARAM=020h-06Fh,0A0h-0BFh \
+  -ACOMMON=070h-07Fh -ABANK0=020h-06Fh -ABANK1=0A0h-0AFh \
+  -ABIGRAM=02000h-0205Fh -ARAM=020h-06Fh,0A0h-0AFh \
   -AABS1=020h-07Fh,0A0h-0BFh -ASFR0=00h-01Fh -ASFR1=080h-09Fh \
   -ASFR2=0100h-016Fh -ASFR3=0180h-01EFh -ASFR4=0200h-026Fh \
   -ASFR5=0280h-02EFh -ASFR6=0300h-036Fh -ASFR7=0380h-03EFh \
@@ -26,8 +26,8 @@ Linker command line:
   -pfunctab=CODE -ACONFIG=08007h-08008h -pconfig=CONFIG -DCONFIG=2 \
   -AIDLOC=08000h-08003h -pidloc=IDLOC -DIDLOC=2 -AEEDATA=00h-0FFh/0F000h \
   -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 \
-  -DENTRY=2 -k C:\Users\Mark\AppData\Local\Temp\s8l4.obj \
-  dist/default/production\TXController.X.production.obj 
+  -DENTRY=2 -k C:\Users\Mark\AppData\Local\Temp\s24g.obj \
+  dist/default/debug\TXController.X.debug.obj 
 
 Object code version is 3.11
 
@@ -36,149 +36,144 @@ Machine type is 12F1822
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\Mark\AppData\Local\Temp\s8l4.obj
+C:\Users\Mark\AppData\Local\Temp\s24g.obj
                 end_init                             11       11        1        8       0
-                reset_vec                             0        0        1        0       0
+                reset_vec                             0        0        2        0       0
                 config                             8007     8007        2    1000E       0
-dist/default/production\TXController.X.production.obj
-                cinit                                12       12       1D        8       0
+dist/default/debug\TXController.X.debug.obj
+                cinit                                12       12       20        8       0
                 intentry                              4        4        D        8       0
-                text56                              51E      51E        E      1EE       0
-                text55                              2D4      2D4       36      1EE       0
-                text54                              418      418       1A      1EE       0
-                text53                               F7       F7       96      1EE       0
-                text51                              478      478       17      1EE       0
-                text50                              4F3      4F3        F      1EE       0
-                text49                              3C9      3C9       1B      1EE       0
-                text48                              338      338       2B      1EE       0
-                text47                              3AD      3AD       1C      1EE       0
-                text46                              4E4      4E4        F      1EE       0
-                text45                              18D      18D       93      1EE       0
-                text44                              5BB      5BB        4      1EE       0
-                text43                              3FE      3FE       1A      1EE       0
-                text42                              363      363       2A      1EE       0
-                text41                              5B7      5B7        4      1EE       0
-                text40                              29B      29B       39      1EE       0
-                text39                              3E4      3E4       1A      1EE       0
-                text38                              461      461       17      1EE       0
-                text37                              4B5      4B5       11      1EE       0
-                text36                              5D0      5D0        1      1EE       0
-                text35                              56D      56D        D      1EE       0
-                text34                              48F      48F       14      1EE       0
-                text33                              560      560        D      1EE       0
-                text32                              553      553        D      1EE       0
-                text31                              546      546        D      1EE       0
-                text30                              539      539        D      1EE       0
-                text29                              52C      52C        D      1EE       0
-                text28                              432      432       18      1EE       0
-                text27                              5CF      5CF        1      1EE       0
-                text26                              5CE      5CE        1      1EE       0
-                text25                              59C      59C        B      1EE       0
-                text24                              5CD      5CD        1      1EE       0
-                text23                              5CC      5CC        1      1EE       0
-                text22                              5CB      5CB        1      1EE       0
-                text21                              5CA      5CA        1      1EE       0
-                text20                              5C9      5C9        1      1EE       0
-                text19                              5C8      5C8        1      1EE       0
-                text18                              5C7      5C7        1      1EE       0
-                text17                              5C6      5C6        1      1EE       0
-                text16                              5C5      5C5        1      1EE       0
-                text15                              5C4      5C4        1      1EE       0
-                text14                              220      220       7B      1EE       0
-                text13                              510      510        E      1EE       0
-                text12                              57A      57A        C      1EE       0
-                text11                              4D5      4D5        F      1EE       0
-                text10                              4C6      4C6        F      1EE       0
-                text9                               591      591        B      1EE       0
-                text8                               502      502        E      1EE       0
-                text7                               30A      30A       2E      1EE       0
-                text6                               586      586        B      1EE       0
-                text5                               38D      38D       20      1EE       0
-                text4                               5BF      5BF        3      1EE       0
-                text3                               4A3      4A3       12      1EE       0
-                text2                               44A      44A       17      1EE       0
-                text1                               5C2      5C2        2      1EE       0
-                maintext                            5AD      5AD        6      1EE       0
+                text54                              459      459        E      1F4       0
+                text53                              3A4      3A4       16      1F4       0
+                text52                              345      345       1A      1F4       0
+                text51                               FA       FA       92      1F4       0
+                text49                              38D      38D       17      1F4       0
+                text48                              42E      42E        F      1F4       0
+                text47                              2F6      2F6       1B      1F4       0
+                text46                              207      207       2B      1F4       0
+                text45                              2BF      2BF       1C      1F4       0
+                text44                              32B      32B       1A      1F4       0
+                text43                              232      232       2A      1F4       0
+                text42                              41F      41F        F      1F4       0
+                text41                              2A2      2A2       1D      1F4       0
+                text40                              2DB      2DB       1B      1F4       0
+                text39                              311      311       1A      1F4       0
+                text38                              376      376       17      1F4       0
+                text37                              410      410        F      1F4       0
+                text36                              4FB      4FB        1      1F4       0
+                text35                              4A8      4A8        D      1F4       0
+                text34                              3BA      3BA       14      1F4       0
+                text33                              49B      49B        D      1F4       0
+                text32                              48E      48E        D      1F4       0
+                text31                              481      481        D      1F4       0
+                text30                              474      474        D      1F4       0
+                text29                              467      467        D      1F4       0
+                text28                              3E0      3E0       12      1F4       0
+                text27                              4FA      4FA        1      1F4       0
+                text26                              4F9      4F9        1      1F4       0
+                text25                              4F8      4F8        1      1F4       0
+                text24                              4F7      4F7        1      1F4       0
+                text23                              4F6      4F6        1      1F4       0
+                text22                              4F5      4F5        1      1F4       0
+                text21                              4F4      4F4        1      1F4       0
+                text20                              4F3      4F3        1      1F4       0
+                text19                              4F2      4F2        1      1F4       0
+                text18                              4F1      4F1        1      1F4       0
+                text17                              4F0      4F0        1      1F4       0
+                text16                              4EF      4EF        1      1F4       0
+                text15                              4EE      4EE        1      1F4       0
+                text14                              18C      18C       7B      1F4       0
+                text13                              44B      44B        E      1F4       0
+                text12                              4B5      4B5        C      1F4       0
+                text11                              401      401        F      1F4       0
+                text10                              3F2      3F2        F      1F4       0
+                text9                               4CC      4CC        B      1F4       0
+                text8                               43D      43D        E      1F4       0
+                text7                               25C      25C       26      1F4       0
+                text6                               4C1      4C1        B      1F4       0
+                text5                               282      282       20      1F4       0
+                text4                               4E9      4E9        3      1F4       0
+                text3                               3CE      3CE       12      1F4       0
+                text2                               35F      35F       17      1F4       0
+                text1                               4EC      4EC        2      1F4       0
+                maintext                            4E3      4E3        6      1F4       0
                 cstackBANK0                          49       49       12       20       1
-                cstackCOMMON                         70       70        7       70       1
-                clrtext                             5A7      5A7        6      1EE       0
-                bssBANK1                             A0       A0       14       A0       1
-                dataBANK0                            5B       5B        4       20       1
+                cstackCOMMON                         77       77        7       70       1
+                clrtext                             4DD      4DD        6      1F4       0
+                dataBANK0                            5B       5B        6       20       1
                 bssBANK0                             20       20       29       20       1
-                bssCOMMON                            77       77        6       70       1
-                nvBANK0                              5F       5F        1       20       1
-                stringtext                           2F       2F       C8       5E       0
-                idataBANK0                          5B3      5B3        4      1EE       0
+                bssCOMMON                            70       70        7       70       1
+                nvBANK0                              61       61        1       20       1
+                stringtext                           32       32       C8       64       0
+                idataBANK0                          4D7      4D7        6      1F4       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
 
         CLASS   CODE           
                 end_init                             11       11        1         0
-                cinit                                12       12       1D         0
+                cinit                                12       12       20         0
                 intentry                              4        4        D         0
-                reset_vec                             0        0        1         0
-                text56                              51E      51E        E         0
-                text55                              2D4      2D4       36         0
-                text54                              418      418       1A         0
-                text53                               F7       F7       96         0
-                text51                              478      478       17         0
-                text50                              4F3      4F3        F         0
-                text49                              3C9      3C9       1B         0
-                text48                              338      338       2B         0
-                text47                              3AD      3AD       1C         0
-                text46                              4E4      4E4        F         0
-                text45                              18D      18D       93         0
-                text44                              5BB      5BB        4         0
-                text43                              3FE      3FE       1A         0
-                text42                              363      363       2A         0
-                text41                              5B7      5B7        4         0
-                text40                              29B      29B       39         0
-                text39                              3E4      3E4       1A         0
-                text38                              461      461       17         0
-                text37                              4B5      4B5       11         0
-                text36                              5D0      5D0        1         0
-                text35                              56D      56D        D         0
-                text34                              48F      48F       14         0
-                text33                              560      560        D         0
-                text32                              553      553        D         0
-                text31                              546      546        D         0
-                text30                              539      539        D         0
-                text29                              52C      52C        D         0
-                text28                              432      432       18         0
-                text27                              5CF      5CF        1         0
-                text26                              5CE      5CE        1         0
-                text25                              59C      59C        B         0
-                text24                              5CD      5CD        1         0
-                text23                              5CC      5CC        1         0
-                text22                              5CB      5CB        1         0
-                text21                              5CA      5CA        1         0
-                text20                              5C9      5C9        1         0
-                text19                              5C8      5C8        1         0
-                text18                              5C7      5C7        1         0
-                text17                              5C6      5C6        1         0
-                text16                              5C5      5C5        1         0
-                text15                              5C4      5C4        1         0
-                text14                              220      220       7B         0
-                text13                              510      510        E         0
-                text12                              57A      57A        C         0
-                text11                              4D5      4D5        F         0
-                text10                              4C6      4C6        F         0
-                text9                               591      591        B         0
-                text8                               502      502        E         0
-                text7                               30A      30A       2E         0
-                text6                               586      586        B         0
-                text5                               38D      38D       20         0
-                text4                               5BF      5BF        3         0
-                text3                               4A3      4A3       12         0
-                text2                               44A      44A       17         0
-                text1                               5C2      5C2        2         0
-                maintext                            5AD      5AD        6         0
-                clrtext                             5A7      5A7        6         0
-                idataBANK0                          5B3      5B3        4         0
+                reset_vec                             0        0        2         0
+                text54                              459      459        E         0
+                text53                              3A4      3A4       16         0
+                text52                              345      345       1A         0
+                text51                               FA       FA       92         0
+                text49                              38D      38D       17         0
+                text48                              42E      42E        F         0
+                text47                              2F6      2F6       1B         0
+                text46                              207      207       2B         0
+                text45                              2BF      2BF       1C         0
+                text44                              32B      32B       1A         0
+                text43                              232      232       2A         0
+                text42                              41F      41F        F         0
+                text41                              2A2      2A2       1D         0
+                text40                              2DB      2DB       1B         0
+                text39                              311      311       1A         0
+                text38                              376      376       17         0
+                text37                              410      410        F         0
+                text36                              4FB      4FB        1         0
+                text35                              4A8      4A8        D         0
+                text34                              3BA      3BA       14         0
+                text33                              49B      49B        D         0
+                text32                              48E      48E        D         0
+                text31                              481      481        D         0
+                text30                              474      474        D         0
+                text29                              467      467        D         0
+                text28                              3E0      3E0       12         0
+                text27                              4FA      4FA        1         0
+                text26                              4F9      4F9        1         0
+                text25                              4F8      4F8        1         0
+                text24                              4F7      4F7        1         0
+                text23                              4F6      4F6        1         0
+                text22                              4F5      4F5        1         0
+                text21                              4F4      4F4        1         0
+                text20                              4F3      4F3        1         0
+                text19                              4F2      4F2        1         0
+                text18                              4F1      4F1        1         0
+                text17                              4F0      4F0        1         0
+                text16                              4EF      4EF        1         0
+                text15                              4EE      4EE        1         0
+                text14                              18C      18C       7B         0
+                text13                              44B      44B        E         0
+                text12                              4B5      4B5        C         0
+                text11                              401      401        F         0
+                text10                              3F2      3F2        F         0
+                text9                               4CC      4CC        B         0
+                text8                               43D      43D        E         0
+                text7                               25C      25C       26         0
+                text6                               4C1      4C1        B         0
+                text5                               282      282       20         0
+                text4                               4E9      4E9        3         0
+                text3                               3CE      3CE       12         0
+                text2                               35F      35F       17         0
+                text1                               4EC      4EC        2         0
+                maintext                            4E3      4E3        6         0
+                clrtext                             4DD      4DD        6         0
+                idataBANK0                          4D7      4D7        6         0
 
         CLASS   STRCODE        
-                stringtext                           2F       2F       C8         0
+                stringtext                           32       32       C8         0
 
         CLASS   STRING         
 
@@ -187,17 +182,16 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   ENTRY          
 
         CLASS   COMMON         
-                cstackCOMMON                         70       70        7         1
-                bssCOMMON                            77       77        6         1
+                cstackCOMMON                         77       77        7         1
+                bssCOMMON                            70       70        7         1
 
         CLASS   BANK0          
                 cstackBANK0                          49       49       12         1
-                dataBANK0                            5B       5B        4         1
+                dataBANK0                            5B       5B        6         1
                 bssBANK0                             20       20       29         1
-                nvBANK0                              5F       5F        1         1
+                nvBANK0                              61       61        1         1
 
         CLASS   BANK1          
-                bssBANK1                             A0       A0       14         1
 
         CLASS   BIGRAM         
 
@@ -341,33 +335,31 @@ TOTAL           Name                               Link     Load   Length     Sp
 
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class     Delta
 
-                reset_vec                      000000  000001  000001         0       0  CODE        2
-                intentry                       000004  00002B  00002F         8       0  CODE        2
-                bssBANK0                       000020  000040  000060        20       1  BANK0       1
-                stringtext                     00002F  0000C8  0000F7        5E       0  STRCODE     2
-                cstackCOMMON                   000070  00000D  00007D        70       1  COMMON      1
-                bssBANK1                       0000A0  000014  0000B4        A0       1  BANK1       1
-                text53                         0000F7  0004DA  0005D1       1EE       0  CODE        2
+                reset_vec                      000000  000002  000002         0       0  CODE        2
+                intentry                       000004  00002E  000032         8       0  CODE        2
+                bssBANK0                       000020  000042  000062        20       1  BANK0       1
+                stringtext                     000032  0000C8  0000FA        64       0  STRCODE     2
+                bssCOMMON                      000070  00000E  00007E        70       1  COMMON      1
+                text51                         0000FA  000402  0004FC       1F4       0  CODE        2
                 config                         008007  000002  008009     1000E       0  CONFIG      2
 
 
 UNUSED ADDRESS RANGES
 
         Name                Unused          Largest block    Delta
-        BANK0            00060-0006F              10           1
-        BANK1            000B4-000BF               C           1
-        BIGRAM           02000-0206F              70           1
-        CODE             00001-00003               3           2
-                         005D1-007FF             22F
-        COMMON           0007D-0007D               1           1
-        CONST            00001-00003               3           2
-                         005D1-007FF             100
+        BANK0            00062-0006F               E           1
+        BANK1            000A0-000AF              10           1
+        BIGRAM           02000-0205F              60           1
+        CODE             00002-00003               2           2
+                         004FC-007FF             304
+        CONST            00002-00003               2           2
+                         004FC-007FF             100
         EEDATA           0F000-0F0FF             100           2
-        ENTRY            00001-00003               3           2
-                         005D1-007FF             100
+        ENTRY            00002-00003               2           2
+                         004FC-007FF             100
         IDLOC            08000-08003               4           2
-        RAM              00060-0006F              10           1
-                         000B4-000BF               C
+        RAM              00062-0006F               E           1
+                         000A0-000AF              10
         SFR0             00000-0001F              20           1
         SFR1             00080-0009F              20           1
         SFR10            00500-0056F              70           1
@@ -400,11 +392,11 @@ UNUSED ADDRESS RANGES
         SFR7             00380-003EF              70           1
         SFR8             00400-0046F              70           1
         SFR9             00480-004EF              70           1
-        STACK            02040-0204F              10           1
-        STRCODE          00001-00003               3           2
-                         005D1-007FF             22F
-        STRING           00001-00003               3           2
-                         005D1-007FF             100
+        STACK            02042-0205F              1E           1
+        STRCODE          00002-00003               2           2
+                         004FC-007FF             304
+        STRING           00002-00003               2           2
+                         004FC-007FF             100
 
                                   Symbol Table
 
@@ -416,12 +408,12 @@ _INTCONbits                    (abs)        0000B
 _IOCAFbits                     (abs)        00393
 _IOCANbits                     (abs)        00392
 _IOCAPbits                     (abs)        00391
-_IOCInterrupt                  text55       002D4
+_IOCInterrupt                  text53       003A4
 _ISRCode                       intentry     00004
 _LATAbits                      (abs)        0010C
-_LEDInit                       text12       0057A
-_LEDService                    text49       003C9
-_LEDTimer                      bssBANK0     00043
+_LEDInit                       text12       004B5
+_LEDService                    text47       002F6
+_LEDTimer                      bssBANK0     00042
 _OSCCONbits                    (abs)        00099
 _PIE1bits                      (abs)        00091
 _PIR1bits                      (abs)        00011
@@ -483,9 +475,8 @@ __Hbank8                       bank8        00000
 __Hbank9                       bank9        00000
 __Hbigram                      bigram       00000
 __HbssBANK0                    bssBANK0     00000
-__HbssBANK1                    bssBANK1     00000
 __HbssCOMMON                   bssCOMMON    00000
-__Hcinit                       cinit        0002F
+__Hcinit                       cinit        00032
 __Hclrtext                     clrtext      00000
 __Hcode                        code         00000
 __Hcommon                      common       00000
@@ -504,7 +495,7 @@ __Hmaintext                    maintext     00000
 __HnvBANK0                     nvBANK0      00000
 __Hpowerup                     powerup      00000
 __Hram                         ram          00000
-__Hreset_vec                   reset_vec    00001
+__Hreset_vec                   reset_vec    00002
 __Hsfr0                        sfr0         00000
 __Hsfr1                        sfr1         00000
 __Hsfr10                       sfr10        00000
@@ -538,7 +529,7 @@ __Hsfr7                        sfr7         00000
 __Hsfr8                        sfr8         00000
 __Hsfr9                        sfr9         00000
 __Hspace_0                     (abs)        08009
-__Hspace_1                     (abs)        000B4
+__Hspace_1                     (abs)        0007E
 __Hspace_2                     (abs)        00000
 __Hspace_3                     (abs)        00000
 __Hstack                       stack        00000
@@ -580,7 +571,6 @@ __Lbank8                       bank8        00000
 __Lbank9                       bank9        00000
 __Lbigram                      bigram       00000
 __LbssBANK0                    bssBANK0     00000
-__LbssBANK1                    bssBANK1     00000
 __LbssCOMMON                   bssCOMMON    00000
 __Lcinit                       cinit        00012
 __Lclrtext                     clrtext      00000
@@ -643,143 +633,138 @@ __Lstrings                     strings      00000
 __Lstringtext                  stringtext   00000
 __Ltext                        text         00000
 __S0                           (abs)        08009
-__S1                           (abs)        000B4
+__S1                           (abs)        0007E
 __S2                           (abs)        00000
 __S3                           (abs)        00000
 ___int_sp                      stack        00000
 ___latbits                     (abs)        00000
 ___sp                          stack        00000
-___wmul                        text47       003AD
+___wmul                        text45       002BF
 ___wmul@multiplicand           cstackBANK0  0004B
 ___wmul@multiplier             cstackBANK0  00049
 ___wmul@product                cstackBANK0  0004D
-__end_of_IOCInterrupt          text55       0030A
+__end_of_IOCInterrupt          text53       003BA
 __end_of_ISRCode               intentry     00011
-__end_of_LEDInit               text12       00586
-__end_of_LEDService            text49       003E4
-__end_of___wmul                text47       003C9
-__end_of__initialization       cinit        0002C
-__end_of_beepRepeatedly        text38       00478
-__end_of_beeperInit            text10       004D5
-__end_of_beeperService         text48       00363
-__end_of_clearLED              text44       005BF
-__end_of_eventHandlerInit      text7        00338
-__end_of_eventHandlerService   text14       0029B
-__end_of_flashLED              text6        00591
-__end_of_getInitEvent          text45       00220
-__end_of_getRunEvent           text40       002D4
-__end_of_hardwareInit          text5        003AD
-__end_of_initIOCInterrupt      text9        0059C
-__end_of_initInterrupt         text4        005C2
-__end_of_initS1_Timeout        text35       0057A
-__end_of_initS2_Timeout        text34       004A3
-__end_of_initS3_greenHigh      text33       0056D
-__end_of_initS4_greenLow       text32       00560
-__end_of_initS5_redHigh        text31       00553
-__end_of_initS6_redLow         text30       00546
-__end_of_initS7_bothHigh       text29       00539
-__end_of_initS8_bothLow        text28       0044A
-__end_of_initStateTable        stringtext   000BF
-__end_of_init_NoAction         text36       005D1
-__end_of_init_Restart          text37       004C6
-__end_of_initialise            text2        00461
-__end_of_kickWatchDog          text1        005C4
-__end_of_longTimerGet          text8        00510
-__end_of_longTimerLock         text43       00418
-__end_of_longTimerRead         text42       0038D
-__end_of_longTimerSet          text39       003FE
-__end_of_main                  maintext     005B3
-__end_of_runS1_Error           text24       005CE
-__end_of_runS1_Initialised     text25       005A7
-__end_of_runS1_Timeout         text26       005CF
-__end_of_runS2_BeepReceived    text21       005CB
-__end_of_runS2_Error           text22       005CC
-__end_of_runS2_Timeout         text23       005CD
-__end_of_runS3_Error           text19       005C9
-__end_of_runS3_GreenFlashing   text18       005C8
-__end_of_runS3_Timeout         text20       005CA
-__end_of_runS4_Error           text15       005C5
-__end_of_runS4_GreenSteadyLow  text16       005C6
-__end_of_runS4_Timeout         text17       005C7
-__end_of_runStateTable         stringtext   000F7
-__end_of_run_NoAction          text27       005D0
-__end_of_setLED                text41       005BB
-__end_of_timer2Init            text11       004E4
-__end_of_timer2Interrupt       text54       00432
-__end_of_timerGet              text13       0051E
-__end_of_timerInit             text3        004B5
-__end_of_timerInterrupt        text53       0018D
-__end_of_timerLock             text46       004F3
-__end_of_timerRead             text51       0048F
-__end_of_timerSet              text50       00502
-__end_ofi1_timerSet            text56       0052C
+__end_of_LEDInit               text12       004C1
+__end_of_LEDService            text47       00311
+__end_of___wmul                text45       002DB
+__end_of__initialization       cinit        0002F
+__end_of_beepRepeatedly        text38       0038D
+__end_of_beeperInit            text10       00401
+__end_of_beeperService         text46       00232
+__end_of_eventHandlerInit      text7        00282
+__end_of_eventHandlerService   text14       00207
+__end_of_flashLED              text6        004CC
+__end_of_getInitEvent          text41       002BF
+__end_of_getRunEvent           text40       002F6
+__end_of_hardwareInit          text5        002A2
+__end_of_initIOCInterrupt      text9        004D7
+__end_of_initInterrupt         text4        004EC
+__end_of_initS1_Timeout        text35       004B5
+__end_of_initS2_Timeout        text34       003CE
+__end_of_initS3_greenHigh      text33       004A8
+__end_of_initS4_greenLow       text32       0049B
+__end_of_initS5_redHigh        text31       0048E
+__end_of_initS6_redLow         text30       00481
+__end_of_initS7_bothHigh       text29       00474
+__end_of_initS8_bothLow        text28       003F2
+__end_of_initStateTable        stringtext   000C2
+__end_of_init_NoAction         text36       004FC
+__end_of_init_Restart          text37       0041F
+__end_of_initialise            text2        00376
+__end_of_kickWatchDog          text1        004EE
+__end_of_longTimerGet          text8        0044B
+__end_of_longTimerLock         text44       00345
+__end_of_longTimerRead         text43       0025C
+__end_of_longTimerSet          text39       0032B
+__end_of_main                  maintext     004E9
+__end_of_runS1_Error           text24       004F8
+__end_of_runS1_Initialised     text25       004F9
+__end_of_runS1_Timeout         text26       004FA
+__end_of_runS2_BeepReceived    text21       004F5
+__end_of_runS2_Error           text22       004F6
+__end_of_runS2_Timeout         text23       004F7
+__end_of_runS3_Error           text19       004F3
+__end_of_runS3_GreenFlashing   text18       004F2
+__end_of_runS3_Timeout         text20       004F4
+__end_of_runS4_Error           text15       004EF
+__end_of_runS4_GreenSteadyLow  text16       004F0
+__end_of_runS4_Timeout         text17       004F1
+__end_of_runStateTable         stringtext   000FA
+__end_of_run_NoAction          text27       004FB
+__end_of_timer2Init            text11       00410
+__end_of_timer2Interrupt       text52       0035F
+__end_of_timerGet              text13       00459
+__end_of_timerInit             text3        003E0
+__end_of_timerInterrupt        text51       0018C
+__end_of_timerLock             text42       0042E
+__end_of_timerRead             text49       003A4
+__end_of_timerSet              text48       0043D
+__end_ofi1_timerSet            text54       00467
 __initialization               cinit        00012
 __pbssBANK0                    bssBANK0     00020
-__pbssBANK1                    bssBANK1     000A0
-__pbssCOMMON                   bssCOMMON    00077
+__pbssCOMMON                   bssCOMMON    00070
 __pcstackBANK0                 cstackBANK0  00049
-__pcstackCOMMON                cstackCOMMON 00070
+__pcstackCOMMON                cstackCOMMON 00077
 __pdataBANK0                   dataBANK0    0005B
-__pidataBANK0                  idataBANK0   005B3
+__pidataBANK0                  idataBANK0   004D7
 __pintentry                    intentry     00004
-__pmaintext                    maintext     005AD
-__pnvBANK0                     nvBANK0      0005F
-__pstringtext                  stringtext   0002F
-__ptext1                       text1        005C2
-__ptext10                      text10       004C6
-__ptext11                      text11       004D5
-__ptext12                      text12       0057A
-__ptext13                      text13       00510
-__ptext14                      text14       00220
-__ptext15                      text15       005C4
-__ptext16                      text16       005C5
-__ptext17                      text17       005C6
-__ptext18                      text18       005C7
-__ptext19                      text19       005C8
-__ptext2                       text2        0044A
-__ptext20                      text20       005C9
-__ptext21                      text21       005CA
-__ptext22                      text22       005CB
-__ptext23                      text23       005CC
-__ptext24                      text24       005CD
-__ptext25                      text25       0059C
-__ptext26                      text26       005CE
-__ptext27                      text27       005CF
-__ptext28                      text28       00432
-__ptext29                      text29       0052C
-__ptext3                       text3        004A3
-__ptext30                      text30       00539
-__ptext31                      text31       00546
-__ptext32                      text32       00553
-__ptext33                      text33       00560
-__ptext34                      text34       0048F
-__ptext35                      text35       0056D
-__ptext36                      text36       005D0
-__ptext37                      text37       004B5
-__ptext38                      text38       00461
-__ptext39                      text39       003E4
-__ptext4                       text4        005BF
-__ptext40                      text40       0029B
-__ptext41                      text41       005B7
-__ptext42                      text42       00363
-__ptext43                      text43       003FE
-__ptext44                      text44       005BB
-__ptext45                      text45       0018D
-__ptext46                      text46       004E4
-__ptext47                      text47       003AD
-__ptext48                      text48       00338
-__ptext49                      text49       003C9
-__ptext5                       text5        0038D
-__ptext50                      text50       004F3
-__ptext51                      text51       00478
-__ptext53                      text53       000F7
-__ptext54                      text54       00418
-__ptext55                      text55       002D4
-__ptext56                      text56       0051E
-__ptext6                       text6        00586
-__ptext7                       text7        0030A
-__ptext8                       text8        00502
-__ptext9                       text9        00591
+__pmaintext                    maintext     004E3
+__pnvBANK0                     nvBANK0      00061
+__pstringtext                  stringtext   00032
+__ptext1                       text1        004EC
+__ptext10                      text10       003F2
+__ptext11                      text11       00401
+__ptext12                      text12       004B5
+__ptext13                      text13       0044B
+__ptext14                      text14       0018C
+__ptext15                      text15       004EE
+__ptext16                      text16       004EF
+__ptext17                      text17       004F0
+__ptext18                      text18       004F1
+__ptext19                      text19       004F2
+__ptext2                       text2        0035F
+__ptext20                      text20       004F3
+__ptext21                      text21       004F4
+__ptext22                      text22       004F5
+__ptext23                      text23       004F6
+__ptext24                      text24       004F7
+__ptext25                      text25       004F8
+__ptext26                      text26       004F9
+__ptext27                      text27       004FA
+__ptext28                      text28       003E0
+__ptext29                      text29       00467
+__ptext3                       text3        003CE
+__ptext30                      text30       00474
+__ptext31                      text31       00481
+__ptext32                      text32       0048E
+__ptext33                      text33       0049B
+__ptext34                      text34       003BA
+__ptext35                      text35       004A8
+__ptext36                      text36       004FB
+__ptext37                      text37       00410
+__ptext38                      text38       00376
+__ptext39                      text39       00311
+__ptext4                       text4        004E9
+__ptext40                      text40       002DB
+__ptext41                      text41       002A2
+__ptext42                      text42       0041F
+__ptext43                      text43       00232
+__ptext44                      text44       0032B
+__ptext45                      text45       002BF
+__ptext46                      text46       00207
+__ptext47                      text47       002F6
+__ptext48                      text48       0042E
+__ptext49                      text49       0038D
+__ptext5                       text5        00282
+__ptext51                      text51       000FA
+__ptext52                      text52       00345
+__ptext53                      text53       003A4
+__ptext54                      text54       00459
+__ptext6                       text6        004C1
+__ptext7                       text7        0025C
+__ptext8                       text8        0043D
+__ptext9                       text9        004CC
 __size_of_IOCInterrupt         (abs)        00000
 __size_of_ISRCode              (abs)        00000
 __size_of_LEDInit              (abs)        00000
@@ -788,7 +773,6 @@ __size_of___wmul               (abs)        00000
 __size_of_beepRepeatedly       (abs)        00000
 __size_of_beeperInit           (abs)        00000
 __size_of_beeperService        (abs)        00000
-__size_of_clearLED             (abs)        00000
 __size_of_eventHandlerInit     (abs)        00000
 __size_of_eventHandlerService  (abs)        00000
 __size_of_flashLED             (abs)        00000
@@ -827,7 +811,6 @@ __size_of_runS4_Error          (abs)        00000
 __size_of_runS4_GreenSteadyLow (abs)        00000
 __size_of_runS4_Timeout        (abs)        00000
 __size_of_run_NoAction         (abs)        00000
-__size_of_setLED               (abs)        00000
 __size_of_timer2Init           (abs)        00000
 __size_of_timer2Interrupt      (abs)        00000
 __size_of_timerGet             (abs)        00000
@@ -838,97 +821,91 @@ __size_of_timerRead            (abs)        00000
 __size_of_timerSet             (abs)        00000
 __size_ofi1_timerSet           (abs)        00000
 _beepRate                      dataBANK0    0005B
-_beepRepeatedly                text38       00461
-_beeperInit                    text10       004C6
-_beeperOn                      bssBANK0     0003D
-_beeperService                 text48       00338
-_beeperTimer                   bssBANK0     00040
-_beeperToggle                  bssBANK0     0003F
-_buzzerTimer                   bssCOMMON    00077
-_chargerInitialised            bssBANK0     00024
-_clearLED                      text44       005BB
-_delayTimer                    bssBANK0     00035
-_eventHandlerInit              text7        0030A
-_eventHandlerService           text14       00220
-_eventHandlerTimer             nvBANK0      0005F
-_flashLED                      text6        00586
+_beepRepeatedly                text38       00376
+_beeperInit                    text10       003F2
+_beeperOn                      bssBANK0     0003C
+_beeperService                 text46       00207
+_beeperTimer                   bssBANK0     0003F
+_beeperToggle                  bssBANK0     0003E
+_buzzerStarted                 bssCOMMON    00076
+_buzzerTimer                   bssBANK0     00036
+_delayTimer                    bssBANK0     00032
+_eventHandlerInit              text7        0025C
+_eventHandlerService           text14       0018C
+_eventHandlerTimer             nvBANK0      00061
+_flashLED                      text6        004C1
 _flashRate                     dataBANK0    0005D
-_flasherToggle                 bssBANK0     00042
-_flashing                      bssBANK0     00041
-_getInitEvent                  text45       0018D
-_getRunEvent                   text40       0029B
-_greenWentHigh                 bssBANK0     00030
-_greenWentLow                  bssBANK0     0002D
-_hardwareInit                  text5        0038D
+_flasherToggle                 bssBANK0     00041
+_flashing                      bssBANK0     00040
+_getInitEvent                  text41       002A2
+_getRunEvent                   text40       002DB
+_hardwareInit                  text5        00282
 _initEvent                     bssBANK0     00047
-_initIOCInterrupt              text9        00591
-_initInterrupt                 text4        005BF
-_initS1_Timeout                text35       0056D
-_initS2_Timeout                text34       0048F
-_initS3_greenHigh              text33       00560
-_initS4_greenLow               text32       00553
-_initS5_redHigh                text31       00546
-_initS6_redLow                 text30       00539
-_initS7_bothHigh               text29       0052C
-_initS8_bothLow                text28       00432
-_initSMTimer                   bssBANK0     0003B
+_initIOCInterrupt              text9        004CC
+_initInterrupt                 text4        004E9
+_initS1_Timeout                text35       004A8
+_initS2_Timeout                text34       003BA
+_initS3_greenHigh              text33       0049B
+_initS4_greenLow               text32       0048E
+_initS5_redHigh                text31       00481
+_initS6_redLow                 text30       00474
+_initS7_bothHigh               text29       00467
+_initS8_bothLow                text28       003E0
+_initSMTimer                   bssBANK0     0003A
 _initState                     bssBANK0     00048
-_initStateTable                stringtext   0002F
-_init_NoAction                 text36       005D0
-_init_Restart                  text37       004B5
-_initialise                    text2        0044A
-_kickWatchDog                  text1        005C2
-_longTimerGet                  text8        00502
-_longTimerLock                 text43       003FE
-_longTimerRead                 text42       00363
-_longTimerSet                  text39       003E4
-_longTimers                    bssBANK0     00020
-_main                          maintext     005AD
-_minuteTimer                   bssBANK0     00037
-_nBeeps                        bssBANK0     00033
-_numLongTimers                 bssCOMMON    0007B
-_numTimers                     bssCOMMON    0007C
-_redWentHigh                   bssBANK0     0002A
-_redWentLow                    bssBANK0     00027
-_repeatedBeeping               bssBANK0     0003E
+_initStateTable                stringtext   00032
+_init_NoAction                 text36       004FB
+_init_Restart                  text37       00410
+_initialise                    text2        0035F
+_kickWatchDog                  text1        004EC
+_lastInitEvent                 bssBANK0     00044
+_lastRunEvent                  bssBANK0     00043
+_longTimerGet                  text8        0043D
+_longTimerLock                 text44       0032B
+_longTimerRead                 text43       00232
+_longTimerSet                  text39       00311
+_longTimers                    bssCOMMON    00070
+_main                          maintext     004E3
+_minuteTimer                   bssBANK0     00034
+_nBeeps                        bssBANK0     00030
+_numLongTimers                 bssCOMMON    00074
+_numTimers                     bssCOMMON    00075
+_repeatedBeeping               bssBANK0     0003D
 _runEvent                      bssBANK0     00045
-_runS1_Error                   text24       005CD
-_runS1_Initialised             text25       0059C
-_runS1_Timeout                 text26       005CE
-_runS2_BeepReceived            text21       005CA
-_runS2_Error                   text22       005CB
-_runS2_Timeout                 text23       005CC
-_runS3_Error                   text19       005C8
-_runS3_GreenFlashing           text18       005C7
-_runS3_Timeout                 text20       005C9
-_runS4_Error                   text15       005C4
-_runS4_GreenSteadyLow          text16       005C5
-_runS4_Timeout                 text17       005C6
-_runSMTimer                    bssBANK0     00039
+_runS1_Error                   text24       004F7
+_runS1_Initialised             text25       004F8
+_runS1_Timeout                 text26       004F9
+_runS2_BeepReceived            text21       004F4
+_runS2_Error                   text22       004F5
+_runS2_Timeout                 text23       004F6
+_runS3_Error                   text19       004F2
+_runS3_GreenFlashing           text18       004F1
+_runS3_Timeout                 text20       004F3
+_runS4_Error                   text15       004EE
+_runS4_GreenSteadyLow          text16       004EF
+_runS4_Timeout                 text17       004F0
+_runSMTimer                    bssBANK0     00038
 _runState                      bssBANK0     00046
-_runStateTable                 stringtext   000BF
-_run_NoAction                  text27       005CF
-_setLED                        text41       005B7
-_systick                       bssCOMMON    00079
-_timer2Init                    text11       004D5
-_timer2Interrupt               text54       00418
-_timerGet                      text13       00510
-_timerInit                     text3        004A3
-_timerInterrupt                text53       000F7
-_timerLock                     text46       004E4
-_timerRead                     text51       00478
-_timerSet                      text50       004F3
-_timers                        bssBANK1     000A0
-_ttog                          bssBANK0     00044
+_runStateTable                 stringtext   000C2
+_run_NoAction                  text27       004FA
+_timer2Init                    text11       00401
+_timer2Interrupt               text52       00345
+_timerGet                      text13       0044B
+_timerInit                     text3        003CE
+_timerInterrupt                text51       000FA
+_timerLock                     text42       0041F
+_timerRead                     text49       0038D
+_timerSet                      text48       0042E
+_timers                        bssBANK0     00020
 beepRepeatedly@n               cstackBANK0  0004B
 beepRepeatedly@period          cstackBANK0  00049
 btemp                          (abs)        0007E
-clear_ram0                     clrtext      005A7
-end_of_initialization          cinit        0002C
+clear_ram0                     clrtext      004DD
+end_of_initialization          cinit        0002F
 flashLED@period                cstackBANK0  00049
-i1_timerSet                    text56       0051E
-i1timerSet@duration            cstackCOMMON 00070
-i1timerSet@index               cstackCOMMON 00072
+i1_timerSet                    text54       00459
+i1timerSet@duration            cstackCOMMON 00077
+i1timerSet@index               cstackCOMMON 00079
 int$flags                      (abs)        0007E
 intlevel0                      functab      00000
 intlevel1                      functab      00000
@@ -943,12 +920,12 @@ longTimerRead@result           cstackBANK0  0004E
 longTimerSet@duration          cstackBANK0  00049
 longTimerSet@index             cstackBANK0  0004E
 reset_vec                      reset_vec    00000
-stackhi                        (abs)        0204F
-stacklo                        (abs)        02040
+stackhi                        (abs)        0205F
+stacklo                        (abs)        02042
 start                          init         00011
 start_initialization           cinit        00012
 timerGet@result                cstackBANK0  0004B
-timerInterrupt@i               cstackCOMMON 00075
+timerInterrupt@i               cstackCOMMON 0007C
 timerLock@index                cstackBANK0  00049
 timerRead@index                cstackBANK0  0004E
 timerRead@result               cstackBANK0  0004C
@@ -1061,7 +1038,7 @@ Total ram usage:        0 bytes
 
  *************** function _timerInit *****************
  Defined at:
-		line 28 in file "../source/timer.c"
+		line 25 in file "../source/timer.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1181,7 +1158,7 @@ Total ram usage:        2 bytes
 
  *************** function _eventHandlerInit *****************
  Defined at:
-		line 96 in file "../source/eventhandler.c"
+		line 76 in file "../source/eventhandler.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1215,7 +1192,7 @@ Total ram usage:        2 bytes
 
  *************** function _longTimerGet *****************
  Defined at:
-		line 189 in file "../source/timer.c"
+		line 184 in file "../source/timer.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1245,7 +1222,7 @@ Total ram usage:        2 bytes
 
  *************** function _initIOCInterrupt *****************
  Defined at:
-		line 38 in file "../source/eventhandler.c"
+		line 30 in file "../source/eventhandler.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1368,7 +1345,7 @@ Total ram usage:        1 bytes
 
  *************** function _timerGet *****************
  Defined at:
-		line 104 in file "../source/timer.c"
+		line 99 in file "../source/timer.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1400,7 +1377,7 @@ Total ram usage:        2 bytes
 
  *************** function _eventHandlerService *****************
  Defined at:
-		line 109 in file "../source/eventhandler.c"
+		line 88 in file "../source/eventhandler.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1457,7 +1434,7 @@ Total ram usage:        8 bytes
 
  *************** function _runS4_Error *****************
  Defined at:
-		line 351 in file "../source/eventhandler.c"
+		line 267 in file "../source/eventhandler.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1487,7 +1464,7 @@ Total ram usage:        0 bytes
 
  *************** function _runS4_GreenSteadyLow *****************
  Defined at:
-		line 361 in file "../source/eventhandler.c"
+		line 277 in file "../source/eventhandler.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1517,7 +1494,7 @@ Total ram usage:        0 bytes
 
  *************** function _runS4_Timeout *****************
  Defined at:
-		line 356 in file "../source/eventhandler.c"
+		line 272 in file "../source/eventhandler.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1547,7 +1524,7 @@ Total ram usage:        0 bytes
 
  *************** function _runS3_GreenFlashing *****************
  Defined at:
-		line 346 in file "../source/eventhandler.c"
+		line 262 in file "../source/eventhandler.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1577,7 +1554,7 @@ Total ram usage:        0 bytes
 
  *************** function _runS3_Error *****************
  Defined at:
-		line 336 in file "../source/eventhandler.c"
+		line 252 in file "../source/eventhandler.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1607,7 +1584,7 @@ Total ram usage:        0 bytes
 
  *************** function _runS3_Timeout *****************
  Defined at:
-		line 341 in file "../source/eventhandler.c"
+		line 257 in file "../source/eventhandler.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1637,7 +1614,7 @@ Total ram usage:        0 bytes
 
  *************** function _runS2_BeepReceived *****************
  Defined at:
-		line 331 in file "../source/eventhandler.c"
+		line 247 in file "../source/eventhandler.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1667,7 +1644,7 @@ Total ram usage:        0 bytes
 
  *************** function _runS2_Error *****************
  Defined at:
-		line 321 in file "../source/eventhandler.c"
+		line 237 in file "../source/eventhandler.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1697,7 +1674,7 @@ Total ram usage:        0 bytes
 
  *************** function _runS2_Timeout *****************
  Defined at:
-		line 326 in file "../source/eventhandler.c"
+		line 242 in file "../source/eventhandler.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1727,7 +1704,7 @@ Total ram usage:        0 bytes
 
  *************** function _runS1_Error *****************
  Defined at:
-		line 306 in file "../source/eventhandler.c"
+		line 222 in file "../source/eventhandler.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1757,7 +1734,7 @@ Total ram usage:        0 bytes
 
  *************** function _runS1_Initialised *****************
  Defined at:
-		line 316 in file "../source/eventhandler.c"
+		line 232 in file "../source/eventhandler.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1765,7 +1742,7 @@ Total ram usage:        0 bytes
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
-		wreg, status,2, status,0, pclath, cstack
+		None
  Tracked objects:
 		On entry : 
 		On exit  : 
@@ -1777,9 +1754,9 @@ Total ram usage:        0 bytes
       Totals:         0       0       0
 Total ram usage:        0 bytes
  Hardware stack levels used:    1
- Hardware stack levels required when called:    4
+ Hardware stack levels required when called:    3
  This function calls:
-		_beepRepeatedly
+		Nothing
  This function is called by:
 		_eventHandlerService
  This function uses a non-reentrant model
@@ -1787,7 +1764,7 @@ Total ram usage:        0 bytes
 
  *************** function _runS1_Timeout *****************
  Defined at:
-		line 311 in file "../source/eventhandler.c"
+		line 227 in file "../source/eventhandler.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1817,7 +1794,7 @@ Total ram usage:        0 bytes
 
  *************** function _run_NoAction *****************
  Defined at:
-		line 301 in file "../source/eventhandler.c"
+		line 217 in file "../source/eventhandler.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1847,7 +1824,7 @@ Total ram usage:        0 bytes
 
  *************** function _initS8_bothLow *****************
  Defined at:
-		line 210 in file "../source/eventhandler.c"
+		line 188 in file "../source/eventhandler.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1878,7 +1855,7 @@ Total ram usage:        1 bytes
 
  *************** function _initS7_bothHigh *****************
  Defined at:
-		line 204 in file "../source/eventhandler.c"
+		line 182 in file "../source/eventhandler.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1908,7 +1885,7 @@ Total ram usage:        1 bytes
 
  *************** function _initS6_redLow *****************
  Defined at:
-		line 198 in file "../source/eventhandler.c"
+		line 176 in file "../source/eventhandler.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1938,7 +1915,7 @@ Total ram usage:        1 bytes
 
  *************** function _initS5_redHigh *****************
  Defined at:
-		line 192 in file "../source/eventhandler.c"
+		line 170 in file "../source/eventhandler.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1968,7 +1945,7 @@ Total ram usage:        1 bytes
 
  *************** function _initS4_greenLow *****************
  Defined at:
-		line 186 in file "../source/eventhandler.c"
+		line 164 in file "../source/eventhandler.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1998,7 +1975,7 @@ Total ram usage:        1 bytes
 
  *************** function _initS3_greenHigh *****************
  Defined at:
-		line 180 in file "../source/eventhandler.c"
+		line 158 in file "../source/eventhandler.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2028,7 +2005,7 @@ Total ram usage:        1 bytes
 
  *************** function _initS2_Timeout *****************
  Defined at:
-		line 168 in file "../source/eventhandler.c"
+		line 145 in file "../source/eventhandler.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2059,7 +2036,7 @@ Total ram usage:        1 bytes
 
  *************** function _initS1_Timeout *****************
  Defined at:
-		line 161 in file "../source/eventhandler.c"
+		line 138 in file "../source/eventhandler.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2089,7 +2066,7 @@ Total ram usage:        0 bytes
 
  *************** function _init_NoAction *****************
  Defined at:
-		line 144 in file "../source/eventhandler.c"
+		line 123 in file "../source/eventhandler.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2119,7 +2096,7 @@ Total ram usage:        0 bytes
 
  *************** function _init_Restart *****************
  Defined at:
-		line 149 in file "../source/eventhandler.c"
+		line 128 in file "../source/eventhandler.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2176,14 +2153,13 @@ Total ram usage:        4 bytes
 		Nothing
  This function is called by:
 		_initS8_bothLow
-		_runS1_Initialised
 		_initialise
  This function uses a non-reentrant model
 
 
  *************** function _longTimerSet *****************
  Defined at:
-		line 208 in file "../source/timer.c"
+		line 203 in file "../source/timer.c"
  Parameters:    Size  Location     Type
   index           1    wreg     unsigned char 
   duration        4    0[BANK0 ] unsigned long 
@@ -2214,13 +2190,13 @@ Total ram usage:        6 bytes
 
  *************** function _getRunEvent *****************
  Defined at:
-		line 368 in file "../source/eventhandler.c"
+		line 282 in file "../source/eventhandler.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
 		None
  Return value:  Size  Location     Type
-                  1    wreg      enum E2354
+                  1    wreg      enum E2356
  Registers used:
 		wreg, fsr1l, fsr1h, status,2, status,0, pclath, cstack
  Tracked objects:
@@ -2236,10 +2212,6 @@ Total ram usage:        0 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    4
  This function calls:
-		_clearLED
-		_longTimerLock
-		_longTimerRead
-		_setLED
 		_timerLock
 		_timerRead
  This function is called by:
@@ -2247,131 +2219,9 @@ Total ram usage:        0 bytes
  This function uses a non-reentrant model
 
 
- *************** function _setLED *****************
- Defined at:
-		line 19 in file "../source/LED.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		status,2
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1
-      Params:         0       0       0
-      Locals:         0       0       0
-      Temps:          0       0       0
-      Totals:         0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    3
- This function calls:
-		Nothing
- This function is called by:
-		_getRunEvent
- This function uses a non-reentrant model
-
-
- *************** function _longTimerRead *****************
- Defined at:
-		line 224 in file "../source/timer.c"
- Parameters:    Size  Location     Type
-  index           1    wreg     unsigned char 
- Auto vars:     Size  Location     Type
-  index           1    9[BANK0 ] unsigned char 
-  result          4    5[BANK0 ] unsigned long 
- Return value:  Size  Location     Type
-                  4    0[BANK0 ] unsigned long 
- Registers used:
-		wreg, fsr1l, fsr1h, status,2, status,0
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1
-      Params:         0       4       0
-      Locals:         0       5       0
-      Temps:          0       1       0
-      Totals:         0      10       0
-Total ram usage:       10 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    3
- This function calls:
-		Nothing
- This function is called by:
-		_getRunEvent
- This function uses a non-reentrant model
-
-
- *************** function _longTimerLock *****************
- Defined at:
-		line 242 in file "../source/timer.c"
- Parameters:    Size  Location     Type
-  index           1    wreg     unsigned char 
- Auto vars:     Size  Location     Type
-  index           1    1[BANK0 ] unsigned char 
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, fsr1l, fsr1h, status,2, status,0
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1
-      Params:         0       0       0
-      Locals:         0       1       0
-      Temps:          0       1       0
-      Totals:         0       2       0
-Total ram usage:        2 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    3
- This function calls:
-		Nothing
- This function is called by:
-		_getRunEvent
-		_longTimerGet
- This function uses a non-reentrant model
-
-
- *************** function _clearLED *****************
- Defined at:
-		line 25 in file "../source/LED.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		status,2
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1
-      Params:         0       0       0
-      Locals:         0       0       0
-      Temps:          0       0       0
-      Totals:         0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    3
- This function calls:
-		Nothing
- This function is called by:
-		_getRunEvent
- This function uses a non-reentrant model
-
-
  *************** function _getInitEvent *****************
  Defined at:
-		line 219 in file "../source/eventhandler.c"
+		line 195 in file "../source/eventhandler.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2387,12 +2237,14 @@ Total ram usage:        0 bytes
  Data sizes:     COMMON   BANK0   BANK1
       Params:         0       0       0
       Locals:         0       0       0
-      Temps:          0       4       0
-      Totals:         0       4       0
-Total ram usage:        4 bytes
+      Temps:          0       0       0
+      Totals:         0       0       0
+Total ram usage:        0 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    4
  This function calls:
+		_longTimerLock
+		_longTimerRead
 		_timerLock
 		_timerRead
  This function is called by:
@@ -2402,7 +2254,7 @@ Total ram usage:        4 bytes
 
  *************** function _timerLock *****************
  Defined at:
-		line 157 in file "../source/timer.c"
+		line 152 in file "../source/timer.c"
  Parameters:    Size  Location     Type
   index           1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -2431,6 +2283,68 @@ Total ram usage:        1 bytes
 		_getInitEvent
 		_getRunEvent
 		_timerGet
+ This function uses a non-reentrant model
+
+
+ *************** function _longTimerRead *****************
+ Defined at:
+		line 219 in file "../source/timer.c"
+ Parameters:    Size  Location     Type
+  index           1    wreg     unsigned char 
+ Auto vars:     Size  Location     Type
+  index           1    9[BANK0 ] unsigned char 
+  result          4    5[BANK0 ] unsigned long 
+ Return value:  Size  Location     Type
+                  4    0[BANK0 ] unsigned long 
+ Registers used:
+		wreg, fsr1l, fsr1h, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1
+      Params:         0       4       0
+      Locals:         0       5       0
+      Temps:          0       1       0
+      Totals:         0      10       0
+Total ram usage:       10 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		Nothing
+ This function is called by:
+		_getInitEvent
+ This function uses a non-reentrant model
+
+
+ *************** function _longTimerLock *****************
+ Defined at:
+		line 237 in file "../source/timer.c"
+ Parameters:    Size  Location     Type
+  index           1    wreg     unsigned char 
+ Auto vars:     Size  Location     Type
+  index           1    1[BANK0 ] unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, fsr1l, fsr1h, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1
+      Params:         0       0       0
+      Locals:         0       1       0
+      Temps:          0       1       0
+      Totals:         0       2       0
+Total ram usage:        2 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		Nothing
+ This function is called by:
+		_getInitEvent
+		_longTimerGet
  This function uses a non-reentrant model
 
 
@@ -2529,7 +2443,7 @@ Total ram usage:        0 bytes
 
  *************** function _timerSet *****************
  Defined at:
-		line 123 in file "../source/timer.c"
+		line 118 in file "../source/timer.c"
  Parameters:    Size  Location     Type
   index           1    wreg     unsigned char 
   duration        2    0[BANK0 ] unsigned int 
@@ -2572,7 +2486,7 @@ Total ram usage:        3 bytes
 
  *************** function _timerRead *****************
  Defined at:
-		line 139 in file "../source/timer.c"
+		line 134 in file "../source/timer.c"
  Parameters:    Size  Location     Type
   index           1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -2639,7 +2553,7 @@ Total ram usage:        1 bytes
 
  *************** function _timerInterrupt *****************
  Defined at:
-		line 57 in file "../source/timer.c"
+		line 54 in file "../source/timer.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2697,7 +2611,7 @@ Total ram usage:        1 bytes
 
  *************** function _IOCInterrupt *****************
  Defined at:
-		line 51 in file "../source/eventhandler.c"
+		line 43 in file "../source/eventhandler.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2727,7 +2641,7 @@ Total ram usage:        0 bytes
 
  *************** function i1_timerSet *****************
  Defined at:
-		line 123 in file "../source/timer.c"
+		line 118 in file "../source/timer.c"
  Parameters:    Size  Location     Type
   index           1    wreg     unsigned char 
   duration        2    0[COMMON] unsigned int 
@@ -2760,94 +2674,92 @@ MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 ../source/beeper.c
-		_beeperService 		CODE           	0338	0000	44
-		_beeperInit    		CODE           	04C6	0000	16
-		_beepRepeatedly		CODE           	0461	0000	24
-		_timer2Interrupt		CODE           	0418	0000	27
-		_timer2Init    		CODE           	04D5	0000	16
+		_beeperService 		CODE           	0207	0000	44
+		_beeperInit    		CODE           	03F2	0000	16
+		_beepRepeatedly		CODE           	0376	0000	24
+		_timer2Interrupt		CODE           	0345	0000	27
+		_timer2Init    		CODE           	0401	0000	16
 
 ../source/beeper.c estimated size: 127
 
 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\Umul16.c
-		___wmul        		CODE           	03AD	0000	29
+		___wmul        		CODE           	02BF	0000	29
 
 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\Umul16.c estimated size: 29
 
 ../source/LED.c
-		_flashLED      		CODE           	0586	0000	12
-		_LEDService    		CODE           	03C9	0000	28
-		_setLED        		CODE           	05B7	0000	5
-		_clearLED      		CODE           	05BB	0000	5
-		_LEDInit       		CODE           	057A	0000	13
+		_flashLED      		CODE           	04C1	0000	12
+		_LEDService    		CODE           	02F6	0000	28
+		_LEDInit       		CODE           	04B5	0000	13
 
-../source/LED.c estimated size: 63
+../source/LED.c estimated size: 53
 
 ../source/interrupt.c
-		_initInterrupt 		CODE           	05BF	0000	4
+		_initInterrupt 		CODE           	04E9	0000	4
 		_ISRCode       		CODE           	0004	0000	14
 
 ../source/interrupt.c estimated size: 18
 
 ../source/timer.c
-		_timerLock     		CODE           	04E4	0000	16
-		_timerRead     		CODE           	0478	0000	24
-		_timerInit     		CODE           	04A3	0000	19
-		_timerGet      		CODE           	0510	0000	15
-		_timerSet      		CODE           	04F3	0000	16
-		_timerInterrupt		CODE           	00F7	0000	151
-		_longTimerGet  		CODE           	0502	0000	15
-		_longTimerSet  		CODE           	03E4	0000	27
-		_longTimerRead 		CODE           	0363	0000	43
-		_longTimerLock 		CODE           	03FE	0000	27
+		_timerLock     		CODE           	041F	0000	16
+		_timerRead     		CODE           	038D	0000	24
+		_timerInit     		CODE           	03CE	0000	19
+		_timerGet      		CODE           	044B	0000	15
+		_timerSet      		CODE           	042E	0000	16
+		_timerInterrupt		CODE           	00FA	0000	147
+		_longTimerGet  		CODE           	043D	0000	15
+		_longTimerSet  		CODE           	0311	0000	27
+		_longTimerRead 		CODE           	0232	0000	43
+		_longTimerLock 		CODE           	032B	0000	27
 
-../source/timer.c estimated size: 353
+../source/timer.c estimated size: 349
 
 ../source/main.c
-		_hardwareInit  		CODE           	038D	0000	33
-		_kickWatchDog  		CODE           	05C2	0000	3
-		_main          		CODE           	05AD	0000	7
-		_initialise    		CODE           	044A	0000	24
+		_hardwareInit  		CODE           	0282	0000	33
+		_kickWatchDog  		CODE           	04EC	0000	3
+		_main          		CODE           	04E3	0000	7
+		_initialise    		CODE           	035F	0000	24
 
 ../source/main.c estimated size: 67
 
 shared
-		_initStateTable		STRCODE        	002F	0000	145
-		__initialization		CODE           	0012	0000	27
-		i1_timerSet    		CODE           	051E	0000	15
-		_runStateTable 		STRCODE        	00BF	0000	57
+		_initStateTable		STRCODE        	0032	0000	145
+		__initialization		CODE           	0012	0000	30
+		i1_timerSet    		CODE           	0459	0000	15
+		_runStateTable 		STRCODE        	00C2	0000	57
 
-shared estimated size: 244
+shared estimated size: 247
 
 ../source/eventhandler.c
-		_runS3_GreenFlashing		CODE           	05C7	0000	2
-		_runS3_Timeout 		CODE           	05C9	0000	2
-		_IOCInterrupt  		CODE           	02D4	0000	55
-		_run_NoAction  		CODE           	05CF	0000	2
-		_initIOCInterrupt		CODE           	0591	0000	12
-		_eventHandlerInit		CODE           	030A	0000	47
-		_initS7_bothHigh		CODE           	052C	0000	14
-		_init_Restart  		CODE           	04B5	0000	18
-		_runS4_GreenSteadyLow		CODE           	05C5	0000	2
-		_initS4_greenLow		CODE           	0553	0000	14
-		_initS5_redHigh		CODE           	0546	0000	14
-		_initS2_Timeout		CODE           	048F	0000	21
-		_runS1_Initialised		CODE           	059C	0000	12
-		_runS4_Timeout 		CODE           	05C6	0000	2
-		_initS8_bothLow		CODE           	0432	0000	25
-		_runS1_Error   		CODE           	05CD	0000	2
-		_initS3_greenHigh		CODE           	0560	0000	14
-		_initS6_redLow 		CODE           	0539	0000	14
-		_runS2_Error   		CODE           	05CB	0000	2
-		_getInitEvent  		CODE           	018D	0000	148
-		_runS3_Error   		CODE           	05C8	0000	2
-		_runS1_Timeout 		CODE           	05CE	0000	2
-		_init_NoAction 		CODE           	05D0	0000	2
-		_eventHandlerService		CODE           	0220	0000	124
-		_runS2_BeepReceived		CODE           	05CA	0000	2
-		_runS4_Error   		CODE           	05C4	0000	2
-		_initS1_Timeout		CODE           	056D	0000	14
-		_getRunEvent   		CODE           	029B	0000	58
-		_runS2_Timeout 		CODE           	05CC	0000	2
+		_runS3_GreenFlashing		CODE           	04F1	0000	2
+		_runS3_Timeout 		CODE           	04F3	0000	2
+		_IOCInterrupt  		CODE           	03A4	0000	23
+		_run_NoAction  		CODE           	04FA	0000	2
+		_initIOCInterrupt		CODE           	04CC	0000	12
+		_eventHandlerInit		CODE           	025C	0000	39
+		_initS7_bothHigh		CODE           	0467	0000	14
+		_init_Restart  		CODE           	0410	0000	16
+		_runS4_GreenSteadyLow		CODE           	04EF	0000	2
+		_initS4_greenLow		CODE           	048E	0000	14
+		_initS5_redHigh		CODE           	0481	0000	14
+		_initS2_Timeout		CODE           	03BA	0000	21
+		_runS1_Initialised		CODE           	04F8	0000	2
+		_runS4_Timeout 		CODE           	04F0	0000	2
+		_initS8_bothLow		CODE           	03E0	0000	19
+		_runS1_Error   		CODE           	04F7	0000	2
+		_initS3_greenHigh		CODE           	049B	0000	14
+		_initS6_redLow 		CODE           	0474	0000	14
+		_runS2_Error   		CODE           	04F5	0000	2
+		_getInitEvent  		CODE           	02A2	0000	30
+		_runS3_Error   		CODE           	04F2	0000	2
+		_runS1_Timeout 		CODE           	04F9	0000	2
+		_init_NoAction 		CODE           	04FB	0000	2
+		_eventHandlerService		CODE           	018C	0000	124
+		_runS2_BeepReceived		CODE           	04F4	0000	2
+		_runS4_Error   		CODE           	04EE	0000	2
+		_initS1_Timeout		CODE           	04A8	0000	14
+		_getRunEvent   		CODE           	02DB	0000	28
+		_runS2_Timeout 		CODE           	04F6	0000	2
 
-../source/eventhandler.c estimated size: 630
+../source/eventhandler.c estimated size: 424
 

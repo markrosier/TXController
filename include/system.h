@@ -2,7 +2,7 @@
  * File:   system.h
  * Author: Mark Rosier
  *
- * Iota electronics Limited 2015
+ * Iota electronics Limited 2017
  */
 
 #ifndef _inc_system

@@ -1,35 +1,68 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"31 ../include\eventhandler.h
-[c E2231 0 1 2 3 4 5 6 7 8 9 .. ]
-[n E2231 initStates initS1 initS2 initS3 initS4 initS5 initS6 initS7 initS8 initialised maxInitStates  ]
-"42
-[c E2243 0 1 2 3 4 5 6 7 8 .. ]
-[n E2243 initEvents noEvent timeout greenHighEvent greenLowEvent redHighEvent redLowEvent bothHighEvent bothLowEvent maxInitEvents  ]
-[v F2281 `(v ~T0 @X0 0 tf ]
-"45
-[v _noAction `(v ~T0 @X0 0 ef ]
+"32 ../include\eventhandler.h
+[c E2239 0 1 2 3 4 5 6 7 8 9 .. ]
+[n E2239 initStates initS1 initS2 initS3 initS4 initS5 initS6 initS7 initS8 initialised maxInitStates  ]
+"44
+[c E2251 0 1 2 3 4 5 6 7 8 .. ]
+[n E2251 initEvents noInitEvent initTimeoutEvent greenHighEvent greenLowEvent redHighEvent redLowEvent bothHighEvent bothLowEvent maxInitEvents  ]
+[v F2287 `(v ~T0 @X0 0 tf ]
 "47
-[v _initS1_Timeout `(v ~T0 @X0 0 ef ]
-"46
-[v _reInit `(v ~T0 @X0 0 ef ]
-"48
-[v _initS2_Timeout `(v ~T0 @X0 0 ef ]
+[v _init_NoAction `(v ~T0 @X0 0 ef ]
 "49
-[v _initS3_greenHigh `(v ~T0 @X0 0 ef ]
+[v _initS1_Timeout `(v ~T0 @X0 0 ef ]
 "50
-[v _initS4_greenLow `(v ~T0 @X0 0 ef ]
+[v _initS2_Timeout `(v ~T0 @X0 0 ef ]
+"48
+[v _init_Restart `(v ~T0 @X0 0 ef ]
 "51
-[v _initS5_redHigh `(v ~T0 @X0 0 ef ]
+[v _initS3_greenHigh `(v ~T0 @X0 0 ef ]
 "52
-[v _initS6_redLow `(v ~T0 @X0 0 ef ]
+[v _initS4_greenLow `(v ~T0 @X0 0 ef ]
 "53
-[v _initS7_bothHigh `(v ~T0 @X0 0 ef ]
+[v _initS5_redHigh `(v ~T0 @X0 0 ef ]
 "54
+[v _initS6_redLow `(v ~T0 @X0 0 ef ]
+"55
+[v _initS7_bothHigh `(v ~T0 @X0 0 ef ]
+"56
 [v _initS8_bothLow `(v ~T0 @X0 0 ef ]
+"80
+[c E2361 0 1 2 3 4 .. ]
+[n E2361 runStates runS1 runS2 runS3 runS4 maxRunStates  ]
+"91
+[c E2368 0 1 2 3 4 5 6 7 .. ]
+[n E2368 runEvents noRunEvent runTimeoutEvent initialisedEvent beepEvent greenFlashingEvent greenSteadyLowEvent errorEvent maxRunEvents  ]
+[v F2409 `(v ~T0 @X0 0 tf ]
+"93
+[v _run_NoAction `(v ~T0 @X0 0 ef ]
+"95
+[v _runS1_Timeout `(v ~T0 @X0 0 ef ]
+"96
+[v _runS1_Initialised `(v ~T0 @X0 0 ef ]
+"94
+[v _runS1_Error `(v ~T0 @X0 0 ef ]
+"98
+[v _runS2_Timeout `(v ~T0 @X0 0 ef ]
+"97
+[v _runS2_Error `(v ~T0 @X0 0 ef ]
+"99
+[v _runS2_BeepReceived `(v ~T0 @X0 0 ef ]
+"101
+[v _runS3_Timeout `(v ~T0 @X0 0 ef ]
+"100
+[v _runS3_Error `(v ~T0 @X0 0 ef ]
+"102
+[v _runS3_GreenFlashing `(v ~T0 @X0 0 ef ]
+"104
+[v _runS4_Timeout `(v ~T0 @X0 0 ef ]
+"105
+[v _runS4_GreenSteadyLow `(v ~T0 @X0 0 ef ]
+"103
+[v _runS4_Error `(v ~T0 @X0 0 ef ]
 [p mainexit ]
 "18 ../include\main.h
 [v _initialise `(v ~T0 @X0 0 ef ]
-"16 ../include\eventhandler.h
+"15 ../include\eventhandler.h
 [v _eventHandlerService `(v ~T0 @X0 0 ef ]
 "18 ../include\led.h
 [v _LEDService `(v ~T0 @X0 0 ef ]
@@ -37,9 +70,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _beeperService `(v ~T0 @X0 0 ef ]
 "19 ../include\main.h
 [v _hardwareInit `(v ~T0 @X0 0 ef ]
-"22 ../include\timer.h
+"25 ../include\timer.h
 [v _timerInit `(v ~T0 @X0 0 ef ]
-"15 ../include\eventhandler.h
+"14 ../include\eventhandler.h
 [v _eventHandlerInit `(v ~T0 @X0 0 ef ]
 "17 ../include\led.h
 [v _LEDInit `(v ~T0 @X0 0 ef ]
@@ -2266,21 +2299,25 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p x PLLEN=ON ]
 "34
 [p x WRT=OFF ]
-[; ;include\timer.h: 20: typedef unsigned char TTimerIndex;
-[; ;include\timer.h: 22: extern void timerInit( void );
-[; ;include\timer.h: 23: extern TTimerIndex timerGet( void );
-[; ;include\timer.h: 24: extern void timerSet( TTimerIndex index, unsigned int duration );
-[; ;include\timer.h: 25: extern unsigned int timerRead( TTimerIndex index );
-[; ;include\timer.h: 26: extern void timerLock( TTimerIndex index );
-[; ;include\timer.h: 27: extern void timerDelay( unsigned int Duration );
-[; ;include\timer.h: 29: void timerInterrupt( void );
+[; ;include\timer.h: 22: typedef unsigned char TTimerIndex;
+[; ;include\timer.h: 23: typedef unsigned char LTTimerIndex;
+[; ;include\timer.h: 25: extern void timerInit( void );
+[; ;include\timer.h: 26: extern TTimerIndex timerGet( void );
+[; ;include\timer.h: 27: extern void timerSet( TTimerIndex index, unsigned int duration );
+[; ;include\timer.h: 28: extern unsigned int timerRead( TTimerIndex index );
+[; ;include\timer.h: 29: extern void timerLock( TTimerIndex index );
+[; ;include\timer.h: 30: extern void timerDelay( unsigned int Duration );
+[; ;include\timer.h: 32: extern LTTimerIndex longTimerGet( void );
+[; ;include\timer.h: 33: extern void longTimerSet( LTTimerIndex, unsigned long duration );
+[; ;include\timer.h: 34: extern unsigned long longTimerRead( LTTimerIndex );
+[; ;include\timer.h: 35: extern void longTimerLock( LTTimerIndex );
+[; ;include\timer.h: 38: void timerInterrupt( void );
 [; ;include\eventhandler.h: 12: void initIOCInterrupt( void );
-[; ;include\eventhandler.h: 13: void resetIOCInterrupt( void );
-[; ;include\eventhandler.h: 14: void IOCInterrupt( void );
-[; ;include\eventhandler.h: 15: void eventHandlerInit( void );
-[; ;include\eventhandler.h: 16: void eventHandlerService( void );
-"31 ../include\eventhandler.h
-[v _initState `E2231 ~T0 @X0 1 e ]
+[; ;include\eventhandler.h: 13: void IOCInterrupt( void );
+[; ;include\eventhandler.h: 14: void eventHandlerInit( void );
+[; ;include\eventhandler.h: 15: void eventHandlerService( void );
+"32 ../include\eventhandler.h
+[v _initState `E2239 ~T0 @X0 1 e ]
 [; ;include\eventhandler.h: 21: enum initStates {
 [; ;include\eventhandler.h: 22: initS1,
 [; ;include\eventhandler.h: 23: initS2,
@@ -2291,148 +2328,237 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;include\eventhandler.h: 28: initS7,
 [; ;include\eventhandler.h: 29: initS8,
 [; ;include\eventhandler.h: 30: initialised,
-[; ;include\eventhandler.h: 31: maxInitStates } initState;
-"42
-[v _initEvent `E2243 ~T0 @X0 1 e ]
-[; ;include\eventhandler.h: 33: enum initEvents {
-[; ;include\eventhandler.h: 34: noEvent,
-[; ;include\eventhandler.h: 35: timeout,
-[; ;include\eventhandler.h: 36: greenHighEvent,
-[; ;include\eventhandler.h: 37: greenLowEvent,
-[; ;include\eventhandler.h: 38: redHighEvent,
-[; ;include\eventhandler.h: 39: redLowEvent,
-[; ;include\eventhandler.h: 40: bothHighEvent,
-[; ;include\eventhandler.h: 41: bothLowEvent,
-[; ;include\eventhandler.h: 42: maxInitEvents } initEvent;
-[; ;include\eventhandler.h: 45: void noAction (void);
-[; ;include\eventhandler.h: 46: void reInit (void);
-[; ;include\eventhandler.h: 47: void initS1_Timeout (void);
-[; ;include\eventhandler.h: 48: void initS2_Timeout (void);
-[; ;include\eventhandler.h: 49: void initS3_greenHigh (void);
-[; ;include\eventhandler.h: 50: void initS4_greenLow (void);
-[; ;include\eventhandler.h: 51: void initS5_redHigh (void);
-[; ;include\eventhandler.h: 52: void initS6_redLow (void);
-[; ;include\eventhandler.h: 53: void initS7_bothHigh (void);
-[; ;include\eventhandler.h: 54: void initS8_bothLow (void);
-[; ;include\eventhandler.h: 55: enum initEvents getInitEvent (void);
-[; ;include\eventhandler.h: 56: void setInitEvent( enum initEvents event);
-[v F2280 `*F2281 ~T0 @X0 . `E2243 8 t ]
-"59
-[v _initStateTable `CF2280 ~T0 @X0 . `E2231 9 e ]
+[; ;include\eventhandler.h: 31: maxInitStates
+[; ;include\eventhandler.h: 32: } initState;
+"44
+[v _initEvent `E2251 ~T0 @X0 1 e ]
+[; ;include\eventhandler.h: 34: enum initEvents {
+[; ;include\eventhandler.h: 35: noInitEvent,
+[; ;include\eventhandler.h: 36: initTimeoutEvent,
+[; ;include\eventhandler.h: 37: greenHighEvent,
+[; ;include\eventhandler.h: 38: greenLowEvent,
+[; ;include\eventhandler.h: 39: redHighEvent,
+[; ;include\eventhandler.h: 40: redLowEvent,
+[; ;include\eventhandler.h: 41: bothHighEvent,
+[; ;include\eventhandler.h: 42: bothLowEvent,
+[; ;include\eventhandler.h: 43: maxInitEvents
+[; ;include\eventhandler.h: 44: } initEvent;
+[; ;include\eventhandler.h: 47: void init_NoAction (void);
+[; ;include\eventhandler.h: 48: void init_Restart (void);
+[; ;include\eventhandler.h: 49: void initS1_Timeout (void);
+[; ;include\eventhandler.h: 50: void initS2_Timeout (void);
+[; ;include\eventhandler.h: 51: void initS3_greenHigh (void);
+[; ;include\eventhandler.h: 52: void initS4_greenLow (void);
+[; ;include\eventhandler.h: 53: void initS5_redHigh (void);
+[; ;include\eventhandler.h: 54: void initS6_redLow (void);
+[; ;include\eventhandler.h: 55: void initS7_bothHigh (void);
+[; ;include\eventhandler.h: 56: void initS8_bothLow (void);
+[; ;include\eventhandler.h: 57: enum initEvents getInitEvent (void);
+[v F2286 `*F2287 ~T0 @X0 . `E2251 8 t ]
+"60
+[v _initStateTable `CF2286 ~T0 @X0 . `E2239 9 e ]
 [i _initStateTable
 :U ..
 :U ..
-"62
-&U _noAction
-&U _initS1_Timeout
-&U _reInit
-&U _reInit
-&U _reInit
-&U _reInit
-&U _reInit
-&U _reInit
-..
-:U ..
 "63
-&U _noAction
-&U _initS2_Timeout
-&U _reInit
-&U _reInit
-&U _reInit
-&U _reInit
-&U _reInit
-&U _reInit
+&U _init_NoAction
+&U _initS1_Timeout
+&U _init_NoAction
+&U _init_NoAction
+&U _init_NoAction
+&U _init_NoAction
+&U _init_NoAction
+&U _init_NoAction
 ..
 :U ..
 "64
-&U _noAction
-&U _reInit
-&U _initS3_greenHigh
-&U _reInit
-&U _reInit
-&U _reInit
-&U _reInit
-&U _reInit
+&U _init_NoAction
+&U _initS2_Timeout
+&U _init_NoAction
+&U _init_NoAction
+&U _init_NoAction
+&U _init_NoAction
+&U _init_NoAction
+&U _init_NoAction
 ..
 :U ..
 "65
-&U _noAction
-&U _reInit
-&U _reInit
-&U _initS4_greenLow
-&U _reInit
-&U _reInit
-&U _reInit
-&U _reInit
+&U _init_NoAction
+&U _init_Restart
+&U _initS3_greenHigh
+&U _init_NoAction
+&U _init_NoAction
+&U _init_NoAction
+&U _init_NoAction
+&U _init_NoAction
 ..
 :U ..
 "66
-&U _noAction
-&U _reInit
-&U _reInit
-&U _reInit
-&U _initS5_redHigh
-&U _reInit
-&U _reInit
-&U _reInit
+&U _init_NoAction
+&U _init_Restart
+&U _init_NoAction
+&U _initS4_greenLow
+&U _init_NoAction
+&U _init_NoAction
+&U _init_NoAction
+&U _init_NoAction
 ..
 :U ..
 "67
-&U _noAction
-&U _reInit
-&U _reInit
-&U _reInit
-&U _reInit
-&U _initS6_redLow
-&U _reInit
-&U _reInit
+&U _init_NoAction
+&U _init_Restart
+&U _init_NoAction
+&U _init_NoAction
+&U _initS5_redHigh
+&U _init_NoAction
+&U _init_NoAction
+&U _init_NoAction
 ..
 :U ..
 "68
-&U _noAction
-&U _reInit
-&U _reInit
-&U _reInit
-&U _reInit
-&U _reInit
-&U _initS7_bothHigh
-&U _reInit
+&U _init_NoAction
+&U _init_Restart
+&U _init_NoAction
+&U _init_NoAction
+&U _init_NoAction
+&U _initS6_redLow
+&U _init_NoAction
+&U _init_NoAction
 ..
 :U ..
 "69
-&U _noAction
-&U _reInit
-&U _reInit
-&U _reInit
-&U _reInit
-&U _reInit
-&U _reInit
-&U _initS8_bothLow
+&U _init_NoAction
+&U _init_Restart
+&U _init_NoAction
+&U _init_NoAction
+&U _init_NoAction
+&U _init_NoAction
+&U _initS7_bothHigh
+&U _init_NoAction
 ..
 :U ..
 "70
-&U _noAction
-&U _reInit
-&U _noAction
-&U _noAction
-&U _noAction
-&U _noAction
-&U _noAction
-&U _noAction
+&U _init_NoAction
+&U _init_Restart
+&U _init_NoAction
+&U _init_NoAction
+&U _init_NoAction
+&U _init_NoAction
+&U _init_NoAction
+&U _initS8_bothLow
+..
+:U ..
+"71
+&U _init_NoAction
+&U _init_Restart
+&U _init_NoAction
+&U _init_NoAction
+&U _init_NoAction
+&U _init_NoAction
+&U _init_NoAction
+&U _init_NoAction
 ..
 ..
 ]
-[; ;include\eventhandler.h: 59: void (*const initStateTable [maxInitStates][maxInitEvents]) (void) = {
-[; ;include\eventhandler.h: 62: { noAction, initS1_Timeout, reInit, reInit, reInit, reInit, reInit, reInit },
-[; ;include\eventhandler.h: 63: { noAction, initS2_Timeout, reInit, reInit, reInit, reInit, reInit, reInit },
-[; ;include\eventhandler.h: 64: { noAction, reInit, initS3_greenHigh, reInit, reInit, reInit, reInit, reInit },
-[; ;include\eventhandler.h: 65: { noAction, reInit, reInit, initS4_greenLow, reInit, reInit, reInit, reInit },
-[; ;include\eventhandler.h: 66: { noAction, reInit, reInit, reInit, initS5_redHigh, reInit, reInit, reInit },
-[; ;include\eventhandler.h: 67: { noAction, reInit, reInit, reInit, reInit, initS6_redLow, reInit, reInit },
-[; ;include\eventhandler.h: 68: { noAction, reInit, reInit, reInit, reInit, reInit, initS7_bothHigh, reInit },
-[; ;include\eventhandler.h: 69: { noAction, reInit, reInit, reInit, reInit, reInit, reInit, initS8_bothLow },
-[; ;include\eventhandler.h: 70: { noAction, reInit, noAction, noAction, noAction, noAction, noAction, noAction }
-[; ;include\eventhandler.h: 71: };
+[; ;include\eventhandler.h: 60: void (*const initStateTable [maxInitStates][maxInitEvents]) (void) = {
+[; ;include\eventhandler.h: 63: { init_NoAction, initS1_Timeout, init_NoAction, init_NoAction, init_NoAction, init_NoAction, init_NoAction, init_NoAction },
+[; ;include\eventhandler.h: 64: { init_NoAction, initS2_Timeout, init_NoAction, init_NoAction, init_NoAction, init_NoAction, init_NoAction, init_NoAction },
+[; ;include\eventhandler.h: 65: { init_NoAction, init_Restart, initS3_greenHigh, init_NoAction, init_NoAction, init_NoAction, init_NoAction, init_NoAction },
+[; ;include\eventhandler.h: 66: { init_NoAction, init_Restart, init_NoAction, initS4_greenLow, init_NoAction, init_NoAction, init_NoAction, init_NoAction },
+[; ;include\eventhandler.h: 67: { init_NoAction, init_Restart, init_NoAction, init_NoAction, initS5_redHigh, init_NoAction, init_NoAction, init_NoAction },
+[; ;include\eventhandler.h: 68: { init_NoAction, init_Restart, init_NoAction, init_NoAction, init_NoAction, initS6_redLow, init_NoAction, init_NoAction },
+[; ;include\eventhandler.h: 69: { init_NoAction, init_Restart, init_NoAction, init_NoAction, init_NoAction, init_NoAction, initS7_bothHigh, init_NoAction },
+[; ;include\eventhandler.h: 70: { init_NoAction, init_Restart, init_NoAction, init_NoAction, init_NoAction, init_NoAction, init_NoAction, initS8_bothLow },
+[; ;include\eventhandler.h: 71: { init_NoAction, init_Restart, init_NoAction, init_NoAction, init_NoAction, init_NoAction, init_NoAction, init_NoAction }
+[; ;include\eventhandler.h: 72: };
+"80
+[v _runState `E2361 ~T0 @X0 1 e ]
+[; ;include\eventhandler.h: 74: enum runStates {
+[; ;include\eventhandler.h: 75: runS1,
+[; ;include\eventhandler.h: 76: runS2,
+[; ;include\eventhandler.h: 77: runS3,
+[; ;include\eventhandler.h: 78: runS4,
+[; ;include\eventhandler.h: 79: maxRunStates
+[; ;include\eventhandler.h: 80: } runState;
+"91
+[v _runEvent `E2368 ~T0 @X0 1 e ]
+[; ;include\eventhandler.h: 82: enum runEvents {
+[; ;include\eventhandler.h: 83: noRunEvent,
+[; ;include\eventhandler.h: 84: runTimeoutEvent,
+[; ;include\eventhandler.h: 85: initialisedEvent,
+[; ;include\eventhandler.h: 86: beepEvent,
+[; ;include\eventhandler.h: 87: greenFlashingEvent,
+[; ;include\eventhandler.h: 88: greenSteadyLowEvent,
+[; ;include\eventhandler.h: 89: errorEvent,
+[; ;include\eventhandler.h: 90: maxRunEvents
+[; ;include\eventhandler.h: 91: } runEvent;
+[; ;include\eventhandler.h: 93: void run_NoAction (void);
+[; ;include\eventhandler.h: 94: void runS1_Error (void);
+[; ;include\eventhandler.h: 95: void runS1_Timeout (void);
+[; ;include\eventhandler.h: 96: void runS1_Initialised (void);
+[; ;include\eventhandler.h: 97: void runS2_Error (void);
+[; ;include\eventhandler.h: 98: void runS2_Timeout (void);
+[; ;include\eventhandler.h: 99: void runS2_BeepReceived (void);
+[; ;include\eventhandler.h: 100: void runS3_Error (void);
+[; ;include\eventhandler.h: 101: void runS3_Timeout (void);
+[; ;include\eventhandler.h: 102: void runS3_GreenFlashing (void);
+[; ;include\eventhandler.h: 103: void runS4_Error (void);
+[; ;include\eventhandler.h: 104: void runS4_Timeout (void);
+[; ;include\eventhandler.h: 105: void runS4_GreenSteadyLow (void);
+[; ;include\eventhandler.h: 107: enum runEvents getRunEvent (void);
+[v F2408 `*F2409 ~T0 @X0 . `E2368 7 t ]
+"110
+[v _runStateTable `CF2408 ~T0 @X0 . `E2361 4 e ]
+[i _runStateTable
+:U ..
+:U ..
+"113
+&U _run_NoAction
+&U _runS1_Timeout
+&U _runS1_Initialised
+&U _runS1_Error
+&U _runS1_Error
+&U _run_NoAction
+&U _runS1_Error
+..
+:U ..
+"114
+&U _run_NoAction
+&U _runS2_Timeout
+&U _runS2_Error
+&U _runS2_BeepReceived
+&U _runS2_Error
+&U _run_NoAction
+&U _runS2_Error
+..
+:U ..
+"115
+&U _run_NoAction
+&U _runS3_Timeout
+&U _runS3_Error
+&U _runS3_Error
+&U _runS3_GreenFlashing
+&U _run_NoAction
+&U _runS3_Error
+..
+:U ..
+"116
+&U _run_NoAction
+&U _runS4_Timeout
+&U _runS3_Error
+&U _runS3_Error
+&U _run_NoAction
+&U _runS4_GreenSteadyLow
+&U _runS4_Error
+..
+..
+]
+[; ;include\eventhandler.h: 110: void (*const runStateTable [maxRunStates][maxRunEvents]) (void) = {
+[; ;include\eventhandler.h: 113: { run_NoAction, runS1_Timeout, runS1_Initialised, runS1_Error, runS1_Error, run_NoAction, runS1_Error },
+[; ;include\eventhandler.h: 114: { run_NoAction, runS2_Timeout, runS2_Error, runS2_BeepReceived, runS2_Error, run_NoAction, runS2_Error },
+[; ;include\eventhandler.h: 115: { run_NoAction, runS3_Timeout, runS3_Error, runS3_Error, runS3_GreenFlashing, run_NoAction, runS3_Error },
+[; ;include\eventhandler.h: 116: { run_NoAction, runS4_Timeout, runS3_Error, runS3_Error, run_NoAction, runS4_GreenSteadyLow, runS4_Error }
+[; ;include\eventhandler.h: 117: };
 [; ;include\led.h: 13: void setLED ( void );
 [; ;include\led.h: 14: void clearLED ( void );
 [; ;include\led.h: 15: void flashLED ( int period );

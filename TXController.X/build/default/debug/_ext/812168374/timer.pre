@@ -1,5 +1,5 @@
 
-# 1 "../source/LED.c"
+# 1 "../source/timer.c"
 
 # 26 "C:\Program Files (x86)\Microchip\xc8\v1.41\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -2914,66 +2914,159 @@ extern void longTimerLock( LTTimerIndex );
 
 void timerInterrupt( void );
 
-# 13 "../include\led.h"
-void setLED ( void );
-void clearLED ( void );
-void flashLED ( int period );
+# 11 "../source/timer.c"
+unsigned int timers[8];
+unsigned int delayTimer;
+unsigned char numTimers;
+unsigned long longTimers[1];
+unsigned char numLongTimers;
 
-void LEDInit (void);
-void LEDService (void);
-
-# 14 "../source/LED.c"
-BYTE LEDTimer = 0;
-bool flasherToggle = 0;
-INT16 flashRate = 1000;
-bool flashing = 0;
-
-void setLED ()
+# 25
+void timerInit( void )
 {
-flashing = 0;
-PORTAbits.RA5 = 0;
+numTimers = 0;
+numLongTimers = 0;
+
+T1GCONbits.TMR1GE = 0;
+
+T1CONbits.TMR1CS1 = 0;
+T1CONbits.TMR1CS0 = 1;
+T1CONbits.T1CKPS1 = 0;
+T1CONbits.T1CKPS0 = 0;
+
+TMR1 = 32000;
+
+PIE1bits.TMR1IE = 1;
+
+INTCONbits.PEIE = 1;
+T1CONbits.TMR1ON = 1;
 }
 
-void clearLED ()
+# 54
+void timerInterrupt( void )
 {
-flashing = 0;
-PORTAbits.RA5 = 1;
+unsigned char i;
+
+if ( PIE1bits.TMR1IE && PIR1bits.TMR1IF )
+{
+T1CONbits.TMR1ON = 0;
+if ( ( delayTimer != 0 ) )
+{
+delayTimer--;
 }
 
-void flashLED ( int period)
+for ( i = 0; i < numTimers; i++ )
 {
-flashing = !0;
-PORTAbits.RA5 = 0;
-flashRate = period;
-flasherToggle = !0;
-}
-
-
-void LEDInit ()
+if ( ( timers[i] != 0 ) && ( timers[i] != 0xFFFF ) )
 {
-LEDTimer = timerGet ();
-
-timerSet( LEDTimer, flashRate );
-}
-
-void LEDService ()
-{
-if (flashing)
-{
-if ( timerRead(LEDTimer) == 0 )
-{
-if (flasherToggle)
-{
-flasherToggle = 0;
-PORTAbits.RA5 = 1;
-}
-else
-{
-flasherToggle = !0;
-PORTAbits.RA5 = 0;
-}
-timerSet( LEDTimer, flashRate );
-}
+timers[i]--;
 }
 }
 
+for ( i = 0; i < numLongTimers; i++ )
+{
+if ( ( longTimers[i] != 0 ) && ( longTimers[i] != 0xFFFFFFFF ) )
+{
+longTimers[i]--;
+}
+}
+
+
+
+TMR1 = 32000;
+T1CONbits.TMR1ON = 1;
+PIR1bits.TMR1IF = 0;
+
+
+}
+}
+
+# 99
+TTimerIndex timerGet( void )
+{
+TTimerIndex result;
+
+result = numTimers;
+numTimers++;
+timerLock( result );
+return ( result );
+}
+
+# 118
+void timerSet( TTimerIndex index, unsigned int duration )
+{
+if ( index < numTimers )
+{
+timers[index] = duration;
+}
+}
+
+# 134
+unsigned int timerRead( TTimerIndex index )
+{
+unsigned int result = 0xFFFF;
+if ( index < numTimers )
+{
+result = timers[index];
+}
+return ( result );
+}
+
+# 152
+void timerLock( TTimerIndex index )
+{
+if ( index < numTimers )
+{
+timers[index] = 0xFFFF;
+}
+}
+
+# 168
+void timerDelay( unsigned int duration )
+{
+delayTimer = duration;
+while ( delayTimer != 0)
+{
+continue;
+}
+}
+
+# 184
+LTTimerIndex longTimerGet( void )
+{
+LTTimerIndex result;
+
+result = numLongTimers;
+numLongTimers++;
+longTimerLock( result );
+return ( result );
+}
+
+# 203
+void longTimerSet( LTTimerIndex index, unsigned long duration )
+{
+if ( index < numLongTimers )
+{
+longTimers[index] = duration;
+}
+}
+
+# 219
+unsigned long longTimerRead( LTTimerIndex index )
+{
+unsigned long result = 0xFFFFFFFF;
+if ( index < numLongTimers )
+{
+result = longTimers[index];
+}
+return ( result );
+}
+
+# 237
+void longTimerLock( LTTimerIndex index )
+{
+if ( index < numLongTimers )
+{
+longTimers[index] = 0xFFFFFFFF;
+}
+}

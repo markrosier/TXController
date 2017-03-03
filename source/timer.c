@@ -8,9 +8,14 @@
 #include "system.h"
 #include "timer.h"
 
+unsigned int systick = 0;  // this is updated every timer interrupt 
+// so a record can be kept for time between 2 events obviously the longest
+// time you can measure between the 2 events is less than 65535 ms
 unsigned int timers[MAX_TIMERS];
 unsigned int delayTimer;
 unsigned char numTimers;
+unsigned long longTimers[MAX_LONG_TIMERS];
+unsigned char numLongTimers;
 
 
 //*****************************************************************************
@@ -23,6 +28,7 @@ unsigned char numTimers;
 void timerInit( void )
 {
   numTimers = 0;
+  numLongTimers = 0;
 
   T1GCONbits.TMR1GE = 0;
 
@@ -68,6 +74,18 @@ void timerInterrupt( void )
       }
     }
 
+    for ( i = 0; i < numLongTimers; i++ )
+    {
+      if ( ( longTimers[i] != 0 ) && ( longTimers[i] != 0xFFFFFFFF ) )
+      {
+        longTimers[i]--;
+      }
+    }
+    
+    // increment the ms tick counter
+    systick++;
+    
+    
     TMR1 = TIMER_1MS_COUNT;
     T1CONbits.TMR1ON = 1;
     PIR1bits.TMR1IF = 0;
@@ -161,3 +179,70 @@ void timerDelay( unsigned int duration )
   }
 }
 
+//*****************************************************************************
+//*	Function:	longTimerGet
+//*	Arguments:	None
+//*	Action:		Assign the next long timer
+//*	Returns:	LTTimerIndex - the timer id
+//*****************************************************************************
+
+LTTimerIndex longTimerGet( void )
+{
+  LTTimerIndex result;
+
+  result = numLongTimers;
+  numLongTimers++;
+  longTimerLock( result );
+  return ( result );
+}
+
+//*****************************************************************************
+//*	Function:	longTimerSet
+//*	Arguments:	
+//*				LTTimerIndex Index - the timer id
+//*				unsigned long Duration - required duration (ms)
+//*	Action:		Set the specified long timer
+//*	Returns:	None
+//*****************************************************************************
+
+void longTimerSet( LTTimerIndex index, unsigned long duration )
+{
+  if ( index < numLongTimers )
+  {
+    longTimers[index] = duration;
+  }
+}
+
+//*****************************************************************************
+//*	Function:	longTimerRead
+//*	Arguments:	
+//*				LTTimerIndex Index - the long timer id
+//*	Action:		Read remaining time for the specified long timer
+//*	Returns:	Duration - remaining duration (ms)
+//*****************************************************************************
+
+unsigned long longTimerRead( LTTimerIndex index )
+{
+  unsigned long result = 0xFFFFFFFF;
+  if ( index < numLongTimers )
+  {
+    result = longTimers[index];
+  }
+  return ( result );
+}
+
+//*****************************************************************************
+//*	Function:	longTimerLock
+//*	Arguments:	
+//*				LTTimerIndex Index - the long timer id
+//*	Action:		Lock the specified long timer
+//*	Returns:	None
+//*****************************************************************************
+
+void longTimerLock( LTTimerIndex index )
+{
+  if ( index < numLongTimers )
+  {
+    longTimers[index] = 0xFFFFFFFF;
+  }
+}

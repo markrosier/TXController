@@ -2895,8 +2895,9 @@ typedef unsigned long DWORD;
 
 typedef unsigned char bool;
 
-# 20 "../include\timer.h"
+# 22 "../include\timer.h"
 typedef unsigned char TTimerIndex;
+typedef unsigned char LTTimerIndex;
 
 extern void timerInit( void );
 extern TTimerIndex timerGet( void );
@@ -2905,18 +2906,21 @@ extern unsigned int timerRead( TTimerIndex index );
 extern void timerLock( TTimerIndex index );
 extern void timerDelay( unsigned int Duration );
 
+extern LTTimerIndex longTimerGet( void );
+extern void longTimerSet( LTTimerIndex, unsigned long duration );
+extern unsigned long longTimerRead( LTTimerIndex );
+extern void longTimerLock( LTTimerIndex );
+
+
 void timerInterrupt( void );
 
 # 12 "../include\eventhandler.h"
 void initIOCInterrupt( void );
-void resetIOCInterrupt( void );
 void IOCInterrupt( void );
 void eventHandlerInit( void );
 void eventHandlerService( void );
 
-
-
-
+# 21
 enum initStates {
 initS1,
 initS2,
@@ -2927,22 +2931,24 @@ initS6,
 initS7,
 initS8,
 initialised,
-maxInitStates } initState;
+maxInitStates
+} initState;
 
 enum initEvents {
-noEvent,
-timeout,
+noInitEvent,
+initTimeoutEvent,
 greenHighEvent,
 greenLowEvent,
 redHighEvent,
 redLowEvent,
 bothHighEvent,
 bothLowEvent,
-maxInitEvents } initEvent;
+maxInitEvents
+} initEvent;
 
 
-void noAction (void);
-void reInit (void);
+void init_NoAction (void);
+void init_Restart (void);
 void initS1_Timeout (void);
 void initS2_Timeout (void);
 void initS3_greenHigh (void);
@@ -2952,21 +2958,65 @@ void initS6_redLow (void);
 void initS7_bothHigh (void);
 void initS8_bothLow (void);
 enum initEvents getInitEvent (void);
-void setInitEvent( enum initEvents event);
 
 
 void (*const initStateTable [maxInitStates][maxInitEvents]) (void) = {
 
 
-{ noAction, initS1_Timeout, reInit, reInit, reInit, reInit, reInit, reInit },
-{ noAction, initS2_Timeout, reInit, reInit, reInit, reInit, reInit, reInit },
-{ noAction, reInit, initS3_greenHigh, reInit, reInit, reInit, reInit, reInit },
-{ noAction, reInit, reInit, initS4_greenLow, reInit, reInit, reInit, reInit },
-{ noAction, reInit, reInit, reInit, initS5_redHigh, reInit, reInit, reInit },
-{ noAction, reInit, reInit, reInit, reInit, initS6_redLow, reInit, reInit },
-{ noAction, reInit, reInit, reInit, reInit, reInit, initS7_bothHigh, reInit },
-{ noAction, reInit, reInit, reInit, reInit, reInit, reInit, initS8_bothLow },
-{ noAction, reInit, noAction, noAction, noAction, noAction, noAction, noAction }
+{ init_NoAction, initS1_Timeout, init_NoAction, init_NoAction, init_NoAction, init_NoAction, init_NoAction, init_NoAction },
+{ init_NoAction, initS2_Timeout, init_NoAction, init_NoAction, init_NoAction, init_NoAction, init_NoAction, init_NoAction },
+{ init_NoAction, init_Restart, initS3_greenHigh, init_NoAction, init_NoAction, init_NoAction, init_NoAction, init_NoAction },
+{ init_NoAction, init_Restart, init_NoAction, initS4_greenLow, init_NoAction, init_NoAction, init_NoAction, init_NoAction },
+{ init_NoAction, init_Restart, init_NoAction, init_NoAction, initS5_redHigh, init_NoAction, init_NoAction, init_NoAction },
+{ init_NoAction, init_Restart, init_NoAction, init_NoAction, init_NoAction, initS6_redLow, init_NoAction, init_NoAction },
+{ init_NoAction, init_Restart, init_NoAction, init_NoAction, init_NoAction, init_NoAction, initS7_bothHigh, init_NoAction },
+{ init_NoAction, init_Restart, init_NoAction, init_NoAction, init_NoAction, init_NoAction, init_NoAction, initS8_bothLow },
+{ init_NoAction, init_Restart, init_NoAction, init_NoAction, init_NoAction, init_NoAction, init_NoAction, init_NoAction }
+};
+
+enum runStates {
+runS1,
+runS2,
+runS3,
+runS4,
+maxRunStates
+} runState;
+
+enum runEvents {
+noRunEvent,
+runTimeoutEvent,
+initialisedEvent,
+beepEvent,
+greenFlashingEvent,
+greenSteadyLowEvent,
+errorEvent,
+maxRunEvents
+} runEvent;
+
+void run_NoAction (void);
+void runS1_Error (void);
+void runS1_Timeout (void);
+void runS1_Initialised (void);
+void runS2_Error (void);
+void runS2_Timeout (void);
+void runS2_BeepReceived (void);
+void runS3_Error (void);
+void runS3_Timeout (void);
+void runS3_GreenFlashing (void);
+void runS4_Error (void);
+void runS4_Timeout (void);
+void runS4_GreenSteadyLow (void);
+
+enum runEvents getRunEvent (void);
+
+
+void (*const runStateTable [maxRunStates][maxRunEvents]) (void) = {
+
+
+{ run_NoAction, runS1_Timeout, runS1_Initialised, runS1_Error, runS1_Error, run_NoAction, runS1_Error },
+{ run_NoAction, runS2_Timeout, runS2_Error, runS2_BeepReceived, runS2_Error, run_NoAction, runS2_Error },
+{ run_NoAction, runS3_Timeout, runS3_Error, runS3_Error, runS3_GreenFlashing, run_NoAction, runS3_Error },
+{ run_NoAction, runS4_Timeout, runS3_Error, runS3_Error, run_NoAction, runS4_GreenSteadyLow, runS4_Error }
 };
 
 # 13 "../include\led.h"
@@ -2987,23 +3037,37 @@ void beepRepeatedly ( int period, int nBeeps );
 void beeperInit (void);
 void beeperService (void);
 
-# 19 "../source/eventhandler.c"
+# 18 "../source/eventhandler.c"
+extern unsigned int systick;
+
 BYTE eventHandlerTimer = 0;
-enum initEvents lastEvent = noEvent;
 int initSMTimer = 0;
+int runSMTimer = 0;
+int buzzerTimer = 0;
+int minuteTimer = 0;
+
+struct event {
+bool eventFlag;
+unsigned int eventTime;
+};
+
+struct event greenWentHigh, greenWentLow, redWentHigh, redWentLow;
+
+struct event chargerInitialised;
+
+
+
 
 void initIOCInterrupt( void )
 {
 INTCONbits.GIE = 1;
 IOCANbits.IOCAN3 = 1;
+IOCANbits.IOCAN2 = 1;
+IOCAPbits.IOCAP2 = 1;
+IOCANbits.IOCAN4 = 1;
+IOCAPbits.IOCAP4 = 1;
 INTCONbits.IOCIF = 0;
 INTCONbits.IOCIE = 1;
-INTCONbits.PEIE = 1;
-}
-
-void resetIOCInterrupt( void )
-{
-IOCAFbits.IOCAF3 = 0;
 INTCONbits.PEIE = 1;
 }
 
@@ -3017,20 +3081,52 @@ if (IOCAFbits.IOCAF3 == 1)
 
 
 
+timerSet( buzzerTimer, 2 );
 
 IOCAFbits.IOCAF3 = 0;
 }
+if (IOCAFbits.IOCAF2 == 1)
+{
+if (PORTAbits.RA2 == 1)
+{
+greenWentHigh.eventFlag = !0;
+greenWentHigh.eventTime = systick;
+}
+else
+{
+greenWentLow.eventFlag = !0;
+greenWentLow.eventTime = systick;
+}
+IOCAFbits.IOCAF2 = 0;
+}
+if (IOCAFbits.IOCAF4 == 1)
+{
+if (PORTAbits.RA4 == 1)
+{
+redWentHigh.eventFlag = !0;
+redWentHigh.eventTime = systick;
+}
+else
+{
+redWentLow.eventFlag = !0;
+redWentLow.eventTime = systick;
+}
+IOCAFbits.IOCAF4 = 0;
 }
 }
-
+}
 
 void eventHandlerInit ()
 {
 eventHandlerTimer = timerGet ();
 timerSet( eventHandlerTimer, 10 );
 initIOCInterrupt();
-initSMTimer = timerGet ();
-reInit();
+buzzerTimer = timerGet();
+initSMTimer = timerGet();
+runSMTimer = timerGet();
+minuteTimer = longTimerGet();
+init_Restart();
+
 }
 
 void eventHandlerService ()
@@ -3047,7 +3143,20 @@ initStateTable [initState][initEvent] ();
 } else
 {
 
-reInit();
+init_Restart();
+}
+
+runEvent = getRunEvent ();
+
+if (((runEvent >= 0) && (runEvent < maxRunEvents))
+&& ((runState >= 0) && (runState < maxRunStates))) {
+
+runStateTable [runState][runEvent] ();
+
+} else
+{
+
+init_Restart();
 }
 
 timerSet( eventHandlerTimer, 10 );
@@ -3055,21 +3164,26 @@ timerSet( eventHandlerTimer, 10 );
 }
 
 
-void noAction (void)
+void init_NoAction (void)
 {
 
 }
 
-void reInit (void)
+void init_Restart (void)
 {
-timerSet( initSMTimer, 100 * 1 );
+timerSet( initSMTimer, 2000 * 1 );
 LATAbits.LATA0 = 1;
 initState = initS1;
+greenWentHigh.eventFlag = 0;
+greenWentLow.eventFlag = 0;
+redWentHigh.eventFlag = 0;
+redWentLow.eventFlag = 0;
+runState = runS1;
 }
 
 void initS1_Timeout (void)
 {
-timerSet( initSMTimer, 100 * 1 );
+timerSet( initSMTimer, 2000 * 1 );
 LATAbits.LATA0 = 0;
 initState = initS2;
 }
@@ -3077,40 +3191,39 @@ initState = initS2;
 void initS2_Timeout (void)
 {
 
-
-
-
-timerSet( initSMTimer, 15 * 1000 );
+# 175
+timerLock( initSMTimer );
+longTimerSet( minuteTimer, (DWORD) 10 * 60 * 1000);
 initState = initialised;
 }
 
 void initS3_greenHigh (void)
 {
-timerSet( initSMTimer, 100 * 1 );
+timerSet( initSMTimer, 2000 * 1 );
 initState = initS4;
 }
 
 void initS4_greenLow (void)
 {
-timerSet( initSMTimer, 100 * 1 );
+timerSet( initSMTimer, 2000 * 1 );
 initState = initS5;
 }
 
 void initS5_redHigh (void)
 {
-timerSet( initSMTimer, 100 * 1 );
+timerSet( initSMTimer, 2000 * 1 );
 initState = initS6;
 }
 
 void initS6_redLow (void)
 {
-timerSet( initSMTimer, 100 * 1 );
+timerSet( initSMTimer, 2000 * 1 );
 initState = initS7;
 }
 
 void initS7_bothHigh (void)
 {
-timerSet( initSMTimer, 100 * 1 );
+timerSet( initSMTimer, 2000 * 1 );
 initState = initS8;
 }
 
@@ -3118,6 +3231,8 @@ void initS8_bothLow (void)
 {
 timerLock( initSMTimer );
 initState = initialised;
+chargerInitialised.eventFlag = !0;
+chargerInitialised.eventTime = systick;
 beepRepeatedly(500, 5);
 }
 
@@ -3126,13 +3241,180 @@ enum initEvents getInitEvent (void)
 if ( timerRead(initSMTimer) == 0 )
 {
 timerLock( initSMTimer );
-return timeout;
+return initTimeoutEvent;
+}
+else if ( redWentHigh.eventFlag )
+{
+
+if (greenWentHigh.eventFlag )
+{
+if ( systick - greenWentHigh.eventTime >= 2)
+{
+greenWentHigh.eventFlag = 0;
+redWentHigh.eventFlag = 0;
+return bothHighEvent;
+}
 }
 else
-return lastEvent;
+{
+redWentHigh.eventFlag = 0;
+return redHighEvent;
+}
+}
+else if ( redWentLow.eventFlag )
+{
+if (greenWentLow.eventFlag )
+{
+if ( systick - greenWentLow.eventTime >= 2)
+{
+greenWentLow.eventFlag = 0;
+redWentLow.eventFlag = 0;
+return bothLowEvent;
+}
+}
+else
+{
+redWentLow.eventFlag = 0;
+return redLowEvent;
+}
+}
+else if ( greenWentHigh.eventFlag )
+{
+if (redWentHigh.eventFlag )
+{
+if ( systick - redWentHigh.eventTime >= 2)
+{
+greenWentHigh.eventFlag = 0;
+redWentHigh.eventFlag = 0;
+return bothHighEvent;
+}
+}
+else
+{
+greenWentHigh.eventFlag = 0;
+return greenHighEvent;
 }
 
-void setInitEvent ( enum initEvents event) {
-lastEvent = event;
+}
+else if ( greenWentLow.eventFlag )
+{
+if (redWentLow.eventFlag )
+{
+if ( systick - redWentLow.eventTime >= 2)
+{
+greenWentLow.eventFlag = 0;
+redWentLow.eventFlag = 0;
+return bothLowEvent;
+}
+}
+else
+{
+greenWentLow.eventFlag = 0;
+return greenLowEvent;
+}
+}
+
+return noInitEvent;
+
+}
+
+void run_NoAction (void)
+{
+
+}
+
+void runS1_Error (void)
+{
+
+}
+
+void runS1_Timeout (void)
+{
+
+}
+
+void runS1_Initialised (void)
+{
+beepRepeatedly ( 200, 5);
+}
+
+void runS2_Error (void)
+{
+
+}
+
+void runS2_Timeout (void)
+{
+
+}
+
+void runS2_BeepReceived (void)
+{
+
+}
+
+void runS3_Error (void)
+{
+
+}
+
+void runS3_Timeout (void)
+{
+
+}
+
+void runS3_GreenFlashing (void)
+{
+
+}
+
+void runS4_Error (void)
+{
+
+}
+
+void runS4_Timeout (void)
+{
+
+}
+
+void runS4_GreenSteadyLow (void)
+{
+
+}
+
+bool ttog = 0;
+
+enum runEvents getRunEvent(void)
+{
+if ( timerRead(runSMTimer) == 0 )
+{
+timerLock( runSMTimer );
+return runTimeoutEvent;
+}
+else if (timerRead(buzzerTimer) == 0 )
+{
+timerLock( buzzerTimer );
+if (ttog) {
+clearLED();
+ttog = 0;
+} else {
+setLED();
+ttog = !0;
+}
+return beepEvent;
+}
+else if (longTimerRead(minuteTimer) == 0)
+{
+longTimerLock( minuteTimer );
+return runTimeoutEvent;
+}
+else if ( chargerInitialised.eventFlag )
+{
+chargerInitialised.eventFlag = 0;
+return initialisedEvent;
+}
+else
+return noRunEvent;
 }
 

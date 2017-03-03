@@ -1,5 +1,5 @@
 
-# 1 "../source/LED.c"
+# 1 "../source/interrupt.c"
 
 # 26 "C:\Program Files (x86)\Microchip\xc8\v1.41\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -2914,66 +2914,148 @@ extern void longTimerLock( LTTimerIndex );
 
 void timerInterrupt( void );
 
-# 13 "../include\led.h"
-void setLED ( void );
-void clearLED ( void );
-void flashLED ( int period );
+# 16 "../include\interrupt.h"
+void initInterrupt( void );
+void disableInterrupts( void );
+void enableInterrupts( void );
 
-void LEDInit (void);
-void LEDService (void);
+# 12 "../include\eventhandler.h"
+void initIOCInterrupt( void );
+void IOCInterrupt( void );
+void eventHandlerInit( void );
+void eventHandlerService( void );
 
-# 14 "../source/LED.c"
-BYTE LEDTimer = 0;
-bool flasherToggle = 0;
-INT16 flashRate = 1000;
-bool flashing = 0;
+# 21
+enum initStates {
+initS1,
+initS2,
+initS3,
+initS4,
+initS5,
+initS6,
+initS7,
+initS8,
+initialised,
+maxInitStates
+} initState;
 
-void setLED ()
+enum initEvents {
+noInitEvent,
+initTimeoutEvent,
+greenHighEvent,
+greenLowEvent,
+redHighEvent,
+redLowEvent,
+bothHighEvent,
+bothLowEvent,
+maxInitEvents
+} initEvent;
+
+
+void init_NoAction (void);
+void init_Restart (void);
+void initS1_Timeout (void);
+void initS2_Timeout (void);
+void initS3_greenHigh (void);
+void initS4_greenLow (void);
+void initS5_redHigh (void);
+void initS6_redLow (void);
+void initS7_bothHigh (void);
+void initS8_bothLow (void);
+enum initEvents getInitEvent (void);
+void setInitEvent( enum initEvents event);
+
+
+void (*const initStateTable [maxInitStates][maxInitEvents]) (void) = {
+
+
+{ init_NoAction, initS1_Timeout, init_Restart, init_Restart, init_Restart, init_Restart, init_Restart, init_Restart },
+{ init_NoAction, initS2_Timeout, init_Restart, init_Restart, init_Restart, init_Restart, init_Restart, init_Restart },
+{ init_NoAction, init_Restart, initS3_greenHigh, init_Restart, init_Restart, init_Restart, init_Restart, init_Restart },
+{ init_NoAction, init_Restart, init_Restart, initS4_greenLow, init_Restart, init_Restart, init_Restart, init_Restart },
+{ init_NoAction, init_Restart, init_Restart, init_Restart, initS5_redHigh, init_Restart, init_Restart, init_Restart },
+{ init_NoAction, init_Restart, init_Restart, init_Restart, init_Restart, initS6_redLow, init_Restart, init_Restart },
+{ init_NoAction, init_Restart, init_Restart, init_Restart, init_Restart, init_Restart, initS7_bothHigh, init_Restart },
+{ init_NoAction, init_Restart, init_Restart, init_Restart, init_Restart, init_Restart, init_Restart, initS8_bothLow },
+{ init_NoAction, init_Restart, init_NoAction, init_NoAction, init_NoAction, init_NoAction, init_NoAction, init_NoAction }
+};
+
+enum runStates {
+runS1,
+runS2,
+runS3,
+runS4,
+maxRunStates
+} runState;
+
+enum runEvents {
+noRunEvent,
+runTimeoutEvent,
+initialisedEvent,
+beepEvent,
+greenFlashingEvent,
+greenSteadyLowEvent,
+errorEvent,
+maxRunEvents
+} runEvent;
+
+void run_NoAction (void);
+void runS1_Error (void);
+void runS1_Timeout (void);
+void runS1_Initialised (void);
+void runS2_Error (void);
+void runS2_Timeout (void);
+void runS2_BeepReceived (void);
+void runS3_Error (void);
+void runS3_Timeout (void);
+void runS3_GreenFlashing (void);
+void runS4_Error (void);
+void runS4_Timeout (void);
+void runS4_GreenSteadyLow (void);
+
+enum runEvents getRunEvent (void);
+void setRunEvent( enum runEvents event);
+
+
+void (*const runStateTable [maxRunStates][maxRunEvents]) (void) = {
+
+
+{ run_NoAction, runS1_Timeout, runS1_Initialised, runS1_Error, runS1_Error, run_NoAction, runS1_Error },
+{ run_NoAction, runS2_Timeout, runS2_Error, runS2_BeepReceived, runS2_Error, run_NoAction, runS2_Error },
+{ run_NoAction, runS3_Timeout, runS3_Error, runS3_Error, runS3_GreenFlashing, run_NoAction, runS3_Error },
+{ run_NoAction, runS4_Timeout, runS3_Error, runS3_Error, run_NoAction, runS4_GreenSteadyLow, runS4_Error }
+};
+
+# 12 "../include\beeper.h"
+void timer2Interrupt( void );
+
+void setBeeper ( void );
+void clearBeeper ( void );
+void beepRepeatedly ( int period, int nBeeps );
+
+void beeperInit (void);
+void beeperService (void);
+
+# 16 "../source/interrupt.c"
+void initInterrupt( void )
 {
-flashing = 0;
-PORTAbits.RA5 = 0;
+INTCONbits.PEIE = 1;
+INTCONbits.GIE = 1;
 }
 
-void clearLED ()
+void disableInterrupts( void )
 {
-flashing = 0;
-PORTAbits.RA5 = 1;
+INTCONbits.GIE = 0;
 }
 
-void flashLED ( int period)
+void enableInterrupts( void )
 {
-flashing = !0;
-PORTAbits.RA5 = 0;
-flashRate = period;
-flasherToggle = !0;
+INTCONbits.GIE = 1;
 }
 
-
-void LEDInit ()
+void interrupt ISRCode( )
 {
-LEDTimer = timerGet ();
-
-timerSet( LEDTimer, flashRate );
+IOCInterrupt();
+timerInterrupt( );
+timer2Interrupt();
 }
-
-void LEDService ()
-{
-if (flashing)
-{
-if ( timerRead(LEDTimer) == 0 )
-{
-if (flasherToggle)
-{
-flasherToggle = 0;
-PORTAbits.RA5 = 1;
-}
-else
-{
-flasherToggle = !0;
-PORTAbits.RA5 = 0;
-}
-timerSet( LEDTimer, flashRate );
-}
-}
-}
-

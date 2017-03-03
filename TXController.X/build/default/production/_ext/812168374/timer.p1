@@ -50,8 +50,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S39 . . ]
 "718
 [v _PIR1bits `VS39 ~T0 @X0 0 e@17 ]
-"26 ../include\timer.h
+"29 ../include\timer.h
 [v _timerLock `(v ~T0 @X0 0 ef1`uc ]
+"35
+[v _longTimerLock `(v ~T0 @X0 0 ef1`uc ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -2181,300 +2183,476 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;include\system.h: 16: typedef unsigned int WORD;
 [; ;include\system.h: 17: typedef unsigned long DWORD;
 [; ;include\system.h: 19: typedef unsigned char bool;
-[; ;include\timer.h: 20: typedef unsigned char TTimerIndex;
-[; ;include\timer.h: 22: extern void timerInit( void );
-[; ;include\timer.h: 23: extern TTimerIndex timerGet( void );
-[; ;include\timer.h: 24: extern void timerSet( TTimerIndex index, unsigned int duration );
-[; ;include\timer.h: 25: extern unsigned int timerRead( TTimerIndex index );
-[; ;include\timer.h: 26: extern void timerLock( TTimerIndex index );
-[; ;include\timer.h: 27: extern void timerDelay( unsigned int Duration );
-[; ;include\timer.h: 29: void timerInterrupt( void );
+[; ;include\timer.h: 22: typedef unsigned char TTimerIndex;
+[; ;include\timer.h: 23: typedef unsigned char LTTimerIndex;
+[; ;include\timer.h: 25: extern void timerInit( void );
+[; ;include\timer.h: 26: extern TTimerIndex timerGet( void );
+[; ;include\timer.h: 27: extern void timerSet( TTimerIndex index, unsigned int duration );
+[; ;include\timer.h: 28: extern unsigned int timerRead( TTimerIndex index );
+[; ;include\timer.h: 29: extern void timerLock( TTimerIndex index );
+[; ;include\timer.h: 30: extern void timerDelay( unsigned int Duration );
+[; ;include\timer.h: 32: extern LTTimerIndex longTimerGet( void );
+[; ;include\timer.h: 33: extern void longTimerSet( LTTimerIndex, unsigned long duration );
+[; ;include\timer.h: 34: extern unsigned long longTimerRead( LTTimerIndex );
+[; ;include\timer.h: 35: extern void longTimerLock( LTTimerIndex );
+[; ;include\timer.h: 38: void timerInterrupt( void );
 "11 ../source/timer.c
-[v _timers `ui ~T0 @X0 -> 16 `i e ]
-[; ;timer.c: 11: unsigned int timers[16];
-"12
+[v _systick `ui ~T0 @X0 1 e ]
+[i _systick
+-> -> 0 `i `ui
+]
+[; ;timer.c: 11: unsigned int systick = 0;
+"14
+[v _timers `ui ~T0 @X0 -> 10 `i e ]
+[; ;timer.c: 14: unsigned int timers[10];
+"15
 [v _delayTimer `ui ~T0 @X0 1 e ]
-[; ;timer.c: 12: unsigned int delayTimer;
-"13
+[; ;timer.c: 15: unsigned int delayTimer;
+"16
 [v _numTimers `uc ~T0 @X0 1 e ]
-[; ;timer.c: 13: unsigned char numTimers;
-"23
+[; ;timer.c: 16: unsigned char numTimers;
+"17
+[v _longTimers `ul ~T0 @X0 -> -> 1 `i `ux e ]
+[; ;timer.c: 17: unsigned long longTimers[1];
+"18
+[v _numLongTimers `uc ~T0 @X0 1 e ]
+[; ;timer.c: 18: unsigned char numLongTimers;
+"28
 [v _timerInit `(v ~T0 @X0 1 ef ]
-"24
+"29
 {
-[; ;timer.c: 23: void timerInit( void )
-[; ;timer.c: 24: {
+[; ;timer.c: 28: void timerInit( void )
+[; ;timer.c: 29: {
 [e :U _timerInit ]
 [f ]
-[; ;timer.c: 25: numTimers = 0;
-"25
-[e = _numTimers -> -> 0 `i `uc ]
-[; ;timer.c: 27: T1GCONbits.TMR1GE = 0;
-"27
-[e = . . _T1GCONbits 0 7 -> -> 0 `i `uc ]
-[; ;timer.c: 29: T1CONbits.TMR1CS1 = 0;
-"29
-[e = . . _T1CONbits 0 7 -> -> 0 `i `uc ]
-[; ;timer.c: 30: T1CONbits.TMR1CS0 = 1;
+[; ;timer.c: 30: numTimers = 0;
 "30
-[e = . . _T1CONbits 0 6 -> -> 1 `i `uc ]
-[; ;timer.c: 31: T1CONbits.T1CKPS1 = 0;
+[e = _numTimers -> -> 0 `i `uc ]
+[; ;timer.c: 31: numLongTimers = 0;
 "31
-[e = . . _T1CONbits 0 5 -> -> 0 `i `uc ]
-[; ;timer.c: 32: T1CONbits.T1CKPS0 = 0;
-"32
-[e = . . _T1CONbits 0 4 -> -> 0 `i `uc ]
-[; ;timer.c: 34: TMR1 = 32000;
-"34
-[e = _TMR1 -> -> 32000 `i `us ]
-[; ;timer.c: 36: PIE1bits.TMR1IE = 1;
+[e = _numLongTimers -> -> 0 `i `uc ]
+[; ;timer.c: 33: T1GCONbits.TMR1GE = 0;
+"33
+[e = . . _T1GCONbits 0 7 -> -> 0 `i `uc ]
+[; ;timer.c: 35: T1CONbits.TMR1CS1 = 0;
+"35
+[e = . . _T1CONbits 0 7 -> -> 0 `i `uc ]
+[; ;timer.c: 36: T1CONbits.TMR1CS0 = 1;
 "36
-[e = . . _PIE1bits 0 0 -> -> 1 `i `uc ]
-[; ;timer.c: 38: INTCONbits.PEIE = 1;
+[e = . . _T1CONbits 0 6 -> -> 1 `i `uc ]
+[; ;timer.c: 37: T1CONbits.T1CKPS1 = 0;
+"37
+[e = . . _T1CONbits 0 5 -> -> 0 `i `uc ]
+[; ;timer.c: 38: T1CONbits.T1CKPS0 = 0;
 "38
-[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-[; ;timer.c: 39: T1CONbits.TMR1ON = 1;
-"39
-[e = . . _T1CONbits 0 0 -> -> 1 `i `uc ]
-[; ;timer.c: 40: }
+[e = . . _T1CONbits 0 4 -> -> 0 `i `uc ]
+[; ;timer.c: 40: TMR1 = 32000;
 "40
+[e = _TMR1 -> -> 32000 `i `us ]
+[; ;timer.c: 42: PIE1bits.TMR1IE = 1;
+"42
+[e = . . _PIE1bits 0 0 -> -> 1 `i `uc ]
+[; ;timer.c: 44: INTCONbits.PEIE = 1;
+"44
+[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
+[; ;timer.c: 45: T1CONbits.TMR1ON = 1;
+"45
+[e = . . _T1CONbits 0 0 -> -> 1 `i `uc ]
+[; ;timer.c: 46: }
+"46
 [e :UE 269 ]
 }
-"51
+"57
 [v _timerInterrupt `(v ~T0 @X0 1 ef ]
-"52
+"58
 {
-[; ;timer.c: 51: void timerInterrupt( void )
-[; ;timer.c: 52: {
+[; ;timer.c: 57: void timerInterrupt( void )
+[; ;timer.c: 58: {
 [e :U _timerInterrupt ]
 [f ]
-"53
-[v _i `uc ~T0 @X0 1 a ]
-[; ;timer.c: 53: unsigned char i;
-[; ;timer.c: 55: if ( PIE1bits.TMR1IE && PIR1bits.TMR1IF )
-"55
-[e $ ! && != -> . . _PIE1bits 0 0 `i -> -> -> 0 `i `Vuc `i != -> . . _PIR1bits 0 0 `i -> -> -> 0 `i `Vuc `i 271  ]
-[; ;timer.c: 56: {
-"56
-{
-[; ;timer.c: 57: T1CONbits.TMR1ON = 0;
-"57
-[e = . . _T1CONbits 0 0 -> -> 0 `i `uc ]
-[; ;timer.c: 58: if ( ( delayTimer != 0 ) )
-"58
-[e $ ! != _delayTimer -> -> 0 `i `ui 272  ]
-[; ;timer.c: 59: {
 "59
-{
-[; ;timer.c: 60: delayTimer--;
-"60
-[e -- _delayTimer -> -> 1 `i `ui ]
+[v _i `uc ~T0 @X0 1 a ]
+[; ;timer.c: 59: unsigned char i;
+[; ;timer.c: 61: if ( PIE1bits.TMR1IE && PIR1bits.TMR1IF )
 "61
+[e $ ! && != -> . . _PIE1bits 0 0 `i -> -> -> 0 `i `Vuc `i != -> . . _PIR1bits 0 0 `i -> -> -> 0 `i `Vuc `i 271  ]
+[; ;timer.c: 62: {
+"62
+{
+[; ;timer.c: 63: T1CONbits.TMR1ON = 0;
+"63
+[e = . . _T1CONbits 0 0 -> -> 0 `i `uc ]
+[; ;timer.c: 64: if ( ( delayTimer != 0 ) )
+"64
+[e $ ! != _delayTimer -> -> 0 `i `ui 272  ]
+[; ;timer.c: 65: {
+"65
+{
+[; ;timer.c: 66: delayTimer--;
+"66
+[e -- _delayTimer -> -> 1 `i `ui ]
+"67
 }
 [e :U 272 ]
-[; ;timer.c: 61: }
-[; ;timer.c: 63: for ( i = 0; i < numTimers; i++ )
-"63
+[; ;timer.c: 67: }
+[; ;timer.c: 69: for ( i = 0; i < numTimers; i++ )
+"69
 {
 [e = _i -> -> 0 `i `uc ]
 [e $U 276  ]
-"64
+"70
 [e :U 273 ]
-[; ;timer.c: 64: {
+[; ;timer.c: 70: {
 {
-[; ;timer.c: 65: if ( ( timers[i] != 0 ) && ( timers[i] != 0xFFFF ) )
-"65
+[; ;timer.c: 71: if ( ( timers[i] != 0 ) && ( timers[i] != 0xFFFF ) )
+"71
 [e $ ! && != *U + &U _timers * -> _i `ux -> -> # *U &U _timers `ui `ux -> -> 0 `i `ui != *U + &U _timers * -> _i `ux -> -> # *U &U _timers `ui `ux -> 65535 `ui 277  ]
-[; ;timer.c: 66: {
-"66
+[; ;timer.c: 72: {
+"72
 {
-[; ;timer.c: 67: timers[i]--;
-"67
+[; ;timer.c: 73: timers[i]--;
+"73
 [e -- *U + &U _timers * -> _i `ux -> -> # *U &U _timers `ui `ux -> -> 1 `i `ui ]
-"68
+"74
 }
 [e :U 277 ]
-"69
+"75
 }
-"63
+"69
 [e ++ _i -> -> 1 `i `uc ]
 [e :U 276 ]
 [e $ < -> _i `i -> _numTimers `i 273  ]
 [e :U 274 ]
-"69
+"75
 }
-[; ;timer.c: 68: }
-[; ;timer.c: 69: }
-[; ;timer.c: 71: TMR1 = 32000;
-"71
-[e = _TMR1 -> -> 32000 `i `us ]
-[; ;timer.c: 72: T1CONbits.TMR1ON = 1;
-"72
-[e = . . _T1CONbits 0 0 -> -> 1 `i `uc ]
-[; ;timer.c: 73: PIR1bits.TMR1IF = 0;
-"73
-[e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
-"76
-}
-[e :U 271 ]
-[; ;timer.c: 76: }
-[; ;timer.c: 77: }
+[; ;timer.c: 74: }
+[; ;timer.c: 75: }
+[; ;timer.c: 77: for ( i = 0; i < numLongTimers; i++ )
 "77
-[e :UE 270 ]
-}
-"86
-[v _timerGet `(uc ~T0 @X0 1 ef ]
-"87
 {
-[; ;timer.c: 86: TTimerIndex timerGet( void )
-[; ;timer.c: 87: {
-[e :U _timerGet ]
-[f ]
-"88
-[v _result `uc ~T0 @X0 1 a ]
-[; ;timer.c: 88: TTimerIndex result;
-[; ;timer.c: 90: result = numTimers;
-"90
-[e = _result _numTimers ]
-[; ;timer.c: 91: numTimers++;
-"91
-[e ++ _numTimers -> -> 1 `i `uc ]
-[; ;timer.c: 92: timerLock( result );
-"92
-[e ( _timerLock (1 _result ]
-[; ;timer.c: 93: return ( result );
-"93
-[e ) _result ]
-[e $UE 278  ]
-[; ;timer.c: 94: }
-"94
-[e :UE 278 ]
-}
-"105
-[v _timerSet `(v ~T0 @X0 1 ef2`uc`ui ]
-"106
+[e = _i -> -> 0 `i `uc ]
+[e $U 281  ]
+"78
+[e :U 278 ]
+[; ;timer.c: 78: {
 {
-[; ;timer.c: 105: void timerSet( TTimerIndex index, unsigned int duration )
-[; ;timer.c: 106: {
-[e :U _timerSet ]
-"105
-[v _index `uc ~T0 @X0 1 r1 ]
-[v _duration `ui ~T0 @X0 1 r2 ]
-"106
-[f ]
-[; ;timer.c: 107: if ( index < numTimers )
-"107
-[e $ ! < -> _index `i -> _numTimers `i 280  ]
-[; ;timer.c: 108: {
-"108
+[; ;timer.c: 79: if ( ( longTimers[i] != 0 ) && ( longTimers[i] != 0xFFFFFFFF ) )
+"79
+[e $ ! && != *U + &U _longTimers * -> _i `ux -> -> # *U &U _longTimers `ui `ux -> -> -> 0 `i `l `ul != *U + &U _longTimers * -> _i `ux -> -> # *U &U _longTimers `ui `ux -> -1 `ul 282  ]
+[; ;timer.c: 80: {
+"80
 {
-[; ;timer.c: 109: timers[index] = duration;
-"109
-[e = *U + &U _timers * -> _index `ux -> -> # *U &U _timers `ui `ux _duration ]
-"110
-}
-[e :U 280 ]
-[; ;timer.c: 110: }
-[; ;timer.c: 111: }
-"111
-[e :UE 279 ]
-}
-"121
-[v _timerRead `(ui ~T0 @X0 1 ef1`uc ]
-"122
-{
-[; ;timer.c: 121: unsigned int timerRead( TTimerIndex index )
-[; ;timer.c: 122: {
-[e :U _timerRead ]
-"121
-[v _index `uc ~T0 @X0 1 r1 ]
-"122
-[f ]
-"123
-[v _result `ui ~T0 @X0 1 a ]
-[; ;timer.c: 123: unsigned int result = 0xFFFF;
-[e = _result -> 65535 `ui ]
-[; ;timer.c: 124: if ( index < numTimers )
-"124
-[e $ ! < -> _index `i -> _numTimers `i 282  ]
-[; ;timer.c: 125: {
-"125
-{
-[; ;timer.c: 126: result = timers[index];
-"126
-[e = _result *U + &U _timers * -> _index `ux -> -> # *U &U _timers `ui `ux ]
-"127
+[; ;timer.c: 81: longTimers[i]--;
+"81
+[e -- *U + &U _longTimers * -> _i `ux -> -> # *U &U _longTimers `ui `ux -> -> -> 1 `i `l `ul ]
+"82
 }
 [e :U 282 ]
-[; ;timer.c: 127: }
-[; ;timer.c: 128: return ( result );
-"128
+"83
+}
+"77
+[e ++ _i -> -> 1 `i `uc ]
+[e :U 281 ]
+[e $ < -> _i `i -> _numLongTimers `i 278  ]
+[e :U 279 ]
+"83
+}
+[; ;timer.c: 82: }
+[; ;timer.c: 83: }
+[; ;timer.c: 86: systick++;
+"86
+[e ++ _systick -> -> 1 `i `ui ]
+[; ;timer.c: 89: TMR1 = 32000;
+"89
+[e = _TMR1 -> -> 32000 `i `us ]
+[; ;timer.c: 90: T1CONbits.TMR1ON = 1;
+"90
+[e = . . _T1CONbits 0 0 -> -> 1 `i `uc ]
+[; ;timer.c: 91: PIR1bits.TMR1IF = 0;
+"91
+[e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
+"94
+}
+[e :U 271 ]
+[; ;timer.c: 94: }
+[; ;timer.c: 95: }
+"95
+[e :UE 270 ]
+}
+"104
+[v _timerGet `(uc ~T0 @X0 1 ef ]
+"105
+{
+[; ;timer.c: 104: TTimerIndex timerGet( void )
+[; ;timer.c: 105: {
+[e :U _timerGet ]
+[f ]
+"106
+[v _result `uc ~T0 @X0 1 a ]
+[; ;timer.c: 106: TTimerIndex result;
+[; ;timer.c: 108: result = numTimers;
+"108
+[e = _result _numTimers ]
+[; ;timer.c: 109: numTimers++;
+"109
+[e ++ _numTimers -> -> 1 `i `uc ]
+[; ;timer.c: 110: timerLock( result );
+"110
+[e ( _timerLock (1 _result ]
+[; ;timer.c: 111: return ( result );
+"111
 [e ) _result ]
-[e $UE 281  ]
+[e $UE 283  ]
+[; ;timer.c: 112: }
+"112
+[e :UE 283 ]
+}
+"123
+[v _timerSet `(v ~T0 @X0 1 ef2`uc`ui ]
+"124
+{
+[; ;timer.c: 123: void timerSet( TTimerIndex index, unsigned int duration )
+[; ;timer.c: 124: {
+[e :U _timerSet ]
+"123
+[v _index `uc ~T0 @X0 1 r1 ]
+[v _duration `ui ~T0 @X0 1 r2 ]
+"124
+[f ]
+[; ;timer.c: 125: if ( index < numTimers )
+"125
+[e $ ! < -> _index `i -> _numTimers `i 285  ]
+[; ;timer.c: 126: {
+"126
+{
+[; ;timer.c: 127: timers[index] = duration;
+"127
+[e = *U + &U _timers * -> _index `ux -> -> # *U &U _timers `ui `ux _duration ]
+"128
+}
+[e :U 285 ]
+[; ;timer.c: 128: }
 [; ;timer.c: 129: }
 "129
-[e :UE 281 ]
+[e :UE 284 ]
 }
 "139
-[v _timerLock `(v ~T0 @X0 1 ef1`uc ]
+[v _timerRead `(ui ~T0 @X0 1 ef1`uc ]
 "140
 {
-[; ;timer.c: 139: void timerLock( TTimerIndex index )
+[; ;timer.c: 139: unsigned int timerRead( TTimerIndex index )
 [; ;timer.c: 140: {
-[e :U _timerLock ]
+[e :U _timerRead ]
 "139
 [v _index `uc ~T0 @X0 1 r1 ]
 "140
 [f ]
-[; ;timer.c: 141: if ( index < numTimers )
 "141
-[e $ ! < -> _index `i -> _numTimers `i 284  ]
-[; ;timer.c: 142: {
+[v _result `ui ~T0 @X0 1 a ]
+[; ;timer.c: 141: unsigned int result = 0xFFFF;
+[e = _result -> 65535 `ui ]
+[; ;timer.c: 142: if ( index < numTimers )
 "142
-{
-[; ;timer.c: 143: timers[index] = 0xFFFF;
+[e $ ! < -> _index `i -> _numTimers `i 287  ]
+[; ;timer.c: 143: {
 "143
-[e = *U + &U _timers * -> _index `ux -> -> # *U &U _timers `ui `ux -> 65535 `ui ]
+{
+[; ;timer.c: 144: result = timers[index];
 "144
-}
-[e :U 284 ]
-[; ;timer.c: 144: }
-[; ;timer.c: 145: }
+[e = _result *U + &U _timers * -> _index `ux -> -> # *U &U _timers `ui `ux ]
 "145
-[e :UE 283 ]
 }
-"155
-[v _timerDelay `(v ~T0 @X0 1 ef1`ui ]
-"156
-{
-[; ;timer.c: 155: void timerDelay( unsigned int duration )
-[; ;timer.c: 156: {
-[e :U _timerDelay ]
-"155
-[v _duration `ui ~T0 @X0 1 r1 ]
-"156
-[f ]
-[; ;timer.c: 157: delayTimer = duration;
-"157
-[e = _delayTimer _duration ]
-[; ;timer.c: 158: while ( delayTimer != 0)
-"158
-[e $U 286  ]
 [e :U 287 ]
-[; ;timer.c: 159: {
-"159
-{
-[; ;timer.c: 160: continue;
-"160
-[e $U 286  ]
-"161
+[; ;timer.c: 145: }
+[; ;timer.c: 146: return ( result );
+"146
+[e ) _result ]
+[e $UE 286  ]
+[; ;timer.c: 147: }
+"147
+[e :UE 286 ]
 }
-[e :U 286 ]
+"157
+[v _timerLock `(v ~T0 @X0 1 ef1`uc ]
 "158
-[e $ != _delayTimer -> -> 0 `i `ui 287  ]
-[e :U 288 ]
-[; ;timer.c: 161: }
-[; ;timer.c: 162: }
+{
+[; ;timer.c: 157: void timerLock( TTimerIndex index )
+[; ;timer.c: 158: {
+[e :U _timerLock ]
+"157
+[v _index `uc ~T0 @X0 1 r1 ]
+"158
+[f ]
+[; ;timer.c: 159: if ( index < numTimers )
+"159
+[e $ ! < -> _index `i -> _numTimers `i 289  ]
+[; ;timer.c: 160: {
+"160
+{
+[; ;timer.c: 161: timers[index] = 0xFFFF;
+"161
+[e = *U + &U _timers * -> _index `ux -> -> # *U &U _timers `ui `ux -> 65535 `ui ]
 "162
-[e :UE 285 ]
+}
+[e :U 289 ]
+[; ;timer.c: 162: }
+[; ;timer.c: 163: }
+"163
+[e :UE 288 ]
+}
+"173
+[v _timerDelay `(v ~T0 @X0 1 ef1`ui ]
+"174
+{
+[; ;timer.c: 173: void timerDelay( unsigned int duration )
+[; ;timer.c: 174: {
+[e :U _timerDelay ]
+"173
+[v _duration `ui ~T0 @X0 1 r1 ]
+"174
+[f ]
+[; ;timer.c: 175: delayTimer = duration;
+"175
+[e = _delayTimer _duration ]
+[; ;timer.c: 176: while ( delayTimer != 0)
+"176
+[e $U 291  ]
+[e :U 292 ]
+[; ;timer.c: 177: {
+"177
+{
+[; ;timer.c: 178: continue;
+"178
+[e $U 291  ]
+"179
+}
+[e :U 291 ]
+"176
+[e $ != _delayTimer -> -> 0 `i `ui 292  ]
+[e :U 293 ]
+[; ;timer.c: 179: }
+[; ;timer.c: 180: }
+"180
+[e :UE 290 ]
+}
+"189
+[v _longTimerGet `(uc ~T0 @X0 1 ef ]
+"190
+{
+[; ;timer.c: 189: LTTimerIndex longTimerGet( void )
+[; ;timer.c: 190: {
+[e :U _longTimerGet ]
+[f ]
+"191
+[v _result `uc ~T0 @X0 1 a ]
+[; ;timer.c: 191: LTTimerIndex result;
+[; ;timer.c: 193: result = numLongTimers;
+"193
+[e = _result _numLongTimers ]
+[; ;timer.c: 194: numLongTimers++;
+"194
+[e ++ _numLongTimers -> -> 1 `i `uc ]
+[; ;timer.c: 195: longTimerLock( result );
+"195
+[e ( _longTimerLock (1 _result ]
+[; ;timer.c: 196: return ( result );
+"196
+[e ) _result ]
+[e $UE 294  ]
+[; ;timer.c: 197: }
+"197
+[e :UE 294 ]
+}
+"208
+[v _longTimerSet `(v ~T0 @X0 1 ef2`uc`ul ]
+"209
+{
+[; ;timer.c: 208: void longTimerSet( LTTimerIndex index, unsigned long duration )
+[; ;timer.c: 209: {
+[e :U _longTimerSet ]
+"208
+[v _index `uc ~T0 @X0 1 r1 ]
+[v _duration `ul ~T0 @X0 1 r2 ]
+"209
+[f ]
+[; ;timer.c: 210: if ( index < numLongTimers )
+"210
+[e $ ! < -> _index `i -> _numLongTimers `i 296  ]
+[; ;timer.c: 211: {
+"211
+{
+[; ;timer.c: 212: longTimers[index] = duration;
+"212
+[e = *U + &U _longTimers * -> _index `ux -> -> # *U &U _longTimers `ui `ux _duration ]
+"213
+}
+[e :U 296 ]
+[; ;timer.c: 213: }
+[; ;timer.c: 214: }
+"214
+[e :UE 295 ]
+}
+"224
+[v _longTimerRead `(ul ~T0 @X0 1 ef1`uc ]
+"225
+{
+[; ;timer.c: 224: unsigned long longTimerRead( LTTimerIndex index )
+[; ;timer.c: 225: {
+[e :U _longTimerRead ]
+"224
+[v _index `uc ~T0 @X0 1 r1 ]
+"225
+[f ]
+"226
+[v _result `ul ~T0 @X0 1 a ]
+[; ;timer.c: 226: unsigned long result = 0xFFFFFFFF;
+[e = _result -> -1 `ul ]
+[; ;timer.c: 227: if ( index < numLongTimers )
+"227
+[e $ ! < -> _index `i -> _numLongTimers `i 298  ]
+[; ;timer.c: 228: {
+"228
+{
+[; ;timer.c: 229: result = longTimers[index];
+"229
+[e = _result *U + &U _longTimers * -> _index `ux -> -> # *U &U _longTimers `ui `ux ]
+"230
+}
+[e :U 298 ]
+[; ;timer.c: 230: }
+[; ;timer.c: 231: return ( result );
+"231
+[e ) _result ]
+[e $UE 297  ]
+[; ;timer.c: 232: }
+"232
+[e :UE 297 ]
+}
+"242
+[v _longTimerLock `(v ~T0 @X0 1 ef1`uc ]
+"243
+{
+[; ;timer.c: 242: void longTimerLock( LTTimerIndex index )
+[; ;timer.c: 243: {
+[e :U _longTimerLock ]
+"242
+[v _index `uc ~T0 @X0 1 r1 ]
+"243
+[f ]
+[; ;timer.c: 244: if ( index < numLongTimers )
+"244
+[e $ ! < -> _index `i -> _numLongTimers `i 300  ]
+[; ;timer.c: 245: {
+"245
+{
+[; ;timer.c: 246: longTimers[index] = 0xFFFFFFFF;
+"246
+[e = *U + &U _longTimers * -> _index `ux -> -> # *U &U _longTimers `ui `ux -> -1 `ul ]
+"247
+}
+[e :U 300 ]
+[; ;timer.c: 247: }
+[; ;timer.c: 248: }
+"248
+[e :UE 299 ]
 }

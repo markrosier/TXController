@@ -2895,8 +2895,9 @@ typedef unsigned long DWORD;
 
 typedef unsigned char bool;
 
-# 20 "../include\timer.h"
+# 22 "../include\timer.h"
 typedef unsigned char TTimerIndex;
+typedef unsigned char LTTimerIndex;
 
 extern void timerInit( void );
 extern TTimerIndex timerGet( void );
@@ -2905,17 +2906,29 @@ extern unsigned int timerRead( TTimerIndex index );
 extern void timerLock( TTimerIndex index );
 extern void timerDelay( unsigned int Duration );
 
+extern LTTimerIndex longTimerGet( void );
+extern void longTimerSet( LTTimerIndex, unsigned long duration );
+extern unsigned long longTimerRead( LTTimerIndex );
+extern void longTimerLock( LTTimerIndex );
+
+
 void timerInterrupt( void );
 
 # 11 "../source/timer.c"
-unsigned int timers[16];
+unsigned int systick = 0;
+
+
+unsigned int timers[10];
 unsigned int delayTimer;
 unsigned char numTimers;
+unsigned long longTimers[1];
+unsigned char numLongTimers;
 
-# 23
+# 28
 void timerInit( void )
 {
 numTimers = 0;
+numLongTimers = 0;
 
 T1GCONbits.TMR1GE = 0;
 
@@ -2932,7 +2945,7 @@ INTCONbits.PEIE = 1;
 T1CONbits.TMR1ON = 1;
 }
 
-# 51
+# 57
 void timerInterrupt( void )
 {
 unsigned char i;
@@ -2953,6 +2966,18 @@ timers[i]--;
 }
 }
 
+for ( i = 0; i < numLongTimers; i++ )
+{
+if ( ( longTimers[i] != 0 ) && ( longTimers[i] != 0xFFFFFFFF ) )
+{
+longTimers[i]--;
+}
+}
+
+
+systick++;
+
+
 TMR1 = 32000;
 T1CONbits.TMR1ON = 1;
 PIR1bits.TMR1IF = 0;
@@ -2961,7 +2986,7 @@ PIR1bits.TMR1IF = 0;
 }
 }
 
-# 86
+# 104
 TTimerIndex timerGet( void )
 {
 TTimerIndex result;
@@ -2972,7 +2997,7 @@ timerLock( result );
 return ( result );
 }
 
-# 105
+# 123
 void timerSet( TTimerIndex index, unsigned int duration )
 {
 if ( index < numTimers )
@@ -2981,7 +3006,7 @@ timers[index] = duration;
 }
 }
 
-# 121
+# 139
 unsigned int timerRead( TTimerIndex index )
 {
 unsigned int result = 0xFFFF;
@@ -2992,7 +3017,7 @@ result = timers[index];
 return ( result );
 }
 
-# 139
+# 157
 void timerLock( TTimerIndex index )
 {
 if ( index < numTimers )
@@ -3001,7 +3026,7 @@ timers[index] = 0xFFFF;
 }
 }
 
-# 155
+# 173
 void timerDelay( unsigned int duration )
 {
 delayTimer = duration;
@@ -3011,3 +3036,42 @@ continue;
 }
 }
 
+# 189
+LTTimerIndex longTimerGet( void )
+{
+LTTimerIndex result;
+
+result = numLongTimers;
+numLongTimers++;
+longTimerLock( result );
+return ( result );
+}
+
+# 208
+void longTimerSet( LTTimerIndex index, unsigned long duration )
+{
+if ( index < numLongTimers )
+{
+longTimers[index] = duration;
+}
+}
+
+# 224
+unsigned long longTimerRead( LTTimerIndex index )
+{
+unsigned long result = 0xFFFFFFFF;
+if ( index < numLongTimers )
+{
+result = longTimers[index];
+}
+return ( result );
+}
+
+# 242
+void longTimerLock( LTTimerIndex index )
+{
+if ( index < numLongTimers )
+{
+longTimers[index] = 0xFFFFFFFF;
+}
+}

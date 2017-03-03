@@ -28,16 +28,16 @@ bothHighEvent 6
 bothLowEvent 7
 maxInitEvents 8
 ]
-"80
-[e E2347 runStates `uc
+"81
+[e E2349 runStates `uc
 runS1 0
 runS2 1
 runS3 2
 runS4 3
 maxRunStates 4
 ]
-"91
-[e E2354 runEvents `uc
+"92
+[e E2356 runEvents `uc
 noRunEvent 0
 runTimeoutEvent 1
 initialisedEvent 2
@@ -72,16 +72,16 @@ bothHighEvent 6
 bothLowEvent 7
 maxInitEvents 8
 ]
-"80
-[e E2353 runStates `uc
+"81
+[e E2355 runStates `uc
 runS1 0
 runS2 1
 runS3 2
 runS4 3
 maxRunStates 4
 ]
-"91
-[e E2360 runEvents `uc
+"92
+[e E2362 runEvents `uc
 noRunEvent 0
 runTimeoutEvent 1
 initialisedEvent 2
@@ -116,16 +116,16 @@ bothHighEvent 6
 bothLowEvent 7
 maxInitEvents 8
 ]
-"80
-[e E2361 runStates `uc
+"81
+[e E2363 runStates `uc
 runS1 0
 runS2 1
 runS3 2
 runS4 3
 maxRunStates 4
 ]
-"91
-[e E2368 runEvents `uc
+"92
+[e E2370 runEvents `uc
 noRunEvent 0
 runTimeoutEvent 1
 initialisedEvent 2
@@ -145,73 +145,69 @@ maxRunEvents 7
 [v _beeperInit beeperInit `(v  1 e 1 0 ]
 "103
 [v _beeperService beeperService `(v  1 e 1 0 ]
-"38 D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+"30 D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
 [v _initIOCInterrupt initIOCInterrupt `(v  1 e 1 0 ]
-"51
+"43
 [v _IOCInterrupt IOCInterrupt `(v  1 e 1 0 ]
-"96
+"76
 [v _eventHandlerInit eventHandlerInit `(v  1 e 1 0 ]
-"109
+"88
 [v _eventHandlerService eventHandlerService `(v  1 e 1 0 ]
-"144
+"123
 [v _init_NoAction init_NoAction `(v  1 e 1 0 ]
-"149
+"128
 [v _init_Restart init_Restart `(v  1 e 1 0 ]
-"161
+"138
 [v _initS1_Timeout initS1_Timeout `(v  1 e 1 0 ]
-"168
+"145
 [v _initS2_Timeout initS2_Timeout `(v  1 e 1 0 ]
-"180
+"158
 [v _initS3_greenHigh initS3_greenHigh `(v  1 e 1 0 ]
-"186
+"164
 [v _initS4_greenLow initS4_greenLow `(v  1 e 1 0 ]
-"192
+"170
 [v _initS5_redHigh initS5_redHigh `(v  1 e 1 0 ]
-"198
+"176
 [v _initS6_redLow initS6_redLow `(v  1 e 1 0 ]
-"204
+"182
 [v _initS7_bothHigh initS7_bothHigh `(v  1 e 1 0 ]
-"210
+"188
 [v _initS8_bothLow initS8_bothLow `(v  1 e 1 0 ]
-"219
+"195
 [v _getInitEvent getInitEvent `(E2237  1 e 1 0 ]
-"301
+"217
 [v _run_NoAction run_NoAction `(v  1 e 1 0 ]
-"306
+"222
 [v _runS1_Error runS1_Error `(v  1 e 1 0 ]
-"311
+"227
 [v _runS1_Timeout runS1_Timeout `(v  1 e 1 0 ]
-"316
+"232
 [v _runS1_Initialised runS1_Initialised `(v  1 e 1 0 ]
-"321
+"237
 [v _runS2_Error runS2_Error `(v  1 e 1 0 ]
-"326
+"242
 [v _runS2_Timeout runS2_Timeout `(v  1 e 1 0 ]
-"331
+"247
 [v _runS2_BeepReceived runS2_BeepReceived `(v  1 e 1 0 ]
-"336
+"252
 [v _runS3_Error runS3_Error `(v  1 e 1 0 ]
-"341
+"257
 [v _runS3_Timeout runS3_Timeout `(v  1 e 1 0 ]
-"346
+"262
 [v _runS3_GreenFlashing runS3_GreenFlashing `(v  1 e 1 0 ]
-"351
+"267
 [v _runS4_Error runS4_Error `(v  1 e 1 0 ]
-"356
+"272
 [v _runS4_Timeout runS4_Timeout `(v  1 e 1 0 ]
-"361
+"277
 [v _runS4_GreenSteadyLow runS4_GreenSteadyLow `(v  1 e 1 0 ]
-"368
-[v _getRunEvent getRunEvent `(E2354  1 e 1 0 ]
+"282
+[v _getRunEvent getRunEvent `(E2356  1 e 1 0 ]
 "16 D:\OneDrive\Software\Projects\Chivas\TXController/source/interrupt.c
 [v _initInterrupt initInterrupt `(v  1 e 1 0 ]
 "32
 [v _ISRCode ISRCode `II(v  1 e 1 0 ]
-"19 D:\OneDrive\Software\Projects\Chivas\TXController/source/LED.c
-[v _setLED setLED `(v  1 e 1 0 ]
-"25
-[v _clearLED clearLED `(v  1 e 1 0 ]
-"31
+"31 D:\OneDrive\Software\Projects\Chivas\TXController/source/LED.c
 [v _flashLED flashLED `(v  1 e 1 0 ]
 "40
 [v _LEDInit LEDInit `(v  1 e 1 0 ]
@@ -225,26 +221,26 @@ maxRunEvents 7
 [v _initialise initialise `(v  1 e 1 0 ]
 "65
 [v _hardwareInit hardwareInit `(v  1 e 1 0 ]
-"28 D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
+"25 D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
 [v _timerInit timerInit `(v  1 e 1 0 ]
-"57
+"54
 [v _timerInterrupt timerInterrupt `(v  1 e 1 0 ]
-"104
+"99
 [v _timerGet timerGet `(uc  1 e 1 0 ]
-"123
+"118
 [v _timerSet timerSet `(v  1 e 1 0 ]
 [v i1_timerSet timerSet `(v  1 e 1 0 ]
-"139
+"134
 [v _timerRead timerRead `(ui  1 e 2 0 ]
-"157
+"152
 [v _timerLock timerLock `(v  1 e 1 0 ]
-"189
+"184
 [v _longTimerGet longTimerGet `(uc  1 e 1 0 ]
-"208
+"203
 [v _longTimerSet longTimerSet `(v  1 e 1 0 ]
-"224
+"219
 [v _longTimerRead longTimerRead `(ul  1 e 4 0 ]
-"242
+"237
 [v _longTimerLock longTimerLock `(v  1 e 1 0 ]
 "62 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\float.c
 [v ___ftpack __ftpack `(f  1 e 3 0 ]
@@ -260,13 +256,13 @@ maxRunEvents 7
 [v _initState initState `E2225  1 e 1 0 ]
 "44
 [v _initEvent initEvent `E2237  1 e 1 0 ]
-"60
+"61
 [v _initStateTable initStateTable `DCC[9][8]*.37(v  1 e 144 0 ]
-"80
-[v _runState runState `E2347  1 e 1 0 ]
-"91
-[v _runEvent runEvent `E2354  1 e 1 0 ]
-"110
+"81
+[v _runState runState `E2349  1 e 1 0 ]
+"92
+[v _runEvent runEvent `E2356  1 e 1 0 ]
+"112
 [v _runStateTable runStateTable `DCC[4][7]*.37(v  1 e 56 0 ]
 "14 D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
 [v _beeperTimer beeperTimer `uc  1 e 1 0 ]
@@ -280,26 +276,22 @@ maxRunEvents 7
 [v _beeperOn beeperOn `uc  1 e 1 0 ]
 "19
 [v _nBeeps nBeeps `i  1 e 2 0 ]
-"20 D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+"19 D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
 [v _eventHandlerTimer eventHandlerTimer `uc  1 e 1 0 ]
+"20
+[v _lastInitEvent lastInitEvent `E2237  1 e 1 0 ]
 "21
-[v _initSMTimer initSMTimer `i  1 e 2 0 ]
+[v _lastRunEvent lastRunEvent `E2356  1 e 1 0 ]
 "22
-[v _runSMTimer runSMTimer `i  1 e 2 0 ]
+[v _initSMTimer initSMTimer `i  1 e 2 0 ]
 "23
-[v _buzzerTimer buzzerTimer `i  1 e 2 0 ]
+[v _runSMTimer runSMTimer `i  1 e 2 0 ]
 "24
+[v _buzzerTimer buzzerTimer `i  1 e 2 0 ]
+"25
 [v _minuteTimer minuteTimer `i  1 e 2 0 ]
-[s S149 event 3 `uc 1 eventFlag 1 0 `ui 1 eventTime 2 1 ]
-"31
-[v _greenWentHigh greenWentHigh `S149  1 e 3 0 ]
-[v _greenWentLow greenWentLow `S149  1 e 3 0 ]
-[v _redWentHigh redWentHigh `S149  1 e 3 0 ]
-[v _redWentLow redWentLow `S149  1 e 3 0 ]
-"33
-[v _chargerInitialised chargerInitialised `S149  1 e 3 0 ]
-"366
-[v _ttog ttog `uc  1 e 1 0 ]
+"28
+[v _buzzerStarted buzzerStarted `uc  1 e 1 0 ]
 "14 D:\OneDrive\Software\Projects\Chivas\TXController/source/LED.c
 [v _LEDTimer LEDTimer `uc  1 e 1 0 ]
 "15
@@ -309,18 +301,16 @@ maxRunEvents 7
 "17
 [v _flashing flashing `uc  1 e 1 0 ]
 "11 D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-[v _systick systick `ui  1 e 2 0 ]
-"14
-[v _timers timers `[10]ui  1 e 20 0 ]
-"15
+[v _timers timers `[8]ui  1 e 16 0 ]
+"12
 [v _delayTimer delayTimer `ui  1 e 2 0 ]
-"16
+"13
 [v _numTimers numTimers `uc  1 e 1 0 ]
-"17
+"14
 [v _longTimers longTimers `[1]ul  1 e 4 0 ]
-"18
+"15
 [v _numLongTimers numLongTimers `uc  1 e 1 0 ]
-[s S152 . 1 `uc 1 IOCIF 1 0 :1:0 
+[s S149 . 1 `uc 1 IOCIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 IOCIE 1 0 :1:3 
@@ -330,14 +320,14 @@ maxRunEvents 7
 `uc 1 GIE 1 0 :1:7 
 ]
 "358 C:\Program Files (x86)\Microchip\xc8\v1.41\include\pic12f1822.h
-[s S161 . 1 `uc 1 . 1 0 :2:0 
+[s S158 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 T0IE 1 0 :1:5 
 ]
-[u S166 . 1 `S152 1 . 1 0 `S161 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES166  1 e 1 @11 ]
-[s S256 . 1 `uc 1 RA0 1 0 :1:0 
+[u S163 . 1 `S149 1 . 1 0 `S158 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES163  1 e 1 @11 ]
+[s S505 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -345,65 +335,65 @@ maxRunEvents 7
 `uc 1 RA5 1 0 :1:5 
 ]
 "492
-[s S263 . 1 `uc 1 AN0 1 0 :1:0 
+[s S512 . 1 `uc 1 AN0 1 0 :1:0 
 `uc 1 AN1 1 0 :1:1 
 `uc 1 AN2 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
 `uc 1 AN3 1 0 :1:4 
 ]
-[s S269 . 1 `uc 1 CPS0 1 0 :1:0 
+[s S518 . 1 `uc 1 CPS0 1 0 :1:0 
 `uc 1 CPS1 1 0 :1:1 
 `uc 1 CPS2 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
 `uc 1 CPS3 1 0 :1:4 
 ]
-[s S275 . 1 `uc 1 C1INP 1 0 :1:0 
+[s S524 . 1 `uc 1 C1INP 1 0 :1:0 
 `uc 1 C1IN0N 1 0 :1:1 
 `uc 1 C1OUT 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
 `uc 1 C1IN1N 1 0 :1:4 
 ]
-[s S281 . 1 `uc 1 DACOUT 1 0 :1:0 
+[s S530 . 1 `uc 1 DACOUT 1 0 :1:0 
 `uc 1 SRI 1 0 :1:1 
 `uc 1 SRQ 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 SRNQ 1 0 :1:5 
 ]
-[s S287 . 1 `uc 1 . 1 0 :1:0 
+[s S536 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 SCK 1 0 :1:1 
 `uc 1 T0CKI 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
 `uc 1 T1OSO 1 0 :1:4 
 `uc 1 T1CKI 1 0 :1:5 
 ]
-[s S294 . 1 `uc 1 . 1 0 :1:0 
+[s S543 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 SCL 1 0 :1:1 
 `uc 1 SDA 1 0 :1:2 
 `uc 1 nMCLR 1 0 :1:3 
 `uc 1 CLKR 1 0 :1:4 
 `uc 1 T1OSI 1 0 :1:5 
 ]
-[s S301 . 1 `uc 1 MDOUT 1 0 :1:0 
+[s S550 . 1 `uc 1 MDOUT 1 0 :1:0 
 `uc 1 MDMIN 1 0 :1:1 
 `uc 1 MDCIN1 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
 `uc 1 MDCIN2 1 0 :1:4 
 ]
-[s S307 . 1 `uc 1 . 1 0 :2:0 
+[s S556 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 SDI 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
 `uc 1 OSC2 1 0 :1:4 
 `uc 1 OSC1 1 0 :1:5 
 ]
-[s S313 . 1 `uc 1 . 1 0 :2:0 
+[s S562 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 FLT0 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
 `uc 1 CLKOUT 1 0 :1:4 
 `uc 1 CLKIN 1 0 :1:5 
 ]
-[u S319 . 1 `S256 1 . 1 0 `S263 1 . 1 0 `S269 1 . 1 0 `S275 1 . 1 0 `S281 1 . 1 0 `S287 1 . 1 0 `S294 1 . 1 0 `S301 1 . 1 0 `S307 1 . 1 0 `S313 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES319  1 e 1 @12 ]
-[s S1093 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[u S568 . 1 `S505 1 . 1 0 `S512 1 . 1 0 `S518 1 . 1 0 `S524 1 . 1 0 `S530 1 . 1 0 `S536 1 . 1 0 `S543 1 . 1 0 `S550 1 . 1 0 `S556 1 . 1 0 `S562 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES568  1 e 1 @12 ]
+[s S998 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSP1IF 1 0 :1:3 
@@ -413,11 +403,11 @@ maxRunEvents 7
 `uc 1 TMR1GIF 1 0 :1:7 
 ]
 "718
-[u S1102 . 1 `S1093 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES1102  1 e 1 @17 ]
+[u S1007 . 1 `S998 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES1007  1 e 1 @17 ]
 "820
 [v _TMR1 TMR1 `VEus  1 e 2 @22 ]
-[s S1023 . 1 `uc 1 TMR1ON 1 0 :1:0 
+[s S928 . 1 `uc 1 TMR1ON 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 nT1SYNC 1 0 :1:2 
 `uc 1 T1OSCEN 1 0 :1:3 
@@ -427,13 +417,13 @@ maxRunEvents 7
 `uc 1 TMR1CS1 1 0 :1:7 
 ]
 "886
-[s S1032 . 1 `uc 1 . 1 0 :4:0 
+[s S937 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 T1CKPS 1 0 :2:4 
 `uc 1 TMR1CS 1 0 :2:6 
 ]
-[u S1036 . 1 `S1023 1 . 1 0 `S1032 1 . 1 0 ]
-[v _T1CONbits T1CONbits `VES1036  1 e 1 @24 ]
-[s S993 . 1 `uc 1 T1GSS0 1 0 :1:0 
+[u S941 . 1 `S928 1 . 1 0 `S937 1 . 1 0 ]
+[v _T1CONbits T1CONbits `VES941  1 e 1 @24 ]
+[s S898 . 1 `uc 1 T1GSS0 1 0 :1:0 
 `uc 1 T1GSS1 1 0 :1:1 
 `uc 1 T1GVAL 1 0 :1:2 
 `uc 1 T1GGO_nDONE 1 0 :1:3 
@@ -443,15 +433,15 @@ maxRunEvents 7
 `uc 1 TMR1GE 1 0 :1:7 
 ]
 "957
-[s S1002 . 1 `uc 1 T1GSS 1 0 :2:0 
+[s S907 . 1 `uc 1 T1GSS 1 0 :2:0 
 `uc 1 . 1 0 :1:2 
 `uc 1 T1GGO 1 0 :1:3 
 ]
-[u S1006 . 1 `S993 1 . 1 0 `S1002 1 . 1 0 ]
-[v _T1GCONbits T1GCONbits `VES1006  1 e 1 @25 ]
+[u S911 . 1 `S898 1 . 1 0 `S907 1 . 1 0 ]
+[v _T1GCONbits T1GCONbits `VES911  1 e 1 @25 ]
 "1030
 [v _PR2 PR2 `VEuc  1 e 1 @27 ]
-[s S1179 . 1 `uc 1 T2CKPS0 1 0 :1:0 
+[s S1083 . 1 `uc 1 T2CKPS0 1 0 :1:0 
 `uc 1 T2CKPS1 1 0 :1:1 
 `uc 1 TMR2ON 1 0 :1:2 
 `uc 1 T2OUTPS0 1 0 :1:3 
@@ -460,13 +450,13 @@ maxRunEvents 7
 `uc 1 T2OUTPS3 1 0 :1:6 
 ]
 "1070
-[s S1187 . 1 `uc 1 T2CKPS 1 0 :2:0 
+[s S1091 . 1 `uc 1 T2CKPS 1 0 :2:0 
 `uc 1 . 1 0 :1:2 
 `uc 1 T2OUTPS 1 0 :4:3 
 ]
-[u S1191 . 1 `S1179 1 . 1 0 `S1187 1 . 1 0 ]
-[v _T2CONbits T2CONbits `VES1191  1 e 1 @28 ]
-[s S875 . 1 `uc 1 TRISA0 1 0 :1:0 
+[u S1095 . 1 `S1083 1 . 1 0 `S1091 1 . 1 0 ]
+[v _T2CONbits T2CONbits `VES1095  1 e 1 @28 ]
+[s S780 . 1 `uc 1 TRISA0 1 0 :1:0 
 `uc 1 TRISA1 1 0 :1:1 
 `uc 1 TRISA2 1 0 :1:2 
 `uc 1 TRISA3 1 0 :1:3 
@@ -474,9 +464,9 @@ maxRunEvents 7
 `uc 1 TRISA5 1 0 :1:5 
 ]
 "1226
-[u S882 . 1 `S875 1 . 1 0 ]
-[v _TRISAbits TRISAbits `VES882  1 e 1 @140 ]
-[s S1054 . 1 `uc 1 TMR1IE 1 0 :1:0 
+[u S787 . 1 `S780 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES787  1 e 1 @140 ]
+[s S959 . 1 `uc 1 TMR1IE 1 0 :1:0 
 `uc 1 TMR2IE 1 0 :1:1 
 `uc 1 CCP1IE 1 0 :1:2 
 `uc 1 SSP1IE 1 0 :1:3 
@@ -486,9 +476,9 @@ maxRunEvents 7
 `uc 1 TMR1GIE 1 0 :1:7 
 ]
 "1277
-[u S1063 . 1 `S1054 1 . 1 0 ]
-[v _PIE1bits PIE1bits `VES1063  1 e 1 @145 ]
-[s S922 . 1 `uc 1 SWDTEN 1 0 :1:0 
+[u S968 . 1 `S959 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES968  1 e 1 @145 ]
+[s S827 . 1 `uc 1 SWDTEN 1 0 :1:0 
 `uc 1 WDTPS0 1 0 :1:1 
 `uc 1 WDTPS1 1 0 :1:2 
 `uc 1 WDTPS2 1 0 :1:3 
@@ -496,12 +486,12 @@ maxRunEvents 7
 `uc 1 WDTPS4 1 0 :1:5 
 ]
 "1511
-[s S929 . 1 `uc 1 . 1 0 :1:0 
+[s S834 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 WDTPS 1 0 :5:1 
 ]
-[u S932 . 1 `S922 1 . 1 0 `S929 1 . 1 0 ]
-[v _WDTCONbits WDTCONbits `VES932  1 e 1 @151 ]
-[s S845 . 1 `uc 1 SCS0 1 0 :1:0 
+[u S837 . 1 `S827 1 . 1 0 `S834 1 . 1 0 ]
+[v _WDTCONbits WDTCONbits `VES837  1 e 1 @151 ]
+[s S750 . 1 `uc 1 SCS0 1 0 :1:0 
 `uc 1 SCS1 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 IRCF0 1 0 :1:3 
@@ -511,13 +501,13 @@ maxRunEvents 7
 `uc 1 SPLLEN 1 0 :1:7 
 ]
 "1629
-[s S854 . 1 `uc 1 SCS 1 0 :2:0 
+[s S759 . 1 `uc 1 SCS 1 0 :2:0 
 `uc 1 . 1 0 :1:2 
 `uc 1 IRCF 1 0 :4:3 
 ]
-[u S858 . 1 `S845 1 . 1 0 `S854 1 . 1 0 ]
-[v _OSCCONbits OSCCONbits `VES858  1 e 1 @153 ]
-[s S416 . 1 `uc 1 LATA0 1 0 :1:0 
+[u S763 . 1 `S750 1 . 1 0 `S759 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES763  1 e 1 @153 ]
+[s S274 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
 `uc 1 LATA2 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -525,20 +515,20 @@ maxRunEvents 7
 `uc 1 LATA5 1 0 :1:5 
 ]
 "1951
-[u S423 . 1 `S416 1 . 1 0 ]
-[v _LATAbits LATAbits `VES423  1 e 1 @268 ]
-[s S892 . 1 `uc 1 ANSA0 1 0 :1:0 
+[u S281 . 1 `S274 1 . 1 0 ]
+[v _LATAbits LATAbits `VES281  1 e 1 @268 ]
+[s S797 . 1 `uc 1 ANSA0 1 0 :1:0 
 `uc 1 ANSA1 1 0 :1:1 
 `uc 1 ANSA2 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
 `uc 1 ANSA4 1 0 :1:4 
 ]
 "2593
-[s S898 . 1 `uc 1 ANSELA 1 0 :5:0 
+[s S803 . 1 `uc 1 ANSELA 1 0 :5:0 
 ]
-[u S900 . 1 `S892 1 . 1 0 `S898 1 . 1 0 ]
-[v _ANSELAbits ANSELAbits `VES900  1 e 1 @396 ]
-[s S206 . 1 `uc 1 IOCAP0 1 0 :1:0 
+[u S805 . 1 `S797 1 . 1 0 `S803 1 . 1 0 ]
+[v _ANSELAbits ANSELAbits `VES805  1 e 1 @396 ]
+[s S203 . 1 `uc 1 IOCAP0 1 0 :1:0 
 `uc 1 IOCAP1 1 0 :1:1 
 `uc 1 IOCAP2 1 0 :1:2 
 `uc 1 IOCAP3 1 0 :1:3 
@@ -546,11 +536,11 @@ maxRunEvents 7
 `uc 1 IOCAP5 1 0 :1:5 
 ]
 "4265
-[s S213 . 1 `uc 1 IOCAP 1 0 :6:0 
+[s S210 . 1 `uc 1 IOCAP 1 0 :6:0 
 ]
-[u S215 . 1 `S206 1 . 1 0 `S213 1 . 1 0 ]
-[v _IOCAPbits IOCAPbits `VES215  1 e 1 @913 ]
-[s S184 . 1 `uc 1 IOCAN0 1 0 :1:0 
+[u S212 . 1 `S203 1 . 1 0 `S210 1 . 1 0 ]
+[v _IOCAPbits IOCAPbits `VES212  1 e 1 @913 ]
+[s S181 . 1 `uc 1 IOCAN0 1 0 :1:0 
 `uc 1 IOCAN1 1 0 :1:1 
 `uc 1 IOCAN2 1 0 :1:2 
 `uc 1 IOCAN3 1 0 :1:3 
@@ -558,11 +548,11 @@ maxRunEvents 7
 `uc 1 IOCAN5 1 0 :1:5 
 ]
 "4322
-[s S191 . 1 `uc 1 IOCAN 1 0 :6:0 
+[s S188 . 1 `uc 1 IOCAN 1 0 :6:0 
 ]
-[u S193 . 1 `S184 1 . 1 0 `S191 1 . 1 0 ]
-[v _IOCANbits IOCANbits `VES193  1 e 1 @914 ]
-[s S228 . 1 `uc 1 IOCAF0 1 0 :1:0 
+[u S190 . 1 `S181 1 . 1 0 `S188 1 . 1 0 ]
+[v _IOCANbits IOCANbits `VES190  1 e 1 @914 ]
+[s S225 . 1 `uc 1 IOCAF0 1 0 :1:0 
 `uc 1 IOCAF1 1 0 :1:1 
 `uc 1 IOCAF2 1 0 :1:2 
 `uc 1 IOCAF3 1 0 :1:3 
@@ -570,10 +560,10 @@ maxRunEvents 7
 `uc 1 IOCAF5 1 0 :1:5 
 ]
 "4379
-[s S235 . 1 `uc 1 IOCAF 1 0 :6:0 
+[s S232 . 1 `uc 1 IOCAF 1 0 :6:0 
 ]
-[u S237 . 1 `S228 1 . 1 0 `S235 1 . 1 0 ]
-[v _IOCAFbits IOCAFbits `VES237  1 e 1 @915 ]
+[u S234 . 1 `S225 1 . 1 0 `S232 1 . 1 0 ]
+[v _IOCAFbits IOCAFbits `VES234  1 e 1 @915 ]
 "29 D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
 [v _main main `(v  1 e 1 0 ]
 {
@@ -589,10 +579,10 @@ maxRunEvents 7
 {
 "57
 } 0
-"28 D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
+"25 D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
 [v _timerInit timerInit `(v  1 e 1 0 ]
 {
-"46
+"43
 } 0
 "16 D:\OneDrive\Software\Projects\Chivas\TXController/source/interrupt.c
 [v _initInterrupt initInterrupt `(v  1 e 1 0 ]
@@ -610,22 +600,22 @@ maxRunEvents 7
 [v flashLED@period period `i  1 p 2 0 ]
 "37
 } 0
-"96 D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+"76 D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
 [v _eventHandlerInit eventHandlerInit `(v  1 e 1 0 ]
 {
-"107
+"86
 } 0
-"189 D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
+"184 D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
 [v _longTimerGet longTimerGet `(uc  1 e 1 0 ]
 {
-"191
+"186
 [v longTimerGet@result result `uc  1 a 1 3 ]
-"197
+"192
 } 0
-"38 D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+"30 D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
 [v _initIOCInterrupt initIOCInterrupt `(v  1 e 1 0 ]
 {
-"49
+"41
 } 0
 "95 D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
 [v _beeperInit beeperInit `(v  1 e 1 0 ]
@@ -642,132 +632,132 @@ maxRunEvents 7
 {
 "45
 } 0
-"104 D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
+"99 D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
 [v _timerGet timerGet `(uc  1 e 1 0 ]
 {
-"106
+"101
 [v timerGet@result result `uc  1 a 1 2 ]
-"112
+"107
 } 0
-"109 D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+"88 D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
 [v _eventHandlerService eventHandlerService `(v  1 e 1 0 ]
 {
-"141
+"120
 } 0
-"351
+"267
 [v _runS4_Error runS4_Error `(v  1 e 1 0 ]
 {
-"354
+"270
 } 0
-"361
+"277
 [v _runS4_GreenSteadyLow runS4_GreenSteadyLow `(v  1 e 1 0 ]
 {
-"364
+"280
 } 0
-"356
+"272
 [v _runS4_Timeout runS4_Timeout `(v  1 e 1 0 ]
 {
-"359
+"275
 } 0
-"346
+"262
 [v _runS3_GreenFlashing runS3_GreenFlashing `(v  1 e 1 0 ]
 {
-"349
+"265
 } 0
-"336
+"252
 [v _runS3_Error runS3_Error `(v  1 e 1 0 ]
 {
-"339
+"255
 } 0
-"341
+"257
 [v _runS3_Timeout runS3_Timeout `(v  1 e 1 0 ]
 {
-"344
+"260
 } 0
-"331
+"247
 [v _runS2_BeepReceived runS2_BeepReceived `(v  1 e 1 0 ]
 {
-"334
+"250
 } 0
-"321
+"237
 [v _runS2_Error runS2_Error `(v  1 e 1 0 ]
 {
-"324
+"240
 } 0
-"326
+"242
 [v _runS2_Timeout runS2_Timeout `(v  1 e 1 0 ]
 {
-"329
+"245
 } 0
-"306
+"222
 [v _runS1_Error runS1_Error `(v  1 e 1 0 ]
 {
-"309
+"225
 } 0
-"316
+"232
 [v _runS1_Initialised runS1_Initialised `(v  1 e 1 0 ]
 {
-"319
+"235
 } 0
-"311
+"227
 [v _runS1_Timeout runS1_Timeout `(v  1 e 1 0 ]
 {
-"314
+"230
 } 0
-"301
+"217
 [v _run_NoAction run_NoAction `(v  1 e 1 0 ]
 {
-"304
+"220
 } 0
-"210
+"188
 [v _initS8_bothLow initS8_bothLow `(v  1 e 1 0 ]
 {
-"217
+"193
 } 0
-"204
+"182
 [v _initS7_bothHigh initS7_bothHigh `(v  1 e 1 0 ]
 {
-"208
+"186
 } 0
-"198
+"176
 [v _initS6_redLow initS6_redLow `(v  1 e 1 0 ]
 {
-"202
+"180
 } 0
-"192
+"170
 [v _initS5_redHigh initS5_redHigh `(v  1 e 1 0 ]
 {
-"196
+"174
 } 0
-"186
+"164
 [v _initS4_greenLow initS4_greenLow `(v  1 e 1 0 ]
 {
-"190
+"168
 } 0
-"180
+"158
 [v _initS3_greenHigh initS3_greenHigh `(v  1 e 1 0 ]
 {
-"184
+"162
 } 0
-"168
+"145
 [v _initS2_Timeout initS2_Timeout `(v  1 e 1 0 ]
 {
-"178
+"156
 } 0
-"161
+"138
 [v _initS1_Timeout initS1_Timeout `(v  1 e 1 0 ]
 {
-"166
+"143
 } 0
-"144
+"123
 [v _init_NoAction init_NoAction `(v  1 e 1 0 ]
 {
-"147
+"126
 } 0
-"149
+"128
 [v _init_Restart init_Restart `(v  1 e 1 0 ]
 {
-"159
+"136
 } 0
 "82 D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
 [v _beepRepeatedly beepRepeatedly `(v  1 e 1 0 ]
@@ -776,65 +766,55 @@ maxRunEvents 7
 [v beepRepeatedly@n n `i  1 p 2 2 ]
 "92
 } 0
-"208 D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
+"203 D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
 [v _longTimerSet longTimerSet `(v  1 e 1 0 ]
 {
 [v longTimerSet@index index `uc  1 a 1 wreg ]
 [v longTimerSet@index index `uc  1 a 1 wreg ]
 [v longTimerSet@duration duration `ul  1 p 4 0 ]
-"210
+"205
 [v longTimerSet@index index `uc  1 a 1 5 ]
-"214
+"209
 } 0
-"368 D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-[v _getRunEvent getRunEvent `(E2354  1 e 1 0 ]
+"282 D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+[v _getRunEvent getRunEvent `(E2356  1 e 1 0 ]
 {
-"399
+"296
 } 0
-"19 D:\OneDrive\Software\Projects\Chivas\TXController/source/LED.c
-[v _setLED setLED `(v  1 e 1 0 ]
-{
-"23
-} 0
-"224 D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-[v _longTimerRead longTimerRead `(ul  1 e 4 0 ]
-{
-[v longTimerRead@index index `uc  1 a 1 wreg ]
-"226
-[v longTimerRead@result result `ul  1 a 4 5 ]
-"224
-[v longTimerRead@index index `uc  1 a 1 wreg ]
-"226
-[v longTimerRead@index index `uc  1 a 1 9 ]
-"232
-} 0
-"242
-[v _longTimerLock longTimerLock `(v  1 e 1 0 ]
-{
-[v longTimerLock@index index `uc  1 a 1 wreg ]
-[v longTimerLock@index index `uc  1 a 1 wreg ]
-"244
-[v longTimerLock@index index `uc  1 a 1 1 ]
-"248
-} 0
-"25 D:\OneDrive\Software\Projects\Chivas\TXController/source/LED.c
-[v _clearLED clearLED `(v  1 e 1 0 ]
-{
-"29
-} 0
-"219 D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+"195
 [v _getInitEvent getInitEvent `(E2237  1 e 1 0 ]
 {
-"299
+"210
 } 0
-"157 D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
+"152 D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
 [v _timerLock timerLock `(v  1 e 1 0 ]
 {
 [v timerLock@index index `uc  1 a 1 wreg ]
 [v timerLock@index index `uc  1 a 1 wreg ]
-"159
+"154
 [v timerLock@index index `uc  1 a 1 0 ]
-"163
+"158
+} 0
+"219
+[v _longTimerRead longTimerRead `(ul  1 e 4 0 ]
+{
+[v longTimerRead@index index `uc  1 a 1 wreg ]
+"221
+[v longTimerRead@result result `ul  1 a 4 5 ]
+"219
+[v longTimerRead@index index `uc  1 a 1 wreg ]
+"221
+[v longTimerRead@index index `uc  1 a 1 9 ]
+"227
+} 0
+"237
+[v _longTimerLock longTimerLock `(v  1 e 1 0 ]
+{
+[v longTimerLock@index index `uc  1 a 1 wreg ]
+[v longTimerLock@index index `uc  1 a 1 wreg ]
+"239
+[v longTimerLock@index index `uc  1 a 1 1 ]
+"243
 } 0
 "15 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
@@ -856,57 +836,57 @@ maxRunEvents 7
 {
 "66
 } 0
-"123 D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
+"118 D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
 [v _timerSet timerSet `(v  1 e 1 0 ]
 {
 [v timerSet@index index `uc  1 a 1 wreg ]
 [v timerSet@index index `uc  1 a 1 wreg ]
 [v timerSet@duration duration `ui  1 p 2 0 ]
-"125
+"120
 [v timerSet@index index `uc  1 a 1 2 ]
-"129
+"124
 } 0
-"139
+"134
 [v _timerRead timerRead `(ui  1 e 2 0 ]
 {
 [v timerRead@index index `uc  1 a 1 wreg ]
-"141
+"136
 [v timerRead@result result `ui  1 a 2 3 ]
-"139
+"134
 [v timerRead@index index `uc  1 a 1 wreg ]
-"141
+"136
 [v timerRead@index index `uc  1 a 1 5 ]
-"147
+"142
 } 0
 "32 D:\OneDrive\Software\Projects\Chivas\TXController/source/interrupt.c
 [v _ISRCode ISRCode `II(v  1 e 1 0 ]
 {
 "37
 } 0
-"57 D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
+"54 D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
 [v _timerInterrupt timerInterrupt `(v  1 e 1 0 ]
 {
-"59
+"56
 [v timerInterrupt@i i `uc  1 a 1 5 ]
-"95
+"90
 } 0
 "50 D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
 [v _timer2Interrupt timer2Interrupt `(v  1 e 1 0 ]
 {
 "65
 } 0
-"51 D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+"43 D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
 [v _IOCInterrupt IOCInterrupt `(v  1 e 1 0 ]
 {
-"94
+"74
 } 0
-"123 D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
+"118 D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
 [v i1_timerSet timerSet `(v  1 e 1 0 ]
 {
 [v i1timerSet@index index `uc  1 a 1 wreg ]
 [v i1timerSet@index index `uc  1 a 1 wreg ]
 [v i1timerSet@duration duration `ui  1 p 2 0 ]
-"125
+"120
 [v i1timerSet@index index `uc  1 a 1 2 ]
-"129
+"124
 } 0

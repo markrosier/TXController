@@ -5,15 +5,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 "44
 [c E2237 0 1 2 3 4 5 6 7 8 .. ]
 [n E2237 initEvents noInitEvent initTimeoutEvent greenHighEvent greenLowEvent redHighEvent redLowEvent bothHighEvent bothLowEvent maxInitEvents  ]
-[v F2273 `(v ~T0 @X0 0 tf ]
+[v F2275 `(v ~T0 @X0 0 tf ]
 "47
 [v _init_NoAction `(v ~T0 @X0 0 ef ]
 "49
 [v _initS1_Timeout `(v ~T0 @X0 0 ef ]
-"50
-[v _initS2_Timeout `(v ~T0 @X0 0 ef ]
 "48
 [v _init_Restart `(v ~T0 @X0 0 ef ]
+"50
+[v _initS2_Timeout `(v ~T0 @X0 0 ef ]
 "51
 [v _initS3_greenHigh `(v ~T0 @X0 0 ef ]
 "52
@@ -26,42 +26,39 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _initS7_bothHigh `(v ~T0 @X0 0 ef ]
 "56
 [v _initS8_bothLow `(v ~T0 @X0 0 ef ]
-"80
-[c E2347 0 1 2 3 4 .. ]
-[n E2347 runStates runS1 runS2 runS3 runS4 maxRunStates  ]
-"91
-[c E2354 0 1 2 3 4 5 6 7 .. ]
-[n E2354 runEvents noRunEvent runTimeoutEvent initialisedEvent beepEvent greenFlashingEvent greenSteadyLowEvent errorEvent maxRunEvents  ]
-[v F2395 `(v ~T0 @X0 0 tf ]
-"93
-[v _run_NoAction `(v ~T0 @X0 0 ef ]
-"95
-[v _runS1_Timeout `(v ~T0 @X0 0 ef ]
-"96
-[v _runS1_Initialised `(v ~T0 @X0 0 ef ]
+"81
+[c E2349 0 1 2 3 4 .. ]
+[n E2349 runStates runS1 runS2 runS3 runS4 maxRunStates  ]
+"92
+[c E2356 0 1 2 3 4 5 6 7 .. ]
+[n E2356 runEvents noRunEvent runTimeoutEvent initialisedEvent beepEvent greenFlashingEvent greenSteadyLowEvent errorEvent maxRunEvents  ]
+[v F2399 `(v ~T0 @X0 0 tf ]
 "94
-[v _runS1_Error `(v ~T0 @X0 0 ef ]
-"98
-[v _runS2_Timeout `(v ~T0 @X0 0 ef ]
+[v _run_NoAction `(v ~T0 @X0 0 ef ]
+"96
+[v _runS1_Timeout `(v ~T0 @X0 0 ef ]
 "97
-[v _runS2_Error `(v ~T0 @X0 0 ef ]
+[v _runS1_Initialised `(v ~T0 @X0 0 ef ]
+"95
+[v _runS1_Error `(v ~T0 @X0 0 ef ]
 "99
-[v _runS2_BeepReceived `(v ~T0 @X0 0 ef ]
-"101
-[v _runS3_Timeout `(v ~T0 @X0 0 ef ]
+[v _runS2_Timeout `(v ~T0 @X0 0 ef ]
+"98
+[v _runS2_Error `(v ~T0 @X0 0 ef ]
 "100
-[v _runS3_Error `(v ~T0 @X0 0 ef ]
+[v _runS2_BeepReceived `(v ~T0 @X0 0 ef ]
 "102
-[v _runS3_GreenFlashing `(v ~T0 @X0 0 ef ]
-"104
-[v _runS4_Timeout `(v ~T0 @X0 0 ef ]
-"105
-[v _runS4_GreenSteadyLow `(v ~T0 @X0 0 ef ]
+[v _runS3_Timeout `(v ~T0 @X0 0 ef ]
+"101
+[v _runS3_Error `(v ~T0 @X0 0 ef ]
 "103
+[v _runS3_GreenFlashing `(v ~T0 @X0 0 ef ]
+"105
+[v _runS4_Timeout `(v ~T0 @X0 0 ef ]
+"106
+[v _runS4_GreenSteadyLow `(v ~T0 @X0 0 ef ]
+"104
 [v _runS4_Error `(v ~T0 @X0 0 ef ]
-"26 ../source/eventhandler.c
-[s S269 `uc 1 `ui 1 ]
-[n S269 event eventFlag eventTime ]
 "341 C:\Program Files (x86)\Microchip\xc8\v1.41\include\pic12f1822.h
 [s S26 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S26 . IOCIF INTF TMR0IF IOCIE INTE TMR0IE PEIE GIE ]
@@ -108,44 +105,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _IOCAFbits `VS230 ~T0 @X0 0 e@915 ]
 "27 ../include\timer.h
 [v _timerSet `(v ~T0 @X0 0 ef2`uc`ui ]
-"418 C:\Program Files (x86)\Microchip\xc8\v1.41\include\pic12f1822.h
-[s S29 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S29 . RA0 RA1 RA2 RA3 RA4 RA5 ]
-"426
-[s S30 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S30 . AN0 AN1 AN2 . AN3 ]
-"433
-[s S31 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S31 . CPS0 CPS1 CPS2 . CPS3 ]
-"440
-[s S32 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S32 . C1INP C1IN0N C1OUT . C1IN1N ]
-"447
-[s S33 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S33 . DACOUT SRI SRQ . SRNQ ]
-"454
-[s S34 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S34 . . SCK T0CKI . T1OSO T1CKI ]
-"462
-[s S35 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S35 . . SCL SDA nMCLR CLKR T1OSI ]
-"470
-[s S36 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S36 . MDOUT MDMIN MDCIN1 . MDCIN2 ]
-"477
-[s S37 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S37 . . SDI . OSC2 OSC1 ]
-"484
-[s S38 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S38 . . FLT0 . CLKOUT CLKIN ]
-"417
-[u S28 `S29 1 `S30 1 `S31 1 `S32 1 `S33 1 `S34 1 `S35 1 `S36 1 `S37 1 `S38 1 ]
-[n S28 . . . . . . . . . . . ]
-"492
-[v _PORTAbits `VS28 ~T0 @X0 0 e@12 ]
-"18 ../source/eventhandler.c
-[v _systick `ui ~T0 @X0 0 e ]
-"26 ../include\timer.h
+"26
 [v _timerGet `(uc ~T0 @X0 0 ef ]
 "32
 [v _longTimerGet `(uc ~T0 @X0 0 ef ]
@@ -153,8 +113,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _timerRead `(ui ~T0 @X0 0 ef1`uc ]
 "57 ../include\eventhandler.h
 [v _getInitEvent `(E2237 ~T0 @X0 0 ef ]
-"107
-[v _getRunEvent `(E2354 ~T0 @X0 0 ef ]
+"108
+[v _getRunEvent `(E2356 ~T0 @X0 0 ef ]
 "1942 C:\Program Files (x86)\Microchip\xc8\v1.41\include\pic12f1822.h
 [s S103 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S103 . LATA0 LATA1 LATA2 . LATA4 LATA5 ]
@@ -169,10 +129,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _longTimerSet `(v ~T0 @X0 0 ef2`uc`ul ]
 "16 ../include\beeper.h
 [v _beepRepeatedly `(v ~T0 @X0 0 ef2`i`i ]
-"14 ../include\led.h
-[v _clearLED `(v ~T0 @X0 0 ef ]
-"13
-[v _setLED `(v ~T0 @X0 0 ef ]
 "34 ../include\timer.h
 [v _longTimerRead `(ul ~T0 @X0 0 ef1`uc ]
 "35
@@ -2361,101 +2317,102 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;include\eventhandler.h: 55: void initS7_bothHigh (void);
 [; ;include\eventhandler.h: 56: void initS8_bothLow (void);
 [; ;include\eventhandler.h: 57: enum initEvents getInitEvent (void);
-[v F2272 `*F2273 ~T0 @X0 . `E2237 8 t ]
-"60
-[v _initStateTable `CF2272 ~T0 @X0 . `E2225 9 e ]
+[; ;include\eventhandler.h: 58: void setInitEvent( enum initEvents event);
+[v F2274 `*F2275 ~T0 @X0 . `E2237 8 t ]
+"61
+[v _initStateTable `CF2274 ~T0 @X0 . `E2225 9 e ]
 [i _initStateTable
 :U ..
 :U ..
-"63
-&U _init_NoAction
-&U _initS1_Timeout
-&U _init_NoAction
-&U _init_NoAction
-&U _init_NoAction
-&U _init_NoAction
-&U _init_NoAction
-&U _init_NoAction
-..
-:U ..
 "64
 &U _init_NoAction
-&U _initS2_Timeout
-&U _init_NoAction
-&U _init_NoAction
-&U _init_NoAction
-&U _init_NoAction
-&U _init_NoAction
-&U _init_NoAction
+&U _initS1_Timeout
+&U _init_Restart
+&U _init_Restart
+&U _init_Restart
+&U _init_Restart
+&U _init_Restart
+&U _init_Restart
 ..
 :U ..
 "65
 &U _init_NoAction
+&U _initS2_Timeout
 &U _init_Restart
-&U _initS3_greenHigh
-&U _init_NoAction
-&U _init_NoAction
-&U _init_NoAction
-&U _init_NoAction
-&U _init_NoAction
+&U _init_Restart
+&U _init_Restart
+&U _init_Restart
+&U _init_Restart
+&U _init_Restart
 ..
 :U ..
 "66
 &U _init_NoAction
 &U _init_Restart
-&U _init_NoAction
-&U _initS4_greenLow
-&U _init_NoAction
-&U _init_NoAction
-&U _init_NoAction
-&U _init_NoAction
+&U _initS3_greenHigh
+&U _init_Restart
+&U _init_Restart
+&U _init_Restart
+&U _init_Restart
+&U _init_Restart
 ..
 :U ..
 "67
 &U _init_NoAction
 &U _init_Restart
-&U _init_NoAction
-&U _init_NoAction
-&U _initS5_redHigh
-&U _init_NoAction
-&U _init_NoAction
-&U _init_NoAction
+&U _init_Restart
+&U _initS4_greenLow
+&U _init_Restart
+&U _init_Restart
+&U _init_Restart
+&U _init_Restart
 ..
 :U ..
 "68
 &U _init_NoAction
 &U _init_Restart
-&U _init_NoAction
-&U _init_NoAction
-&U _init_NoAction
-&U _initS6_redLow
-&U _init_NoAction
-&U _init_NoAction
+&U _init_Restart
+&U _init_Restart
+&U _initS5_redHigh
+&U _init_Restart
+&U _init_Restart
+&U _init_Restart
 ..
 :U ..
 "69
 &U _init_NoAction
 &U _init_Restart
-&U _init_NoAction
-&U _init_NoAction
-&U _init_NoAction
-&U _init_NoAction
-&U _initS7_bothHigh
-&U _init_NoAction
+&U _init_Restart
+&U _init_Restart
+&U _init_Restart
+&U _initS6_redLow
+&U _init_Restart
+&U _init_Restart
 ..
 :U ..
 "70
 &U _init_NoAction
 &U _init_Restart
-&U _init_NoAction
-&U _init_NoAction
-&U _init_NoAction
-&U _init_NoAction
-&U _init_NoAction
-&U _initS8_bothLow
+&U _init_Restart
+&U _init_Restart
+&U _init_Restart
+&U _init_Restart
+&U _initS7_bothHigh
+&U _init_Restart
 ..
 :U ..
 "71
+&U _init_NoAction
+&U _init_Restart
+&U _init_Restart
+&U _init_Restart
+&U _init_Restart
+&U _init_Restart
+&U _init_Restart
+&U _initS8_bothLow
+..
+:U ..
+"72
 &U _init_NoAction
 &U _init_Restart
 &U _init_NoAction
@@ -2467,59 +2424,60 @@ Version 3.2 HI-TECH Software Intermediate Code
 ..
 ..
 ]
-[; ;include\eventhandler.h: 60: void (*const initStateTable [maxInitStates][maxInitEvents]) (void) = {
-[; ;include\eventhandler.h: 63: { init_NoAction, initS1_Timeout, init_NoAction, init_NoAction, init_NoAction, init_NoAction, init_NoAction, init_NoAction },
-[; ;include\eventhandler.h: 64: { init_NoAction, initS2_Timeout, init_NoAction, init_NoAction, init_NoAction, init_NoAction, init_NoAction, init_NoAction },
-[; ;include\eventhandler.h: 65: { init_NoAction, init_Restart, initS3_greenHigh, init_NoAction, init_NoAction, init_NoAction, init_NoAction, init_NoAction },
-[; ;include\eventhandler.h: 66: { init_NoAction, init_Restart, init_NoAction, initS4_greenLow, init_NoAction, init_NoAction, init_NoAction, init_NoAction },
-[; ;include\eventhandler.h: 67: { init_NoAction, init_Restart, init_NoAction, init_NoAction, initS5_redHigh, init_NoAction, init_NoAction, init_NoAction },
-[; ;include\eventhandler.h: 68: { init_NoAction, init_Restart, init_NoAction, init_NoAction, init_NoAction, initS6_redLow, init_NoAction, init_NoAction },
-[; ;include\eventhandler.h: 69: { init_NoAction, init_Restart, init_NoAction, init_NoAction, init_NoAction, init_NoAction, initS7_bothHigh, init_NoAction },
-[; ;include\eventhandler.h: 70: { init_NoAction, init_Restart, init_NoAction, init_NoAction, init_NoAction, init_NoAction, init_NoAction, initS8_bothLow },
-[; ;include\eventhandler.h: 71: { init_NoAction, init_Restart, init_NoAction, init_NoAction, init_NoAction, init_NoAction, init_NoAction, init_NoAction }
-[; ;include\eventhandler.h: 72: };
-"80
-[v _runState `E2347 ~T0 @X0 1 e ]
-[; ;include\eventhandler.h: 74: enum runStates {
-[; ;include\eventhandler.h: 75: runS1,
-[; ;include\eventhandler.h: 76: runS2,
-[; ;include\eventhandler.h: 77: runS3,
-[; ;include\eventhandler.h: 78: runS4,
-[; ;include\eventhandler.h: 79: maxRunStates
-[; ;include\eventhandler.h: 80: } runState;
-"91
-[v _runEvent `E2354 ~T0 @X0 1 e ]
-[; ;include\eventhandler.h: 82: enum runEvents {
-[; ;include\eventhandler.h: 83: noRunEvent,
-[; ;include\eventhandler.h: 84: runTimeoutEvent,
-[; ;include\eventhandler.h: 85: initialisedEvent,
-[; ;include\eventhandler.h: 86: beepEvent,
-[; ;include\eventhandler.h: 87: greenFlashingEvent,
-[; ;include\eventhandler.h: 88: greenSteadyLowEvent,
-[; ;include\eventhandler.h: 89: errorEvent,
-[; ;include\eventhandler.h: 90: maxRunEvents
-[; ;include\eventhandler.h: 91: } runEvent;
-[; ;include\eventhandler.h: 93: void run_NoAction (void);
-[; ;include\eventhandler.h: 94: void runS1_Error (void);
-[; ;include\eventhandler.h: 95: void runS1_Timeout (void);
-[; ;include\eventhandler.h: 96: void runS1_Initialised (void);
-[; ;include\eventhandler.h: 97: void runS2_Error (void);
-[; ;include\eventhandler.h: 98: void runS2_Timeout (void);
-[; ;include\eventhandler.h: 99: void runS2_BeepReceived (void);
-[; ;include\eventhandler.h: 100: void runS3_Error (void);
-[; ;include\eventhandler.h: 101: void runS3_Timeout (void);
-[; ;include\eventhandler.h: 102: void runS3_GreenFlashing (void);
-[; ;include\eventhandler.h: 103: void runS4_Error (void);
-[; ;include\eventhandler.h: 104: void runS4_Timeout (void);
-[; ;include\eventhandler.h: 105: void runS4_GreenSteadyLow (void);
-[; ;include\eventhandler.h: 107: enum runEvents getRunEvent (void);
-[v F2394 `*F2395 ~T0 @X0 . `E2354 7 t ]
-"110
-[v _runStateTable `CF2394 ~T0 @X0 . `E2347 4 e ]
+[; ;include\eventhandler.h: 61: void (*const initStateTable [maxInitStates][maxInitEvents]) (void) = {
+[; ;include\eventhandler.h: 64: { init_NoAction, initS1_Timeout, init_Restart, init_Restart, init_Restart, init_Restart, init_Restart, init_Restart },
+[; ;include\eventhandler.h: 65: { init_NoAction, initS2_Timeout, init_Restart, init_Restart, init_Restart, init_Restart, init_Restart, init_Restart },
+[; ;include\eventhandler.h: 66: { init_NoAction, init_Restart, initS3_greenHigh, init_Restart, init_Restart, init_Restart, init_Restart, init_Restart },
+[; ;include\eventhandler.h: 67: { init_NoAction, init_Restart, init_Restart, initS4_greenLow, init_Restart, init_Restart, init_Restart, init_Restart },
+[; ;include\eventhandler.h: 68: { init_NoAction, init_Restart, init_Restart, init_Restart, initS5_redHigh, init_Restart, init_Restart, init_Restart },
+[; ;include\eventhandler.h: 69: { init_NoAction, init_Restart, init_Restart, init_Restart, init_Restart, initS6_redLow, init_Restart, init_Restart },
+[; ;include\eventhandler.h: 70: { init_NoAction, init_Restart, init_Restart, init_Restart, init_Restart, init_Restart, initS7_bothHigh, init_Restart },
+[; ;include\eventhandler.h: 71: { init_NoAction, init_Restart, init_Restart, init_Restart, init_Restart, init_Restart, init_Restart, initS8_bothLow },
+[; ;include\eventhandler.h: 72: { init_NoAction, init_Restart, init_NoAction, init_NoAction, init_NoAction, init_NoAction, init_NoAction, init_NoAction }
+[; ;include\eventhandler.h: 73: };
+"81
+[v _runState `E2349 ~T0 @X0 1 e ]
+[; ;include\eventhandler.h: 75: enum runStates {
+[; ;include\eventhandler.h: 76: runS1,
+[; ;include\eventhandler.h: 77: runS2,
+[; ;include\eventhandler.h: 78: runS3,
+[; ;include\eventhandler.h: 79: runS4,
+[; ;include\eventhandler.h: 80: maxRunStates
+[; ;include\eventhandler.h: 81: } runState;
+"92
+[v _runEvent `E2356 ~T0 @X0 1 e ]
+[; ;include\eventhandler.h: 83: enum runEvents {
+[; ;include\eventhandler.h: 84: noRunEvent,
+[; ;include\eventhandler.h: 85: runTimeoutEvent,
+[; ;include\eventhandler.h: 86: initialisedEvent,
+[; ;include\eventhandler.h: 87: beepEvent,
+[; ;include\eventhandler.h: 88: greenFlashingEvent,
+[; ;include\eventhandler.h: 89: greenSteadyLowEvent,
+[; ;include\eventhandler.h: 90: errorEvent,
+[; ;include\eventhandler.h: 91: maxRunEvents
+[; ;include\eventhandler.h: 92: } runEvent;
+[; ;include\eventhandler.h: 94: void run_NoAction (void);
+[; ;include\eventhandler.h: 95: void runS1_Error (void);
+[; ;include\eventhandler.h: 96: void runS1_Timeout (void);
+[; ;include\eventhandler.h: 97: void runS1_Initialised (void);
+[; ;include\eventhandler.h: 98: void runS2_Error (void);
+[; ;include\eventhandler.h: 99: void runS2_Timeout (void);
+[; ;include\eventhandler.h: 100: void runS2_BeepReceived (void);
+[; ;include\eventhandler.h: 101: void runS3_Error (void);
+[; ;include\eventhandler.h: 102: void runS3_Timeout (void);
+[; ;include\eventhandler.h: 103: void runS3_GreenFlashing (void);
+[; ;include\eventhandler.h: 104: void runS4_Error (void);
+[; ;include\eventhandler.h: 105: void runS4_Timeout (void);
+[; ;include\eventhandler.h: 106: void runS4_GreenSteadyLow (void);
+[; ;include\eventhandler.h: 108: enum runEvents getRunEvent (void);
+[; ;include\eventhandler.h: 109: void setRunEvent( enum runEvents event);
+[v F2398 `*F2399 ~T0 @X0 . `E2356 7 t ]
+"112
+[v _runStateTable `CF2398 ~T0 @X0 . `E2349 4 e ]
 [i _runStateTable
 :U ..
 :U ..
-"113
+"115
 &U _run_NoAction
 &U _runS1_Timeout
 &U _runS1_Initialised
@@ -2529,7 +2487,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 &U _runS1_Error
 ..
 :U ..
-"114
+"116
 &U _run_NoAction
 &U _runS2_Timeout
 &U _runS2_Error
@@ -2539,7 +2497,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 &U _runS2_Error
 ..
 :U ..
-"115
+"117
 &U _run_NoAction
 &U _runS3_Timeout
 &U _runS3_Error
@@ -2549,7 +2507,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 &U _runS3_Error
 ..
 :U ..
-"116
+"118
 &U _run_NoAction
 &U _runS4_Timeout
 &U _runS3_Error
@@ -2560,12 +2518,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 ..
 ..
 ]
-[; ;include\eventhandler.h: 110: void (*const runStateTable [maxRunStates][maxRunEvents]) (void) = {
-[; ;include\eventhandler.h: 113: { run_NoAction, runS1_Timeout, runS1_Initialised, runS1_Error, runS1_Error, run_NoAction, runS1_Error },
-[; ;include\eventhandler.h: 114: { run_NoAction, runS2_Timeout, runS2_Error, runS2_BeepReceived, runS2_Error, run_NoAction, runS2_Error },
-[; ;include\eventhandler.h: 115: { run_NoAction, runS3_Timeout, runS3_Error, runS3_Error, runS3_GreenFlashing, run_NoAction, runS3_Error },
-[; ;include\eventhandler.h: 116: { run_NoAction, runS4_Timeout, runS3_Error, runS3_Error, run_NoAction, runS4_GreenSteadyLow, runS4_Error }
-[; ;include\eventhandler.h: 117: };
+[; ;include\eventhandler.h: 112: void (*const runStateTable [maxRunStates][maxRunEvents]) (void) = {
+[; ;include\eventhandler.h: 115: { run_NoAction, runS1_Timeout, runS1_Initialised, runS1_Error, runS1_Error, run_NoAction, runS1_Error },
+[; ;include\eventhandler.h: 116: { run_NoAction, runS2_Timeout, runS2_Error, runS2_BeepReceived, runS2_Error, run_NoAction, runS2_Error },
+[; ;include\eventhandler.h: 117: { run_NoAction, runS3_Timeout, runS3_Error, runS3_Error, runS3_GreenFlashing, run_NoAction, runS3_Error },
+[; ;include\eventhandler.h: 118: { run_NoAction, runS4_Timeout, runS3_Error, runS3_Error, run_NoAction, runS4_GreenSteadyLow, runS4_Error }
+[; ;include\eventhandler.h: 119: };
 [; ;include\led.h: 13: void setLED ( void );
 [; ;include\led.h: 14: void clearLED ( void );
 [; ;include\led.h: 15: void flashLED ( int period );
@@ -2577,1088 +2535,772 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;include\beeper.h: 16: void beepRepeatedly ( int period, int nBeeps );
 [; ;include\beeper.h: 18: void beeperInit (void);
 [; ;include\beeper.h: 19: void beeperService (void);
-[; ;eventhandler.c: 18: extern unsigned int systick;
-"20 ../source/eventhandler.c
+"19 ../source/eventhandler.c
 [v _eventHandlerTimer `uc ~T0 @X0 1 e ]
 [i _eventHandlerTimer
 -> -> 0 `i `uc
 ]
-[; ;eventhandler.c: 20: BYTE eventHandlerTimer = 0;
+[; ;eventhandler.c: 19: BYTE eventHandlerTimer = 0;
+"20
+[v _lastInitEvent `E2237 ~T0 @X0 1 e ]
+[i _lastInitEvent
+. `E2237 0
+]
+[; ;eventhandler.c: 20: enum initEvents lastInitEvent = noInitEvent;
 "21
+[v _lastRunEvent `E2356 ~T0 @X0 1 e ]
+[i _lastRunEvent
+. `E2356 0
+]
+[; ;eventhandler.c: 21: enum runEvents lastRunEvent = noRunEvent;
+"22
 [v _initSMTimer `i ~T0 @X0 1 e ]
 [i _initSMTimer
 -> 0 `i
 ]
-[; ;eventhandler.c: 21: int initSMTimer = 0;
-"22
+[; ;eventhandler.c: 22: int initSMTimer = 0;
+"23
 [v _runSMTimer `i ~T0 @X0 1 e ]
 [i _runSMTimer
 -> 0 `i
 ]
-[; ;eventhandler.c: 22: int runSMTimer = 0;
-"23
+[; ;eventhandler.c: 23: int runSMTimer = 0;
+"24
 [v _buzzerTimer `i ~T0 @X0 1 e ]
 [i _buzzerTimer
 -> 0 `i
 ]
-[; ;eventhandler.c: 23: int buzzerTimer = 0;
-"24
+[; ;eventhandler.c: 24: int buzzerTimer = 0;
+"25
 [v _minuteTimer `i ~T0 @X0 1 e ]
 [i _minuteTimer
 -> 0 `i
 ]
-[; ;eventhandler.c: 24: int minuteTimer = 0;
-[; ;eventhandler.c: 26: struct event {
-[; ;eventhandler.c: 27: bool eventFlag;
-[; ;eventhandler.c: 28: unsigned int eventTime;
-[; ;eventhandler.c: 29: };
-"31
-[v _greenWentHigh `S269 ~T0 @X0 1 e ]
-[v _greenWentLow `S269 ~T0 @X0 1 e ]
-[v _redWentHigh `S269 ~T0 @X0 1 e ]
-[v _redWentLow `S269 ~T0 @X0 1 e ]
-[; ;eventhandler.c: 31: struct event greenWentHigh, greenWentLow, redWentHigh, redWentLow;
-"33
-[v _chargerInitialised `S269 ~T0 @X0 1 e ]
-[; ;eventhandler.c: 33: struct event chargerInitialised;
-"38
+[; ;eventhandler.c: 25: int minuteTimer = 0;
+"27
+[v _buzzerDetected `i ~T0 @X0 1 e ]
+[i _buzzerDetected
+-> 1 `i
+]
+[; ;eventhandler.c: 27: int buzzerDetected = 1;
+"28
+[v _buzzerStarted `uc ~T0 @X0 1 e ]
+[i _buzzerStarted
+-> -> 0 `i `uc
+]
+[; ;eventhandler.c: 28: bool buzzerStarted = 0;
+"30
 [v _initIOCInterrupt `(v ~T0 @X0 1 ef ]
-"39
+"31
 {
-[; ;eventhandler.c: 38: void initIOCInterrupt( void )
-[; ;eventhandler.c: 39: {
+[; ;eventhandler.c: 30: void initIOCInterrupt( void )
+[; ;eventhandler.c: 31: {
 [e :U _initIOCInterrupt ]
 [f ]
-[; ;eventhandler.c: 40: INTCONbits.GIE = 1;
-"40
+[; ;eventhandler.c: 32: INTCONbits.GIE = 1;
+"32
 [e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-[; ;eventhandler.c: 41: IOCANbits.IOCAN3 = 1;
-"41
+[; ;eventhandler.c: 33: IOCANbits.IOCAN3 = 1;
+"33
 [e = . . _IOCANbits 0 3 -> -> 1 `i `uc ]
-[; ;eventhandler.c: 42: IOCANbits.IOCAN2 = 1;
-"42
+[; ;eventhandler.c: 34: IOCANbits.IOCAN2 = 1;
+"34
 [e = . . _IOCANbits 0 2 -> -> 1 `i `uc ]
-[; ;eventhandler.c: 43: IOCAPbits.IOCAP2 = 1;
-"43
+[; ;eventhandler.c: 35: IOCAPbits.IOCAP2 = 1;
+"35
 [e = . . _IOCAPbits 0 2 -> -> 1 `i `uc ]
-[; ;eventhandler.c: 44: IOCANbits.IOCAN4 = 1;
-"44
+[; ;eventhandler.c: 36: IOCANbits.IOCAN4 = 1;
+"36
 [e = . . _IOCANbits 0 4 -> -> 1 `i `uc ]
-[; ;eventhandler.c: 45: IOCAPbits.IOCAP4 = 1;
-"45
+[; ;eventhandler.c: 37: IOCAPbits.IOCAP4 = 1;
+"37
 [e = . . _IOCAPbits 0 4 -> -> 1 `i `uc ]
-[; ;eventhandler.c: 46: INTCONbits.IOCIF = 0;
-"46
+[; ;eventhandler.c: 38: INTCONbits.IOCIF = 0;
+"38
 [e = . . _INTCONbits 0 0 -> -> 0 `i `uc ]
-[; ;eventhandler.c: 47: INTCONbits.IOCIE = 1;
-"47
+[; ;eventhandler.c: 39: INTCONbits.IOCIE = 1;
+"39
 [e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
-[; ;eventhandler.c: 48: INTCONbits.PEIE = 1;
-"48
+[; ;eventhandler.c: 40: INTCONbits.PEIE = 1;
+"40
 [e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-[; ;eventhandler.c: 49: }
-"49
-[e :UE 270 ]
+[; ;eventhandler.c: 41: }
+"41
+[e :UE 269 ]
 }
-"51
+"43
 [v _IOCInterrupt `(v ~T0 @X0 1 ef ]
-"52
+"44
 {
-[; ;eventhandler.c: 51: void IOCInterrupt( void )
-[; ;eventhandler.c: 52: {
+[; ;eventhandler.c: 43: void IOCInterrupt( void )
+[; ;eventhandler.c: 44: {
 [e :U _IOCInterrupt ]
 [f ]
-[; ;eventhandler.c: 53: if ( INTCONbits.IOCIF == 1)
-"53
-[e $ ! == -> . . _INTCONbits 0 0 `i -> 1 `i 272  ]
-[; ;eventhandler.c: 54: {
-"54
+[; ;eventhandler.c: 45: if ( INTCONbits.IOCIF == 1)
+"45
+[e $ ! == -> . . _INTCONbits 0 0 `i -> 1 `i 271  ]
+[; ;eventhandler.c: 46: {
+"46
 {
-[; ;eventhandler.c: 56: if (IOCAFbits.IOCAF3 == 1)
-"56
-[e $ ! == -> . . _IOCAFbits 0 3 `i -> 1 `i 273  ]
-[; ;eventhandler.c: 57: {
-"57
+[; ;eventhandler.c: 48: if (IOCAFbits.IOCAF3 == 1)
+"48
+[e $ ! == -> . . _IOCAFbits 0 3 `i -> 1 `i 272  ]
+[; ;eventhandler.c: 49: {
+"49
 {
-[; ;eventhandler.c: 61: timerSet( buzzerTimer, 2 );
-"61
-[e ( _timerSet (2 , -> _buzzerTimer `uc -> -> 2 `i `ui ]
-[; ;eventhandler.c: 63: IOCAFbits.IOCAF3 = 0;
-"63
+[; ;eventhandler.c: 50: buzzerStarted = !0;
+"50
+[e = _buzzerStarted -> -> ! != -> 0 `i -> 0 `i `i `uc ]
+[; ;eventhandler.c: 51: timerSet( buzzerTimer, 1 );
+"51
+[e ( _timerSet (2 , -> _buzzerTimer `uc -> -> 1 `i `ui ]
+[; ;eventhandler.c: 55: IOCAFbits.IOCAF3 = 0;
+"55
 [e = . . _IOCAFbits 0 3 -> -> 0 `i `uc ]
+"56
+}
+[e :U 272 ]
+[; ;eventhandler.c: 56: }
+[; ;eventhandler.c: 57: if (IOCAFbits.IOCAF2 == 1)
+"57
+[e $ ! == -> . . _IOCAFbits 0 2 `i -> 1 `i 273  ]
+[; ;eventhandler.c: 58: {
+"58
+{
+[; ;eventhandler.c: 63: IOCAFbits.IOCAF2 = 0;
+"63
+[e = . . _IOCAFbits 0 2 -> -> 0 `i `uc ]
 "64
 }
 [e :U 273 ]
 [; ;eventhandler.c: 64: }
-[; ;eventhandler.c: 65: if (IOCAFbits.IOCAF2 == 1)
+[; ;eventhandler.c: 65: if (IOCAFbits.IOCAF4 == 1)
 "65
-[e $ ! == -> . . _IOCAFbits 0 2 `i -> 1 `i 274  ]
+[e $ ! == -> . . _IOCAFbits 0 4 `i -> 1 `i 274  ]
 [; ;eventhandler.c: 66: {
 "66
 {
-[; ;eventhandler.c: 67: if (PORTAbits.RA2 == 1)
-"67
-[e $ ! == -> . . _PORTAbits 0 2 `i -> 1 `i 275  ]
-[; ;eventhandler.c: 68: {
-"68
-{
-[; ;eventhandler.c: 69: greenWentHigh.eventFlag = !0;
-"69
-[e = . _greenWentHigh 0 -> -> ! != -> 0 `i -> 0 `i `i `uc ]
-[; ;eventhandler.c: 70: greenWentHigh.eventTime = systick;
-"70
-[e = . _greenWentHigh 1 _systick ]
+[; ;eventhandler.c: 71: IOCAFbits.IOCAF4 = 0;
 "71
-}
-[; ;eventhandler.c: 71: }
-[e $U 276  ]
+[e = . . _IOCAFbits 0 4 -> -> 0 `i `uc ]
 "72
-[e :U 275 ]
-[; ;eventhandler.c: 72: else
-[; ;eventhandler.c: 73: {
-"73
-{
-[; ;eventhandler.c: 74: greenWentLow.eventFlag = !0;
-"74
-[e = . _greenWentLow 0 -> -> ! != -> 0 `i -> 0 `i `i `uc ]
-[; ;eventhandler.c: 75: greenWentLow.eventTime = systick;
-"75
-[e = . _greenWentLow 1 _systick ]
-"76
-}
-[e :U 276 ]
-[; ;eventhandler.c: 76: }
-[; ;eventhandler.c: 77: IOCAFbits.IOCAF2 = 0;
-"77
-[e = . . _IOCAFbits 0 2 -> -> 0 `i `uc ]
-"78
 }
 [e :U 274 ]
-[; ;eventhandler.c: 78: }
-[; ;eventhandler.c: 79: if (IOCAFbits.IOCAF4 == 1)
-"79
-[e $ ! == -> . . _IOCAFbits 0 4 `i -> 1 `i 277  ]
-[; ;eventhandler.c: 80: {
-"80
-{
-[; ;eventhandler.c: 81: if (PORTAbits.RA4 == 1)
-"81
-[e $ ! == -> . . _PORTAbits 0 4 `i -> 1 `i 278  ]
-[; ;eventhandler.c: 82: {
-"82
-{
-[; ;eventhandler.c: 83: redWentHigh.eventFlag = !0;
-"83
-[e = . _redWentHigh 0 -> -> ! != -> 0 `i -> 0 `i `i `uc ]
-[; ;eventhandler.c: 84: redWentHigh.eventTime = systick;
-"84
-[e = . _redWentHigh 1 _systick ]
-"85
+"73
 }
-[; ;eventhandler.c: 85: }
-[e $U 279  ]
-"86
-[e :U 278 ]
-[; ;eventhandler.c: 86: else
-[; ;eventhandler.c: 87: {
-"87
-{
-[; ;eventhandler.c: 88: redWentLow.eventFlag = !0;
-"88
-[e = . _redWentLow 0 -> -> ! != -> 0 `i -> 0 `i `i `uc ]
-[; ;eventhandler.c: 89: redWentLow.eventTime = systick;
-"89
-[e = . _redWentLow 1 _systick ]
-"90
+[e :U 271 ]
+[; ;eventhandler.c: 72: }
+[; ;eventhandler.c: 73: }
+[; ;eventhandler.c: 74: }
+"74
+[e :UE 270 ]
 }
-[e :U 279 ]
-[; ;eventhandler.c: 90: }
-[; ;eventhandler.c: 91: IOCAFbits.IOCAF4 = 0;
-"91
-[e = . . _IOCAFbits 0 4 -> -> 0 `i `uc ]
-"92
-}
-[e :U 277 ]
-"93
-}
-[e :U 272 ]
-[; ;eventhandler.c: 92: }
-[; ;eventhandler.c: 93: }
-[; ;eventhandler.c: 94: }
-"94
-[e :UE 271 ]
-}
-"96
+"76
 [v _eventHandlerInit `(v ~T0 @X0 1 ef ]
-"97
+"77
 {
-[; ;eventhandler.c: 96: void eventHandlerInit ()
-[; ;eventhandler.c: 97: {
+[; ;eventhandler.c: 76: void eventHandlerInit ()
+[; ;eventhandler.c: 77: {
 [e :U _eventHandlerInit ]
 [f ]
-[; ;eventhandler.c: 98: eventHandlerTimer = timerGet ();
-"98
+[; ;eventhandler.c: 78: eventHandlerTimer = timerGet ();
+"78
 [e = _eventHandlerTimer ( _timerGet ..  ]
-[; ;eventhandler.c: 99: timerSet( eventHandlerTimer, 10 );
-"99
+[; ;eventhandler.c: 79: timerSet( eventHandlerTimer, 10 );
+"79
 [e ( _timerSet (2 , _eventHandlerTimer -> -> 10 `i `ui ]
-[; ;eventhandler.c: 100: initIOCInterrupt();
-"100
+[; ;eventhandler.c: 80: initIOCInterrupt();
+"80
 [e ( _initIOCInterrupt ..  ]
-[; ;eventhandler.c: 101: buzzerTimer = timerGet();
-"101
+[; ;eventhandler.c: 81: buzzerTimer = timerGet();
+"81
 [e = _buzzerTimer -> ( _timerGet ..  `i ]
-[; ;eventhandler.c: 102: initSMTimer = timerGet();
-"102
+[; ;eventhandler.c: 82: initSMTimer = timerGet();
+"82
 [e = _initSMTimer -> ( _timerGet ..  `i ]
-[; ;eventhandler.c: 103: runSMTimer = timerGet();
-"103
-[e = _runSMTimer -> ( _timerGet ..  `i ]
-[; ;eventhandler.c: 104: minuteTimer = longTimerGet();
-"104
+[; ;eventhandler.c: 83: minuteTimer = longTimerGet();
+"83
 [e = _minuteTimer -> ( _longTimerGet ..  `i ]
-[; ;eventhandler.c: 105: init_Restart();
-"105
+[; ;eventhandler.c: 84: init_Restart();
+"84
 [e ( _init_Restart ..  ]
-[; ;eventhandler.c: 107: }
-"107
-[e :UE 280 ]
+[; ;eventhandler.c: 86: }
+"86
+[e :UE 275 ]
 }
-"109
+"88
 [v _eventHandlerService `(v ~T0 @X0 1 ef ]
-"110
+"89
 {
-[; ;eventhandler.c: 109: void eventHandlerService ()
-[; ;eventhandler.c: 110: {
+[; ;eventhandler.c: 88: void eventHandlerService ()
+[; ;eventhandler.c: 89: {
 [e :U _eventHandlerService ]
 [f ]
-[; ;eventhandler.c: 111: if ( timerRead(eventHandlerTimer) == 0 )
-"111
-[e $ ! == ( _timerRead (1 _eventHandlerTimer -> -> 0 `i `ui 282  ]
-[; ;eventhandler.c: 112: {
-"112
+[; ;eventhandler.c: 90: if ( timerRead(eventHandlerTimer) == 0 )
+"90
+[e $ ! == ( _timerRead (1 _eventHandlerTimer -> -> 0 `i `ui 277  ]
+[; ;eventhandler.c: 91: {
+"91
 {
-[; ;eventhandler.c: 113: initEvent = getInitEvent ();
-"113
+[; ;eventhandler.c: 92: initEvent = getInitEvent ();
+"92
 [e = _initEvent ( _getInitEvent ..  ]
-[; ;eventhandler.c: 115: if (((initEvent >= 0) && (initEvent < maxInitEvents))
-[; ;eventhandler.c: 116: && ((initState >= 0) && (initState < maxInitStates))) {
-"116
-[e $ ! && && >= -> _initEvent `i -> 0 `i < -> _initEvent `i -> . `E2237 8 `i && >= -> _initState `i -> 0 `i < -> _initState `i -> . `E2225 9 `i 283  ]
+[; ;eventhandler.c: 94: if (((initEvent >= 0) && (initEvent < maxInitEvents))
+[; ;eventhandler.c: 95: && ((initState >= 0) && (initState < maxInitStates))) {
+"95
+[e $ ! && && >= -> _initEvent `i -> 0 `i < -> _initEvent `i -> . `E2237 8 `i && >= -> _initState `i -> 0 `i < -> _initState `i -> . `E2225 9 `i 278  ]
 {
-[; ;eventhandler.c: 118: initStateTable [initState][initEvent] ();
-"118
+[; ;eventhandler.c: 97: initStateTable [initState][initEvent] ();
+"97
 [e ( *U *U + &U *U + &U _initStateTable * -> _initState `ux -> * -> # *U &U *U &U _initStateTable `ui -> . `E2237 8 `ui `ux * -> _initEvent `ux -> -> # *U &U *U + &U _initStateTable * -> _initState `ux -> * -> # *U &U *U &U _initStateTable `ui -> . `E2237 8 `ui `ux `ui `ux ..  ]
-"120
+"99
 }
-[; ;eventhandler.c: 120: } else
-[e $U 284  ]
-[e :U 283 ]
-[; ;eventhandler.c: 121: {
-"121
+[; ;eventhandler.c: 99: } else
+[e $U 279  ]
+[e :U 278 ]
+[; ;eventhandler.c: 100: {
+"100
 {
-[; ;eventhandler.c: 123: init_Restart();
-"123
+[; ;eventhandler.c: 102: init_Restart();
+"102
 [e ( _init_Restart ..  ]
-"124
+"103
 }
-[e :U 284 ]
-[; ;eventhandler.c: 124: }
-[; ;eventhandler.c: 126: runEvent = getRunEvent ();
-"126
+[e :U 279 ]
+[; ;eventhandler.c: 103: }
+[; ;eventhandler.c: 105: runEvent = getRunEvent ();
+"105
 [e = _runEvent ( _getRunEvent ..  ]
-[; ;eventhandler.c: 128: if (((runEvent >= 0) && (runEvent < maxRunEvents))
-[; ;eventhandler.c: 129: && ((runState >= 0) && (runState < maxRunStates))) {
-"129
-[e $ ! && && >= -> _runEvent `i -> 0 `i < -> _runEvent `i -> . `E2354 7 `i && >= -> _runState `i -> 0 `i < -> _runState `i -> . `E2347 4 `i 285  ]
+[; ;eventhandler.c: 107: if (((runEvent >= 0) && (runEvent < maxRunEvents))
+[; ;eventhandler.c: 108: && ((runState >= 0) && (runState < maxRunStates))) {
+"108
+[e $ ! && && >= -> _runEvent `i -> 0 `i < -> _runEvent `i -> . `E2356 7 `i && >= -> _runState `i -> 0 `i < -> _runState `i -> . `E2349 4 `i 280  ]
 {
-[; ;eventhandler.c: 131: runStateTable [runState][runEvent] ();
-"131
-[e ( *U *U + &U *U + &U _runStateTable * -> _runState `ux -> * -> # *U &U *U &U _runStateTable `ui -> . `E2354 7 `ui `ux * -> _runEvent `ux -> -> # *U &U *U + &U _runStateTable * -> _runState `ux -> * -> # *U &U *U &U _runStateTable `ui -> . `E2354 7 `ui `ux `ui `ux ..  ]
-"133
+[; ;eventhandler.c: 110: runStateTable [runState][runEvent] ();
+"110
+[e ( *U *U + &U *U + &U _runStateTable * -> _runState `ux -> * -> # *U &U *U &U _runStateTable `ui -> . `E2356 7 `ui `ux * -> _runEvent `ux -> -> # *U &U *U + &U _runStateTable * -> _runState `ux -> * -> # *U &U *U &U _runStateTable `ui -> . `E2356 7 `ui `ux `ui `ux ..  ]
+"112
 }
-[; ;eventhandler.c: 133: } else
-[e $U 286  ]
-[e :U 285 ]
-[; ;eventhandler.c: 134: {
-"134
+[; ;eventhandler.c: 112: } else
+[e $U 281  ]
+[e :U 280 ]
+[; ;eventhandler.c: 113: {
+"113
 {
-[; ;eventhandler.c: 136: init_Restart();
-"136
+[; ;eventhandler.c: 115: init_Restart();
+"115
 [e ( _init_Restart ..  ]
-"137
+"116
 }
-[e :U 286 ]
-[; ;eventhandler.c: 137: }
-[; ;eventhandler.c: 139: timerSet( eventHandlerTimer, 10 );
-"139
+[e :U 281 ]
+[; ;eventhandler.c: 116: }
+[; ;eventhandler.c: 118: timerSet( eventHandlerTimer, 10 );
+"118
 [e ( _timerSet (2 , _eventHandlerTimer -> -> 10 `i `ui ]
-"140
+"119
 }
-[e :U 282 ]
-[; ;eventhandler.c: 140: }
-[; ;eventhandler.c: 141: }
-"141
-[e :UE 281 ]
+[e :U 277 ]
+[; ;eventhandler.c: 119: }
+[; ;eventhandler.c: 120: }
+"120
+[e :UE 276 ]
 }
-"144
+"123
 [v _init_NoAction `(v ~T0 @X0 1 ef ]
-"145
+"124
 {
-[; ;eventhandler.c: 144: void init_NoAction (void)
-[; ;eventhandler.c: 145: {
+[; ;eventhandler.c: 123: void init_NoAction (void)
+[; ;eventhandler.c: 124: {
 [e :U _init_NoAction ]
 [f ]
-[; ;eventhandler.c: 147: }
-"147
-[e :UE 287 ]
+[; ;eventhandler.c: 126: }
+"126
+[e :UE 282 ]
 }
-"149
+"128
 [v _init_Restart `(v ~T0 @X0 1 ef ]
-"150
+"129
 {
-[; ;eventhandler.c: 149: void init_Restart (void)
-[; ;eventhandler.c: 150: {
+[; ;eventhandler.c: 128: void init_Restart (void)
+[; ;eventhandler.c: 129: {
 [e :U _init_Restart ]
 [f ]
-[; ;eventhandler.c: 151: timerSet( initSMTimer, 2000 * 1 );
-"151
-[e ( _timerSet (2 , -> _initSMTimer `uc -> * -> 2000 `i -> 1 `i `ui ]
-[; ;eventhandler.c: 152: LATAbits.LATA0 = 1;
-"152
+[; ;eventhandler.c: 130: timerSet( initSMTimer, 100 * 1 );
+"130
+[e ( _timerSet (2 , -> _initSMTimer `uc -> * -> 100 `i -> 1 `i `ui ]
+[; ;eventhandler.c: 131: LATAbits.LATA0 = 1;
+"131
 [e = . . _LATAbits 0 0 -> -> 1 `i `uc ]
-[; ;eventhandler.c: 153: initState = initS1;
-"153
+[; ;eventhandler.c: 132: initState = initS1;
+"132
 [e = _initState . `E2225 0 ]
-[; ;eventhandler.c: 154: greenWentHigh.eventFlag = 0;
-"154
-[e = . _greenWentHigh 0 -> -> 0 `i `uc ]
-[; ;eventhandler.c: 155: greenWentLow.eventFlag = 0;
-"155
-[e = . _greenWentLow 0 -> -> 0 `i `uc ]
-[; ;eventhandler.c: 156: redWentHigh.eventFlag = 0;
-"156
-[e = . _redWentHigh 0 -> -> 0 `i `uc ]
-[; ;eventhandler.c: 157: redWentLow.eventFlag = 0;
-"157
-[e = . _redWentLow 0 -> -> 0 `i `uc ]
-[; ;eventhandler.c: 158: runState = runS1;
-"158
-[e = _runState . `E2347 0 ]
-[; ;eventhandler.c: 159: }
-"159
-[e :UE 288 ]
+[; ;eventhandler.c: 133: lastInitEvent = noInitEvent;
+"133
+[e = _lastInitEvent . `E2237 0 ]
+[; ;eventhandler.c: 134: runState = runS1;
+"134
+[e = _runState . `E2349 0 ]
+[; ;eventhandler.c: 135: lastRunEvent = noRunEvent;
+"135
+[e = _lastRunEvent . `E2356 0 ]
+[; ;eventhandler.c: 136: }
+"136
+[e :UE 283 ]
 }
-"161
+"138
 [v _initS1_Timeout `(v ~T0 @X0 1 ef ]
-"162
+"139
 {
-[; ;eventhandler.c: 161: void initS1_Timeout (void)
-[; ;eventhandler.c: 162: {
+[; ;eventhandler.c: 138: void initS1_Timeout (void)
+[; ;eventhandler.c: 139: {
 [e :U _initS1_Timeout ]
 [f ]
-[; ;eventhandler.c: 163: timerSet( initSMTimer, 2000 * 1 );
-"163
-[e ( _timerSet (2 , -> _initSMTimer `uc -> * -> 2000 `i -> 1 `i `ui ]
-[; ;eventhandler.c: 164: LATAbits.LATA0 = 0;
-"164
+[; ;eventhandler.c: 140: timerSet( initSMTimer, 100 * 1 );
+"140
+[e ( _timerSet (2 , -> _initSMTimer `uc -> * -> 100 `i -> 1 `i `ui ]
+[; ;eventhandler.c: 141: LATAbits.LATA0 = 0;
+"141
 [e = . . _LATAbits 0 0 -> -> 0 `i `uc ]
-[; ;eventhandler.c: 165: initState = initS2;
-"165
+[; ;eventhandler.c: 142: initState = initS2;
+"142
 [e = _initState . `E2225 1 ]
-[; ;eventhandler.c: 166: }
-"166
-[e :UE 289 ]
+[; ;eventhandler.c: 143: }
+"143
+[e :UE 284 ]
 }
-"168
+"145
 [v _initS2_Timeout `(v ~T0 @X0 1 ef ]
-"169
+"146
 {
-[; ;eventhandler.c: 168: void initS2_Timeout (void)
-[; ;eventhandler.c: 169: {
+[; ;eventhandler.c: 145: void initS2_Timeout (void)
+[; ;eventhandler.c: 146: {
 [e :U _initS2_Timeout ]
 [f ]
-[; ;eventhandler.c: 175: timerLock( initSMTimer );
-"175
+[; ;eventhandler.c: 152: timerLock( initSMTimer );
+"152
 [e ( _timerLock (1 -> _initSMTimer `uc ]
-[; ;eventhandler.c: 176: longTimerSet( minuteTimer, (DWORD) 10 * 60 * 1000);
-"176
-[e ( _longTimerSet (2 , -> _minuteTimer `uc * * -> -> 10 `i `ul -> -> -> 60 `i `l `ul -> -> -> 1000 `i `l `ul ]
-[; ;eventhandler.c: 177: initState = initialised;
-"177
+[; ;eventhandler.c: 153: longTimerSet( minuteTimer, (DWORD) 33 * 1000 );
+"153
+[e ( _longTimerSet (2 , -> _minuteTimer `uc * -> -> 33 `i `ul -> -> -> 1000 `i `l `ul ]
+[; ;eventhandler.c: 155: initState = initialised;
+"155
 [e = _initState . `E2225 8 ]
-[; ;eventhandler.c: 178: }
-"178
-[e :UE 290 ]
+[; ;eventhandler.c: 156: }
+"156
+[e :UE 285 ]
 }
-"180
+"158
 [v _initS3_greenHigh `(v ~T0 @X0 1 ef ]
-"181
+"159
 {
-[; ;eventhandler.c: 180: void initS3_greenHigh (void)
-[; ;eventhandler.c: 181: {
+[; ;eventhandler.c: 158: void initS3_greenHigh (void)
+[; ;eventhandler.c: 159: {
 [e :U _initS3_greenHigh ]
 [f ]
-[; ;eventhandler.c: 182: timerSet( initSMTimer, 2000 * 1 );
-"182
-[e ( _timerSet (2 , -> _initSMTimer `uc -> * -> 2000 `i -> 1 `i `ui ]
-[; ;eventhandler.c: 183: initState = initS4;
-"183
+[; ;eventhandler.c: 160: timerSet( initSMTimer, 100 * 1 );
+"160
+[e ( _timerSet (2 , -> _initSMTimer `uc -> * -> 100 `i -> 1 `i `ui ]
+[; ;eventhandler.c: 161: initState = initS4;
+"161
 [e = _initState . `E2225 3 ]
-[; ;eventhandler.c: 184: }
-"184
-[e :UE 291 ]
+[; ;eventhandler.c: 162: }
+"162
+[e :UE 286 ]
 }
-"186
+"164
 [v _initS4_greenLow `(v ~T0 @X0 1 ef ]
-"187
+"165
 {
-[; ;eventhandler.c: 186: void initS4_greenLow (void)
-[; ;eventhandler.c: 187: {
+[; ;eventhandler.c: 164: void initS4_greenLow (void)
+[; ;eventhandler.c: 165: {
 [e :U _initS4_greenLow ]
 [f ]
-[; ;eventhandler.c: 188: timerSet( initSMTimer, 2000 * 1 );
-"188
-[e ( _timerSet (2 , -> _initSMTimer `uc -> * -> 2000 `i -> 1 `i `ui ]
-[; ;eventhandler.c: 189: initState = initS5;
-"189
+[; ;eventhandler.c: 166: timerSet( initSMTimer, 100 * 1 );
+"166
+[e ( _timerSet (2 , -> _initSMTimer `uc -> * -> 100 `i -> 1 `i `ui ]
+[; ;eventhandler.c: 167: initState = initS5;
+"167
 [e = _initState . `E2225 4 ]
-[; ;eventhandler.c: 190: }
-"190
-[e :UE 292 ]
+[; ;eventhandler.c: 168: }
+"168
+[e :UE 287 ]
 }
-"192
+"170
 [v _initS5_redHigh `(v ~T0 @X0 1 ef ]
-"193
+"171
 {
-[; ;eventhandler.c: 192: void initS5_redHigh (void)
-[; ;eventhandler.c: 193: {
+[; ;eventhandler.c: 170: void initS5_redHigh (void)
+[; ;eventhandler.c: 171: {
 [e :U _initS5_redHigh ]
 [f ]
-[; ;eventhandler.c: 194: timerSet( initSMTimer, 2000 * 1 );
-"194
-[e ( _timerSet (2 , -> _initSMTimer `uc -> * -> 2000 `i -> 1 `i `ui ]
-[; ;eventhandler.c: 195: initState = initS6;
-"195
+[; ;eventhandler.c: 172: timerSet( initSMTimer, 100 * 1 );
+"172
+[e ( _timerSet (2 , -> _initSMTimer `uc -> * -> 100 `i -> 1 `i `ui ]
+[; ;eventhandler.c: 173: initState = initS6;
+"173
 [e = _initState . `E2225 5 ]
-[; ;eventhandler.c: 196: }
-"196
-[e :UE 293 ]
+[; ;eventhandler.c: 174: }
+"174
+[e :UE 288 ]
 }
-"198
+"176
 [v _initS6_redLow `(v ~T0 @X0 1 ef ]
-"199
+"177
 {
-[; ;eventhandler.c: 198: void initS6_redLow (void)
-[; ;eventhandler.c: 199: {
+[; ;eventhandler.c: 176: void initS6_redLow (void)
+[; ;eventhandler.c: 177: {
 [e :U _initS6_redLow ]
 [f ]
-[; ;eventhandler.c: 200: timerSet( initSMTimer, 2000 * 1 );
-"200
-[e ( _timerSet (2 , -> _initSMTimer `uc -> * -> 2000 `i -> 1 `i `ui ]
-[; ;eventhandler.c: 201: initState = initS7;
-"201
+[; ;eventhandler.c: 178: timerSet( initSMTimer, 100 * 1 );
+"178
+[e ( _timerSet (2 , -> _initSMTimer `uc -> * -> 100 `i -> 1 `i `ui ]
+[; ;eventhandler.c: 179: initState = initS7;
+"179
 [e = _initState . `E2225 6 ]
-[; ;eventhandler.c: 202: }
-"202
-[e :UE 294 ]
+[; ;eventhandler.c: 180: }
+"180
+[e :UE 289 ]
 }
-"204
+"182
 [v _initS7_bothHigh `(v ~T0 @X0 1 ef ]
-"205
+"183
 {
-[; ;eventhandler.c: 204: void initS7_bothHigh (void)
-[; ;eventhandler.c: 205: {
+[; ;eventhandler.c: 182: void initS7_bothHigh (void)
+[; ;eventhandler.c: 183: {
 [e :U _initS7_bothHigh ]
 [f ]
-[; ;eventhandler.c: 206: timerSet( initSMTimer, 2000 * 1 );
-"206
-[e ( _timerSet (2 , -> _initSMTimer `uc -> * -> 2000 `i -> 1 `i `ui ]
-[; ;eventhandler.c: 207: initState = initS8;
-"207
+[; ;eventhandler.c: 184: timerSet( initSMTimer, 100 * 1 );
+"184
+[e ( _timerSet (2 , -> _initSMTimer `uc -> * -> 100 `i -> 1 `i `ui ]
+[; ;eventhandler.c: 185: initState = initS8;
+"185
 [e = _initState . `E2225 7 ]
-[; ;eventhandler.c: 208: }
-"208
-[e :UE 295 ]
+[; ;eventhandler.c: 186: }
+"186
+[e :UE 290 ]
 }
-"210
+"188
 [v _initS8_bothLow `(v ~T0 @X0 1 ef ]
-"211
+"189
 {
-[; ;eventhandler.c: 210: void initS8_bothLow (void)
-[; ;eventhandler.c: 211: {
+[; ;eventhandler.c: 188: void initS8_bothLow (void)
+[; ;eventhandler.c: 189: {
 [e :U _initS8_bothLow ]
 [f ]
-[; ;eventhandler.c: 212: timerLock( initSMTimer );
-"212
+[; ;eventhandler.c: 190: timerLock( initSMTimer );
+"190
 [e ( _timerLock (1 -> _initSMTimer `uc ]
-[; ;eventhandler.c: 213: initState = initialised;
-"213
+[; ;eventhandler.c: 191: initState = initialised;
+"191
 [e = _initState . `E2225 8 ]
-[; ;eventhandler.c: 214: chargerInitialised.eventFlag = !0;
-"214
-[e = . _chargerInitialised 0 -> -> ! != -> 0 `i -> 0 `i `i `uc ]
-[; ;eventhandler.c: 215: chargerInitialised.eventTime = systick;
-"215
-[e = . _chargerInitialised 1 _systick ]
-[; ;eventhandler.c: 216: beepRepeatedly(500, 5);
-"216
+[; ;eventhandler.c: 192: beepRepeatedly(500, 5);
+"192
 [e ( _beepRepeatedly (2 , -> 500 `i -> 5 `i ]
-[; ;eventhandler.c: 217: }
-"217
-[e :UE 296 ]
+[; ;eventhandler.c: 193: }
+"193
+[e :UE 291 ]
 }
-"219
+"195
 [v _getInitEvent `(E2237 ~T0 @X0 1 ef ]
-"220
+"196
 {
-[; ;eventhandler.c: 219: enum initEvents getInitEvent (void)
-[; ;eventhandler.c: 220: {
+[; ;eventhandler.c: 195: enum initEvents getInitEvent (void)
+[; ;eventhandler.c: 196: {
 [e :U _getInitEvent ]
 [f ]
-[; ;eventhandler.c: 221: if ( timerRead(initSMTimer) == 0 )
-"221
-[e $ ! == ( _timerRead (1 -> _initSMTimer `uc -> -> 0 `i `ui 298  ]
-[; ;eventhandler.c: 222: {
-"222
+[; ;eventhandler.c: 197: if ( timerRead(initSMTimer) == 0 )
+"197
+[e $ ! == ( _timerRead (1 -> _initSMTimer `uc -> -> 0 `i `ui 293  ]
+[; ;eventhandler.c: 198: {
+"198
 {
-[; ;eventhandler.c: 223: timerLock( initSMTimer );
-"223
+[; ;eventhandler.c: 199: timerLock( initSMTimer );
+"199
 [e ( _timerLock (1 -> _initSMTimer `uc ]
-[; ;eventhandler.c: 224: return initTimeoutEvent;
-"224
+[; ;eventhandler.c: 200: return initTimeoutEvent;
+"200
 [e ) . `E2237 1 ]
-[e $UE 297  ]
-"225
+[e $UE 292  ]
+"201
 }
-[; ;eventhandler.c: 225: }
-[e $U 299  ]
-"226
-[e :U 298 ]
-[; ;eventhandler.c: 226: else if ( redWentHigh.eventFlag )
-[e $ ! != -> . _redWentHigh 0 `i -> -> -> 0 `i `uc `i 300  ]
-[; ;eventhandler.c: 227: {
-"227
+[; ;eventhandler.c: 201: }
+[e $U 294  ]
+"202
+[e :U 293 ]
+[; ;eventhandler.c: 202: else if (longTimerRead(minuteTimer) == 0)
+[e $ ! == ( _longTimerRead (1 -> _minuteTimer `uc -> -> -> 0 `i `l `ul 295  ]
+[; ;eventhandler.c: 203: {
+"203
 {
-[; ;eventhandler.c: 229: if (greenWentHigh.eventFlag )
-"229
-[e $ ! != -> . _greenWentHigh 0 `i -> -> -> 0 `i `uc `i 301  ]
-[; ;eventhandler.c: 230: {
-"230
+[; ;eventhandler.c: 204: longTimerLock( minuteTimer );
+"204
+[e ( _longTimerLock (1 -> _minuteTimer `uc ]
+[; ;eventhandler.c: 205: return initTimeoutEvent;
+"205
+[e ) . `E2237 1 ]
+[e $UE 292  ]
+"206
+}
+[; ;eventhandler.c: 206: }
+[e $U 296  ]
+"208
+[e :U 295 ]
+[; ;eventhandler.c: 208: else
+[; ;eventhandler.c: 209: return lastInitEvent;
+"209
+[e ) _lastInitEvent ]
+[e $UE 292  ]
+[e :U 296 ]
+[e :U 294 ]
+[; ;eventhandler.c: 210: }
+"210
+[e :UE 292 ]
+}
+"212
+[v _setInitEvent `(v ~T0 @X0 1 ef1`E2237 ]
+"213
 {
-[; ;eventhandler.c: 231: if ( systick - greenWentHigh.eventTime >= 2)
-"231
-[e $ ! >= - _systick . _greenWentHigh 1 -> -> 2 `i `ui 302  ]
-[; ;eventhandler.c: 232: {
-"232
-{
-[; ;eventhandler.c: 233: greenWentHigh.eventFlag = 0;
-"233
-[e = . _greenWentHigh 0 -> -> 0 `i `uc ]
-[; ;eventhandler.c: 234: redWentHigh.eventFlag = 0;
-"234
-[e = . _redWentHigh 0 -> -> 0 `i `uc ]
-[; ;eventhandler.c: 235: return bothHighEvent;
-"235
-[e ) . `E2237 6 ]
-[e $UE 297  ]
-"236
-}
-[e :U 302 ]
-"237
-}
-[; ;eventhandler.c: 236: }
-[; ;eventhandler.c: 237: }
-[e $U 303  ]
-"238
-[e :U 301 ]
-[; ;eventhandler.c: 238: else
-[; ;eventhandler.c: 239: {
-"239
-{
-[; ;eventhandler.c: 240: redWentHigh.eventFlag = 0;
-"240
-[e = . _redWentHigh 0 -> -> 0 `i `uc ]
-[; ;eventhandler.c: 241: return redHighEvent;
-"241
-[e ) . `E2237 4 ]
-[e $UE 297  ]
-"242
-}
-[e :U 303 ]
-"243
-}
-[; ;eventhandler.c: 242: }
-[; ;eventhandler.c: 243: }
-[e $U 304  ]
-"244
-[e :U 300 ]
-[; ;eventhandler.c: 244: else if ( redWentLow.eventFlag )
-[e $ ! != -> . _redWentLow 0 `i -> -> -> 0 `i `uc `i 305  ]
-[; ;eventhandler.c: 245: {
-"245
-{
-[; ;eventhandler.c: 246: if (greenWentLow.eventFlag )
-"246
-[e $ ! != -> . _greenWentLow 0 `i -> -> -> 0 `i `uc `i 306  ]
-[; ;eventhandler.c: 247: {
-"247
-{
-[; ;eventhandler.c: 248: if ( systick - greenWentLow.eventTime >= 2)
-"248
-[e $ ! >= - _systick . _greenWentLow 1 -> -> 2 `i `ui 307  ]
-[; ;eventhandler.c: 249: {
-"249
-{
-[; ;eventhandler.c: 250: greenWentLow.eventFlag = 0;
-"250
-[e = . _greenWentLow 0 -> -> 0 `i `uc ]
-[; ;eventhandler.c: 251: redWentLow.eventFlag = 0;
-"251
-[e = . _redWentLow 0 -> -> 0 `i `uc ]
-[; ;eventhandler.c: 252: return bothLowEvent;
-"252
-[e ) . `E2237 7 ]
-[e $UE 297  ]
-"253
-}
-[e :U 307 ]
-"254
-}
-[; ;eventhandler.c: 253: }
-[; ;eventhandler.c: 254: }
-[e $U 308  ]
-"255
-[e :U 306 ]
-[; ;eventhandler.c: 255: else
-[; ;eventhandler.c: 256: {
-"256
-{
-[; ;eventhandler.c: 257: redWentLow.eventFlag = 0;
-"257
-[e = . _redWentLow 0 -> -> 0 `i `uc ]
-[; ;eventhandler.c: 258: return redLowEvent;
-"258
-[e ) . `E2237 5 ]
-[e $UE 297  ]
-"259
-}
-[e :U 308 ]
-"260
-}
-[; ;eventhandler.c: 259: }
-[; ;eventhandler.c: 260: }
-[e $U 309  ]
-"261
-[e :U 305 ]
-[; ;eventhandler.c: 261: else if ( greenWentHigh.eventFlag )
-[e $ ! != -> . _greenWentHigh 0 `i -> -> -> 0 `i `uc `i 310  ]
-[; ;eventhandler.c: 262: {
-"262
-{
-[; ;eventhandler.c: 263: if (redWentHigh.eventFlag )
-"263
-[e $ ! != -> . _redWentHigh 0 `i -> -> -> 0 `i `uc `i 311  ]
-[; ;eventhandler.c: 264: {
-"264
-{
-[; ;eventhandler.c: 265: if ( systick - redWentHigh.eventTime >= 2)
-"265
-[e $ ! >= - _systick . _redWentHigh 1 -> -> 2 `i `ui 312  ]
-[; ;eventhandler.c: 266: {
-"266
-{
-[; ;eventhandler.c: 267: greenWentHigh.eventFlag = 0;
-"267
-[e = . _greenWentHigh 0 -> -> 0 `i `uc ]
-[; ;eventhandler.c: 268: redWentHigh.eventFlag = 0;
-"268
-[e = . _redWentHigh 0 -> -> 0 `i `uc ]
-[; ;eventhandler.c: 269: return bothHighEvent;
-"269
-[e ) . `E2237 6 ]
-[e $UE 297  ]
-"270
-}
-[e :U 312 ]
-"271
-}
-[; ;eventhandler.c: 270: }
-[; ;eventhandler.c: 271: }
-[e $U 313  ]
-"272
-[e :U 311 ]
-[; ;eventhandler.c: 272: else
-[; ;eventhandler.c: 273: {
-"273
-{
-[; ;eventhandler.c: 274: greenWentHigh.eventFlag = 0;
-"274
-[e = . _greenWentHigh 0 -> -> 0 `i `uc ]
-[; ;eventhandler.c: 275: return greenHighEvent;
-"275
-[e ) . `E2237 2 ]
-[e $UE 297  ]
-"276
-}
-[e :U 313 ]
-"278
-}
-[; ;eventhandler.c: 276: }
-[; ;eventhandler.c: 278: }
-[e $U 314  ]
-"279
-[e :U 310 ]
-[; ;eventhandler.c: 279: else if ( greenWentLow.eventFlag )
-[e $ ! != -> . _greenWentLow 0 `i -> -> -> 0 `i `uc `i 315  ]
-[; ;eventhandler.c: 280: {
-"280
-{
-[; ;eventhandler.c: 281: if (redWentLow.eventFlag )
-"281
-[e $ ! != -> . _redWentLow 0 `i -> -> -> 0 `i `uc `i 316  ]
-[; ;eventhandler.c: 282: {
-"282
-{
-[; ;eventhandler.c: 283: if ( systick - redWentLow.eventTime >= 2)
-"283
-[e $ ! >= - _systick . _redWentLow 1 -> -> 2 `i `ui 317  ]
-[; ;eventhandler.c: 284: {
-"284
-{
-[; ;eventhandler.c: 285: greenWentLow.eventFlag = 0;
-"285
-[e = . _greenWentLow 0 -> -> 0 `i `uc ]
-[; ;eventhandler.c: 286: redWentLow.eventFlag = 0;
-"286
-[e = . _redWentLow 0 -> -> 0 `i `uc ]
-[; ;eventhandler.c: 287: return bothLowEvent;
-"287
-[e ) . `E2237 7 ]
-[e $UE 297  ]
-"288
-}
-[e :U 317 ]
-"289
-}
-[; ;eventhandler.c: 288: }
-[; ;eventhandler.c: 289: }
-[e $U 318  ]
-"290
-[e :U 316 ]
-[; ;eventhandler.c: 290: else
-[; ;eventhandler.c: 291: {
-"291
-{
-[; ;eventhandler.c: 292: greenWentLow.eventFlag = 0;
-"292
-[e = . _greenWentLow 0 -> -> 0 `i `uc ]
-[; ;eventhandler.c: 293: return greenLowEvent;
-"293
-[e ) . `E2237 3 ]
-[e $UE 297  ]
-"294
-}
-[e :U 318 ]
-"295
-}
-[e :U 315 ]
-"297
-[e :U 314 ]
-[e :U 309 ]
-[e :U 304 ]
-[e :U 299 ]
-[; ;eventhandler.c: 294: }
-[; ;eventhandler.c: 295: }
-[; ;eventhandler.c: 297: return noInitEvent;
-[e ) . `E2237 0 ]
-[e $UE 297  ]
-[; ;eventhandler.c: 299: }
-"299
+[; ;eventhandler.c: 212: void setInitEvent ( enum initEvents event)
+[; ;eventhandler.c: 213: {
+[e :U _setInitEvent ]
+"212
+[v _event `E2237 ~T0 @X0 1 r1 ]
+"213
+[f ]
+[; ;eventhandler.c: 214: lastInitEvent = event;
+"214
+[e = _lastInitEvent _event ]
+[; ;eventhandler.c: 215: }
+"215
 [e :UE 297 ]
 }
-"301
+"217
 [v _run_NoAction `(v ~T0 @X0 1 ef ]
-"302
+"218
 {
-[; ;eventhandler.c: 301: void run_NoAction (void)
-[; ;eventhandler.c: 302: {
+[; ;eventhandler.c: 217: void run_NoAction (void)
+[; ;eventhandler.c: 218: {
 [e :U _run_NoAction ]
 [f ]
-[; ;eventhandler.c: 304: }
-"304
-[e :UE 319 ]
+[; ;eventhandler.c: 220: }
+"220
+[e :UE 298 ]
 }
-"306
+"222
 [v _runS1_Error `(v ~T0 @X0 1 ef ]
-"307
+"223
 {
-[; ;eventhandler.c: 306: void runS1_Error (void)
-[; ;eventhandler.c: 307: {
+[; ;eventhandler.c: 222: void runS1_Error (void)
+[; ;eventhandler.c: 223: {
 [e :U _runS1_Error ]
 [f ]
-[; ;eventhandler.c: 309: }
-"309
-[e :UE 320 ]
+[; ;eventhandler.c: 225: }
+"225
+[e :UE 299 ]
 }
-"311
+"227
 [v _runS1_Timeout `(v ~T0 @X0 1 ef ]
-"312
+"228
 {
-[; ;eventhandler.c: 311: void runS1_Timeout (void)
-[; ;eventhandler.c: 312: {
+[; ;eventhandler.c: 227: void runS1_Timeout (void)
+[; ;eventhandler.c: 228: {
 [e :U _runS1_Timeout ]
 [f ]
-[; ;eventhandler.c: 314: }
-"314
-[e :UE 321 ]
+[; ;eventhandler.c: 230: }
+"230
+[e :UE 300 ]
 }
-"316
+"232
 [v _runS1_Initialised `(v ~T0 @X0 1 ef ]
-"317
+"233
 {
-[; ;eventhandler.c: 316: void runS1_Initialised (void)
-[; ;eventhandler.c: 317: {
+[; ;eventhandler.c: 232: void runS1_Initialised (void)
+[; ;eventhandler.c: 233: {
 [e :U _runS1_Initialised ]
 [f ]
-[; ;eventhandler.c: 318: beepRepeatedly ( 200, 5);
-"318
-[e ( _beepRepeatedly (2 , -> 200 `i -> 5 `i ]
-[; ;eventhandler.c: 319: }
-"319
-[e :UE 322 ]
+[; ;eventhandler.c: 235: }
+"235
+[e :UE 301 ]
 }
-"321
+"237
 [v _runS2_Error `(v ~T0 @X0 1 ef ]
-"322
+"238
 {
-[; ;eventhandler.c: 321: void runS2_Error (void)
-[; ;eventhandler.c: 322: {
+[; ;eventhandler.c: 237: void runS2_Error (void)
+[; ;eventhandler.c: 238: {
 [e :U _runS2_Error ]
 [f ]
-[; ;eventhandler.c: 324: }
-"324
-[e :UE 323 ]
+[; ;eventhandler.c: 240: }
+"240
+[e :UE 302 ]
 }
-"326
+"242
 [v _runS2_Timeout `(v ~T0 @X0 1 ef ]
-"327
+"243
 {
-[; ;eventhandler.c: 326: void runS2_Timeout (void)
-[; ;eventhandler.c: 327: {
+[; ;eventhandler.c: 242: void runS2_Timeout (void)
+[; ;eventhandler.c: 243: {
 [e :U _runS2_Timeout ]
 [f ]
-[; ;eventhandler.c: 329: }
-"329
-[e :UE 324 ]
+[; ;eventhandler.c: 245: }
+"245
+[e :UE 303 ]
 }
-"331
+"247
 [v _runS2_BeepReceived `(v ~T0 @X0 1 ef ]
-"332
+"248
 {
-[; ;eventhandler.c: 331: void runS2_BeepReceived (void)
-[; ;eventhandler.c: 332: {
+[; ;eventhandler.c: 247: void runS2_BeepReceived (void)
+[; ;eventhandler.c: 248: {
 [e :U _runS2_BeepReceived ]
 [f ]
-[; ;eventhandler.c: 334: }
-"334
-[e :UE 325 ]
+[; ;eventhandler.c: 250: }
+"250
+[e :UE 304 ]
 }
-"336
+"252
 [v _runS3_Error `(v ~T0 @X0 1 ef ]
-"337
+"253
 {
-[; ;eventhandler.c: 336: void runS3_Error (void)
-[; ;eventhandler.c: 337: {
+[; ;eventhandler.c: 252: void runS3_Error (void)
+[; ;eventhandler.c: 253: {
 [e :U _runS3_Error ]
 [f ]
-[; ;eventhandler.c: 339: }
-"339
-[e :UE 326 ]
+[; ;eventhandler.c: 255: }
+"255
+[e :UE 305 ]
 }
-"341
+"257
 [v _runS3_Timeout `(v ~T0 @X0 1 ef ]
-"342
+"258
 {
-[; ;eventhandler.c: 341: void runS3_Timeout (void)
-[; ;eventhandler.c: 342: {
+[; ;eventhandler.c: 257: void runS3_Timeout (void)
+[; ;eventhandler.c: 258: {
 [e :U _runS3_Timeout ]
 [f ]
-[; ;eventhandler.c: 344: }
-"344
-[e :UE 327 ]
+[; ;eventhandler.c: 260: }
+"260
+[e :UE 306 ]
 }
-"346
+"262
 [v _runS3_GreenFlashing `(v ~T0 @X0 1 ef ]
-"347
+"263
 {
-[; ;eventhandler.c: 346: void runS3_GreenFlashing (void)
-[; ;eventhandler.c: 347: {
+[; ;eventhandler.c: 262: void runS3_GreenFlashing (void)
+[; ;eventhandler.c: 263: {
 [e :U _runS3_GreenFlashing ]
 [f ]
-[; ;eventhandler.c: 349: }
-"349
-[e :UE 328 ]
+[; ;eventhandler.c: 265: }
+"265
+[e :UE 307 ]
 }
-"351
+"267
 [v _runS4_Error `(v ~T0 @X0 1 ef ]
-"352
+"268
 {
-[; ;eventhandler.c: 351: void runS4_Error (void)
-[; ;eventhandler.c: 352: {
+[; ;eventhandler.c: 267: void runS4_Error (void)
+[; ;eventhandler.c: 268: {
 [e :U _runS4_Error ]
 [f ]
-[; ;eventhandler.c: 354: }
-"354
-[e :UE 329 ]
+[; ;eventhandler.c: 270: }
+"270
+[e :UE 308 ]
 }
-"356
+"272
 [v _runS4_Timeout `(v ~T0 @X0 1 ef ]
-"357
+"273
 {
-[; ;eventhandler.c: 356: void runS4_Timeout (void)
-[; ;eventhandler.c: 357: {
+[; ;eventhandler.c: 272: void runS4_Timeout (void)
+[; ;eventhandler.c: 273: {
 [e :U _runS4_Timeout ]
 [f ]
-[; ;eventhandler.c: 359: }
-"359
-[e :UE 330 ]
+[; ;eventhandler.c: 275: }
+"275
+[e :UE 309 ]
 }
-"361
+"277
 [v _runS4_GreenSteadyLow `(v ~T0 @X0 1 ef ]
-"362
+"278
 {
-[; ;eventhandler.c: 361: void runS4_GreenSteadyLow (void)
-[; ;eventhandler.c: 362: {
+[; ;eventhandler.c: 277: void runS4_GreenSteadyLow (void)
+[; ;eventhandler.c: 278: {
 [e :U _runS4_GreenSteadyLow ]
 [f ]
-[; ;eventhandler.c: 364: }
-"364
-[e :UE 331 ]
+[; ;eventhandler.c: 280: }
+"280
+[e :UE 310 ]
 }
-"366
-[v _ttog `uc ~T0 @X0 1 e ]
-[i _ttog
--> -> 0 `i `uc
-]
-[; ;eventhandler.c: 366: bool ttog = 0;
-"368
-[v _getRunEvent `(E2354 ~T0 @X0 1 ef ]
-"369
+"282
+[v _getRunEvent `(E2356 ~T0 @X0 1 ef ]
+"283
 {
-[; ;eventhandler.c: 368: enum runEvents getRunEvent(void)
-[; ;eventhandler.c: 369: {
+[; ;eventhandler.c: 282: enum runEvents getRunEvent(void)
+[; ;eventhandler.c: 283: {
 [e :U _getRunEvent ]
 [f ]
-[; ;eventhandler.c: 370: if ( timerRead(runSMTimer) == 0 )
-"370
-[e $ ! == ( _timerRead (1 -> _runSMTimer `uc -> -> 0 `i `ui 333  ]
-[; ;eventhandler.c: 371: {
-"371
+[; ;eventhandler.c: 284: if ( timerRead(runSMTimer) == 0 )
+"284
+[e $ ! == ( _timerRead (1 -> _runSMTimer `uc -> -> 0 `i `ui 312  ]
+[; ;eventhandler.c: 285: {
+"285
 {
-[; ;eventhandler.c: 372: timerLock( runSMTimer );
-"372
+[; ;eventhandler.c: 286: timerLock( runSMTimer );
+"286
 [e ( _timerLock (1 -> _runSMTimer `uc ]
-[; ;eventhandler.c: 373: return runTimeoutEvent;
-"373
-[e ) . `E2354 1 ]
-[e $UE 332  ]
-"374
+[; ;eventhandler.c: 287: return runTimeoutEvent;
+"287
+[e ) . `E2356 1 ]
+[e $UE 311  ]
+"288
 }
-[; ;eventhandler.c: 374: }
-[e $U 334  ]
-"375
-[e :U 333 ]
-[; ;eventhandler.c: 375: else if (timerRead(buzzerTimer) == 0 )
-[e $ ! == ( _timerRead (1 -> _buzzerTimer `uc -> -> 0 `i `ui 335  ]
-[; ;eventhandler.c: 376: {
-"376
+[; ;eventhandler.c: 288: }
+[e $U 313  ]
+"289
+[e :U 312 ]
+[; ;eventhandler.c: 289: else if (timerRead(buzzerTimer) == 0 )
+[e $ ! == ( _timerRead (1 -> _buzzerTimer `uc -> -> 0 `i `ui 314  ]
+[; ;eventhandler.c: 290: {
+"290
 {
-[; ;eventhandler.c: 377: timerLock( buzzerTimer );
-"377
+[; ;eventhandler.c: 291: timerLock( buzzerTimer );
+"291
 [e ( _timerLock (1 -> _buzzerTimer `uc ]
-[; ;eventhandler.c: 378: if (ttog) {
-"378
-[e $ ! != -> _ttog `i -> -> -> 0 `i `uc `i 336  ]
+[; ;eventhandler.c: 292: return beepEvent;
+"292
+[e ) . `E2356 3 ]
+[e $UE 311  ]
+"293
+}
+[; ;eventhandler.c: 293: }
+[e $U 315  ]
+"294
+[e :U 314 ]
+[; ;eventhandler.c: 294: else
+[; ;eventhandler.c: 295: return lastRunEvent;
+"295
+[e ) _lastRunEvent ]
+[e $UE 311  ]
+[e :U 315 ]
+[e :U 313 ]
+[; ;eventhandler.c: 296: }
+"296
+[e :UE 311 ]
+}
+"298
+[v _setRunEvent `(v ~T0 @X0 1 ef1`E2356 ]
+"299
 {
-[; ;eventhandler.c: 379: clearLED();
-"379
-[e ( _clearLED ..  ]
-[; ;eventhandler.c: 380: ttog = 0;
-"380
-[e = _ttog -> -> 0 `i `uc ]
-"381
-}
-[; ;eventhandler.c: 381: } else {
-[e $U 337  ]
-[e :U 336 ]
-{
-[; ;eventhandler.c: 382: setLED();
-"382
-[e ( _setLED ..  ]
-[; ;eventhandler.c: 383: ttog = !0;
-"383
-[e = _ttog -> -> ! != -> 0 `i -> 0 `i `i `uc ]
-"384
-}
-[e :U 337 ]
-[; ;eventhandler.c: 384: }
-[; ;eventhandler.c: 385: return beepEvent;
-"385
-[e ) . `E2354 3 ]
-[e $UE 332  ]
-"386
-}
-[; ;eventhandler.c: 386: }
-[e $U 338  ]
-"387
-[e :U 335 ]
-[; ;eventhandler.c: 387: else if (longTimerRead(minuteTimer) == 0)
-[e $ ! == ( _longTimerRead (1 -> _minuteTimer `uc -> -> -> 0 `i `l `ul 339  ]
-[; ;eventhandler.c: 388: {
-"388
-{
-[; ;eventhandler.c: 389: longTimerLock( minuteTimer );
-"389
-[e ( _longTimerLock (1 -> _minuteTimer `uc ]
-[; ;eventhandler.c: 390: return runTimeoutEvent;
-"390
-[e ) . `E2354 1 ]
-[e $UE 332  ]
-"391
-}
-[; ;eventhandler.c: 391: }
-[e $U 340  ]
-"392
-[e :U 339 ]
-[; ;eventhandler.c: 392: else if ( chargerInitialised.eventFlag )
-[e $ ! != -> . _chargerInitialised 0 `i -> -> -> 0 `i `uc `i 341  ]
-[; ;eventhandler.c: 393: {
-"393
-{
-[; ;eventhandler.c: 394: chargerInitialised.eventFlag = 0;
-"394
-[e = . _chargerInitialised 0 -> -> 0 `i `uc ]
-[; ;eventhandler.c: 395: return initialisedEvent;
-"395
-[e ) . `E2354 2 ]
-[e $UE 332  ]
-"396
-}
-[; ;eventhandler.c: 396: }
-[e $U 342  ]
-"397
-[e :U 341 ]
-[; ;eventhandler.c: 397: else
-[; ;eventhandler.c: 398: return noRunEvent;
-"398
-[e ) . `E2354 0 ]
-[e $UE 332  ]
-[e :U 342 ]
-[e :U 340 ]
-[e :U 338 ]
-[e :U 334 ]
-[; ;eventhandler.c: 399: }
-"399
-[e :UE 332 ]
+[; ;eventhandler.c: 298: void setRunEvent ( enum runEvents event)
+[; ;eventhandler.c: 299: {
+[e :U _setRunEvent ]
+"298
+[v _event `E2356 ~T0 @X0 1 r1 ]
+"299
+[f ]
+[; ;eventhandler.c: 300: lastRunEvent = event;
+"300
+[e = _lastRunEvent _event ]
+[; ;eventhandler.c: 301: }
+"301
+[e :UE 316 ]
 }

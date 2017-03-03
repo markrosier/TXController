@@ -1,5 +1,5 @@
 
-# 1 "../source/LED.c"
+# 1 "../source/eventhandler.c"
 
 # 26 "C:\Program Files (x86)\Microchip\xc8\v1.41\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -2914,6 +2914,113 @@ extern void longTimerLock( LTTimerIndex );
 
 void timerInterrupt( void );
 
+# 12 "../include\eventhandler.h"
+void initIOCInterrupt( void );
+void IOCInterrupt( void );
+void eventHandlerInit( void );
+void eventHandlerService( void );
+
+# 21
+enum initStates {
+initS1,
+initS2,
+initS3,
+initS4,
+initS5,
+initS6,
+initS7,
+initS8,
+initialised,
+maxInitStates
+} initState;
+
+enum initEvents {
+noInitEvent,
+initTimeoutEvent,
+greenHighEvent,
+greenLowEvent,
+redHighEvent,
+redLowEvent,
+bothHighEvent,
+bothLowEvent,
+maxInitEvents
+} initEvent;
+
+
+void init_NoAction (void);
+void init_Restart (void);
+void initS1_Timeout (void);
+void initS2_Timeout (void);
+void initS3_greenHigh (void);
+void initS4_greenLow (void);
+void initS5_redHigh (void);
+void initS6_redLow (void);
+void initS7_bothHigh (void);
+void initS8_bothLow (void);
+enum initEvents getInitEvent (void);
+void setInitEvent( enum initEvents event);
+
+
+void (*const initStateTable [maxInitStates][maxInitEvents]) (void) = {
+
+
+{ init_NoAction, initS1_Timeout, init_Restart, init_Restart, init_Restart, init_Restart, init_Restart, init_Restart },
+{ init_NoAction, initS2_Timeout, init_Restart, init_Restart, init_Restart, init_Restart, init_Restart, init_Restart },
+{ init_NoAction, init_Restart, initS3_greenHigh, init_Restart, init_Restart, init_Restart, init_Restart, init_Restart },
+{ init_NoAction, init_Restart, init_Restart, initS4_greenLow, init_Restart, init_Restart, init_Restart, init_Restart },
+{ init_NoAction, init_Restart, init_Restart, init_Restart, initS5_redHigh, init_Restart, init_Restart, init_Restart },
+{ init_NoAction, init_Restart, init_Restart, init_Restart, init_Restart, initS6_redLow, init_Restart, init_Restart },
+{ init_NoAction, init_Restart, init_Restart, init_Restart, init_Restart, init_Restart, initS7_bothHigh, init_Restart },
+{ init_NoAction, init_Restart, init_Restart, init_Restart, init_Restart, init_Restart, init_Restart, initS8_bothLow },
+{ init_NoAction, init_Restart, init_NoAction, init_NoAction, init_NoAction, init_NoAction, init_NoAction, init_NoAction }
+};
+
+enum runStates {
+runS1,
+runS2,
+runS3,
+runS4,
+maxRunStates
+} runState;
+
+enum runEvents {
+noRunEvent,
+runTimeoutEvent,
+initialisedEvent,
+beepEvent,
+greenFlashingEvent,
+greenSteadyLowEvent,
+errorEvent,
+maxRunEvents
+} runEvent;
+
+void run_NoAction (void);
+void runS1_Error (void);
+void runS1_Timeout (void);
+void runS1_Initialised (void);
+void runS2_Error (void);
+void runS2_Timeout (void);
+void runS2_BeepReceived (void);
+void runS3_Error (void);
+void runS3_Timeout (void);
+void runS3_GreenFlashing (void);
+void runS4_Error (void);
+void runS4_Timeout (void);
+void runS4_GreenSteadyLow (void);
+
+enum runEvents getRunEvent (void);
+void setRunEvent( enum runEvents event);
+
+
+void (*const runStateTable [maxRunStates][maxRunEvents]) (void) = {
+
+
+{ run_NoAction, runS1_Timeout, runS1_Initialised, runS1_Error, runS1_Error, run_NoAction, runS1_Error },
+{ run_NoAction, runS2_Timeout, runS2_Error, runS2_BeepReceived, runS2_Error, run_NoAction, runS2_Error },
+{ run_NoAction, runS3_Timeout, runS3_Error, runS3_Error, runS3_GreenFlashing, run_NoAction, runS3_Error },
+{ run_NoAction, runS4_Timeout, runS3_Error, runS3_Error, run_NoAction, runS4_GreenSteadyLow, runS4_Error }
+};
+
 # 13 "../include\led.h"
 void setLED ( void );
 void clearLED ( void );
@@ -2922,58 +3029,294 @@ void flashLED ( int period );
 void LEDInit (void);
 void LEDService (void);
 
-# 14 "../source/LED.c"
-BYTE LEDTimer = 0;
-bool flasherToggle = 0;
-INT16 flashRate = 1000;
-bool flashing = 0;
+# 12 "../include\beeper.h"
+void timer2Interrupt( void );
 
-void setLED ()
+void setBeeper ( void );
+void clearBeeper ( void );
+void beepRepeatedly ( int period, int nBeeps );
+
+void beeperInit (void);
+void beeperService (void);
+
+# 19 "../source/eventhandler.c"
+BYTE eventHandlerTimer = 0;
+enum initEvents lastInitEvent = noInitEvent;
+enum runEvents lastRunEvent = noRunEvent;
+int initSMTimer = 0;
+int runSMTimer = 0;
+int buzzerTimer = 0;
+int minuteTimer = 0;
+
+int buzzerDetected = 1;
+bool buzzerStarted = 0;
+
+void initIOCInterrupt( void )
 {
-flashing = 0;
-PORTAbits.RA5 = 0;
+INTCONbits.GIE = 1;
+IOCANbits.IOCAN3 = 1;
+IOCANbits.IOCAN2 = 1;
+IOCAPbits.IOCAP2 = 1;
+IOCANbits.IOCAN4 = 1;
+IOCAPbits.IOCAP4 = 1;
+INTCONbits.IOCIF = 0;
+INTCONbits.IOCIE = 1;
+INTCONbits.PEIE = 1;
 }
 
-void clearLED ()
+void IOCInterrupt( void )
 {
-flashing = 0;
-PORTAbits.RA5 = 1;
+if ( INTCONbits.IOCIF == 1)
+{
+
+if (IOCAFbits.IOCAF3 == 1)
+{
+buzzerStarted = !0;
+timerSet( buzzerTimer, 1 );
+
+
+
+IOCAFbits.IOCAF3 = 0;
+}
+if (IOCAFbits.IOCAF2 == 1)
+{
+
+
+
+
+IOCAFbits.IOCAF2 = 0;
+}
+if (IOCAFbits.IOCAF4 == 1)
+{
+
+
+
+
+IOCAFbits.IOCAF4 = 0;
+}
+}
 }
 
-void flashLED ( int period)
+void eventHandlerInit ()
 {
-flashing = !0;
-PORTAbits.RA5 = 0;
-flashRate = period;
-flasherToggle = !0;
+eventHandlerTimer = timerGet ();
+timerSet( eventHandlerTimer, 10 );
+initIOCInterrupt();
+buzzerTimer = timerGet();
+initSMTimer = timerGet();
+minuteTimer = longTimerGet();
+init_Restart();
+
+}
+
+void eventHandlerService ()
+{
+if ( timerRead(eventHandlerTimer) == 0 )
+{
+initEvent = getInitEvent ();
+
+if (((initEvent >= 0) && (initEvent < maxInitEvents))
+&& ((initState >= 0) && (initState < maxInitStates))) {
+
+initStateTable [initState][initEvent] ();
+
+} else
+{
+
+init_Restart();
+}
+
+runEvent = getRunEvent ();
+
+if (((runEvent >= 0) && (runEvent < maxRunEvents))
+&& ((runState >= 0) && (runState < maxRunStates))) {
+
+runStateTable [runState][runEvent] ();
+
+} else
+{
+
+init_Restart();
+}
+
+timerSet( eventHandlerTimer, 10 );
+}
 }
 
 
-void LEDInit ()
+void init_NoAction (void)
 {
-LEDTimer = timerGet ();
 
-timerSet( LEDTimer, flashRate );
 }
 
-void LEDService ()
+void init_Restart (void)
 {
-if (flashing)
+timerSet( initSMTimer, 100 * 1 );
+LATAbits.LATA0 = 1;
+initState = initS1;
+lastInitEvent = noInitEvent;
+runState = runS1;
+lastRunEvent = noRunEvent;
+}
+
+void initS1_Timeout (void)
 {
-if ( timerRead(LEDTimer) == 0 )
+timerSet( initSMTimer, 100 * 1 );
+LATAbits.LATA0 = 0;
+initState = initS2;
+}
+
+void initS2_Timeout (void)
 {
-if (flasherToggle)
+
+# 152
+timerLock( initSMTimer );
+longTimerSet( minuteTimer, (DWORD) 33 * 1000 );
+
+initState = initialised;
+}
+
+void initS3_greenHigh (void)
 {
-flasherToggle = 0;
-PORTAbits.RA5 = 1;
+timerSet( initSMTimer, 100 * 1 );
+initState = initS4;
+}
+
+void initS4_greenLow (void)
+{
+timerSet( initSMTimer, 100 * 1 );
+initState = initS5;
+}
+
+void initS5_redHigh (void)
+{
+timerSet( initSMTimer, 100 * 1 );
+initState = initS6;
+}
+
+void initS6_redLow (void)
+{
+timerSet( initSMTimer, 100 * 1 );
+initState = initS7;
+}
+
+void initS7_bothHigh (void)
+{
+timerSet( initSMTimer, 100 * 1 );
+initState = initS8;
+}
+
+void initS8_bothLow (void)
+{
+timerLock( initSMTimer );
+initState = initialised;
+beepRepeatedly(500, 5);
+}
+
+enum initEvents getInitEvent (void)
+{
+if ( timerRead(initSMTimer) == 0 )
+{
+timerLock( initSMTimer );
+return initTimeoutEvent;
+}
+else if (longTimerRead(minuteTimer) == 0)
+{
+longTimerLock( minuteTimer );
+return initTimeoutEvent;
+}
+
+else
+return lastInitEvent;
+}
+
+void setInitEvent ( enum initEvents event)
+{
+lastInitEvent = event;
+}
+
+void run_NoAction (void)
+{
+
+}
+
+void runS1_Error (void)
+{
+
+}
+
+void runS1_Timeout (void)
+{
+
+}
+
+void runS1_Initialised (void)
+{
+
+}
+
+void runS2_Error (void)
+{
+
+}
+
+void runS2_Timeout (void)
+{
+
+}
+
+void runS2_BeepReceived (void)
+{
+
+}
+
+void runS3_Error (void)
+{
+
+}
+
+void runS3_Timeout (void)
+{
+
+}
+
+void runS3_GreenFlashing (void)
+{
+
+}
+
+void runS4_Error (void)
+{
+
+}
+
+void runS4_Timeout (void)
+{
+
+}
+
+void runS4_GreenSteadyLow (void)
+{
+
+}
+
+enum runEvents getRunEvent(void)
+{
+if ( timerRead(runSMTimer) == 0 )
+{
+timerLock( runSMTimer );
+return runTimeoutEvent;
+}
+else if (timerRead(buzzerTimer) == 0 )
+{
+timerLock( buzzerTimer );
+return beepEvent;
 }
 else
-{
-flasherToggle = !0;
-PORTAbits.RA5 = 0;
-}
-timerSet( LEDTimer, flashRate );
-}
-}
+return lastRunEvent;
 }
 
+void setRunEvent ( enum runEvents event)
+{
+lastRunEvent = event;
+}
