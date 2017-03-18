@@ -64,7 +64,7 @@ void IOCInterrupt( void )
     }
     if (IOCAFbits.IOCAF2 == 1)
     {
-       if (INDICATOR2_PIN == 1)
+       if (INDICATOR2_PIN == 0)
       {
         greenWentHigh.eventFlag = true;
         greenWentHigh.eventTime = systick;
@@ -78,7 +78,7 @@ void IOCInterrupt( void )
     }
     if (IOCAFbits.IOCAF4 == 1)
     {
-      if (INDICATOR1_PIN == 1)
+      if (INDICATOR1_PIN == 0)
       {
         redWentHigh.eventFlag = true;
         redWentHigh.eventTime = systick;
@@ -110,32 +110,36 @@ void eventHandlerService ()
 {
   if ( timerRead(eventHandlerTimer) == EXPIRED )
   {
-    initEvent = getInitEvent ();
-
-    if (((initEvent >= 0) && (initEvent < maxInitEvents))
-    && ((initState >= 0) && (initState < maxInitStates))) {
-
-        initStateTable [initState][initEvent] ();
-
-    } else 
+    if (initState != initialised) 
     {
-      // Invalid State just start again
-        init_Restart();
+        initEvent = getInitEvent();
+
+        if (((initEvent >= 0) && (initEvent < maxInitEvents))
+        && ((initState >= 0) && (initState < maxInitStates))) 
+        {
+            initStateTable [initState][initEvent]();
+        } 
+        else 
+        {
+          // Invalid State just start again
+            init_Restart();
+        }
     }
-
-    runEvent = getRunEvent ();
-
-    if (((runEvent >= 0) && (runEvent < maxRunEvents))
-    && ((runState >= 0) && (runState < maxRunStates))) {
-
-        runStateTable [runState][runEvent] ();
-
-    } else 
+    else
     {
-      // Invalid State just start again
-        init_Restart();
+        runEvent = getRunEvent();
+
+        if (((runEvent >= 0) && (runEvent < maxRunEvents))
+        && ((runState >= 0) && (runState < maxRunStates))) 
+        {
+            runStateTable [runState][runEvent]();
+        } 
+        else 
+        {
+        // Invalid State just start again
+            init_Restart();
+        }
     }
- 
     timerSet( eventHandlerTimer, EVENT_HANDLER_PERIOD );
   }
 }
@@ -156,25 +160,26 @@ void init_Restart (void)
   redWentHigh.eventFlag = false;
   redWentLow.eventFlag = false;
   runState =  runS1;
+  clearLED();
 }
 
 void initS1_Timeout (void)
 {
-  timerSet( initSMTimer, 2000 * MILLISECONDS );
+  timerSet( initSMTimer, 3000 * MILLISECONDS );
   ENABLE_TX_PIN_LATCH = ENABLE_TX;
-  initState = initS2;
+  initState = initS5;
 }
 
 void initS2_Timeout (void)
 {
-//  timerSet( initSMTimer, 2000 * MILLISECONDS );
-//  initState = initS3;
+  timerSet( initSMTimer, 2000 * MILLISECONDS );
+  initState = initS3;
  
   // test to see if it reInitialises after 15 seconds
   //timerSet( initSMTimer, 15 * SECONDS );
-  timerLock( initSMTimer );
-  longTimerSet( minuteTimer, (DWORD) 10 * MINUTES);
-  initState = initialised;
+//  timerLock( initSMTimer );
+//  longTimerSet( minuteTimer, (DWORD) 10 * MINUTES);
+//  initState = initialised;
 }
 
 void initS3_greenHigh (void)
@@ -186,7 +191,7 @@ void initS3_greenHigh (void)
 void initS4_greenLow (void)
 {
   timerSet( initSMTimer, 2000 * MILLISECONDS );
-  initState = initS5;
+  initState = initS7;
 }
 
 void initS5_redHigh (void)
@@ -198,7 +203,7 @@ void initS5_redHigh (void)
 void initS6_redLow (void)
 {
   timerSet( initSMTimer, 2000 * MILLISECONDS );
-  initState = initS7;
+  initState = initS4;
 }
 
 void initS7_bothHigh (void)
@@ -238,6 +243,7 @@ enum initEvents getInitEvent (void)
         else 
         {
             redWentHigh.eventFlag = false;
+            setLED();
             return redHighEvent;
         }
     }
@@ -255,6 +261,7 @@ enum initEvents getInitEvent (void)
         else 
         {
             redWentLow.eventFlag = false;
+            clearLED();
             return redLowEvent;
         }
     }
@@ -375,14 +382,14 @@ enum runEvents getRunEvent(void)
     else if (timerRead(buzzerTimer) == EXPIRED )
     {
         timerLock( buzzerTimer );
-        if (ttog) {
+/*        if (ttog) {
             clearLED();
             ttog = false;
         } else {
             setLED();
             ttog = true;
         }
-        return beepEvent;
+*/        return beepEvent;
     }
     else if (longTimerRead(minuteTimer) == EXPIRED)
      {

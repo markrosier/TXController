@@ -11,93 +11,75 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$dist/default/production\TXController.X.production.obj
-cinit CODE 0 12 12 1D 2
-text1 CODE 0 5C2 5C2 2 2
-text2 CODE 0 44A 44A 17 2
-text3 CODE 0 4A3 4A3 12 2
-text4 CODE 0 5BF 5BF 3 2
-text5 CODE 0 38D 38D 20 2
-text6 CODE 0 586 586 B 2
-text7 CODE 0 30A 30A 2E 2
-text8 CODE 0 502 502 E 2
-text9 CODE 0 591 591 B 2
-text10 CODE 0 4C6 4C6 F 2
-text11 CODE 0 4D5 4D5 F 2
-text12 CODE 0 57A 57A C 2
-text13 CODE 0 510 510 E 2
-text14 CODE 0 220 220 7B 2
-text15 CODE 0 5C4 5C4 1 2
-text16 CODE 0 5C5 5C5 1 2
-text17 CODE 0 5C6 5C6 1 2
-text18 CODE 0 5C7 5C7 1 2
-text19 CODE 0 5C8 5C8 1 2
-text20 CODE 0 5C9 5C9 1 2
-text21 CODE 0 5CA 5CA 1 2
-text22 CODE 0 5CB 5CB 1 2
-text23 CODE 0 5CC 5CC 1 2
-text24 CODE 0 5CD 5CD 1 2
-text25 CODE 0 59C 59C B 2
-text26 CODE 0 5CE 5CE 1 2
-text27 CODE 0 5CF 5CF 1 2
-text28 CODE 0 432 432 18 2
-text29 CODE 0 52C 52C D 2
-text30 CODE 0 539 539 D 2
-text31 CODE 0 546 546 D 2
-text32 CODE 0 553 553 D 2
-text33 CODE 0 560 560 D 2
-text34 CODE 0 48F 48F 14 2
-text35 CODE 0 56D 56D D 2
-text36 CODE 0 5D0 5D0 1 2
-text37 CODE 0 4B5 4B5 11 2
-text38 CODE 0 461 461 17 2
-text39 CODE 0 3E4 3E4 1A 2
-text40 CODE 0 29B 29B 39 2
-text41 CODE 0 5B7 5B7 4 2
-text42 CODE 0 363 363 2A 2
-text43 CODE 0 3FE 3FE 1A 2
-text44 CODE 0 5BB 5BB 4 2
-text45 CODE 0 18D 18D 93 2
-text46 CODE 0 4E4 4E4 F 2
-text47 CODE 0 3AD 3AD 1C 2
-text48 CODE 0 338 338 2B 2
-text49 CODE 0 3C9 3C9 1B 2
-text50 CODE 0 4F3 4F3 F 2
-text51 CODE 0 478 478 17 2
-text53 CODE 0 F7 F7 96 2
-text54 CODE 0 418 418 1A 2
-text55 CODE 0 2D4 2D4 36 2
-text56 CODE 0 51E 51E E 2
-nvBANK0 BANK0 1 5F 5F 1 1
-maintext CODE 0 5AD 5AD 6 2
-cstackCOMMON COMMON 1 70 70 7 1
-cstackBANK0 BANK0 1 49 49 12 1
-intentry CODE 0 4 4 D 2
-bssBANK0 BANK0 1 20 20 29 1
-bssBANK1 BANK1 1 A0 A0 14 1
-stringtext STRCODE 0 2F 2F C8 2
-idataBANK0 CODE 0 5B3 5B3 4 2
-dataBANK0 BANK0 1 5B 5B 4 1
-clrtext CODE 0 5A7 5A7 6 2
-bssCOMMON COMMON 1 77 77 6 1
-$C:\Users\Mark\AppData\Local\Temp\s8l4.obj
+$C:\Users\Mark\AppData\Local\Temp\s9qg.obj
 reset_vec CODE 0 0 0 1 2
 end_init CODE 0 11 11 1 2
 config CONFIG 0 8007 8007 2 2
+$dist/default/production\TXController.X.production.obj
+cinit CODE 0 12 12 1E 2
+text1 CODE 0 4DD 4DD 2 2
+text2 CODE 0 3B2 3B2 12 2
+text3 CODE 0 3C4 3C4 12 2
+text4 CODE 0 4DA 4DA 3 2
+text5 CODE 0 2FD 2FD 20 2
+text6 CODE 0 2A4 2A4 2E 2
+text7 CODE 0 433 433 E 2
+text8 CODE 0 338 338 1A 2
+text9 CODE 0 4B7 4B7 B 2
+text10 CODE 0 3E8 3E8 F 2
+text11 CODE 0 3F7 3F7 F 2
+text12 CODE 0 4AB 4AB C 2
+text13 CODE 0 441 441 E 2
+text14 CODE 0 225 225 49 2
+text15 CODE 0 36C 36C 18 2
+text16 CODE 0 45D 45D D 2
+text17 CODE 0 46A 46A D 2
+text18 CODE 0 477 477 D 2
+text19 CODE 0 484 484 D 2
+text20 CODE 0 491 491 D 2
+text21 CODE 0 49E 49E D 2
+text22 CODE 0 406 406 F 2
+text23 CODE 0 4DF 4DF 1 2
+text24 CODE 0 3D6 3D6 12 2
+text25 CODE 0 384 384 17 2
+text26 CODE 0 F8 F8 97 2
+text27 CODE 0 415 415 F 2
+text28 CODE 0 4D2 4D2 4 2
+text29 CODE 0 4D6 4D6 4 2
+text30 CODE 0 2D2 2D2 2B 2
+text31 CODE 0 31D 31D 1B 2
+text32 CODE 0 424 424 F 2
+text33 CODE 0 39B 39B 17 2
+text35 CODE 0 18F 18F 96 2
+text36 CODE 0 352 352 1A 2
+text37 CODE 0 26E 26E 36 2
+text38 CODE 0 44F 44F E 2
+nvBANK0 BANK0 1 5E 5E 1 1
+maintext CODE 0 4C8 4C8 6 2
+cstackCOMMON COMMON 1 77 77 7 1
+cstackBANK0 BANK0 1 48 48 12 1
+intentry CODE 0 4 4 D 2
+bssBANK0 BANK0 1 20 20 28 1
+bssBANK1 BANK1 1 A0 A0 14 1
+stringtext STRCODE 0 30 30 C8 2
+idataBANK0 CODE 0 4CE 4CE 4 2
+dataBANK0 BANK0 1 5A 5A 4 1
+clrtext CODE 0 4C2 4C2 6 2
+bssCOMMON COMMON 1 70 70 7 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
 # is described on a single line as follows:
 #    <class name> <range> <delta>
 # Addresses given in the range are in hexadecimal and units of delta.
 %UNUSED
-RAM 60-6F 1
+RAM 5F-6F 1
 RAM B4-BF 1
-BANK0 60-6F 1
+BANK0 5F-6F 1
 BANK1 B4-BF 1
 CONST 1-3 2
-CONST 5D1-7FF 2
+CONST 4E0-7FF 2
 ENTRY 1-3 2
-ENTRY 5D1-7FF 2
+ENTRY 4E0-7FF 2
 IDLOC 8000-8003 2
 SFR10 500-56F 1
 SFR11 580-5EF 1
@@ -121,9 +103,9 @@ SFR28 E00-E6F 1
 SFR29 E80-EEF 1
 SFR30 F00-F6F 1
 SFR31 F80-FEF 1
-STACK 2040-204F 1
+STACK 203F-204F 1
 CODE 1-3 2
-CODE 5D1-7FF 2
+CODE 4E0-7FF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-16F 1
@@ -135,12 +117,11 @@ SFR7 380-3EF 1
 SFR8 400-46F 1
 SFR9 480-4EF 1
 BIGRAM 2000-206F 1
-COMMON 7D-7D 1
 EEDATA F000-F0FF 2
 STRCODE 1-3 2
-STRCODE 5D1-7FF 2
+STRCODE 4E0-7FF 2
 STRING 1-3 2
-STRING 5D1-7FF 2
+STRING 4E0-7FF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -155,441 +136,366 @@ STRING 5D1-7FF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\TXController.X.production.obj
-12 cinit CODE >1949:C:\Users\Mark\AppData\Local\Temp\s8l4.
-12 cinit CODE >1952:C:\Users\Mark\AppData\Local\Temp\s8l4.
-12 cinit CODE >2065:C:\Users\Mark\AppData\Local\Temp\s8l4.
-13 cinit CODE >2066:C:\Users\Mark\AppData\Local\Temp\s8l4.
-14 cinit CODE >2067:C:\Users\Mark\AppData\Local\Temp\s8l4.
-15 cinit CODE >2068:C:\Users\Mark\AppData\Local\Temp\s8l4.
-16 cinit CODE >2069:C:\Users\Mark\AppData\Local\Temp\s8l4.
-17 cinit CODE >2070:C:\Users\Mark\AppData\Local\Temp\s8l4.
-18 cinit CODE >2071:C:\Users\Mark\AppData\Local\Temp\s8l4.
-19 cinit CODE >2072:C:\Users\Mark\AppData\Local\Temp\s8l4.
-1A cinit CODE >2089:C:\Users\Mark\AppData\Local\Temp\s8l4.
-1B cinit CODE >2090:C:\Users\Mark\AppData\Local\Temp\s8l4.
-1C cinit CODE >2091:C:\Users\Mark\AppData\Local\Temp\s8l4.
-1D cinit CODE >2092:C:\Users\Mark\AppData\Local\Temp\s8l4.
-1E cinit CODE >2093:C:\Users\Mark\AppData\Local\Temp\s8l4.
-1F cinit CODE >2094:C:\Users\Mark\AppData\Local\Temp\s8l4.
-20 cinit CODE >2098:C:\Users\Mark\AppData\Local\Temp\s8l4.
-21 cinit CODE >2099:C:\Users\Mark\AppData\Local\Temp\s8l4.
-22 cinit CODE >2100:C:\Users\Mark\AppData\Local\Temp\s8l4.
-23 cinit CODE >2101:C:\Users\Mark\AppData\Local\Temp\s8l4.
-24 cinit CODE >2102:C:\Users\Mark\AppData\Local\Temp\s8l4.
-25 cinit CODE >2103:C:\Users\Mark\AppData\Local\Temp\s8l4.
-26 cinit CODE >2107:C:\Users\Mark\AppData\Local\Temp\s8l4.
-27 cinit CODE >2108:C:\Users\Mark\AppData\Local\Temp\s8l4.
-28 cinit CODE >2109:C:\Users\Mark\AppData\Local\Temp\s8l4.
-29 cinit CODE >2110:C:\Users\Mark\AppData\Local\Temp\s8l4.
-2A cinit CODE >2111:C:\Users\Mark\AppData\Local\Temp\s8l4.
-2B cinit CODE >2112:C:\Users\Mark\AppData\Local\Temp\s8l4.
-2C cinit CODE >2118:C:\Users\Mark\AppData\Local\Temp\s8l4.
-2C cinit CODE >2120:C:\Users\Mark\AppData\Local\Temp\s8l4.
-2D cinit CODE >2121:C:\Users\Mark\AppData\Local\Temp\s8l4.
-2E cinit CODE >2122:C:\Users\Mark\AppData\Local\Temp\s8l4.
+12 cinit CODE >1964:C:\Users\Mark\AppData\Local\Temp\s9qg.
+12 cinit CODE >1967:C:\Users\Mark\AppData\Local\Temp\s9qg.
+12 cinit CODE >2080:C:\Users\Mark\AppData\Local\Temp\s9qg.
+13 cinit CODE >2081:C:\Users\Mark\AppData\Local\Temp\s9qg.
+14 cinit CODE >2082:C:\Users\Mark\AppData\Local\Temp\s9qg.
+15 cinit CODE >2083:C:\Users\Mark\AppData\Local\Temp\s9qg.
+16 cinit CODE >2084:C:\Users\Mark\AppData\Local\Temp\s9qg.
+17 cinit CODE >2085:C:\Users\Mark\AppData\Local\Temp\s9qg.
+18 cinit CODE >2086:C:\Users\Mark\AppData\Local\Temp\s9qg.
+19 cinit CODE >2087:C:\Users\Mark\AppData\Local\Temp\s9qg.
+1A cinit CODE >2104:C:\Users\Mark\AppData\Local\Temp\s9qg.
+1B cinit CODE >2105:C:\Users\Mark\AppData\Local\Temp\s9qg.
+1C cinit CODE >2106:C:\Users\Mark\AppData\Local\Temp\s9qg.
+1D cinit CODE >2107:C:\Users\Mark\AppData\Local\Temp\s9qg.
+1E cinit CODE >2108:C:\Users\Mark\AppData\Local\Temp\s9qg.
+1F cinit CODE >2109:C:\Users\Mark\AppData\Local\Temp\s9qg.
+20 cinit CODE >2110:C:\Users\Mark\AppData\Local\Temp\s9qg.
+21 cinit CODE >2114:C:\Users\Mark\AppData\Local\Temp\s9qg.
+22 cinit CODE >2115:C:\Users\Mark\AppData\Local\Temp\s9qg.
+23 cinit CODE >2116:C:\Users\Mark\AppData\Local\Temp\s9qg.
+24 cinit CODE >2117:C:\Users\Mark\AppData\Local\Temp\s9qg.
+25 cinit CODE >2118:C:\Users\Mark\AppData\Local\Temp\s9qg.
+26 cinit CODE >2119:C:\Users\Mark\AppData\Local\Temp\s9qg.
+27 cinit CODE >2123:C:\Users\Mark\AppData\Local\Temp\s9qg.
+28 cinit CODE >2124:C:\Users\Mark\AppData\Local\Temp\s9qg.
+29 cinit CODE >2125:C:\Users\Mark\AppData\Local\Temp\s9qg.
+2A cinit CODE >2126:C:\Users\Mark\AppData\Local\Temp\s9qg.
+2B cinit CODE >2127:C:\Users\Mark\AppData\Local\Temp\s9qg.
+2C cinit CODE >2128:C:\Users\Mark\AppData\Local\Temp\s9qg.
+2D cinit CODE >2134:C:\Users\Mark\AppData\Local\Temp\s9qg.
+2D cinit CODE >2136:C:\Users\Mark\AppData\Local\Temp\s9qg.
+2E cinit CODE >2137:C:\Users\Mark\AppData\Local\Temp\s9qg.
+2F cinit CODE >2138:C:\Users\Mark\AppData\Local\Temp\s9qg.
 4 intentry CODE >32:D:\OneDrive\Software\Projects\Chivas\TXController/source/interrupt.c
 4 intentry CODE >147:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
 9 intentry CODE >34:D:\OneDrive\Software\Projects\Chivas\TXController/source/interrupt.c
 A intentry CODE >35:D:\OneDrive\Software\Projects\Chivas\TXController/source/interrupt.c
 B intentry CODE >36:D:\OneDrive\Software\Projects\Chivas\TXController/source/interrupt.c
 C intentry CODE >37:D:\OneDrive\Software\Projects\Chivas\TXController/source/interrupt.c
-51E text56 CODE >123:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-51F text56 CODE >125:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-523 text56 CODE >127:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-2D4 text55 CODE >51:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-2D4 text55 CODE >53:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-2D6 text55 CODE >56:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-2D9 text55 CODE >61:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-2DF text55 CODE >63:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-2E1 text55 CODE >65:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-2E3 text55 CODE >67:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-2E6 text55 CODE >69:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-2E8 text55 CODE >70:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-2EC text55 CODE >71:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-2ED text55 CODE >72:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-2ED text55 CODE >74:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-2EF text55 CODE >75:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-2F3 text55 CODE >77:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-2F5 text55 CODE >79:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-2F7 text55 CODE >81:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-2FA text55 CODE >83:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-2FC text55 CODE >84:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-300 text55 CODE >85:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-301 text55 CODE >86:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-301 text55 CODE >88:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-303 text55 CODE >89:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-307 text55 CODE >91:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-309 text55 CODE >92:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-418 text54 CODE >50:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
-418 text54 CODE >54:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
-41E text54 CODE >56:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
-41F text54 CODE >58:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
-422 text54 CODE >60:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
-42E text54 CODE >62:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
-430 text54 CODE >63:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
-F7 text53 CODE >57:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-F7 text53 CODE >61:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-FD text53 CODE >63:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-FE text53 CODE >64:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-102 text53 CODE >66:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-106 text53 CODE >69:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-10B text53 CODE >71:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-11F text53 CODE >73:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-129 text53 CODE >69:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-12E text53 CODE >77:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-133 text53 CODE >79:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-165 text53 CODE >81:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-17C text53 CODE >77:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-181 text53 CODE >86:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-185 text53 CODE >89:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-18A text53 CODE >90:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-18B text53 CODE >91:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-478 text51 CODE >139:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-47A text51 CODE >141:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-47E text51 CODE >142:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-482 text51 CODE >144:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-48A text51 CODE >146:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-4F3 text50 CODE >123:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-4F5 text50 CODE >125:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-4F9 text50 CODE >127:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-3C9 text49 CODE >47:D:\OneDrive\Software\Projects\Chivas\TXController/source/LED.c
-3C9 text49 CODE >49:D:\OneDrive\Software\Projects\Chivas\TXController/source/LED.c
-3CD text49 CODE >51:D:\OneDrive\Software\Projects\Chivas\TXController/source/LED.c
-3D4 text49 CODE >53:D:\OneDrive\Software\Projects\Chivas\TXController/source/LED.c
-3D7 text49 CODE >55:D:\OneDrive\Software\Projects\Chivas\TXController/source/LED.c
-3D8 text49 CODE >56:D:\OneDrive\Software\Projects\Chivas\TXController/source/LED.c
-3D9 text49 CODE >57:D:\OneDrive\Software\Projects\Chivas\TXController/source/LED.c
-3DA text49 CODE >58:D:\OneDrive\Software\Projects\Chivas\TXController/source/LED.c
-3DA text49 CODE >60:D:\OneDrive\Software\Projects\Chivas\TXController/source/LED.c
-3DC text49 CODE >61:D:\OneDrive\Software\Projects\Chivas\TXController/source/LED.c
-3DD text49 CODE >63:D:\OneDrive\Software\Projects\Chivas\TXController/source/LED.c
-3E3 text49 CODE >64:D:\OneDrive\Software\Projects\Chivas\TXController/source/LED.c
-338 text48 CODE >103:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
-338 text48 CODE >105:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
-33C text48 CODE >107:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
-343 text48 CODE >109:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
-346 text48 CODE >111:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
-347 text48 CODE >112:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
-348 text48 CODE >113:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
-349 text48 CODE >114:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
-349 text48 CODE >116:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
-34B text48 CODE >117:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
-34D text48 CODE >120:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
-352 text48 CODE >122:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
-356 text48 CODE >123:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
-35A text48 CODE >125:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
-35B text48 CODE >126:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
-35C text48 CODE >129:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
-362 text48 CODE >130:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
-3AD text47 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\Umul16.c
-3AD text47 CODE >43:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\Umul16.c
-3B0 text47 CODE >45:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\Umul16.c
-3B2 text47 CODE >46:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\Umul16.c
-3B6 text47 CODE >47:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\Umul16.c
-3BB text47 CODE >48:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\Umul16.c
-3C0 text47 CODE >49:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\Umul16.c
-3C4 text47 CODE >52:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\Umul16.c
-4E4 text46 CODE >157:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-4E6 text46 CODE >159:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-4EA text46 CODE >161:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-18D text45 CODE >219:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-18D text45 CODE >221:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-195 text45 CODE >223:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-197 text45 CODE >224:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-199 text45 CODE >226:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-19D text45 CODE >229:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-1A0 text45 CODE >231:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-1B4 text45 CODE >233:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-1B5 text45 CODE >234:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-1B6 text45 CODE >235:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-1B8 text45 CODE >240:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-1B9 text45 CODE >241:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-1BB text45 CODE >244:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-1BE text45 CODE >246:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-1C1 text45 CODE >248:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-1D5 text45 CODE >250:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-1D6 text45 CODE >251:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-1D7 text45 CODE >252:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-1D9 text45 CODE >257:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-1DA text45 CODE >258:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-1DC text45 CODE >261:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-1DF text45 CODE >263:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-1E2 text45 CODE >265:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-1F6 text45 CODE >267:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-1F7 text45 CODE >268:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-1F8 text45 CODE >269:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-1FA text45 CODE >274:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-1FB text45 CODE >275:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-1FD text45 CODE >279:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-200 text45 CODE >281:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-203 text45 CODE >283:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-217 text45 CODE >285:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-218 text45 CODE >286:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-219 text45 CODE >287:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-21B text45 CODE >292:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-21C text45 CODE >293:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-21E text45 CODE >297:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-5BB text44 CODE >25:D:\OneDrive\Software\Projects\Chivas\TXController/source/LED.c
-5BB text44 CODE >27:D:\OneDrive\Software\Projects\Chivas\TXController/source/LED.c
-5BD text44 CODE >28:D:\OneDrive\Software\Projects\Chivas\TXController/source/LED.c
-5BE text44 CODE >29:D:\OneDrive\Software\Projects\Chivas\TXController/source/LED.c
-3FE text43 CODE >242:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-400 text43 CODE >244:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-404 text43 CODE >246:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-363 text42 CODE >224:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-365 text42 CODE >226:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-36D text42 CODE >227:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-371 text42 CODE >229:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-384 text42 CODE >231:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-5B7 text41 CODE >19:D:\OneDrive\Software\Projects\Chivas\TXController/source/LED.c
-5B7 text41 CODE >21:D:\OneDrive\Software\Projects\Chivas\TXController/source/LED.c
-5B9 text41 CODE >22:D:\OneDrive\Software\Projects\Chivas\TXController/source/LED.c
-5BA text41 CODE >23:D:\OneDrive\Software\Projects\Chivas\TXController/source/LED.c
-29B text40 CODE >368:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-29B text40 CODE >370:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-2A3 text40 CODE >372:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-2A5 text40 CODE >373:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-2A6 text40 CODE >374:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-2A7 text40 CODE >375:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-2AE text40 CODE >377:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-2B0 text40 CODE >378:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-2B4 text40 CODE >379:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-2B5 text40 CODE >380:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-2B7 text40 CODE >381:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-2B8 text40 CODE >382:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-2B9 text40 CODE >383:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-2BC text40 CODE >385:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-2BD text40 CODE >386:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-2BE text40 CODE >387:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-2C7 text40 CODE >389:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-2C9 text40 CODE >390:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-2CA text40 CODE >391:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-2CB text40 CODE >392:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-2CF text40 CODE >394:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-2D0 text40 CODE >395:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-2D1 text40 CODE >396:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-2D2 text40 CODE >398:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-3E4 text39 CODE >208:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-3E6 text39 CODE >210:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-3EA text39 CODE >212:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-461 text38 CODE >82:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
-461 text38 CODE >84:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
-464 text38 CODE >85:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
-469 text38 CODE >86:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
-46D text38 CODE >88:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
-471 text38 CODE >89:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
-472 text38 CODE >90:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
-476 text38 CODE >91:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
-477 text38 CODE >92:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
-4B5 text37 CODE >149:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-4B5 text37 CODE >151:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-4BC text37 CODE >152:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-4BE text37 CODE >153:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-4C0 text37 CODE >154:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-4C1 text37 CODE >155:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-4C2 text37 CODE >156:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-4C3 text37 CODE >157:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-4C4 text37 CODE >158:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-4C5 text37 CODE >159:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-5D0 text36 CODE >144:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-5D0 text36 CODE >147:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-56D text35 CODE >161:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-56D text35 CODE >163:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-574 text35 CODE >164:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-576 text35 CODE >165:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-579 text35 CODE >166:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-48F text34 CODE >168:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-48F text34 CODE >175:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-492 text34 CODE >176:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-49D text34 CODE >177:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-4A2 text34 CODE >178:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-560 text33 CODE >180:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-560 text33 CODE >182:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-567 text33 CODE >183:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-56C text33 CODE >184:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-553 text32 CODE >186:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-553 text32 CODE >188:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-55A text32 CODE >189:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-55F text32 CODE >190:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-546 text31 CODE >192:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-546 text31 CODE >194:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-54D text31 CODE >195:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-552 text31 CODE >196:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-539 text30 CODE >198:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-539 text30 CODE >200:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-540 text30 CODE >201:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-545 text30 CODE >202:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-52C text29 CODE >204:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-52C text29 CODE >206:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-533 text29 CODE >207:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-538 text29 CODE >208:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-432 text28 CODE >210:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-432 text28 CODE >212:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-435 text28 CODE >213:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-43A text28 CODE >214:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-43C text28 CODE >215:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-440 text28 CODE >216:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-449 text28 CODE >217:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-5CF text27 CODE >301:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-5CF text27 CODE >304:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-5CE text26 CODE >311:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-5CE text26 CODE >314:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-59C text25 CODE >316:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-59C text25 CODE >318:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-5A6 text25 CODE >319:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-5CD text24 CODE >306:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-5CD text24 CODE >309:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-5CC text23 CODE >326:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-5CC text23 CODE >329:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-5CB text22 CODE >321:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-5CB text22 CODE >324:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-5CA text21 CODE >331:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-5CA text21 CODE >334:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-5C9 text20 CODE >341:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-5C9 text20 CODE >344:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-5C8 text19 CODE >336:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-5C8 text19 CODE >339:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-5C7 text18 CODE >346:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-5C7 text18 CODE >349:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-5C6 text17 CODE >356:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-5C6 text17 CODE >359:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-5C5 text16 CODE >361:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-5C5 text16 CODE >364:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-5C4 text15 CODE >351:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-5C4 text15 CODE >354:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-220 text14 CODE >109:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-220 text14 CODE >111:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-228 text14 CODE >113:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-22D text14 CODE >116:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-235 text14 CODE >118:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-25B text14 CODE >120:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-25C text14 CODE >123:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-25D text14 CODE >124:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-25D text14 CODE >126:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-262 text14 CODE >129:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-26A text14 CODE >131:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-291 text14 CODE >133:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-292 text14 CODE >136:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-293 text14 CODE >137:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-293 text14 CODE >139:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-510 text13 CODE >104:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-510 text13 CODE >108:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-515 text13 CODE >109:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-519 text13 CODE >110:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-51B text13 CODE >111:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-57A text12 CODE >40:D:\OneDrive\Software\Projects\Chivas\TXController/source/LED.c
-57A text12 CODE >42:D:\OneDrive\Software\Projects\Chivas\TXController/source/LED.c
-57F text12 CODE >44:D:\OneDrive\Software\Projects\Chivas\TXController/source/LED.c
-585 text12 CODE >45:D:\OneDrive\Software\Projects\Chivas\TXController/source/LED.c
-4D5 text11 CODE >29:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
-4D5 text11 CODE >32:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
-4D8 text11 CODE >33:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
-4DC text11 CODE >35:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
-4DE text11 CODE >37:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
-4E0 text11 CODE >39:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
-4E1 text11 CODE >40:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
-4E3 text11 CODE >41:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
-4C6 text10 CODE >95:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
-4C6 text10 CODE >97:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
-4C7 text10 CODE >98:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
-4C9 text10 CODE >99:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
-4CE text10 CODE >100:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
-4D4 text10 CODE >101:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
-591 text9 CODE >38:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-591 text9 CODE >40:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-592 text9 CODE >41:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-594 text9 CODE >42:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-595 text9 CODE >43:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-596 text9 CODE >44:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-597 text9 CODE >45:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-598 text9 CODE >46:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-599 text9 CODE >47:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-59A text9 CODE >48:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-59B text9 CODE >49:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-502 text8 CODE >189:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-502 text8 CODE >193:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-507 text8 CODE >194:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-50B text8 CODE >195:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-50D text8 CODE >196:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-30A text7 CODE >96:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-30A text7 CODE >98:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-30F text7 CODE >99:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-315 text7 CODE >100:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-316 text7 CODE >101:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-31E text7 CODE >102:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-326 text7 CODE >103:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-32E text7 CODE >104:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-336 text7 CODE >105:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-337 text7 CODE >107:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
-586 text6 CODE >31:D:\OneDrive\Software\Projects\Chivas\TXController/source/LED.c
-586 text6 CODE >33:D:\OneDrive\Software\Projects\Chivas\TXController/source/LED.c
-589 text6 CODE >34:D:\OneDrive\Software\Projects\Chivas\TXController/source/LED.c
-58A text6 CODE >35:D:\OneDrive\Software\Projects\Chivas\TXController/source/LED.c
-58E text6 CODE >36:D:\OneDrive\Software\Projects\Chivas\TXController/source/LED.c
-590 text6 CODE >37:D:\OneDrive\Software\Projects\Chivas\TXController/source/LED.c
-38D text5 CODE >65:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
-38D text5 CODE >67:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
-390 text5 CODE >68:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
-394 text5 CODE >69:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
-395 text5 CODE >71:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
-396 text5 CODE >73:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
-397 text5 CODE >74:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
-399 text5 CODE >75:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
-39B text5 CODE >77:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
-39D text5 CODE >79:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
-39E text5 CODE >80:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
-3A0 text5 CODE >81:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
-3A2 text5 CODE >83:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
-3A4 text5 CODE >84:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
-3A6 text5 CODE >86:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
-3A8 text5 CODE >87:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
-3AA text5 CODE >90:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
-3AC text5 CODE >92:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
-5BF text4 CODE >16:D:\OneDrive\Software\Projects\Chivas\TXController/source/interrupt.c
-5BF text4 CODE >18:D:\OneDrive\Software\Projects\Chivas\TXController/source/interrupt.c
-5C0 text4 CODE >19:D:\OneDrive\Software\Projects\Chivas\TXController/source/interrupt.c
-5C1 text4 CODE >20:D:\OneDrive\Software\Projects\Chivas\TXController/source/interrupt.c
-4A3 text3 CODE >28:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-4A3 text3 CODE >30:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-4A4 text3 CODE >31:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-4A5 text3 CODE >33:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-4A7 text3 CODE >35:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-4A8 text3 CODE >36:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-4A9 text3 CODE >37:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-4AA text3 CODE >38:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-4AB text3 CODE >40:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-4AF text3 CODE >42:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-4B1 text3 CODE >44:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-4B2 text3 CODE >45:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-4B4 text3 CODE >46:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
-44A text2 CODE >47:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
-44A text2 CODE >49:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
-44B text2 CODE >50:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
-44C text2 CODE >51:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
-44D text2 CODE >52:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
-44E text2 CODE >53:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
-44F text2 CODE >54:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
-450 text2 CODE >55:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
-456 text2 CODE >56:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
-460 text2 CODE >57:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
-5C2 text1 CODE >18:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
-5C2 text1 CODE >20:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
-5C3 text1 CODE >21:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
-5AD maintext CODE >29:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
-5AD maintext CODE >31:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
-5AE maintext CODE >34:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
-5AF maintext CODE >35:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
-5B0 maintext CODE >36:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
-5B1 maintext CODE >37:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
-5B2 maintext CODE >32:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
-5A7 clrtext CODE >2078:C:\Users\Mark\AppData\Local\Temp\s8l4.
-5A7 clrtext CODE >2079:C:\Users\Mark\AppData\Local\Temp\s8l4.
-5A8 clrtext CODE >2080:C:\Users\Mark\AppData\Local\Temp\s8l4.
-5A8 clrtext CODE >2081:C:\Users\Mark\AppData\Local\Temp\s8l4.
-5A9 clrtext CODE >2082:C:\Users\Mark\AppData\Local\Temp\s8l4.
-5AA clrtext CODE >2083:C:\Users\Mark\AppData\Local\Temp\s8l4.
-5AB clrtext CODE >2084:C:\Users\Mark\AppData\Local\Temp\s8l4.
-5AC clrtext CODE >2085:C:\Users\Mark\AppData\Local\Temp\s8l4.
+44F text38 CODE >123:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
+450 text38 CODE >125:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
+454 text38 CODE >127:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
+26E text37 CODE >51:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+26E text37 CODE >53:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+270 text37 CODE >56:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+273 text37 CODE >61:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+279 text37 CODE >63:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+27B text37 CODE >65:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+27D text37 CODE >67:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+280 text37 CODE >69:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+282 text37 CODE >70:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+286 text37 CODE >71:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+287 text37 CODE >72:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+287 text37 CODE >74:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+289 text37 CODE >75:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+28D text37 CODE >77:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+28F text37 CODE >79:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+291 text37 CODE >81:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+294 text37 CODE >83:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+296 text37 CODE >84:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+29A text37 CODE >85:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+29B text37 CODE >86:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+29B text37 CODE >88:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+29D text37 CODE >89:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+2A1 text37 CODE >91:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+2A3 text37 CODE >92:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+352 text36 CODE >50:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
+352 text36 CODE >54:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
+358 text36 CODE >56:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
+359 text36 CODE >58:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
+35C text36 CODE >60:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
+368 text36 CODE >62:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
+36A text36 CODE >63:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
+18F text35 CODE >57:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
+18F text35 CODE >61:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
+195 text35 CODE >63:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
+196 text35 CODE >64:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
+19A text35 CODE >66:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
+19E text35 CODE >69:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
+1A3 text35 CODE >71:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
+1B7 text35 CODE >73:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
+1C1 text35 CODE >69:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
+1C6 text35 CODE >77:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
+1CB text35 CODE >79:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
+1FD text35 CODE >81:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
+214 text35 CODE >77:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
+219 text35 CODE >86:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
+21D text35 CODE >89:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
+222 text35 CODE >90:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
+223 text35 CODE >91:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
+39B text33 CODE >139:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
+39D text33 CODE >141:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
+3A1 text33 CODE >142:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
+3A5 text33 CODE >144:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
+3AD text33 CODE >146:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
+424 text32 CODE >123:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
+426 text32 CODE >125:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
+42A text32 CODE >127:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
+31D text31 CODE >47:D:\OneDrive\Software\Projects\Chivas\TXController/source/LED.c
+31D text31 CODE >49:D:\OneDrive\Software\Projects\Chivas\TXController/source/LED.c
+321 text31 CODE >51:D:\OneDrive\Software\Projects\Chivas\TXController/source/LED.c
+328 text31 CODE >53:D:\OneDrive\Software\Projects\Chivas\TXController/source/LED.c
+32B text31 CODE >55:D:\OneDrive\Software\Projects\Chivas\TXController/source/LED.c
+32C text31 CODE >56:D:\OneDrive\Software\Projects\Chivas\TXController/source/LED.c
+32D text31 CODE >57:D:\OneDrive\Software\Projects\Chivas\TXController/source/LED.c
+32E text31 CODE >58:D:\OneDrive\Software\Projects\Chivas\TXController/source/LED.c
+32E text31 CODE >60:D:\OneDrive\Software\Projects\Chivas\TXController/source/LED.c
+330 text31 CODE >61:D:\OneDrive\Software\Projects\Chivas\TXController/source/LED.c
+331 text31 CODE >63:D:\OneDrive\Software\Projects\Chivas\TXController/source/LED.c
+337 text31 CODE >64:D:\OneDrive\Software\Projects\Chivas\TXController/source/LED.c
+2D2 text30 CODE >103:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
+2D2 text30 CODE >105:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
+2D6 text30 CODE >107:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
+2DD text30 CODE >109:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
+2E0 text30 CODE >111:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
+2E1 text30 CODE >112:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
+2E2 text30 CODE >113:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
+2E3 text30 CODE >114:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
+2E3 text30 CODE >116:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
+2E5 text30 CODE >117:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
+2E7 text30 CODE >120:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
+2EC text30 CODE >122:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
+2F0 text30 CODE >123:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
+2F4 text30 CODE >125:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
+2F5 text30 CODE >126:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
+2F6 text30 CODE >129:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
+2FC text30 CODE >130:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
+4D6 text29 CODE >25:D:\OneDrive\Software\Projects\Chivas\TXController/source/LED.c
+4D6 text29 CODE >27:D:\OneDrive\Software\Projects\Chivas\TXController/source/LED.c
+4D8 text29 CODE >28:D:\OneDrive\Software\Projects\Chivas\TXController/source/LED.c
+4D9 text29 CODE >29:D:\OneDrive\Software\Projects\Chivas\TXController/source/LED.c
+4D2 text28 CODE >19:D:\OneDrive\Software\Projects\Chivas\TXController/source/LED.c
+4D2 text28 CODE >21:D:\OneDrive\Software\Projects\Chivas\TXController/source/LED.c
+4D4 text28 CODE >22:D:\OneDrive\Software\Projects\Chivas\TXController/source/LED.c
+4D5 text28 CODE >23:D:\OneDrive\Software\Projects\Chivas\TXController/source/LED.c
+415 text27 CODE >157:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
+417 text27 CODE >159:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
+41B text27 CODE >161:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
+F8 text26 CODE >224:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+F8 text26 CODE >226:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+100 text26 CODE >228:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+102 text26 CODE >229:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+104 text26 CODE >231:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+108 text26 CODE >234:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+10B text26 CODE >236:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+11F text26 CODE >238:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+120 text26 CODE >239:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+121 text26 CODE >240:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+123 text26 CODE >245:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+124 text26 CODE >246:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+125 text26 CODE >247:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+127 text26 CODE >250:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+12B text26 CODE >252:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+12E text26 CODE >254:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+142 text26 CODE >256:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+143 text26 CODE >257:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+144 text26 CODE >258:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+146 text26 CODE >263:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+147 text26 CODE >264:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+148 text26 CODE >265:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+14A text26 CODE >268:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+14E text26 CODE >270:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+151 text26 CODE >272:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+165 text26 CODE >274:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+166 text26 CODE >275:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+167 text26 CODE >276:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+169 text26 CODE >281:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+16A text26 CODE >282:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+16C text26 CODE >286:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+16F text26 CODE >288:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+172 text26 CODE >290:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+186 text26 CODE >292:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+187 text26 CODE >293:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+188 text26 CODE >294:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+18A text26 CODE >299:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+18B text26 CODE >300:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+18D text26 CODE >304:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+384 text25 CODE >82:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
+384 text25 CODE >84:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
+387 text25 CODE >85:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
+38C text25 CODE >86:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
+390 text25 CODE >88:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
+394 text25 CODE >89:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
+395 text25 CODE >90:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
+399 text25 CODE >91:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
+39A text25 CODE >92:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
+3D6 text24 CODE >153:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+3D6 text24 CODE >155:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+3DD text24 CODE >156:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+3DF text24 CODE >157:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+3E1 text24 CODE >158:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+3E2 text24 CODE >159:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+3E3 text24 CODE >160:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+3E4 text24 CODE >161:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+3E5 text24 CODE >162:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+3E6 text24 CODE >163:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+3E7 text24 CODE >164:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+4DF text23 CODE >148:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+4DF text23 CODE >151:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+406 text22 CODE >166:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+406 text22 CODE >168:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+40D text22 CODE >169:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+40F text22 CODE >170:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+414 text22 CODE >171:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+49E text21 CODE >173:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+49E text21 CODE >175:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+4A5 text21 CODE >176:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+4AA text21 CODE >183:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+491 text20 CODE >185:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+491 text20 CODE >187:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+498 text20 CODE >188:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+49D text20 CODE >189:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+484 text19 CODE >191:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+484 text19 CODE >193:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+48B text19 CODE >194:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+490 text19 CODE >195:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+477 text18 CODE >197:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+477 text18 CODE >199:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+47E text18 CODE >200:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+483 text18 CODE >201:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+46A text17 CODE >203:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+46A text17 CODE >205:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+471 text17 CODE >206:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+476 text17 CODE >207:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+45D text16 CODE >209:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+45D text16 CODE >211:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+464 text16 CODE >212:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+469 text16 CODE >213:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+36C text15 CODE >215:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+36C text15 CODE >217:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+36F text15 CODE >218:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+374 text15 CODE >219:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+376 text15 CODE >220:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+37A text15 CODE >221:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+383 text15 CODE >222:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+225 text14 CODE >109:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+225 text14 CODE >111:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+22D text14 CODE >113:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+231 text14 CODE >115:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+236 text14 CODE >118:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+23E text14 CODE >120:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+264 text14 CODE >121:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+265 text14 CODE >125:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+266 text14 CODE >127:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+266 text14 CODE >143:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+441 text13 CODE >104:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
+441 text13 CODE >108:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
+446 text13 CODE >109:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
+44A text13 CODE >110:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
+44C text13 CODE >111:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
+4AB text12 CODE >40:D:\OneDrive\Software\Projects\Chivas\TXController/source/LED.c
+4AB text12 CODE >42:D:\OneDrive\Software\Projects\Chivas\TXController/source/LED.c
+4B0 text12 CODE >44:D:\OneDrive\Software\Projects\Chivas\TXController/source/LED.c
+4B6 text12 CODE >45:D:\OneDrive\Software\Projects\Chivas\TXController/source/LED.c
+3F7 text11 CODE >29:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
+3F7 text11 CODE >32:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
+3FA text11 CODE >33:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
+3FE text11 CODE >35:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
+400 text11 CODE >37:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
+402 text11 CODE >39:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
+403 text11 CODE >40:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
+405 text11 CODE >41:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
+3E8 text10 CODE >95:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
+3E8 text10 CODE >97:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
+3E9 text10 CODE >98:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
+3EB text10 CODE >99:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
+3F0 text10 CODE >100:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
+3F6 text10 CODE >101:D:\OneDrive\Software\Projects\Chivas\TXController/source/beeper.c
+4B7 text9 CODE >38:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+4B7 text9 CODE >40:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+4B8 text9 CODE >41:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+4BA text9 CODE >42:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+4BB text9 CODE >43:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+4BC text9 CODE >44:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+4BD text9 CODE >45:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+4BE text9 CODE >46:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+4BF text9 CODE >47:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+4C0 text9 CODE >48:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+4C1 text9 CODE >49:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+338 text8 CODE >242:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
+33A text8 CODE >244:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
+33E text8 CODE >246:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
+433 text7 CODE >189:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
+433 text7 CODE >193:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
+438 text7 CODE >194:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
+43C text7 CODE >195:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
+43E text7 CODE >196:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
+2A4 text6 CODE >96:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+2A4 text6 CODE >98:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+2A9 text6 CODE >99:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+2AF text6 CODE >100:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+2B0 text6 CODE >101:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+2B8 text6 CODE >102:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+2C0 text6 CODE >103:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+2C8 text6 CODE >104:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+2D0 text6 CODE >105:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+2D1 text6 CODE >107:D:\OneDrive\Software\Projects\Chivas\TXController/source/eventhandler.c
+2FD text5 CODE >66:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
+2FD text5 CODE >68:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
+300 text5 CODE >69:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
+304 text5 CODE >70:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
+305 text5 CODE >72:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
+306 text5 CODE >74:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
+307 text5 CODE >75:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
+309 text5 CODE >76:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
+30B text5 CODE >78:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
+30D text5 CODE >80:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
+30E text5 CODE >81:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
+310 text5 CODE >82:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
+312 text5 CODE >84:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
+314 text5 CODE >85:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
+316 text5 CODE >87:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
+318 text5 CODE >88:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
+31A text5 CODE >91:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
+31C text5 CODE >93:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
+4DA text4 CODE >16:D:\OneDrive\Software\Projects\Chivas\TXController/source/interrupt.c
+4DA text4 CODE >18:D:\OneDrive\Software\Projects\Chivas\TXController/source/interrupt.c
+4DB text4 CODE >19:D:\OneDrive\Software\Projects\Chivas\TXController/source/interrupt.c
+4DC text4 CODE >20:D:\OneDrive\Software\Projects\Chivas\TXController/source/interrupt.c
+3C4 text3 CODE >28:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
+3C4 text3 CODE >30:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
+3C5 text3 CODE >31:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
+3C6 text3 CODE >33:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
+3C8 text3 CODE >35:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
+3C9 text3 CODE >36:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
+3CA text3 CODE >37:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
+3CB text3 CODE >38:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
+3CC text3 CODE >40:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
+3D0 text3 CODE >42:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
+3D2 text3 CODE >44:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
+3D3 text3 CODE >45:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
+3D5 text3 CODE >46:D:\OneDrive\Software\Projects\Chivas\TXController/source/timer.c
+3B2 text2 CODE >47:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
+3B2 text2 CODE >49:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
+3B3 text2 CODE >50:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
+3B4 text2 CODE >51:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
+3B5 text2 CODE >52:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
+3B6 text2 CODE >53:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
+3B7 text2 CODE >54:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
+3B8 text2 CODE >55:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
+3B9 text2 CODE >57:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
+3C3 text2 CODE >58:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
+4DD text1 CODE >18:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
+4DD text1 CODE >20:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
+4DE text1 CODE >21:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
+4C8 maintext CODE >29:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
+4C8 maintext CODE >31:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
+4C9 maintext CODE >34:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
+4CA maintext CODE >35:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
+4CB maintext CODE >36:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
+4CC maintext CODE >37:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
+4CD maintext CODE >32:D:\OneDrive\Software\Projects\Chivas\TXController/source/main.c
+4C2 clrtext CODE >2093:C:\Users\Mark\AppData\Local\Temp\s9qg.
+4C2 clrtext CODE >2094:C:\Users\Mark\AppData\Local\Temp\s9qg.
+4C3 clrtext CODE >2095:C:\Users\Mark\AppData\Local\Temp\s9qg.
+4C3 clrtext CODE >2096:C:\Users\Mark\AppData\Local\Temp\s9qg.
+4C4 clrtext CODE >2097:C:\Users\Mark\AppData\Local\Temp\s9qg.
+4C5 clrtext CODE >2098:C:\Users\Mark\AppData\Local\Temp\s9qg.
+4C6 clrtext CODE >2099:C:\Users\Mark\AppData\Local\Temp\s9qg.
+4C7 clrtext CODE >2100:C:\Users\Mark\AppData\Local\Temp\s9qg.
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -604,131 +510,107 @@ FE text53 CODE >64:D:\OneDrive\Software\Projects\Chivas\TXController/source/time
 %SYMTAB
 ___latbits 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
 __LdataBANK0 0 0 ABS 0 dataBANK0 -
-_initS4_greenLow AA6 0 CODE 0 text32 dist/default/production\TXController.X.production.obj
+_initS4_greenLow 908 0 CODE 0 text19 dist/default/production\TXController.X.production.obj
 __Hspace_0 8009 0 ABS 0 - -
 __Hspace_1 B4 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
 __CFG_IESO$OFF 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
 __HidataBANK0 0 0 ABS 0 idataBANK0 -
-_runS1_Error B9A 0 CODE 0 text24 dist/default/production\TXController.X.production.obj
-__end_of_runS3_Error B92 0 CODE 0 text19 dist/default/production\TXController.X.production.obj
-__end_of_initialise 8C2 0 CODE 0 text2 dist/default/production\TXController.X.production.obj
-_timer2Init 9AA 0 CODE 0 text11 dist/default/production\TXController.X.production.obj
+_runS1_Error 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
+__end_of_initialise 788 0 CODE 0 text2 dist/default/production\TXController.X.production.obj
+_timer2Init 7EE 0 CODE 0 text11 dist/default/production\TXController.X.production.obj
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
-_flashRate 5D 0 BANK0 1 dataBANK0 dist/default/production\TXController.X.production.obj
-_runS2_Timeout B98 0 CODE 0 text23 dist/default/production\TXController.X.production.obj
+_flashRate 5C 0 BANK0 1 dataBANK0 dist/default/production\TXController.X.production.obj
+_runS2_Timeout 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
 _T1CONbits 18 0 ABS 0 - dist/default/production\TXController.X.production.obj
 __Lstringtext 0 0 ABS 0 stringtext -
 __Hstrings 0 0 ABS 0 strings -
 _TMR1 16 0 ABS 0 - dist/default/production\TXController.X.production.obj
-___sp 0 0 STACK 2 stack C:\Users\Mark\AppData\Local\Temp\s8l4.obj
-_main B5A 0 CODE 0 maintext dist/default/production\TXController.X.production.obj
-_ttog 44 0 BANK0 1 bssBANK0 dist/default/production\TXController.X.production.obj
+___sp 0 0 STACK 2 stack C:\Users\Mark\AppData\Local\Temp\s9qg.obj
+_main 990 0 CODE 0 maintext dist/default/production\TXController.X.production.obj
 btemp 7E 0 ABS 0 - dist/default/production\TXController.X.production.obj
-start 22 0 CODE 0 init C:\Users\Mark\AppData\Local\Temp\s8l4.obj
-__end_of_timerInit 96A 0 CODE 0 text3 dist/default/production\TXController.X.production.obj
-__end_of_timerLock 9E6 0 CODE 0 text46 dist/default/production\TXController.X.production.obj
-__end_of_timerRead 91E 0 CODE 0 text51 dist/default/production\TXController.X.production.obj
+start 22 0 CODE 0 init C:\Users\Mark\AppData\Local\Temp\s9qg.obj
+__end_of_timerInit 7AC 0 CODE 0 text3 dist/default/production\TXController.X.production.obj
+__end_of_timerLock 848 0 CODE 0 text27 dist/default/production\TXController.X.production.obj
+__end_of_timerRead 764 0 CODE 0 text33 dist/default/production\TXController.X.production.obj
 __size_of_main 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 __size_of_timerInit 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
 __size_of_timerLock 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
 __size_of_timerRead 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
-i1timerSet@duration 70 0 COMMON 1 cstackCOMMON dist/default/production\TXController.X.production.obj
-_longTimerGet A04 0 CODE 0 text8 dist/default/production\TXController.X.production.obj
-_longTimerSet 7C8 0 CODE 0 text39 dist/default/production\TXController.X.production.obj
+i1timerSet@duration 77 0 COMMON 1 cstackCOMMON dist/default/production\TXController.X.production.obj
+_longTimerGet 866 0 CODE 0 text7 dist/default/production\TXController.X.production.obj
 _beeperToggle 3F 0 BANK0 1 bssBANK0 dist/default/production\TXController.X.production.obj
-_initS8_bothLow 864 0 CODE 0 text28 dist/default/production\TXController.X.production.obj
+_initS8_bothLow 6D8 0 CODE 0 text15 dist/default/production\TXController.X.production.obj
 __size_of_init_Restart 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
-?___wmul 49 0 BANK0 1 cstackBANK0 dist/default/production\TXController.X.production.obj
-_initS2_Timeout 91E 0 CODE 0 text34 dist/default/production\TXController.X.production.obj
-__size_of_runS1_Initialised 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
-__size_of_getRunEvent 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
+_initS2_Timeout 93C 0 CODE 0 text21 dist/default/production\TXController.X.production.obj
 __LidataBANK0 0 0 ABS 0 idataBANK0 -
-beepRepeatedly@period 49 0 BANK0 1 cstackBANK0 dist/default/production\TXController.X.production.obj
+beepRepeatedly@period 48 0 BANK0 1 cstackBANK0 dist/default/production\TXController.X.production.obj
 __Hpowerup 0 0 CODE 0 powerup -
 __size_of_LEDInit 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
 __size_of_LEDService 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
-_timerInit 946 0 CODE 0 text3 dist/default/production\TXController.X.production.obj
-_timerLock 9C8 0 CODE 0 text46 dist/default/production\TXController.X.production.obj
-_timerRead 8F0 0 CODE 0 text51 dist/default/production\TXController.X.production.obj
-_initIOCInterrupt B22 0 CODE 0 text9 dist/default/production\TXController.X.production.obj
-i1timerSet@index 72 0 COMMON 1 cstackCOMMON dist/default/production\TXController.X.production.obj
-intlevel0 0 0 CODE 0 functab C:\Users\Mark\AppData\Local\Temp\s8l4.obj
-intlevel1 0 0 CODE 0 functab C:\Users\Mark\AppData\Local\Temp\s8l4.obj
-intlevel2 0 0 CODE 0 functab C:\Users\Mark\AppData\Local\Temp\s8l4.obj
-intlevel3 0 0 CODE 0 functab C:\Users\Mark\AppData\Local\Temp\s8l4.obj
-intlevel4 0 0 CODE 0 functab C:\Users\Mark\AppData\Local\Temp\s8l4.obj
-intlevel5 0 0 CODE 0 functab C:\Users\Mark\AppData\Local\Temp\s8l4.obj
+_timerInit 788 0 CODE 0 text3 dist/default/production\TXController.X.production.obj
+_timerLock 82A 0 CODE 0 text27 dist/default/production\TXController.X.production.obj
+_timerRead 736 0 CODE 0 text33 dist/default/production\TXController.X.production.obj
+_initIOCInterrupt 96E 0 CODE 0 text9 dist/default/production\TXController.X.production.obj
+i1timerSet@index 79 0 COMMON 1 cstackCOMMON dist/default/production\TXController.X.production.obj
+intlevel0 0 0 CODE 0 functab C:\Users\Mark\AppData\Local\Temp\s9qg.obj
+intlevel1 0 0 CODE 0 functab C:\Users\Mark\AppData\Local\Temp\s9qg.obj
+intlevel2 0 0 CODE 0 functab C:\Users\Mark\AppData\Local\Temp\s9qg.obj
+intlevel3 0 0 CODE 0 functab C:\Users\Mark\AppData\Local\Temp\s9qg.obj
+intlevel4 0 0 CODE 0 functab C:\Users\Mark\AppData\Local\Temp\s9qg.obj
+intlevel5 0 0 CODE 0 functab C:\Users\Mark\AppData\Local\Temp\s9qg.obj
 _WDTCONbits 97 0 ABS 0 - dist/default/production\TXController.X.production.obj
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 _greenWentLow 2D 0 BANK0 1 bssBANK0 dist/default/production\TXController.X.production.obj
-__end_of_init_Restart 98C 0 CODE 0 text37 dist/default/production\TXController.X.production.obj
+__end_of_init_Restart 7D0 0 CODE 0 text24 dist/default/production\TXController.X.production.obj
 _OSCCONbits 99 0 ABS 0 - dist/default/production\TXController.X.production.obj
-__size_of_runS4_Timeout 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
 wtemp0 7E 0 ABS 0 - dist/default/production\TXController.X.production.obj
-longTimerSet@index 4E 0 BANK0 1 cstackBANK0 dist/default/production\TXController.X.production.obj
 __Hfunctab 0 0 CODE 0 functab -
-__end_of_timer2Init 9C8 0 CODE 0 text11 dist/default/production\TXController.X.production.obj
+__end_of_timer2Init 80C 0 CODE 0 text11 dist/default/production\TXController.X.production.obj
 __Hclrtext 0 0 ABS 0 clrtext -
 __size_of_longTimerGet 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
-__size_of_longTimerSet 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
-timerSet@index 4B 0 BANK0 1 cstackBANK0 dist/default/production\TXController.X.production.obj
+timerSet@index 4A 0 BANK0 1 cstackBANK0 dist/default/production\TXController.X.production.obj
 __size_of_initS1_Timeout 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
-___wmul@multiplicand 4B 0 BANK0 1 cstackBANK0 dist/default/production\TXController.X.production.obj
-_beeperService 670 0 CODE 0 text48 dist/default/production\TXController.X.production.obj
+_beeperService 5A4 0 CODE 0 text30 dist/default/production\TXController.X.production.obj
 __size_of_initS4_greenLow 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
-__end_of_initS8_bothLow 894 0 CODE 0 text28 dist/default/production\TXController.X.production.obj
+__end_of_initS8_bothLow 708 0 CODE 0 text15 dist/default/production\TXController.X.production.obj
 __size_of_beeperInit 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
-__end_of_initS2_Timeout 946 0 CODE 0 text34 dist/default/production\TXController.X.production.obj
-longTimerRead@result 4E 0 BANK0 1 cstackBANK0 dist/default/production\TXController.X.production.obj
-__end_of___wmul 792 0 CODE 0 text47 dist/default/production\TXController.X.production.obj
-__end_of_runS4_Timeout B8E 0 CODE 0 text17 dist/default/production\TXController.X.production.obj
-timerSet@duration 49 0 BANK0 1 cstackBANK0 dist/default/production\TXController.X.production.obj
-__end_of_longTimerGet A20 0 CODE 0 text8 dist/default/production\TXController.X.production.obj
-__end_of_longTimerSet 7FC 0 CODE 0 text39 dist/default/production\TXController.X.production.obj
-__size_of_runS2_Timeout 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
+__end_of_initS2_Timeout 956 0 CODE 0 text21 dist/default/production\TXController.X.production.obj
+timerSet@duration 48 0 BANK0 1 cstackBANK0 dist/default/production\TXController.X.production.obj
+__end_of_longTimerGet 882 0 CODE 0 text7 dist/default/production\TXController.X.production.obj
 __Lmaintext 0 0 ABS 0 maintext -
-timerLock@index 49 0 BANK0 1 cstackBANK0 dist/default/production\TXController.X.production.obj
+timerLock@index 48 0 BANK0 1 cstackBANK0 dist/default/production\TXController.X.production.obj
 __LnvBANK0 0 0 ABS 0 nvBANK0 -
-__size_of_runS4_GreenSteadyLow 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
-?_longTimerRead 49 0 BANK0 1 cstackBANK0 dist/default/production\TXController.X.production.obj
 _flasherToggle 42 0 BANK0 1 bssBANK0 dist/default/production\TXController.X.production.obj
-i1_timerSet A3C 0 CODE 0 text56 dist/default/production\TXController.X.production.obj
-longTimerSet@duration 49 0 BANK0 1 cstackBANK0 dist/default/production\TXController.X.production.obj
-_numLongTimers 7B 0 COMMON 1 bssCOMMON dist/default/production\TXController.X.production.obj
-__size_of_runS3_Error 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
-longTimerLock@index 4A 0 BANK0 1 cstackBANK0 dist/default/production\TXController.X.production.obj
-__end_of_timer2Interrupt 864 0 CODE 0 text54 dist/default/production\TXController.X.production.obj
-__end_of_LEDInit B0C 0 CODE 0 text12 dist/default/production\TXController.X.production.obj
-__end_of_runS4_GreenSteadyLow B8C 0 CODE 0 text16 dist/default/production\TXController.X.production.obj
+i1_timerSet 89E 0 CODE 0 text38 dist/default/production\TXController.X.production.obj
+_numLongTimers 74 0 COMMON 1 bssCOMMON dist/default/production\TXController.X.production.obj
+longTimerLock@index 49 0 BANK0 1 cstackBANK0 dist/default/production\TXController.X.production.obj
+__end_of_timer2Interrupt 6D8 0 CODE 0 text36 dist/default/production\TXController.X.production.obj
+__end_of_LEDInit 96E 0 CODE 0 text12 dist/default/production\TXController.X.production.obj
 __size_of_beepRepeatedly 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
-beepRepeatedly@n 4B 0 BANK0 1 cstackBANK0 dist/default/production\TXController.X.production.obj
-__end_of_initIOCInterrupt B38 0 CODE 0 text9 dist/default/production\TXController.X.production.obj
-__size_of_runS2_BeepReceived 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
-_numTimers 7C 0 COMMON 1 bssCOMMON dist/default/production\TXController.X.production.obj
+beepRepeatedly@n 4A 0 BANK0 1 cstackBANK0 dist/default/production\TXController.X.production.obj
+__end_of_initIOCInterrupt 984 0 CODE 0 text9 dist/default/production\TXController.X.production.obj
+_numTimers 75 0 COMMON 1 bssCOMMON dist/default/production\TXController.X.production.obj
 __CFG_FCMEN$OFF 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
 __CFG_MCLRE$OFF 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
-__end_of_runS2_Timeout B9A 0 CODE 0 text23 dist/default/production\TXController.X.production.obj
 start_initialization 24 0 CODE 0 cinit dist/default/production\TXController.X.production.obj
-_runS2_Error B96 0 CODE 0 text22 dist/default/production\TXController.X.production.obj
-__end_of_runS4_Error B8A 0 CODE 0 text15 dist/default/production\TXController.X.production.obj
-__end_of_runS1_Initialised B4E 0 CODE 0 text25 dist/default/production\TXController.X.production.obj
+_runS2_Error 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
 __size_of_initialise 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
 __size_of_initIOCInterrupt 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
 _TRISAbits 8C 0 ABS 0 - dist/default/production\TXController.X.production.obj
 __size_of_ISRCode 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
 __CFG_STVREN$OFF 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
-clear_ram0 B4E 0 CODE 0 clrtext dist/default/production\TXController.X.production.obj
-__pcstackBANK0 49 0 BANK0 1 cstackBANK0 dist/default/production\TXController.X.production.obj
-_init_NoAction BA0 0 CODE 0 text36 dist/default/production\TXController.X.production.obj
-_initS6_redLow A72 0 CODE 0 text30 dist/default/production\TXController.X.production.obj
+clear_ram0 984 0 CODE 0 clrtext dist/default/production\TXController.X.production.obj
+__pcstackBANK0 48 0 BANK0 1 cstackBANK0 dist/default/production\TXController.X.production.obj
+_init_NoAction 9BE 0 CODE 0 text23 dist/default/production\TXController.X.production.obj
+_initS6_redLow 8D4 0 CODE 0 text17 dist/default/production\TXController.X.production.obj
 __size_of_beeperService 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
-___int_sp 0 0 STACK 2 stack C:\Users\Mark\AppData\Local\Temp\s8l4.obj
-__end_ofi1_timerSet A58 0 CODE 0 text56 dist/default/production\TXController.X.production.obj
-__end_of_setLED B76 0 CODE 0 text41 dist/default/production\TXController.X.production.obj
-_getInitEvent 31A 0 CODE 0 text45 dist/default/production\TXController.X.production.obj
+___int_sp 0 0 STACK 2 stack C:\Users\Mark\AppData\Local\Temp\s9qg.obj
+__end_ofi1_timerSet 8BA 0 CODE 0 text38 dist/default/production\TXController.X.production.obj
+__end_of_setLED 9AC 0 CODE 0 text28 dist/default/production\TXController.X.production.obj
+_getInitEvent 1F0 0 CODE 0 text26 dist/default/production\TXController.X.production.obj
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 BANK2 1 bank2 -
@@ -739,9 +621,9 @@ __Hbank6 0 0 BANK6 1 bank6 -
 __Hbank7 0 0 BANK7 1 bank7 -
 __Hbank8 0 0 BANK8 1 bank8 -
 __Hbank9 0 0 BANK9 1 bank9 -
-__Hcinit 5E 0 CODE 0 cinit -
+__Hcinit 60 0 CODE 0 cinit -
 __Hidloc 0 0 IDLOC 0 idloc -
-_timer2Interrupt 830 0 CODE 0 text54 dist/default/production\TXController.X.production.obj
+_timer2Interrupt 6A4 0 CODE 0 text36 dist/default/production\TXController.X.production.obj
 __Hsfr10 0 0 ABS 0 sfr10 -
 __Hsfr11 0 0 ABS 0 sfr11 -
 __Hsfr12 0 0 ABS 0 sfr12 -
@@ -765,8 +647,7 @@ __Hsfr29 0 0 ABS 0 sfr29 -
 __Hsfr30 0 0 ABS 0 sfr30 -
 __Hsfr31 0 0 ABS 0 sfr31 -
 __Hstack 0 0 STACK 2 stack -
-__end_of_runS1_Error B9C 0 CODE 0 text24 dist/default/production\TXController.X.production.obj
-_timerInterrupt 1EE 0 CODE 0 text53 dist/default/production\TXController.X.production.obj
+_timerInterrupt 31E 0 CODE 0 text35 dist/default/production\TXController.X.production.obj
 __Hbank10 0 0 BANK10 1 bank10 -
 __Hbank11 0 0 BANK11 1 bank11 -
 __Hbank12 0 0 BANK12 1 bank12 -
@@ -791,11 +672,10 @@ __Hbank30 0 0 BANK30 1 bank30 -
 __Hbank31 0 0 BANK31 1 bank31 -
 __Hbigram 0 0 ABS 0 bigram -
 __Hmaintext 0 0 ABS 0 maintext -
-_getRunEvent 536 0 CODE 0 text40 dist/default/production\TXController.X.production.obj
 __CFG_FOSC$INTOSC 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
 __Hcommon 0 0 ABS 0 common -
 __Hconfig 10012 0 CONFIG 0 config -
-_initS5_redHigh A8C 0 CODE 0 text31 dist/default/production\TXController.X.production.obj
+_initS5_redHigh 8EE 0 CODE 0 text18 dist/default/production\TXController.X.production.obj
 __Lbank0 0 0 ABS 0 bank0 -
 __Lbank1 0 0 ABS 0 bank1 -
 __Lbank2 0 0 BANK2 1 bank2 -
@@ -863,9 +743,8 @@ __Lsfr7 0 0 ABS 0 sfr7 -
 __Lsfr8 0 0 ABS 0 sfr8 -
 __Lsfr9 0 0 ABS 0 sfr9 -
 __Ltext 0 0 ABS 0 text -
-__end_of_beeperService 6C6 0 CODE 0 text48 dist/default/production\TXController.X.production.obj
-__pnvBANK0 5F 0 BANK0 1 nvBANK0 dist/default/production\TXController.X.production.obj
-___wmul 75A 0 CODE 0 text47 dist/default/production\TXController.X.production.obj
+__end_of_beeperService 5FA 0 CODE 0 text30 dist/default/production\TXController.X.production.obj
+__pnvBANK0 5E 0 BANK0 1 nvBANK0 dist/default/production\TXController.X.production.obj
 __LcstackBANK0 0 0 ABS 0 cstackBANK0 -
 int$flags 7E 0 ABS 0 - dist/default/production\TXController.X.production.obj
 __size_of_timer2Init 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
@@ -875,94 +754,68 @@ __S0 8009 0 ABS 0 - -
 __S1 B4 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
-_runS3_Timeout B92 0 CODE 0 text20 dist/default/production\TXController.X.production.obj
-_runStateTable 17E 0 STRCODE 0 stringtext dist/default/production\TXController.X.production.obj
+_runS3_Timeout 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
 __size_of_getInitEvent 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
-_runS1_Initialised B38 0 CODE 0 text25 dist/default/production\TXController.X.production.obj
-_eventHandlerInit 614 0 CODE 0 text7 dist/default/production\TXController.X.production.obj
-__size_of_runS3_GreenFlashing 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
+_runS1_Initialised 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
+_eventHandlerInit 548 0 CODE 0 text6 dist/default/production\TXController.X.production.obj
 __CFG_PLLEN$ON 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
 __end_of_ISRCode 22 0 CODE 0 intentry dist/default/production\TXController.X.production.obj
-_longTimerLock 7FC 0 CODE 0 text43 dist/default/production\TXController.X.production.obj
-_longTimerRead 6C6 0 CODE 0 text42 dist/default/production\TXController.X.production.obj
-__end_of_timerInterrupt 31A 0 CODE 0 text53 dist/default/production\TXController.X.production.obj
-flashLED@period 49 0 BANK0 1 cstackBANK0 dist/default/production\TXController.X.production.obj
-_initStateTable 5E 0 STRCODE 0 stringtext dist/default/production\TXController.X.production.obj
+_longTimerLock 670 0 CODE 0 text8 dist/default/production\TXController.X.production.obj
+__end_of_timerInterrupt 44A 0 CODE 0 text35 dist/default/production\TXController.X.production.obj
+_initStateTable 60 0 STRCODE 0 stringtext dist/default/production\TXController.X.production.obj
 __CFG_BOREN$ON 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
-__end_of_initS5_redHigh AA6 0 CODE 0 text31 dist/default/production\TXController.X.production.obj
+__end_of_initS5_redHigh 908 0 CODE 0 text18 dist/default/production\TXController.X.production.obj
 __HnvBANK0 0 0 ABS 0 nvBANK0 -
 __Lintentry 8 0 CODE 0 intentry -
-__end_of_initS7_bothHigh A72 0 CODE 0 text29 dist/default/production\TXController.X.production.obj
-reset_vec 0 0 CODE 0 reset_vec C:\Users\Mark\AppData\Local\Temp\s8l4.obj
+__end_of_initS7_bothHigh 8D4 0 CODE 0 text16 dist/default/production\TXController.X.production.obj
+reset_vec 0 0 CODE 0 reset_vec C:\Users\Mark\AppData\Local\Temp\s9qg.obj
 __size_of_init_NoAction 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
-__end_of_getInitEvent 440 0 CODE 0 text45 dist/default/production\TXController.X.production.obj
+__end_of_getInitEvent 31E 0 CODE 0 text26 dist/default/production\TXController.X.production.obj
 _redWentLow 27 0 BANK0 1 bssBANK0 dist/default/production\TXController.X.production.obj
-__pdataBANK0 5B 0 BANK0 1 dataBANK0 dist/default/production\TXController.X.production.obj
-_run_NoAction B9E 0 CODE 0 text27 dist/default/production\TXController.X.production.obj
-__size_of_flashLED 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
-__size_of___wmul 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
+__pdataBANK0 5A 0 BANK0 1 dataBANK0 dist/default/production\TXController.X.production.obj
+_run_NoAction 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
 __LbssBANK1 0 0 ABS 0 bssBANK1 -
-_runS1_Timeout B9C 0 CODE 0 text26 dist/default/production\TXController.X.production.obj
-_runEvent 45 0 BANK0 1 bssBANK0 dist/default/production\TXController.X.production.obj
-_runState 46 0 BANK0 1 bssBANK0 dist/default/production\TXController.X.production.obj
+_runS1_Timeout 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
+_runState 45 0 BANK0 1 bssBANK0 dist/default/production\TXController.X.production.obj
 __size_of_initS6_redLow 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
-__size_of_runS4_Error 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
 _IOCAFbits 393 0 ABS 0 - dist/default/production\TXController.X.production.obj
 _IOCANbits 392 0 ABS 0 - dist/default/production\TXController.X.production.obj
 _IOCAPbits 391 0 ABS 0 - dist/default/production\TXController.X.production.obj
 _PIE1bits 91 0 ABS 0 - dist/default/production\TXController.X.production.obj
 __size_of_timer2Interrupt 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
 _nBeeps 33 0 BANK0 1 bssBANK0 dist/default/production\TXController.X.production.obj
-__ptext10 98C 0 CODE 0 text10 dist/default/production\TXController.X.production.obj
-__ptext11 9AA 0 CODE 0 text11 dist/default/production\TXController.X.production.obj
-__ptext12 AF4 0 CODE 0 text12 dist/default/production\TXController.X.production.obj
-__ptext13 A20 0 CODE 0 text13 dist/default/production\TXController.X.production.obj
-__ptext14 440 0 CODE 0 text14 dist/default/production\TXController.X.production.obj
-__ptext15 B88 0 CODE 0 text15 dist/default/production\TXController.X.production.obj
-__ptext16 B8A 0 CODE 0 text16 dist/default/production\TXController.X.production.obj
-__ptext17 B8C 0 CODE 0 text17 dist/default/production\TXController.X.production.obj
-__ptext18 B8E 0 CODE 0 text18 dist/default/production\TXController.X.production.obj
-__ptext19 B90 0 CODE 0 text19 dist/default/production\TXController.X.production.obj
-__ptext20 B92 0 CODE 0 text20 dist/default/production\TXController.X.production.obj
-__ptext21 B94 0 CODE 0 text21 dist/default/production\TXController.X.production.obj
-__ptext22 B96 0 CODE 0 text22 dist/default/production\TXController.X.production.obj
-__ptext23 B98 0 CODE 0 text23 dist/default/production\TXController.X.production.obj
-__ptext24 B9A 0 CODE 0 text24 dist/default/production\TXController.X.production.obj
-__ptext25 B38 0 CODE 0 text25 dist/default/production\TXController.X.production.obj
-__ptext26 B9C 0 CODE 0 text26 dist/default/production\TXController.X.production.obj
-__ptext27 B9E 0 CODE 0 text27 dist/default/production\TXController.X.production.obj
-__ptext28 864 0 CODE 0 text28 dist/default/production\TXController.X.production.obj
-__ptext29 A58 0 CODE 0 text29 dist/default/production\TXController.X.production.obj
-__ptext30 A72 0 CODE 0 text30 dist/default/production\TXController.X.production.obj
-__ptext31 A8C 0 CODE 0 text31 dist/default/production\TXController.X.production.obj
-__ptext32 AA6 0 CODE 0 text32 dist/default/production\TXController.X.production.obj
-__ptext33 AC0 0 CODE 0 text33 dist/default/production\TXController.X.production.obj
-__ptext34 91E 0 CODE 0 text34 dist/default/production\TXController.X.production.obj
-__ptext35 ADA 0 CODE 0 text35 dist/default/production\TXController.X.production.obj
-__ptext36 BA0 0 CODE 0 text36 dist/default/production\TXController.X.production.obj
-__ptext37 96A 0 CODE 0 text37 dist/default/production\TXController.X.production.obj
-__ptext38 8C2 0 CODE 0 text38 dist/default/production\TXController.X.production.obj
-__ptext39 7C8 0 CODE 0 text39 dist/default/production\TXController.X.production.obj
-__ptext40 536 0 CODE 0 text40 dist/default/production\TXController.X.production.obj
-__ptext41 B6E 0 CODE 0 text41 dist/default/production\TXController.X.production.obj
-__ptext42 6C6 0 CODE 0 text42 dist/default/production\TXController.X.production.obj
-__ptext43 7FC 0 CODE 0 text43 dist/default/production\TXController.X.production.obj
-__ptext44 B76 0 CODE 0 text44 dist/default/production\TXController.X.production.obj
-__ptext45 31A 0 CODE 0 text45 dist/default/production\TXController.X.production.obj
-__ptext46 9C8 0 CODE 0 text46 dist/default/production\TXController.X.production.obj
-__ptext47 75A 0 CODE 0 text47 dist/default/production\TXController.X.production.obj
-__ptext48 670 0 CODE 0 text48 dist/default/production\TXController.X.production.obj
-__ptext49 792 0 CODE 0 text49 dist/default/production\TXController.X.production.obj
-__ptext50 9E6 0 CODE 0 text50 dist/default/production\TXController.X.production.obj
-__ptext51 8F0 0 CODE 0 text51 dist/default/production\TXController.X.production.obj
-__ptext53 1EE 0 CODE 0 text53 dist/default/production\TXController.X.production.obj
-__ptext54 830 0 CODE 0 text54 dist/default/production\TXController.X.production.obj
-__ptext55 5A8 0 CODE 0 text55 dist/default/production\TXController.X.production.obj
-__ptext56 A3C 0 CODE 0 text56 dist/default/production\TXController.X.production.obj
-_runS3_GreenFlashing B8E 0 CODE 0 text18 dist/default/production\TXController.X.production.obj
-_IOCInterrupt 5A8 0 CODE 0 text55 dist/default/production\TXController.X.production.obj
-_runS3_Error B90 0 CODE 0 text19 dist/default/production\TXController.X.production.obj
+__ptext10 7D0 0 CODE 0 text10 dist/default/production\TXController.X.production.obj
+__ptext11 7EE 0 CODE 0 text11 dist/default/production\TXController.X.production.obj
+__ptext12 956 0 CODE 0 text12 dist/default/production\TXController.X.production.obj
+__ptext13 882 0 CODE 0 text13 dist/default/production\TXController.X.production.obj
+__ptext14 44A 0 CODE 0 text14 dist/default/production\TXController.X.production.obj
+__ptext15 6D8 0 CODE 0 text15 dist/default/production\TXController.X.production.obj
+__ptext16 8BA 0 CODE 0 text16 dist/default/production\TXController.X.production.obj
+__ptext17 8D4 0 CODE 0 text17 dist/default/production\TXController.X.production.obj
+__ptext18 8EE 0 CODE 0 text18 dist/default/production\TXController.X.production.obj
+__ptext19 908 0 CODE 0 text19 dist/default/production\TXController.X.production.obj
+__ptext20 922 0 CODE 0 text20 dist/default/production\TXController.X.production.obj
+__ptext21 93C 0 CODE 0 text21 dist/default/production\TXController.X.production.obj
+__ptext22 80C 0 CODE 0 text22 dist/default/production\TXController.X.production.obj
+__ptext23 9BE 0 CODE 0 text23 dist/default/production\TXController.X.production.obj
+__ptext24 7AC 0 CODE 0 text24 dist/default/production\TXController.X.production.obj
+__ptext25 708 0 CODE 0 text25 dist/default/production\TXController.X.production.obj
+__ptext26 1F0 0 CODE 0 text26 dist/default/production\TXController.X.production.obj
+__ptext27 82A 0 CODE 0 text27 dist/default/production\TXController.X.production.obj
+__ptext28 9A4 0 CODE 0 text28 dist/default/production\TXController.X.production.obj
+__ptext29 9AC 0 CODE 0 text29 dist/default/production\TXController.X.production.obj
+__ptext30 5A4 0 CODE 0 text30 dist/default/production\TXController.X.production.obj
+__ptext31 63A 0 CODE 0 text31 dist/default/production\TXController.X.production.obj
+__ptext32 848 0 CODE 0 text32 dist/default/production\TXController.X.production.obj
+__ptext33 736 0 CODE 0 text33 dist/default/production\TXController.X.production.obj
+__ptext35 31E 0 CODE 0 text35 dist/default/production\TXController.X.production.obj
+__ptext36 6A4 0 CODE 0 text36 dist/default/production\TXController.X.production.obj
+__ptext37 4DC 0 CODE 0 text37 dist/default/production\TXController.X.production.obj
+__ptext38 89E 0 CODE 0 text38 dist/default/production\TXController.X.production.obj
+_runS3_GreenFlashing 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
+_IOCInterrupt 4DC 0 CODE 0 text37 dist/default/production\TXController.X.production.obj
+_runS3_Error 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
 __Lbank10 0 0 BANK10 1 bank10 -
 __Lbank11 0 0 BANK11 1 bank11 -
 __Lbank12 0 0 BANK12 1 bank12 -
@@ -985,42 +838,37 @@ __Lbank28 0 0 BANK28 1 bank28 -
 __Lbank29 0 0 BANK29 1 bank29 -
 __Lbank30 0 0 BANK30 1 bank30 -
 __Lbank31 0 0 BANK31 1 bank31 -
-__pmaintext B5A 0 CODE 0 maintext dist/default/production\TXController.X.production.obj
+__pmaintext 990 0 CODE 0 maintext dist/default/production\TXController.X.production.obj
 __Lbigram 0 0 ABS 0 bigram -
 __CFG_BORV$LO 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
-_initS1_Timeout ADA 0 CODE 0 text35 dist/default/production\TXController.X.production.obj
+_initS1_Timeout 80C 0 CODE 0 text22 dist/default/production\TXController.X.production.obj
 __size_of_initS8_bothLow 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
-timerRead@result 4C 0 BANK0 1 cstackBANK0 dist/default/production\TXController.X.production.obj
+timerRead@result 4B 0 BANK0 1 cstackBANK0 dist/default/production\TXController.X.production.obj
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 1000E 0 CONFIG 0 config -
 __CFG_CP$OFF 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
 __size_of_eventHandlerService 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
 __size_of_initS2_Timeout 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
-___wmul@multiplier 49 0 BANK0 1 cstackBANK0 dist/default/production\TXController.X.production.obj
-__end_of_init_NoAction BA2 0 CODE 0 text36 dist/default/production\TXController.X.production.obj
+__end_of_init_NoAction 9C0 0 CODE 0 text23 dist/default/production\TXController.X.production.obj
 _LATAbits 10C 0 ABS 0 - dist/default/production\TXController.X.production.obj
 _runSMTimer 39 0 BANK0 1 bssBANK0 dist/default/production\TXController.X.production.obj
-?_timerRead 49 0 BANK0 1 cstackBANK0 dist/default/production\TXController.X.production.obj
-_initEvent 47 0 BANK0 1 bssBANK0 dist/default/production\TXController.X.production.obj
-_hardwareInit 71A 0 CODE 0 text5 dist/default/production\TXController.X.production.obj
-_setLED B6E 0 CODE 0 text41 dist/default/production\TXController.X.production.obj
-_initState 48 0 BANK0 1 bssBANK0 dist/default/production\TXController.X.production.obj
-_LEDInit AF4 0 CODE 0 text12 dist/default/production\TXController.X.production.obj
-__end_of_initStateTable 17E 0 STRCODE 0 stringtext dist/default/production\TXController.X.production.obj
-__end_of_initS6_redLow A8C 0 CODE 0 text30 dist/default/production\TXController.X.production.obj
+?_timerRead 48 0 BANK0 1 cstackBANK0 dist/default/production\TXController.X.production.obj
+_initEvent 46 0 BANK0 1 bssBANK0 dist/default/production\TXController.X.production.obj
+_hardwareInit 5FA 0 CODE 0 text5 dist/default/production\TXController.X.production.obj
+_setLED 9A4 0 CODE 0 text28 dist/default/production\TXController.X.production.obj
+_initState 47 0 BANK0 1 bssBANK0 dist/default/production\TXController.X.production.obj
+_LEDInit 956 0 CODE 0 text12 dist/default/production\TXController.X.production.obj
+__end_of_initStateTable 180 0 STRCODE 0 stringtext dist/default/production\TXController.X.production.obj
+__end_of_initS6_redLow 8EE 0 CODE 0 text17 dist/default/production\TXController.X.production.obj
 _timers A0 0 BANK1 1 bssBANK1 dist/default/production\TXController.X.production.obj
-__size_of_run_NoAction 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
-_LEDService 792 0 CODE 0 text49 dist/default/production\TXController.X.production.obj
-_initS7_bothHigh A58 0 CODE 0 text29 dist/default/production\TXController.X.production.obj
-stackhi 204F 0 ABS 0 - C:\Users\Mark\AppData\Local\Temp\s8l4.obj
-stacklo 2040 0 ABS 0 - C:\Users\Mark\AppData\Local\Temp\s8l4.obj
-__end_of_eventHandlerInit 670 0 CODE 0 text7 dist/default/production\TXController.X.production.obj
-__size_of_runS1_Error 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
-__size_of_runS3_Timeout 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
+_LEDService 63A 0 CODE 0 text31 dist/default/production\TXController.X.production.obj
+_initS7_bothHigh 8BA 0 CODE 0 text16 dist/default/production\TXController.X.production.obj
+stackhi 204F 0 ABS 0 - C:\Users\Mark\AppData\Local\Temp\s9qg.obj
+stacklo 203F 0 ABS 0 - C:\Users\Mark\AppData\Local\Temp\s9qg.obj
+__end_of_eventHandlerInit 5A4 0 CODE 0 text6 dist/default/production\TXController.X.production.obj
 _redWentHigh 2A 0 BANK0 1 bssBANK0 dist/default/production\TXController.X.production.obj
 __CFG_LVP$OFF 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
-timerInterrupt@i 75 0 COMMON 1 cstackCOMMON dist/default/production\TXController.X.production.obj
-_flashLED B0C 0 CODE 0 text6 dist/default/production\TXController.X.production.obj
+timerInterrupt@i 7C 0 COMMON 1 cstackCOMMON dist/default/production\TXController.X.production.obj
 _flashing 41 0 BANK0 1 bssBANK0 dist/default/production\TXController.X.production.obj
 __size_of_timerGet 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
 __size_of_timerSet 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
@@ -1029,94 +877,82 @@ __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
 __Lspace_3 0 0 ABS 0 - -
 _LEDTimer 43 0 BANK0 1 bssBANK0 dist/default/production\TXController.X.production.obj
-__pbssCOMMON 77 0 COMMON 1 bssCOMMON dist/default/production\TXController.X.production.obj
+__pbssCOMMON 70 0 COMMON 1 bssCOMMON dist/default/production\TXController.X.production.obj
 __size_of_eventHandlerInit 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
 __HcstackBANK0 0 0 ABS 0 cstackBANK0 -
 __size_ofi1_timerSet 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
 __size_of_IOCInterrupt 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
 _PIR1bits 11 0 ABS 0 - dist/default/production\TXController.X.production.obj
 __Lend_init 22 0 CODE 0 end_init -
-__end_of_runS2_Error B98 0 CODE 0 text22 dist/default/production\TXController.X.production.obj
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
-_initInterrupt B7E 0 CODE 0 text4 dist/default/production\TXController.X.production.obj
-_runS4_GreenSteadyLow B8A 0 CODE 0 text16 dist/default/production\TXController.X.production.obj
+_initInterrupt 9B4 0 CODE 0 text4 dist/default/production\TXController.X.production.obj
+_runS4_GreenSteadyLow 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
 __size_of_longTimerLock 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
-__size_of_longTimerRead 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
-__end_of_flashLED B22 0 CODE 0 text6 dist/default/production\TXController.X.production.obj
 _greenWentHigh 30 0 BANK0 1 bssBANK0 dist/default/production\TXController.X.production.obj
-end_of_initialization 58 0 CODE 0 cinit dist/default/production\TXController.X.production.obj
-_initS3_greenHigh AC0 0 CODE 0 text33 dist/default/production\TXController.X.production.obj
-__end_of_run_NoAction BA0 0 CODE 0 text27 dist/default/production\TXController.X.production.obj
+end_of_initialization 5A 0 CODE 0 cinit dist/default/production\TXController.X.production.obj
+_initS3_greenHigh 922 0 CODE 0 text20 dist/default/production\TXController.X.production.obj
 __Hintentry 22 0 CODE 0 intentry -
-_eventHandlerService 440 0 CODE 0 text14 dist/default/production\TXController.X.production.obj
+_eventHandlerService 44A 0 CODE 0 text14 dist/default/production\TXController.X.production.obj
 __Lstrings 0 0 ABS 0 strings -
-_beepRepeatedly 8C2 0 CODE 0 text38 dist/default/production\TXController.X.production.obj
-__end_of_initS1_Timeout AF4 0 CODE 0 text35 dist/default/production\TXController.X.production.obj
+_beepRepeatedly 708 0 CODE 0 text25 dist/default/production\TXController.X.production.obj
+__end_of_initS1_Timeout 82A 0 CODE 0 text22 dist/default/production\TXController.X.production.obj
 __size_of_hardwareInit 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
 __Hreset_vec 2 0 CODE 0 reset_vec -
-_beeperInit 98C 0 CODE 0 text10 dist/default/production\TXController.X.production.obj
+_beeperInit 7D0 0 CODE 0 text10 dist/default/production\TXController.X.production.obj
 __HbssBANK0 0 0 ABS 0 bssBANK0 -
 __HbssBANK1 0 0 ABS 0 bssBANK1 -
 __size_of_setLED 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
-__end_of_runS3_Timeout B94 0 CODE 0 text20 dist/default/production\TXController.X.production.obj
-__end_of_runStateTable 1EE 0 STRCODE 0 stringtext dist/default/production\TXController.X.production.obj
-_eventHandlerTimer 5F 0 BANK0 1 nvBANK0 dist/default/production\TXController.X.production.obj
-__ptext1 B84 0 CODE 0 text1 dist/default/production\TXController.X.production.obj
-__ptext2 894 0 CODE 0 text2 dist/default/production\TXController.X.production.obj
-__ptext3 946 0 CODE 0 text3 dist/default/production\TXController.X.production.obj
-__ptext4 B7E 0 CODE 0 text4 dist/default/production\TXController.X.production.obj
-__ptext5 71A 0 CODE 0 text5 dist/default/production\TXController.X.production.obj
-__ptext6 B0C 0 CODE 0 text6 dist/default/production\TXController.X.production.obj
-__ptext7 614 0 CODE 0 text7 dist/default/production\TXController.X.production.obj
-__ptext8 A04 0 CODE 0 text8 dist/default/production\TXController.X.production.obj
-__ptext9 B22 0 CODE 0 text9 dist/default/production\TXController.X.production.obj
-__end_of_IOCInterrupt 614 0 CODE 0 text55 dist/default/production\TXController.X.production.obj
-__size_of_runS1_Timeout 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
+__end_of_runStateTable 1F0 0 STRCODE 0 stringtext dist/default/production\TXController.X.production.obj
+_eventHandlerTimer 5E 0 BANK0 1 nvBANK0 dist/default/production\TXController.X.production.obj
+__ptext1 9BA 0 CODE 0 text1 dist/default/production\TXController.X.production.obj
+__ptext2 764 0 CODE 0 text2 dist/default/production\TXController.X.production.obj
+__ptext3 788 0 CODE 0 text3 dist/default/production\TXController.X.production.obj
+__ptext4 9B4 0 CODE 0 text4 dist/default/production\TXController.X.production.obj
+__ptext5 5FA 0 CODE 0 text5 dist/default/production\TXController.X.production.obj
+__ptext6 548 0 CODE 0 text6 dist/default/production\TXController.X.production.obj
+__ptext7 866 0 CODE 0 text7 dist/default/production\TXController.X.production.obj
+__ptext8 670 0 CODE 0 text8 dist/default/production\TXController.X.production.obj
+__ptext9 96E 0 CODE 0 text9 dist/default/production\TXController.X.production.obj
+__end_of_IOCInterrupt 548 0 CODE 0 text37 dist/default/production\TXController.X.production.obj
 __Lpowerup 0 0 CODE 0 powerup -
 _repeatedBeeping 3E 0 BANK0 1 bssBANK0 dist/default/production\TXController.X.production.obj
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
-__pstringtext 5E 0 STRCODE 0 stringtext dist/default/production\TXController.X.production.obj
-__end_of_longTimerLock 830 0 CODE 0 text43 dist/default/production\TXController.X.production.obj
-__end_of_longTimerRead 71A 0 CODE 0 text42 dist/default/production\TXController.X.production.obj
-__end_of_LEDService 7C8 0 CODE 0 text49 dist/default/production\TXController.X.production.obj
+__pstringtext 60 0 STRCODE 0 stringtext dist/default/production\TXController.X.production.obj
+__end_of_longTimerLock 6A4 0 CODE 0 text8 dist/default/production\TXController.X.production.obj
+__end_of_LEDService 670 0 CODE 0 text31 dist/default/production\TXController.X.production.obj
 _minuteTimer 37 0 BANK0 1 bssBANK0 dist/default/production\TXController.X.production.obj
-__end_of_runS3_GreenFlashing B90 0 CODE 0 text18 dist/default/production\TXController.X.production.obj
-__end_of_hardwareInit 75A 0 CODE 0 text5 dist/default/production\TXController.X.production.obj
+__end_of_hardwareInit 63A 0 CODE 0 text5 dist/default/production\TXController.X.production.obj
 __Lreset_vec 0 0 CODE 0 reset_vec -
-_timerGet A20 0 CODE 0 text13 dist/default/production\TXController.X.production.obj
-_timerSet 9E6 0 CODE 0 text50 dist/default/production\TXController.X.production.obj
-__end_of_getRunEvent 5A8 0 CODE 0 text40 dist/default/production\TXController.X.production.obj
-timerGet@result 4B 0 BANK0 1 cstackBANK0 dist/default/production\TXController.X.production.obj
-_kickWatchDog B84 0 CODE 0 text1 dist/default/production\TXController.X.production.obj
+_timerGet 882 0 CODE 0 text13 dist/default/production\TXController.X.production.obj
+_timerSet 848 0 CODE 0 text32 dist/default/production\TXController.X.production.obj
+timerGet@result 4A 0 BANK0 1 cstackBANK0 dist/default/production\TXController.X.production.obj
+_kickWatchDog 9BA 0 CODE 0 text1 dist/default/production\TXController.X.production.obj
 __CFG_CLKOUTEN$OFF 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
-timerRead@index 4E 0 BANK0 1 cstackBANK0 dist/default/production\TXController.X.production.obj
+timerRead@index 4D 0 BANK0 1 cstackBANK0 dist/default/production\TXController.X.production.obj
 __CFG_WDTE$ON 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
 __size_of_clearLED 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
-__end_of__initialization 58 0 CODE 0 cinit dist/default/production\TXController.X.production.obj
+__end_of__initialization 5A 0 CODE 0 cinit dist/default/production\TXController.X.production.obj
 __Lfunctab 0 0 CODE 0 functab -
-__end_of_timerGet A3C 0 CODE 0 text13 dist/default/production\TXController.X.production.obj
-__end_of_timerSet A04 0 CODE 0 text50 dist/default/production\TXController.X.production.obj
-__pidataBANK0 B66 0 CODE 0 idataBANK0 dist/default/production\TXController.X.production.obj
-__end_of_runS1_Timeout B9E 0 CODE 0 text26 dist/default/production\TXController.X.production.obj
+__end_of_timerGet 89E 0 CODE 0 text13 dist/default/production\TXController.X.production.obj
+__end_of_timerSet 866 0 CODE 0 text32 dist/default/production\TXController.X.production.obj
+__pidataBANK0 99C 0 CODE 0 idataBANK0 dist/default/production\TXController.X.production.obj
 __Lclrtext 0 0 ABS 0 clrtext -
 __size_of_initS7_bothHigh 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
-__end_of_beepRepeatedly 8F0 0 CODE 0 text38 dist/default/production\TXController.X.production.obj
-__end_of_runS2_BeepReceived B96 0 CODE 0 text21 dist/default/production\TXController.X.production.obj
-_systick 79 0 COMMON 1 bssCOMMON dist/default/production\TXController.X.production.obj
-longTimerGet@result 4C 0 BANK0 1 cstackBANK0 dist/default/production\TXController.X.production.obj
-__pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\TXController.X.production.obj
-longTimerRead@index 52 0 BANK0 1 cstackBANK0 dist/default/production\TXController.X.production.obj
-_initialise 894 0 CODE 0 text2 dist/default/production\TXController.X.production.obj
+__end_of_beepRepeatedly 736 0 CODE 0 text25 dist/default/production\TXController.X.production.obj
+_systick 72 0 COMMON 1 bssCOMMON dist/default/production\TXController.X.production.obj
+longTimerGet@result 4B 0 BANK0 1 cstackBANK0 dist/default/production\TXController.X.production.obj
+__pcstackCOMMON 77 0 COMMON 1 cstackCOMMON dist/default/production\TXController.X.production.obj
+_initialise 764 0 CODE 0 text2 dist/default/production\TXController.X.production.obj
 _ISRCode 8 0 CODE 0 intentry dist/default/production\TXController.X.production.obj
-__end_of_beeperInit 9AA 0 CODE 0 text10 dist/default/production\TXController.X.production.obj
-__end_of_initS4_greenLow AC0 0 CODE 0 text32 dist/default/production\TXController.X.production.obj
+__end_of_beeperInit 7EE 0 CODE 0 text10 dist/default/production\TXController.X.production.obj
+__end_of_initS4_greenLow 922 0 CODE 0 text19 dist/default/production\TXController.X.production.obj
 __Hend_init 24 0 CODE 0 end_init -
 _longTimers 20 0 BANK0 1 bssBANK0 dist/default/production\TXController.X.production.obj
-__end_of_initS3_greenHigh ADA 0 CODE 0 text33 dist/default/production\TXController.X.production.obj
-__end_of_main B66 0 CODE 0 maintext dist/default/production\TXController.X.production.obj
+__end_of_initS3_greenHigh 93C 0 CODE 0 text20 dist/default/production\TXController.X.production.obj
+__end_of_main 99C 0 CODE 0 maintext dist/default/production\TXController.X.production.obj
 _delayTimer 35 0 BANK0 1 bssBANK0 dist/default/production\TXController.X.production.obj
 _beeperTimer 40 0 BANK0 1 bssBANK0 dist/default/production\TXController.X.production.obj
-_runS4_Error B88 0 CODE 0 text15 dist/default/production\TXController.X.production.obj
+_runS4_Error 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
 __size_of_initInterrupt 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
@@ -1125,30 +961,28 @@ __size_of_kickWatchDog 0 0 ABS 0 - dist/default/production\TXController.X.produc
 __size_of_initS3_greenHigh 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
 _chargerInitialised 24 0 BANK0 1 bssBANK0 dist/default/production\TXController.X.production.obj
 __pintentry 8 0 CODE 0 intentry dist/default/production\TXController.X.production.obj
-_beepRate 5B 0 BANK0 1 dataBANK0 dist/default/production\TXController.X.production.obj
+_beepRate 5A 0 BANK0 1 dataBANK0 dist/default/production\TXController.X.production.obj
 _beeperOn 3D 0 BANK0 1 bssBANK0 dist/default/production\TXController.X.production.obj
-__end_of_eventHandlerService 536 0 CODE 0 text14 dist/default/production\TXController.X.production.obj
+__end_of_eventHandlerService 4DC 0 CODE 0 text14 dist/default/production\TXController.X.production.obj
 __HdataBANK0 0 0 ABS 0 dataBANK0 -
-_runS4_Timeout B8C 0 CODE 0 text17 dist/default/production\TXController.X.production.obj
-_buzzerTimer 77 0 COMMON 1 bssCOMMON dist/default/production\TXController.X.production.obj
-_runS2_BeepReceived B94 0 CODE 0 text21 dist/default/production\TXController.X.production.obj
+_runS4_Timeout 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
+_buzzerTimer 70 0 COMMON 1 bssCOMMON dist/default/production\TXController.X.production.obj
+_runS2_BeepReceived 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
 __initialization 24 0 CODE 0 cinit dist/default/production\TXController.X.production.obj
 __CFG_PWRTE$OFF 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
 __pbssBANK0 20 0 BANK0 1 bssBANK0 dist/default/production\TXController.X.production.obj
 __pbssBANK1 A0 0 BANK1 1 bssBANK1 dist/default/production\TXController.X.production.obj
-_clearLED B76 0 CODE 0 text44 dist/default/production\TXController.X.production.obj
+_clearLED 9AC 0 CODE 0 text29 dist/default/production\TXController.X.production.obj
 _T2CONbits 1C 0 ABS 0 - dist/default/production\TXController.X.production.obj
 __Hstringtext 0 0 ABS 0 stringtext -
 __CFG_WRT$OFF 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
 __size_of_timerInterrupt 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
-___wmul@product 4D 0 BANK0 1 cstackBANK0 dist/default/production\TXController.X.production.obj
 __size_of_initS5_redHigh 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
-_init_Restart 96A 0 CODE 0 text37 dist/default/production\TXController.X.production.obj
+_init_Restart 7AC 0 CODE 0 text24 dist/default/production\TXController.X.production.obj
 _ANSELAbits 18C 0 ABS 0 - dist/default/production\TXController.X.production.obj
-__size_of_runS2_Error 0 0 ABS 0 - dist/default/production\TXController.X.production.obj
-__end_of_clearLED B7E 0 CODE 0 text44 dist/default/production\TXController.X.production.obj
-__end_of_kickWatchDog B88 0 CODE 0 text1 dist/default/production\TXController.X.production.obj
-__end_of_initInterrupt B84 0 CODE 0 text4 dist/default/production\TXController.X.production.obj
+__end_of_clearLED 9B4 0 CODE 0 text29 dist/default/production\TXController.X.production.obj
+__end_of_kickWatchDog 9BE 0 CODE 0 text1 dist/default/production\TXController.X.production.obj
+__end_of_initInterrupt 9BA 0 CODE 0 text4 dist/default/production\TXController.X.production.obj
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.
@@ -1174,11 +1008,11 @@ __end_of_initInterrupt B84 0 CODE 0 text4 dist/default/production\TXController.X
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-text53 0 F7 1EE 4DA 2
-cstackCOMMON 1 70 70 D 1
-intentry 0 4 8 2B 2
+text26 0 F8 1F0 3E8 2
+intentry 0 4 8 2C 2
 reset_vec 0 0 0 1 2
-bssBANK0 1 20 20 40 1
+bssBANK0 1 20 20 3F 1
 bssBANK1 1 A0 A0 14 1
-stringtext 0 2F 5E C8 2
+stringtext 0 30 60 C8 2
+bssCOMMON 1 70 70 E 1
 config 0 8007 1000E 2 2

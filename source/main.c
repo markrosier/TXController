@@ -52,7 +52,8 @@ void initialise( void )
   LEDInit();
   beeperInit();
   initInterrupt();
-  flashLED(1000);
+  clearLED();
+//  flashLED(1000);
   beepRepeatedly(200, 3);
 }
 

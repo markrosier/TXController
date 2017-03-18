@@ -68,7 +68,7 @@ void (*const initStateTable [maxInitStates][maxInitEvents]) (void) = {
 /*initS6      */ { init_NoAction,   init_Restart,    init_NoAction,     init_NoAction,    init_NoAction,   initS6_redLow, init_NoAction,    init_NoAction   }, 
 /*initS7      */ { init_NoAction,   init_Restart,    init_NoAction,     init_NoAction,    init_NoAction,   init_NoAction,  initS7_bothHigh, init_NoAction   },
 /*initS8      */ { init_NoAction,   init_Restart,    init_NoAction,     init_NoAction,    init_NoAction,   init_NoAction,  init_NoAction,    initS8_bothLow },
-/*initialised */ { init_NoAction,   init_Restart,    init_NoAction,    init_NoAction,   init_NoAction,  init_NoAction, init_NoAction,   init_NoAction  }
+/*initialised */ { init_NoAction,   init_NoAction,    init_NoAction,    init_NoAction,   init_NoAction,  init_NoAction, init_NoAction,   init_NoAction  }
 };
 
 enum runStates {

@@ -11,7 +11,7 @@ extern double __fpnormalize(double);
 #pragma intrinsic(__builtin_software_breakpoint)
 extern void __builtin_software_breakpoint(void);
 
-# 49 "C:\Program Files (x86)\Microchip\xc8\v1.41\include\pic12f1822.h"
+# 49 "C:\Program Files (x86)\Microchip\xc8\v1.41\include\pic12lf1822.h"
 extern volatile unsigned char INDF0 @ 0x000;
 
 asm("INDF0 equ 00h");
@@ -1213,7 +1213,7 @@ asm("SPBRGL equ 019Bh");
 
 typedef union {
 struct {
-unsigned SP1BRGL :8;
+unsigned SPBRGL :8;
 };
 } SP1BRGLbits_t;
 extern volatile SP1BRGLbits_t SP1BRGLbits @ 0x19B;
@@ -1221,7 +1221,7 @@ extern volatile SP1BRGLbits_t SP1BRGLbits @ 0x19B;
 # 2879
 typedef union {
 struct {
-unsigned SP1BRGL :8;
+unsigned SPBRGL :8;
 };
 } SPBRGbits_t;
 extern volatile SPBRGbits_t SPBRGbits @ 0x19B;
@@ -1229,7 +1229,7 @@ extern volatile SPBRGbits_t SPBRGbits @ 0x19B;
 # 2891
 typedef union {
 struct {
-unsigned SP1BRGL :8;
+unsigned SPBRGL :8;
 };
 } SPBRGLbits_t;
 extern volatile SPBRGLbits_t SPBRGLbits @ 0x19B;
@@ -1247,7 +1247,7 @@ asm("SPBRGH equ 019Ch");
 
 typedef union {
 struct {
-unsigned SP1BRGH :8;
+unsigned SPBRGH :8;
 };
 } SP1BRGHbits_t;
 extern volatile SP1BRGHbits_t SP1BRGHbits @ 0x19C;
@@ -1255,7 +1255,7 @@ extern volatile SP1BRGHbits_t SP1BRGHbits @ 0x19C;
 # 2928
 typedef union {
 struct {
-unsigned SP1BRGH :8;
+unsigned SPBRGH :8;
 };
 } SPBRGHbits_t;
 extern volatile SPBRGHbits_t SPBRGHbits @ 0x19C;
@@ -2976,7 +2976,7 @@ void (*const initStateTable [maxInitStates][maxInitEvents]) (void) = {
 { init_NoAction, init_Restart, init_NoAction, init_NoAction, init_NoAction, initS6_redLow, init_NoAction, init_NoAction },
 { init_NoAction, init_Restart, init_NoAction, init_NoAction, init_NoAction, init_NoAction, initS7_bothHigh, init_NoAction },
 { init_NoAction, init_Restart, init_NoAction, init_NoAction, init_NoAction, init_NoAction, init_NoAction, initS8_bothLow },
-{ init_NoAction, init_Restart, init_NoAction, init_NoAction, init_NoAction, init_NoAction, init_NoAction, init_NoAction }
+{ init_NoAction, init_NoAction, init_NoAction, init_NoAction, init_NoAction, init_NoAction, init_NoAction, init_NoAction }
 };
 
 enum runStates {

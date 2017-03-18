@@ -11,7 +11,7 @@ extern double __fpnormalize(double);
 #pragma intrinsic(__builtin_software_breakpoint)
 extern void __builtin_software_breakpoint(void);
 
-# 49 "C:\Program Files (x86)\Microchip\xc8\v1.41\include\pic12f1822.h"
+# 49 "C:\Program Files (x86)\Microchip\xc8\v1.41\include\pic12lf1822.h"
 extern volatile unsigned char INDF0 @ 0x000;
 
 asm("INDF0 equ 00h");
@@ -1213,7 +1213,7 @@ asm("SPBRGL equ 019Bh");
 
 typedef union {
 struct {
-unsigned SP1BRGL :8;
+unsigned SPBRGL :8;
 };
 } SP1BRGLbits_t;
 extern volatile SP1BRGLbits_t SP1BRGLbits @ 0x19B;
@@ -1221,7 +1221,7 @@ extern volatile SP1BRGLbits_t SP1BRGLbits @ 0x19B;
 # 2879
 typedef union {
 struct {
-unsigned SP1BRGL :8;
+unsigned SPBRGL :8;
 };
 } SPBRGbits_t;
 extern volatile SPBRGbits_t SPBRGbits @ 0x19B;
@@ -1229,7 +1229,7 @@ extern volatile SPBRGbits_t SPBRGbits @ 0x19B;
 # 2891
 typedef union {
 struct {
-unsigned SP1BRGL :8;
+unsigned SPBRGL :8;
 };
 } SPBRGLbits_t;
 extern volatile SPBRGLbits_t SPBRGLbits @ 0x19B;
@@ -1247,7 +1247,7 @@ asm("SPBRGH equ 019Ch");
 
 typedef union {
 struct {
-unsigned SP1BRGH :8;
+unsigned SPBRGH :8;
 };
 } SP1BRGHbits_t;
 extern volatile SP1BRGHbits_t SP1BRGHbits @ 0x19C;
@@ -1255,7 +1255,7 @@ extern volatile SP1BRGHbits_t SP1BRGHbits @ 0x19C;
 # 2928
 typedef union {
 struct {
-unsigned SP1BRGH :8;
+unsigned SPBRGH :8;
 };
 } SPBRGHbits_t;
 extern volatile SPBRGHbits_t SPBRGHbits @ 0x19C;
@@ -2971,7 +2971,7 @@ void (*const initStateTable [maxInitStates][maxInitEvents]) (void) = {
 { init_NoAction, init_Restart, init_NoAction, init_NoAction, init_NoAction, initS6_redLow, init_NoAction, init_NoAction },
 { init_NoAction, init_Restart, init_NoAction, init_NoAction, init_NoAction, init_NoAction, initS7_bothHigh, init_NoAction },
 { init_NoAction, init_Restart, init_NoAction, init_NoAction, init_NoAction, init_NoAction, init_NoAction, initS8_bothLow },
-{ init_NoAction, init_Restart, init_NoAction, init_NoAction, init_NoAction, init_NoAction, init_NoAction, init_NoAction }
+{ init_NoAction, init_NoAction, init_NoAction, init_NoAction, init_NoAction, init_NoAction, init_NoAction, init_NoAction }
 };
 
 enum runStates {
@@ -3087,7 +3087,7 @@ IOCAFbits.IOCAF3 = 0;
 }
 if (IOCAFbits.IOCAF2 == 1)
 {
-if (PORTAbits.RA2 == 1)
+if (PORTAbits.RA2 == 0)
 {
 greenWentHigh.eventFlag = !0;
 greenWentHigh.eventTime = systick;
@@ -3101,7 +3101,7 @@ IOCAFbits.IOCAF2 = 0;
 }
 if (IOCAFbits.IOCAF4 == 1)
 {
-if (PORTAbits.RA4 == 1)
+if (PORTAbits.RA4 == 0)
 {
 redWentHigh.eventFlag = !0;
 redWentHigh.eventTime = systick;
@@ -3133,32 +3133,23 @@ void eventHandlerService ()
 {
 if ( timerRead(eventHandlerTimer) == 0 )
 {
-initEvent = getInitEvent ();
+if (initState != initialised)
+{
+initEvent = getInitEvent();
 
 if (((initEvent >= 0) && (initEvent < maxInitEvents))
-&& ((initState >= 0) && (initState < maxInitStates))) {
-
-initStateTable [initState][initEvent] ();
-
-} else
+&& ((initState >= 0) && (initState < maxInitStates)))
+{
+initStateTable [initState][initEvent]();
+}
+else
 {
 
 init_Restart();
 }
-
-runEvent = getRunEvent ();
-
-if (((runEvent >= 0) && (runEvent < maxRunEvents))
-&& ((runState >= 0) && (runState < maxRunStates))) {
-
-runStateTable [runState][runEvent] ();
-
-} else
-{
-
-init_Restart();
 }
 
+# 143
 timerSet( eventHandlerTimer, 10 );
 }
 }
@@ -3179,22 +3170,22 @@ greenWentLow.eventFlag = 0;
 redWentHigh.eventFlag = 0;
 redWentLow.eventFlag = 0;
 runState = runS1;
+clearLED();
 }
 
 void initS1_Timeout (void)
 {
-timerSet( initSMTimer, 2000 * 1 );
+timerSet( initSMTimer, 3000 * 1 );
 LATAbits.LATA0 = 0;
-initState = initS2;
+initState = initS5;
 }
 
 void initS2_Timeout (void)
 {
+timerSet( initSMTimer, 2000 * 1 );
+initState = initS3;
 
-# 175
-timerLock( initSMTimer );
-longTimerSet( minuteTimer, (DWORD) 10 * 60 * 1000);
-initState = initialised;
+# 183
 }
 
 void initS3_greenHigh (void)
@@ -3206,7 +3197,7 @@ initState = initS4;
 void initS4_greenLow (void)
 {
 timerSet( initSMTimer, 2000 * 1 );
-initState = initS5;
+initState = initS7;
 }
 
 void initS5_redHigh (void)
@@ -3218,7 +3209,7 @@ initState = initS6;
 void initS6_redLow (void)
 {
 timerSet( initSMTimer, 2000 * 1 );
-initState = initS7;
+initState = initS4;
 }
 
 void initS7_bothHigh (void)
@@ -3258,6 +3249,7 @@ return bothHighEvent;
 else
 {
 redWentHigh.eventFlag = 0;
+setLED();
 return redHighEvent;
 }
 }
@@ -3275,6 +3267,7 @@ return bothLowEvent;
 else
 {
 redWentLow.eventFlag = 0;
+clearLED();
 return redLowEvent;
 }
 }
@@ -3395,13 +3388,8 @@ return runTimeoutEvent;
 else if (timerRead(buzzerTimer) == 0 )
 {
 timerLock( buzzerTimer );
-if (ttog) {
-clearLED();
-ttog = 0;
-} else {
-setLED();
-ttog = !0;
-}
+
+# 392
 return beepEvent;
 }
 else if (longTimerRead(minuteTimer) == 0)
