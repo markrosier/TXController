@@ -23,7 +23,7 @@ extern "C" {
 #pragma config (CP=OFF)         // Code Protection
 #pragma config (MCLRE=OFF)       // MCLR pin On = Reset off = digital input
 #pragma config (PWRTE=OFF)      // Power up timer disabled
-#pragma config (WDTE=ON)       // Watchdog Timer Disabled
+#pragma config (WDTE=ON)       // Watchdog Timer enabled
 #pragma config (FOSC=INTOSC)  	// Oscillator election
 
 // Word 2
