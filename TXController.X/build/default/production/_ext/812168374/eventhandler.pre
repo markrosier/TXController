@@ -2920,7 +2920,7 @@ void IOCInterrupt( void );
 void eventHandlerInit( void );
 void eventHandlerService( void );
 
-# 22
+# 23
 enum initStates {
 initS1,
 initS2,
@@ -2994,30 +2994,19 @@ maxRunEvents
 } runEvent;
 
 void run_NoAction (void);
-void runS1_Error (void);
-void runS1_Timeout (void);
-void runS1_Initialised (void);
-void runS2_Error (void);
-void runS2_Timeout (void);
-void runS2_BeepReceived (void);
-void runS3_Error (void);
-void runS3_Timeout (void);
-void runS3_GreenFlashing (void);
-void runS4_Error (void);
-void runS4_Timeout (void);
-void runS4_GreenFlashing (void);
-void runS4_GreenSteadyLow (void);
+void run_Initialised (void);
+void run_BeepReceived (void);
+void run_GreenFlashing (void);
+void run_GreenSteadyLow (void);
 
 enum runEvents getRunEvent (void);
-
 
 void (*const runStateTable [maxRunStates][maxRunEvents]) (void) = {
 
 
-{ run_NoAction, runS1_Timeout, runS1_Initialised, runS1_Error, runS1_Error, run_NoAction, runS1_Error },
-{ run_NoAction, runS2_Timeout, runS2_Error, runS2_BeepReceived, runS2_Error, run_NoAction, runS2_Error },
-{ run_NoAction, runS3_Timeout, runS3_Error, runS3_Error, runS3_GreenFlashing, runS3_Error, runS3_Error },
-{ run_NoAction, runS4_Timeout, runS3_Error, runS3_Error, runS4_GreenFlashing, runS4_GreenSteadyLow, runS4_Error }
+{ run_NoAction, init_Restart, run_Initialised, init_Restart, init_Restart, run_NoAction, init_Restart },
+{ run_NoAction, init_Restart, init_Restart, run_BeepReceived, init_Restart, run_NoAction, init_Restart },
+{ run_NoAction, init_Restart, init_Restart, init_Restart, run_GreenFlashing, run_GreenSteadyLow, init_Restart }
 };
 
 # 13 "../include\led.h"
@@ -3076,6 +3065,8 @@ INTCONbits.IOCIE = 1;
 INTCONbits.PEIE = 1;
 }
 
+int buzzerTransitionCount = 0;
+
 void IOCInterrupt( void )
 {
 if ( INTCONbits.IOCIF == 1)
@@ -3083,10 +3074,16 @@ if ( INTCONbits.IOCIF == 1)
 
 if (IOCAFbits.IOCAF3 == 1)
 {
+if (buzzerTransitionCount ++ > 100 )
+{
 
 
 
 timerSet( buzzerTimer, 2 );
+
+}
+else
+timerLock(buzzerTimer);
 
 IOCAFbits.IOCAF3 = 0;
 }
@@ -3188,7 +3185,7 @@ greenWentLow.eventFlag = 0;
 redWentHigh.eventFlag = 0;
 redWentLow.eventFlag = 0;
 runState = runS1;
-clearLED();
+flashLED(200);
 }
 
 void initS1_Timeout (void)
@@ -3203,7 +3200,7 @@ void initS2_Timeout (void)
 timerSet( initSMTimer, 2000 * 1 );
 initState = initS3;
 
-# 187
+# 195
 }
 
 void initS3_greenHigh (void)
@@ -3334,90 +3331,51 @@ void run_NoAction (void)
 
 }
 
-void runS1_Error (void)
-{
-
-}
-
-void runS1_Timeout (void)
-{
-
-}
-
-void runS1_Initialised (void)
+void run_Initialised (void)
 {
 timerLock(runSMTimer);
-
+clearLED();
+longTimerSet(minuteTimer, (unsigned long) 1 * 60 * 1000);
 runState = runS2;
 }
 
-void runS2_Error (void)
+void run_BeepReceived (void)
 {
-
-}
-
-void runS2_Timeout (void)
-{
-
-}
-
-void runS2_BeepReceived (void)
-{
-
+longTimerLock(minuteTimer);
+beepRepeatedly ( 100, 1);
+timerSet(runSMTimer, 10 * 1000);
 runState = runS3;
 }
 
-void runS3_Error (void)
+void run_GreenFlashing (void)
+{
+timerSet(runSMTimer, 10 * 1000);
+setLED();
+}
+
+void run_GreenSteadyLow (void)
+{
+timerLock(runSMTimer);
+longTimerSet(minuteTimer, (unsigned long)1 * 60 * 1000);
+runState = runS2;
+clearLED();
+beepRepeatedly ( 200, 2);
+
+}
+
+enum runEvents multipleErrorEvent(void)
 {
 errorCount+=1;
 if (errorCount > 10)
 {
 beepRepeatedly ( 100, 1);
 errorCount = 0;
-init_Restart();
-}
-}
-
-void runS3_Timeout (void)
-{
-beepRepeatedly ( 100, 2);
+timerLock(runSMTimer);
+return errorEvent;
 }
 
-bool tog = 0;
-
-void runS3_GreenFlashing (void)
-{
-if (tog) {
-clearLED();
-tog = 0;
+return noRunEvent;
 }
-else {
-setLED();
-tog = !0;
-}
-}
-
-void runS4_Error (void)
-{
-
-}
-
-void runS4_Timeout (void)
-{
-
-}
-
-void runS4_GreenFlashing (void)
-{
-
-}
-
-void runS4_GreenSteadyLow (void)
-{
-
-}
-
-bool ttog = 0;
 
 enum runEvents getRunEvent(void)
 {
@@ -3433,9 +3391,8 @@ return runTimeoutEvent;
 }
 else if (timerRead(buzzerTimer) == 0 )
 {
+buzzerTransitionCount = 0;
 timerLock( buzzerTimer );
-
-# 424
 return beepEvent;
 }
 else if (longTimerRead(minuteTimer) == 0)
@@ -3443,12 +3400,14 @@ else if (longTimerRead(minuteTimer) == 0)
 longTimerLock( minuteTimer );
 return runTimeoutEvent;
 }
-else if (greenWentHigh.eventFlag && greenWentLow.eventFlag )
+else if ( greenWentLow.eventFlag )
+{
+if (greenWentHigh.eventFlag && greenWentLow.eventFlag )
 {
 if ( greenWentLow.eventTime - greenWentHigh.eventTime <= 600)
 {
 greenWentHigh.eventFlag = 0;
-greenWentLow.eventFlag = 0;
+
 return greenFlashingEvent;
 }
 else if ( greenWentHigh.eventTime - greenWentLow.eventTime <= 600)
@@ -3461,12 +3420,10 @@ else
 {
 greenWentHigh.eventFlag = 0;
 greenWentLow.eventFlag = 0;
-return errorEvent;
+return multipleErrorEvent();
 }
 }
-else if ( greenWentLow.eventFlag )
-{
-if (systick - greenWentLow.eventTime > 600)
+else if (systick - greenWentLow.eventTime > 600)
 {
 greenWentHigh.eventFlag = 0;
 greenWentLow.eventFlag = 0;
@@ -3475,18 +3432,18 @@ return greenSteadyLowEvent;
 }
 else if ( greenWentHigh.eventFlag )
 {
-if (systick - greenWentHigh.eventTime > 600)
+if (systick - greenWentHigh.eventTime > 1000)
 {
 greenWentHigh.eventFlag = 0;
 greenWentLow.eventFlag = 0;
-return errorEvent;
+return multipleErrorEvent();
 }
 }
 else if (redWentHigh.eventFlag || redWentLow.eventFlag)
 {
 redWentHigh.eventFlag = 0;
 redWentLow.eventFlag = 0;
-return errorEvent;
+return multipleErrorEvent();
 }
 
 return noRunEvent;

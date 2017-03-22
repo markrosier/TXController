@@ -2951,7 +2951,7 @@ void IOCInterrupt( void );
 void eventHandlerInit( void );
 void eventHandlerService( void );
 
-# 22
+# 23
 enum initStates {
 initS1,
 initS2,
@@ -3025,30 +3025,19 @@ maxRunEvents
 } runEvent;
 
 void run_NoAction (void);
-void runS1_Error (void);
-void runS1_Timeout (void);
-void runS1_Initialised (void);
-void runS2_Error (void);
-void runS2_Timeout (void);
-void runS2_BeepReceived (void);
-void runS3_Error (void);
-void runS3_Timeout (void);
-void runS3_GreenFlashing (void);
-void runS4_Error (void);
-void runS4_Timeout (void);
-void runS4_GreenFlashing (void);
-void runS4_GreenSteadyLow (void);
+void run_Initialised (void);
+void run_BeepReceived (void);
+void run_GreenFlashing (void);
+void run_GreenSteadyLow (void);
 
 enum runEvents getRunEvent (void);
-
 
 void (*const runStateTable [maxRunStates][maxRunEvents]) (void) = {
 
 
-{ run_NoAction, runS1_Timeout, runS1_Initialised, runS1_Error, runS1_Error, run_NoAction, runS1_Error },
-{ run_NoAction, runS2_Timeout, runS2_Error, runS2_BeepReceived, runS2_Error, run_NoAction, runS2_Error },
-{ run_NoAction, runS3_Timeout, runS3_Error, runS3_Error, runS3_GreenFlashing, runS3_Error, runS3_Error },
-{ run_NoAction, runS4_Timeout, runS3_Error, runS3_Error, runS4_GreenFlashing, runS4_GreenSteadyLow, runS4_Error }
+{ run_NoAction, init_Restart, run_Initialised, init_Restart, init_Restart, run_NoAction, init_Restart },
+{ run_NoAction, init_Restart, init_Restart, run_BeepReceived, init_Restart, run_NoAction, init_Restart },
+{ run_NoAction, init_Restart, init_Restart, init_Restart, run_GreenFlashing, run_GreenSteadyLow, init_Restart }
 };
 
 # 13 "../include\led.h"

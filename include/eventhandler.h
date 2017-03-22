@@ -17,6 +17,7 @@ void eventHandlerService( void );
 #define EVENT_HANDLER_PERIOD    10
 #define BUZZER_PERIOD           2
 #define ERROR_LIMIT             10
+#define N_IGNORE_BUZZER_TRANSITIONS 100
 
 // State Machine stuff
 enum initStates {   
@@ -92,30 +93,19 @@ enum runEvents {
 } runEvent;
 
 void run_NoAction (void);
-void runS1_Error (void);
-void runS1_Timeout (void);
-void runS1_Initialised (void);
-void runS2_Error (void);
-void runS2_Timeout (void);
-void runS2_BeepReceived (void);
-void runS3_Error (void);
-void runS3_Timeout (void);
-void runS3_GreenFlashing (void);
-void runS4_Error (void);
-void runS4_Timeout (void);
-void runS4_GreenFlashing (void);
-void runS4_GreenSteadyLow (void);
+void run_Initialised (void);
+void run_BeepReceived (void);
+void run_GreenFlashing (void);
+void run_GreenSteadyLow (void);
 
 enum runEvents getRunEvent (void);
-
 
 void (*const runStateTable [maxRunStates][maxRunEvents]) (void) = {
         //Event     noEvent         runTimeoutEvent  initialisedEvent    beepEvent          greeenFlashingEvent       greenSteadyLowEvent   errorEvent 
 //State  
-/* runs1 */  {     run_NoAction,    runS1_Timeout,   runS1_Initialised,  runS1_Error,           runS1_Error,          run_NoAction,         runS1_Error },
-/* runs2 */  {     run_NoAction,    runS2_Timeout,   runS2_Error,        runS2_BeepReceived,    runS2_Error,          run_NoAction,         runS2_Error },
-/* runs3 */  {     run_NoAction,    runS3_Timeout,   runS3_Error,        runS3_Error,           runS3_GreenFlashing,  runS3_Error,          runS3_Error },
-/* runs4 */  {     run_NoAction,    runS4_Timeout,   runS3_Error,        runS3_Error,           runS4_GreenFlashing,  runS4_GreenSteadyLow, runS4_Error }
+/* runs1 */  {     run_NoAction,    init_Restart,    run_Initialised,    init_Restart,        init_Restart,          run_NoAction,         init_Restart },
+/* runs2 */  {     run_NoAction,    init_Restart,    init_Restart,       run_BeepReceived,    init_Restart,          run_NoAction,         init_Restart },
+/* runs3 */  {     run_NoAction,    init_Restart,    init_Restart,       init_Restart,        run_GreenFlashing,     run_GreenSteadyLow,   init_Restart }
 };
 
 #endif

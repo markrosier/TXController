@@ -52,6 +52,8 @@ void initIOCInterrupt( void )
   INTCONbits.PEIE = 1;
 }
 
+int buzzerTransitionCount = 0;
+
 void IOCInterrupt( void )
 {
   if ( INTCONbits.IOCIF == 1)
@@ -59,12 +61,18 @@ void IOCInterrupt( void )
     // check P9242 Buzzer line
     if (IOCAFbits.IOCAF3 == 1)
     {
-      // start the buzzerTimer it will keep running until
-      // it has stopped being retriggered by this
-      // so the timeout occurs when the buzzer has stopped buzzing
-      timerSet( buzzerTimer, BUZZER_PERIOD );
-      //INDICATOR1_PIN_LATCH ^= 1;
-      IOCAFbits.IOCAF3 = 0;
+        if (buzzerTransitionCount ++ > N_IGNORE_BUZZER_TRANSITIONS )
+        {
+            // start the buzzerTimer it will keep running until
+            // it has stopped being retriggered by this
+            // so the timeout occurs when the buzzer has stopped buzzing
+            timerSet( buzzerTimer, BUZZER_PERIOD );
+            //INDICATOR1_PIN_LATCH ^= 1;
+        }
+        else 
+            timerLock(buzzerTimer);
+      
+        IOCAFbits.IOCAF3 = 0;
     }
     if (IOCAFbits.IOCAF2 == 1)
     {
@@ -164,7 +172,7 @@ void init_Restart (void)
   redWentHigh.eventFlag = false;
   redWentLow.eventFlag = false;
   runState =  runS1;
-  clearLED();
+  flashLED(200);
 }
 
 void initS1_Timeout (void)
@@ -314,90 +322,51 @@ void run_NoAction (void)
     
 }
 
-void runS1_Error (void)
-{
-    
-}
-
-void runS1_Timeout (void)
-{
-    
-}
-
-void runS1_Initialised (void)
+void run_Initialised (void)
 {
    timerLock(runSMTimer);
-   //beepRepeatedly ( 100, 3);
-    runState = runS2;
+   clearLED();
+   longTimerSet(minuteTimer, (unsigned long) 1 * MINUTES);
+   runState = runS2;
 }
 
-void runS2_Error (void)
+void run_BeepReceived (void)
 {
-    
+   longTimerLock(minuteTimer);
+   beepRepeatedly ( 100, 1);
+   timerSet(runSMTimer, 10 * SECONDS);
+   runState = runS3;
 }
 
-void runS2_Timeout (void)
+void run_GreenFlashing (void)
 {
-    
+    timerSet(runSMTimer, 10 * SECONDS);
+    setLED();
 }
 
-void runS2_BeepReceived (void)
+void run_GreenSteadyLow (void)
 {
-    //beepRepeatedly ( 100, 2);
-    runState = runS3;
+   timerLock(runSMTimer); 
+   longTimerSet(minuteTimer, (unsigned long)1 * MINUTES);
+   runState = runS2;
+   clearLED();
+   beepRepeatedly ( 200, 2);
+
 }
 
-void runS3_Error (void)
+enum runEvents multipleErrorEvent(void)
 {
     errorCount+=1;
     if (errorCount > ERROR_LIMIT) 
     {
         beepRepeatedly ( 100, 1);
         errorCount = 0;
-        init_Restart();
+        timerLock(runSMTimer);
+        return errorEvent;
     }
- }
 
-void runS3_Timeout (void)
-{
-    beepRepeatedly ( 100, 2);
+    return noRunEvent;
 }
-
-bool tog = false;
-
-void runS3_GreenFlashing (void)
-{
-    if (tog) {
-        clearLED();
-        tog = false;
-    }
-    else {
-        setLED();
-        tog = true;
-    }
-}
-
-void runS4_Error (void)
-{
-    
-}
-
-void runS4_Timeout (void)
-{
-    
-}
-
-void runS4_GreenFlashing (void)
-{
-    
-}
-
-void runS4_GreenSteadyLow (void)
-{
-    
-}
-
-bool ttog = false;
 
 enum runEvents getRunEvent(void)
 {
@@ -413,45 +382,39 @@ enum runEvents getRunEvent(void)
     }
     else if (timerRead(buzzerTimer) == EXPIRED )
     {
+        buzzerTransitionCount = 0;
         timerLock( buzzerTimer );
-/*        if (ttog) {
-            clearLED();
-            ttog = false;
-        } else {
-            setLED();
-            ttog = true;
-        }
-*/        return beepEvent;
+        return beepEvent;
     }
     else if (longTimerRead(minuteTimer) == EXPIRED)
      {
         longTimerLock( minuteTimer );
         return runTimeoutEvent;
     }
-    else if (greenWentHigh.eventFlag && greenWentLow.eventFlag ) 
-    {
-        if ( greenWentLow.eventTime - greenWentHigh.eventTime <= 600) 
-        {
-            greenWentHigh.eventFlag = false;
-            greenWentLow.eventFlag = false;
-            return greenFlashingEvent;
-        }
-        else if ( greenWentHigh.eventTime - greenWentLow.eventTime <= 600)
-        {
-            greenWentHigh.eventFlag = false;
-            greenWentLow.eventFlag = false;
-            return greenFlashingEvent;
-        }
-        else
-        {
-           greenWentHigh.eventFlag = false;
-           greenWentLow.eventFlag = false;
-           return errorEvent;
-        }
-    }
     else if ( greenWentLow.eventFlag )
     {
-        if (systick - greenWentLow.eventTime > 600)
+        if (greenWentHigh.eventFlag && greenWentLow.eventFlag ) 
+        {
+            if ( greenWentLow.eventTime - greenWentHigh.eventTime <= 600) 
+            {
+                greenWentHigh.eventFlag = false;
+                //greenWentLow.eventFlag = false;
+                return greenFlashingEvent;
+            }
+            else if ( greenWentHigh.eventTime - greenWentLow.eventTime <= 600)
+            {
+                greenWentHigh.eventFlag = false;
+                greenWentLow.eventFlag = false;
+                return greenFlashingEvent;
+            }
+            else
+            {
+               greenWentHigh.eventFlag = false;
+               greenWentLow.eventFlag = false;
+               return multipleErrorEvent();
+            }
+        }
+        else if (systick - greenWentLow.eventTime > 600)
         {
             greenWentHigh.eventFlag = false;
             greenWentLow.eventFlag = false;
@@ -460,18 +423,18 @@ enum runEvents getRunEvent(void)
     }
     else if ( greenWentHigh.eventFlag )
     {
-        if (systick - greenWentHigh.eventTime > 600)
+        if (systick - greenWentHigh.eventTime > 1000)
         {
             greenWentHigh.eventFlag = false;
             greenWentLow.eventFlag = false;
-            return errorEvent;
+            return multipleErrorEvent();
         }
     }
     else if (redWentHigh.eventFlag || redWentLow.eventFlag)
     {
             redWentHigh.eventFlag = false;
             redWentLow.eventFlag = false;
-            return errorEvent;
+            return multipleErrorEvent();
     }
     
     return noRunEvent;
