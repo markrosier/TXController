@@ -333,7 +333,7 @@ void run_Initialised (void)
 void run_BeepReceived (void)
 {
    longTimerLock(minuteTimer);
-   beepRepeatedly ( 100, 1);
+   //beepRepeatedly ( 100, 1);
    timerSet(runSMTimer, 10 * SECONDS);
    runState = runS3;
 }
@@ -350,7 +350,7 @@ void run_GreenSteadyLow (void)
    longTimerSet(minuteTimer, (unsigned long)1 * MINUTES);
    runState = runS2;
    clearLED();
-   beepRepeatedly ( 200, 2);
+   //beepRepeatedly ( 200, 2);
 
 }
 
@@ -359,7 +359,7 @@ enum runEvents multipleErrorEvent(void)
     errorCount+=1;
     if (errorCount > ERROR_LIMIT) 
     {
-        beepRepeatedly ( 100, 1);
+        //beepRepeatedly ( 100, 1);
         errorCount = 0;
         timerLock(runSMTimer);
         return errorEvent;
